@@ -1,4 +1,4 @@
-cv
+sdfa
 Vui lòng nhập mật khẩu!
 Thông Báo
 Tên đăng nhập hoặc mật khẩu không chính xác
@@ -11,3 +11,17 @@ Bạn đã đăng ký thành công. Hãy quay lại để đăng nhập.
 Tài Khoản đã tồn tại!
 Mã Nhân Viên này đã được đăng ký Tài Khoản!
 ID nhân viên không tồn tại!
+Hãy đăng ký tài khoản tại đây
+Mật Khẩu
+Quên Mật Khẩu?
+Đăng Nhập
+Bạn chưa có tài khoản?
+Đăng Ký
+Hãy đăng ký tài khoản tại đây
+Bạn đã có tài khoản?
+Thoát
+Hãy điền đầy đủ thông tin
+Mật Khẩu Mới
+Xác Nhận
+Tài Khoản không chính xác!
+Đổi Mật Khẩu thành công.

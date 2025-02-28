@@ -40,7 +40,7 @@ namespace QLHieuThuoc.forms
         // Cập nhật ngôn ngữ vs theme cho hệ thống
         private void DangNhap_Loaded(object sender, RoutedEventArgs e)
         {
-            
+            CapNhatNN();
         }
 
 
@@ -137,9 +137,30 @@ namespace QLHieuThuoc.forms
 
 
 
+        // cập nhật ngôn ngữ
+        private void CapNhatNN()
+        {
+            // thoat
+            tbl_bt_thoat.Text = NN.nn[21];
 
+            // đăng nhập
+            tbl_titel1.Text = NN.nn[13];
+            tb_TaiKhoanDangNhap.Text = NN.nn[4];
+            tbl_HienThiMatKhau.Text = NN.nn[14];
+            tbl_QuenMatKhau.Text = NN.nn[15];  
+            tbl_bt_Dangnhap.Text = NN.nn[16];
+            tbl_quadangky.Text = $"{NN.nn[17]}   ";
+            tbl_txtquadangky.Text = NN.nn[18];
 
-
+            // đăng ký
+            tbl_titel2.Text = NN.nn[19];
+            tb_MaNhanVien.Text = NN.nn[5];
+            tb_TaiKhoanDangKy.Text = NN.nn[4];
+            tbl_HienThiMatKhauDangKy.Text = NN.nn[14];
+            tbl_bt_Dangky.Text = NN.nn[18];
+            tbl_qldangnhap.Text = $"{NN.nn[20]}   ";
+            tbl_txtqldangnhap.Text = NN.nn[16];
+        }
 
 
 

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\final\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\obj\Debug\net8.0-windows\
+D:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\obj\Debug\net8.0-windows\
 QLHieuThuoc
 none
 false
-TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
-D:\final\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\App.xaml
+TRACE;DEBUG;NET;NET8_0;NETCOREAPP
+D:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\App.xaml
 3247864950
 
 13393763643
-1994512393
+1991824629205
 forms\DangNhap.xaml;forms\MainWindow.xaml;forms\QuenMK.xaml;
 
-False
+True
 

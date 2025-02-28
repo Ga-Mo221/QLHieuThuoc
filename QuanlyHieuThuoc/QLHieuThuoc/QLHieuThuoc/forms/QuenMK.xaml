@@ -322,7 +322,8 @@
             
             
             <!-- grid 6 - hãy điền đầy đủ thông tin -->
-            <TextBlock Text="Hãy điền đầy đủ thông tin"
+            <TextBlock x:Name="tbl_titel" 
+                       Text="Hãy điền đầy đủ thông tin"
                        FontFamily="Cascadia Mono"
                        Grid.Row="6"
                        HorizontalAlignment="Center"
@@ -403,7 +404,7 @@
             <!-- grid 14 - nút xác nhận -->
             <Button Style="{DynamicResource xacnhan}" Grid.Row="14"
                     Background="#E2895A"
-                    Width="295">
+                    Width="295" Click="Button_Click_1">
                 <Button.Content>
                     <TextBlock x:Name="tbl_bt_Dangky"
                                Text="Xác Nhận"

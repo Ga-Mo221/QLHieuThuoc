@@ -470,7 +470,7 @@
 
 
                     <!-- hãy đăng ký tại đây -->
-                    <TextBlock Text="Hãy đăng ký tài khoản tại đây"
+                    <TextBlock x:Name="tbl_titel2" Text="Hãy đăng ký tài khoản tại đây"
                                FontFamily="Cascadia Mono"
                                Grid.Row="4"
                                HorizontalAlignment="Center"
@@ -567,7 +567,8 @@
 
                     <!-- grid 14 - Quay lại đăng nhập -->
                     <StackPanel Grid.Row="14" HorizontalAlignment="Center" Orientation="Horizontal">
-                        <TextBlock x:Name="tbl_qldangnhap" Text="Bạn đã có tài khoản?  " 
+                        <TextBlock x:Name="tbl_qldangnhap" 
+                                   Text="Bạn đã có tài khoản?  " 
                                    FontFamily="Cascadia Mono" 
                                    HorizontalAlignment="Center"/>
                         <TextBlock x:Name="tbl_txtqldangnhap" 
@@ -624,7 +625,8 @@
 
 
                     <!-- vui lòng hãy đăng nhập -->
-                    <TextBlock Text="Hãy đăng ký tài khoản tại đây"
+                    <TextBlock x:Name="tbl_titel1" 
+                               Text="Hãy đăng ký tài khoản tại đây"
                                FontFamily="Cascadia Mono"
                                Grid.Row="4"
                                HorizontalAlignment="Center"
@@ -715,7 +717,8 @@
 
                     <!-- đăng ký -->
                     <StackPanel Grid.Row="14" HorizontalAlignment="Center" Orientation="Horizontal">
-                        <TextBlock x:Name="tbl_quadangky" Text="Bạn chưa có tài khoản?  " 
+                        <TextBlock x:Name="tbl_quadangky" 
+                                   Text="Bạn chưa có tài khoản?  " 
                                    FontFamily="Cascadia Mono" 
                                    HorizontalAlignment="Center"/>
                         <TextBlock x:Name="tbl_txtquadangky" 
