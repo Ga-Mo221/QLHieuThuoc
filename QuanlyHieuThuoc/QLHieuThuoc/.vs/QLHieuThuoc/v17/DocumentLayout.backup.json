@@ -1,0 +1,74 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\final\\QuanlyHieuThuoc\\QLHieuThuoc\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{AF183C98-B091-4920-B14C-79D71193BC4C}|QLHieuThuoc\\QLHieuThuoc.csproj|d:\\final\\quanlyhieuthuoc\\qlhieuthuoc\\qlhieuthuoc\\forms\\dangnhap.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF183C98-B091-4920-B14C-79D71193BC4C}|QLHieuThuoc\\QLHieuThuoc.csproj|solutionrelative:qlhieuthuoc\\forms\\dangnhap.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF183C98-B091-4920-B14C-79D71193BC4C}|QLHieuThuoc\\QLHieuThuoc.csproj|d:\\final\\quanlyhieuthuoc\\qlhieuthuoc\\qlhieuthuoc\\model\\files\\docghi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF183C98-B091-4920-B14C-79D71193BC4C}|QLHieuThuoc\\QLHieuThuoc.csproj|solutionrelative:qlhieuthuoc\\model\\files\\docghi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF183C98-B091-4920-B14C-79D71193BC4C}|QLHieuThuoc\\QLHieuThuoc.csproj|d:\\final\\quanlyhieuthuoc\\qlhieuthuoc\\qlhieuthuoc\\forms\\dangnhap.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{AF183C98-B091-4920-B14C-79D71193BC4C}|QLHieuThuoc\\QLHieuThuoc.csproj|solutionrelative:qlhieuthuoc\\forms\\dangnhap.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DocGhi.cs",
+              "DocumentMoniker": "D:\\final\\QuanlyHieuThuoc\\QLHieuThuoc\\QLHieuThuoc\\Model\\Files\\DocGhi.cs",
+              "RelativeDocumentMoniker": "QLHieuThuoc\\Model\\Files\\DocGhi.cs",
+              "ToolTip": "D:\\final\\QuanlyHieuThuoc\\QLHieuThuoc\\QLHieuThuoc\\Model\\Files\\DocGhi.cs",
+              "RelativeToolTip": "QLHieuThuoc\\Model\\Files\\DocGhi.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAgwDQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-27T17:45:28.779Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DangNhap.xaml",
+              "DocumentMoniker": "D:\\final\\QuanlyHieuThuoc\\QLHieuThuoc\\QLHieuThuoc\\forms\\DangNhap.xaml",
+              "RelativeDocumentMoniker": "QLHieuThuoc\\forms\\DangNhap.xaml",
+              "ToolTip": "D:\\final\\QuanlyHieuThuoc\\QLHieuThuoc\\QLHieuThuoc\\forms\\DangNhap.xaml",
+              "RelativeToolTip": "QLHieuThuoc\\forms\\DangNhap.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-02-27T13:28:10.915Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DangNhap.xaml.cs",
+              "DocumentMoniker": "D:\\final\\QuanlyHieuThuoc\\QLHieuThuoc\\QLHieuThuoc\\forms\\DangNhap.xaml.cs",
+              "RelativeDocumentMoniker": "QLHieuThuoc\\forms\\DangNhap.xaml.cs",
+              "ToolTip": "D:\\final\\QuanlyHieuThuoc\\QLHieuThuoc\\QLHieuThuoc\\forms\\DangNhap.xaml.cs*",
+              "RelativeToolTip": "QLHieuThuoc\\forms\\DangNhap.xaml.cs*",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAgwCMAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-27T13:28:50.365Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
