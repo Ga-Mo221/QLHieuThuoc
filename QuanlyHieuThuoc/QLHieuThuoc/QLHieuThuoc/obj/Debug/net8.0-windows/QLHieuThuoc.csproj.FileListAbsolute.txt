@@ -29,3 +29,5 @@ D:\final\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\bin\Debug\net8.0-windows\runtim
 D:\final\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Data.SqlClient.dll
 D:\final\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\obj\Debug\net8.0-windows\QLHieuThuoc.csproj.AssemblyReference.cache
 D:\final\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\obj\Debug\net8.0-windows\QLHieuTh.A55E1F7E.Up2Date
+D:\final\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\obj\Debug\net8.0-windows\forms\MainWindow.g.cs
+D:\final\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\obj\Debug\net8.0-windows\forms\MainWindow.baml

@@ -5,6 +5,9 @@
     <Compile Update="forms\DangNhap.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="forms\MainWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="forms\QuenMK.xaml.cs">
       <SubType>Code</SubType>
     </Compile>

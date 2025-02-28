@@ -30,17 +30,21 @@ namespace QLHieuThuoc.forms
             InitializeComponent();
 
             // lấy ngôn ngữ
-            dg.Setting();
-            dg.Ngongu(NN.nn,NN.NgonNguSetting);
+            dg.Setting(); // đọng file setting để lấy được ngôn ngữ đã thiết lập 
+            dg.Ngongu(NN.nn,NN.NgonNguSetting); // cập nhật ngôn ngữ vào list
 
             this.Loaded += DangNhap_Loaded;
         }
 
+
+        // Cập nhật ngôn ngữ vs theme cho hệ thống
         private void DangNhap_Loaded(object sender, RoutedEventArgs e)
         {
             
         }
 
+
+        // Chuyển sang cửa sổ quên mật khẩu
         private void tbl_QuenMatKhau_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             // áp dụng hiệu ứng mờ cho cửa sổ hiện tại
@@ -56,68 +60,87 @@ namespace QLHieuThuoc.forms
             this.Effect = null;
         }
 
-
+        // Thoát chương trình
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
 
-
+        // Sự kiện kiểm tra tài khoản mật khẩu và đăng nhập
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             string tk = tb_TaiKhoanDangNhap.Text;
             string mk = pw_MatKhauDangNhap.Password;
 
             if (tk.Trim() == "") { return; }
-            else if (mk.Trim() == "") { MessageBox.Show("Vui lòng nhập mật khẩu!", "Thông Báo", MessageBoxButton.OK, MessageBoxImage.Warning); return; }
+            else if (mk.Trim() == "") { MessageBox.Show(NN.nn[1], NN.nn[2], MessageBoxButton.OK, MessageBoxImage.Warning); return; }
             else
             {
                 string LenhTruyVan = "Select * from TaiKhoan where TK = '" + tk + "' and MK = '" + mk + "'";
                 if (modify.TaiKhoans(LenhTruyVan).Count > 0)
                 {
-                    MessageBox.Show("Đăng Nhập Thành Công");
+                    MainWindow CuaSoChinh = new MainWindow();
+                    this.Hide();
+                    CuaSoChinh.Show();
                 }
                 else
                 {
-                    MessageBox.Show("Tên đăng nhập hoặc mật khẩu không chính xác", "Thông Báo", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    MessageBox.Show(NN.nn[3], NN.nn[2], MessageBoxButton.OK, MessageBoxImage.Warning);
                 }
             }
         }
 
 
+        // Sự kiện đăng ký tài khoản
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             string IDNV = tb_MaNhanVien.Text;
             string TKDK = tb_TaiKhoanDangKy.Text;
             string MKDK = pw_MatKhauDangKy.Password;
 
-            if(IDNV.Trim() == "") { MessageBox.Show("Vui lòng nhập ID Nhân Viên", "Thông Báo", MessageBoxButton.OK, MessageBoxImage.Warning); return; }
-            if (TKDK.Trim() == "") { MessageBox.Show("Vui lòng nhập Tài Khoản", "Thông Báo", MessageBoxButton.OK, MessageBoxImage.Warning); return; }
-            if (MKDK.Trim() == "") { MessageBox.Show("Vui lòng nhập Mật Khẩu", "Thông Báo", MessageBoxButton.OK, MessageBoxImage.Warning); return; }
+            if(IDNV.Trim() == "") { MessageBox.Show(NN.nn[6], NN.nn[2], MessageBoxButton.OK, MessageBoxImage.Warning); return; }
+            if (TKDK.Trim() == "") { MessageBox.Show(NN.nn[7], NN.nn[2], MessageBoxButton.OK, MessageBoxImage.Warning); return; }
+            if (MKDK.Trim() == "") { MessageBox.Show(NN.nn[8], NN.nn[2], MessageBoxButton.OK, MessageBoxImage.Warning); return; }
 
 
             string CauLenhTruyVanMaNhanVien = "Select * from NhanVien where ID = '"+IDNV+"'";
             if (modify.NhanViens(CauLenhTruyVanMaNhanVien).Count == 1)
             {
-                string CauLenhTruyVanTaiKhoan = "Select * from TaiKhoan where TK = '"+TKDK+"'";
-                if (modify.TaiKhoans(CauLenhTruyVanTaiKhoan).Count == 0)
+                string CauLenhTruyVanMaNhanVienDaCoTaiKhoanChua = "Select * from TaiKhoan where IDNV = '"+IDNV+"'";
+                if (modify.TaiKhoans(CauLenhTruyVanMaNhanVienDaCoTaiKhoanChua).Count == 0)
                 {
-                    string CauLenhAddNewAcc = "Insert into TaiKhoan values ('"+TKDK+"','"+MKDK+"','"+IDNV+"')";
-                    modify.ThucThi(CauLenhAddNewAcc);
+                    string CauLenhTruyVanTaiKhoan = "Select * from TaiKhoan where TK = '"+TKDK+"'";
+                    if (modify.TaiKhoans(CauLenhTruyVanTaiKhoan).Count == 0)
+                    {
+                        string CauLenhAddNewAcc = "Insert into TaiKhoan values ('"+TKDK+"','"+MKDK+"','"+IDNV+"')";
+                        modify.ThucThi(CauLenhAddNewAcc);
 
-                    MessageBox.Show("Bạn đã đăng ký thành công. Hãy quay lại để đăng nhập.", "Thông Báo", MessageBoxButton.OK);
+                        MessageBox.Show(NN.nn[9], NN.nn[2], MessageBoxButton.OK);
+                    }
+                    else
+                    {
+                        MessageBox.Show(NN.nn[10], NN.nn[2], MessageBoxButton.OK, MessageBoxImage.Warning);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Tài Khoản đã tồn tại!", "Thông Báo", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    MessageBox.Show(NN.nn[11], NN.nn[2], MessageBoxButton.OK, MessageBoxImage.Warning);
                 }
             }
             else
             {
-                MessageBox.Show("ID nhân viên không tồn tại!", "Thông Báo", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show(NN.nn[12], NN.nn[2], MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
+
+
+
+
+
+
+
+
 
 
 
@@ -131,7 +154,7 @@ namespace QLHieuThuoc.forms
         // TextBox tài khoản đăng nhập
         private void tb_TaiKhoanDangNhap_GotFocus(object sender, RoutedEventArgs e)
         {
-            if (tb_TaiKhoanDangNhap.Text == "Tài Khoản")
+            if (tb_TaiKhoanDangNhap.Text == NN.nn[4])
             {
                 tb_TaiKhoanDangNhap.Text = "";
                 tb_TaiKhoanDangNhap.Foreground = Brushes.Black; // Đổi màu chữ khi nhập
@@ -141,7 +164,7 @@ namespace QLHieuThuoc.forms
         {
             if (string.IsNullOrWhiteSpace(tb_TaiKhoanDangNhap.Text))
             {
-                tb_TaiKhoanDangNhap.Text = "Tài Khoản";
+                tb_TaiKhoanDangNhap.Text = NN.nn[4];
                 tb_TaiKhoanDangNhap.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#8C8C8C")); // Trả lại màu xám
             }
         }
@@ -162,7 +185,7 @@ namespace QLHieuThuoc.forms
         // TextBox mã nhân viên đăng ký
         private void tb_MaNhanVien_GotFocus(object sender, RoutedEventArgs e)
         {
-            if (tb_MaNhanVien.Text == "Mã Nhân Viên")
+            if (tb_MaNhanVien.Text == NN.nn[5])
             {
                 tb_MaNhanVien.Text = "";
                 tb_MaNhanVien.Foreground = Brushes.Black; // Đổi màu chữ khi nhập
@@ -172,7 +195,7 @@ namespace QLHieuThuoc.forms
         {
             if (string.IsNullOrWhiteSpace(tb_MaNhanVien.Text))
             {
-                tb_MaNhanVien.Text = "Mã Nhân Viên";
+                tb_MaNhanVien.Text = NN.nn[5];
                 tb_MaNhanVien.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#8C8C8C")); // Trả lại màu xám
             }
         }
@@ -193,7 +216,7 @@ namespace QLHieuThuoc.forms
         // TextBox tài khoản đăng ký
         private void tb_TaiKhoanDangKy_GotFocus(object sender, RoutedEventArgs e)
         {
-            if (tb_TaiKhoanDangKy.Text == "Tài Khoản")
+            if (tb_TaiKhoanDangKy.Text == NN.nn[4])
             {
                 tb_TaiKhoanDangKy.Text = "";
                 tb_TaiKhoanDangKy.Foreground = Brushes.Black; // Đổi màu chữ khi nhập
@@ -203,7 +226,7 @@ namespace QLHieuThuoc.forms
         {
             if (string.IsNullOrWhiteSpace(tb_TaiKhoanDangKy.Text))
             {
-                tb_TaiKhoanDangKy.Text = "Tài Khoản";
+                tb_TaiKhoanDangKy.Text = NN.nn[4];
                 tb_TaiKhoanDangKy.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#8C8C8C")); // Trả lại màu xám
             }
         }

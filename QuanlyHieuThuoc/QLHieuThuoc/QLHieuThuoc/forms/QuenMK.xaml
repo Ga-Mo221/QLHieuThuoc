@@ -330,45 +330,42 @@
             </TextBlock>
 
 
-            <!-- grid 8 - nhập tài khoản -->
-            <Border x:Name="mybordertk" 
+            <!-- grid 8 - nhập mã nhân viên -->
+            <Border x:Name="myborderma" 
                     Background="#D9D9D9" 
                     CornerRadius="10"
                     Width="295"
                     Grid.Row="8">
-                <TextBox Style="{DynamicResource taikhoan}" Background="{Binding Background, ElementName=mybordertk}"
+                <TextBox x:Name="tb_MaNhanVien" Style="{DynamicResource taikhoan}" 
+                         Background="{Binding Background, ElementName=myborderma}"
                          Width="250" Height="20"
                          FontFamily="Cascadia Mono"
                          FontSize="17"
                          Foreground="#8C8C8C"
-                         Text="Tài Khoản">
+                         Text="Mã Nhân Viên"
+                         GotFocus="tb_MaNhanVien_GotFocus"
+                         LostFocus="tb_MaNhanVien_LostFocus">
                 </TextBox>
             </Border>
 
 
-            <!-- grid 10 - nhập mật khẩu cũ -->
-            <Border x:Name="mybordermkc" 
+            <!-- grid 10 - nhập tài khoản -->
+            <Border x:Name="mybordertk" 
                     Background="#D9D9D9" 
                     CornerRadius="10"
                     Width="295"
                     Grid.Row="10">
-                <Grid>
-                    <PasswordBox Style="{DynamicResource matkhaucu}" Height="20" 
-                                 Background="{Binding Background, ElementName=mybordermkc}"
-                                 Width="250"
-                                 FontFamily="Cascadia Mono"
-                                 FontSize="17"
-                                 Panel.ZIndex="0"/>
-                        <TextBlock Height="20" 
-                                   Width="100"
-                                   FontFamily="Cascadia Mono"
-                                   FontSize="15"
-                                   Foreground="#8C8C8C"
-                                   Text="Mật Khẩu Cũ"
-                                   HorizontalAlignment="Left"
-                                   Margin="22.5,0,0,0"
-                                   Panel.ZIndex="1"/>
-                </Grid>
+                <TextBox x:Name="tb_TaiKhoan" 
+                         Style="{DynamicResource taikhoan}" 
+                         Background="{Binding Background, ElementName=mybordertk}"
+                         Width="250" Height="20"
+                         FontFamily="Cascadia Mono"
+                         FontSize="17"
+                         Foreground="#8C8C8C"
+                         Text="Tài Khoản"
+                         GotFocus="tb_TaiKhoan_GotFocus"
+                         LostFocus="tb_TaiKhoan_LostFocus">
+                </TextBox>
             </Border>
 
 
@@ -379,13 +376,18 @@
                     Width="295"
                     Grid.Row="12">
                 <Grid>
-                    <PasswordBox Style="{DynamicResource matkhaumoi}" Height="20" 
+                    <PasswordBox x:Name="pw_MatKhau" 
+                                 Style="{DynamicResource matkhaumoi}" Height="20" 
                                  Background="{Binding Background, ElementName=mybordermkm}"
                                  Width="250"
                                  FontFamily="Cascadia Mono"
                                  FontSize="17"
-                                 Panel.ZIndex="0"/>
-                    <TextBlock Height="20" 
+                                 Panel.ZIndex="0"
+                                 GotFocus="pw_MatKhau_GotFocus"
+                                 LostFocus="pw_MatKhau_LostFocus">
+                    </PasswordBox>
+                    <TextBlock x:Name="tbl_HienThiMatKhau" 
+                               Height="20" 
                                Width="105"
                                FontFamily="Cascadia Mono"
                                FontSize="15"

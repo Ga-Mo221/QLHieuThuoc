@@ -1,1 +1,13 @@
-con me may
+cv
+Vui lòng nhập mật khẩu!
+Thông Báo
+Tên đăng nhập hoặc mật khẩu không chính xác
+Tài Khoản
+Mã Nhân Viên
+Vui lòng nhập ID Nhân Viên
+Vui lòng nhập Tài Khoản
+Vui lòng nhập Mật Khẩu
+Bạn đã đăng ký thành công. Hãy quay lại để đăng nhập.
+Tài Khoản đã tồn tại!
+Mã Nhân Viên này đã được đăng ký Tài Khoản!
+ID nhân viên không tồn tại!
