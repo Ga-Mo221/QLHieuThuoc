@@ -9,8 +9,65 @@
         AllowsTransparency="True"
         Background="Transparent"
         WindowStartupLocation="CenterScreen"
-        Title="QLHT" Height="1024" Width="1440">
-    <Border Background="White" 
+        Title="QLHT" Height="930" Width="1440">
+    <Window.Resources>
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" StrokeDashArray="1 2" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" SnapsToDevicePixels="true" StrokeThickness="1"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+        <Style x:Key="TongQuan" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" CornerRadius="10" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Border Background="#F7F7F7" 
             CornerRadius="10"
             BorderThickness="1"
             BorderBrush="Black"
@@ -27,41 +84,179 @@
                     CornerRadius="20"
                     Grid.Column="0">
                 <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="24"></RowDefinition>
-                        <RowDefinition Height="63"></RowDefinition>
-                        <RowDefinition Height="34"></RowDefinition>
-                        <RowDefinition Height="57"></RowDefinition>
-                        <RowDefinition Height="15"></RowDefinition>
-                        <RowDefinition Height="57"></RowDefinition>
-                        <RowDefinition Height="15"></RowDefinition>
-                        <RowDefinition Height="57"></RowDefinition>
-                        <RowDefinition Height="15"></RowDefinition>
-                        <RowDefinition Height="57"></RowDefinition>
-                        <RowDefinition Height="15"></RowDefinition>
-                        <RowDefinition Height="57"></RowDefinition>
-                        <RowDefinition Height="15"></RowDefinition>
-                        <RowDefinition Height="57"></RowDefinition>
-                        <RowDefinition Height="15"></RowDefinition>
-                        <RowDefinition Height="57"></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                    </Grid.RowDefinitions>
-
-                    <Grid Grid.Row="16">
-                        <StackPanel Orientation="Vertical" 
-                                    VerticalAlignment="Bottom">
-                            <Grid Height="57" >
-                                
-                            </Grid>
-                            <Grid Height="57" Margin="0,15,0,24">
-                                
-                            </Grid>
+                    <Grid Margin="16">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="24"></RowDefinition>
+                            <RowDefinition Height="63"></RowDefinition>
+                            <RowDefinition Height="34"></RowDefinition>
+                            <RowDefinition Height="57"></RowDefinition>
+                            <RowDefinition Height="15"></RowDefinition>
+                            <RowDefinition Height="57"></RowDefinition>
+                            <RowDefinition Height="15"></RowDefinition>
+                            <RowDefinition Height="57"></RowDefinition>
+                            <RowDefinition Height="15"></RowDefinition>
+                            <RowDefinition Height="57"></RowDefinition>
+                            <RowDefinition Height="15"></RowDefinition>
+                            <RowDefinition Height="57"></RowDefinition>
+                            <RowDefinition Height="15"></RowDefinition>
+                            <RowDefinition Height="57"></RowDefinition>
+                            <RowDefinition Height="15"></RowDefinition>
+                            <RowDefinition Height="57"></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        
+                        
+                        <!-- logo và thương hiệu-->
+                        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Ellipse Height="63" Width="63" Fill="#FCF4F0"></Ellipse>
+                            <TextBlock Text="  QLHT" 
+                                       Style="{StaticResource CustomFont}" 
+                                       FontSize="21"
+                                       VerticalAlignment="Center">
+                            </TextBlock>
                         </StackPanel>
+                        
+                                               
+                        <!-- Tổng quan -->
+                        <Button x:Name="bt_TongQuan" 
+                                Style="{DynamicResource TongQuan}" 
+                                Grid.Row="3"
+                                Background="#E2895A" Click="bt_TongQuan_Click">
+                            <TextBlock x:Name="tbl_bt_TongQuan" 
+                                       FontSize="20"
+                                       FontFamily="Cascadia Mono"
+                                       Foreground="#FCF4F0"
+                                       Margin="43 15 76 14">
+                                Tổng Quan
+                            </TextBlock>
+                        </Button>
+                        
+                        
+                        <!-- Sản phẩm -->
+                        <Button x:Name="bt_SanPham" 
+                                Style="{DynamicResource TongQuan}" 
+                                Grid.Row="5"
+                                Background="#E2895A" Click="bt_SanPham_Click">
+                            <TextBlock x:Name="tbl_bt_SanPham" 
+                                       FontSize="20"
+                                       FontFamily="Cascadia Mono"
+                                       Foreground="#FCF4F0"
+                                       Margin="43 15 85 14">
+                                Sản Phẩm
+                            </TextBlock>
+                        </Button>
+                        
+                        
+                        <!-- Bán hàng -->
+                        <Button x:Name="bt_BanHang" 
+                                Style="{DynamicResource TongQuan}" Grid.Row="7"
+                                Background="#E2895A" Click="bt_BanHang_Click">
+                            <TextBlock x:Name="tbl_bt_BanHang" 
+                                       FontSize="20"
+                                       FontFamily="Cascadia Mono"
+                                       Foreground="#FCF4F0"
+                                       Margin="43 15 85 14">
+                                Bán Hàng
+                            </TextBlock>
+                        </Button>
+                        
+                        
+                        <!-- Nhập hàng -->
+                        <Button x:Name="bt_NhapHang" 
+                                Style="{DynamicResource TongQuan}" Grid.Row="9"
+                                Background="#E2895A" Click="bt_NhapHang_Click">
+                            <TextBlock x:Name="tbl_bt_NhapHang" 
+                                       FontSize="20"
+                                       FontFamily="Cascadia Mono"
+                                       Foreground="#FCF4F0"
+                                       Margin="43 15 76 14">
+                                Nhập Hàng
+                            </TextBlock>
+                        </Button>
+                        
+                        
+                        <!-- Thống kê -->
+                        <Button x:Name="bt_ThongKe" 
+                                Style="{DynamicResource TongQuan}" Grid.Row="11"
+                                Background="#E2895A" Click="bt_ThongKe_Click">
+                            <TextBlock x:Name="tbl_bt_ThongKe" 
+                                       FontSize="20"
+                                       FontFamily="Cascadia Mono"
+                                       Foreground="#FCF4F0"
+                                       Margin="43 15 90 14">
+                                Thống Kê
+                            </TextBlock>
+                        </Button>
+                        
+                        
+                        <!-- Khách Hàng -->
+                        <Button x:Name="bt_KhachHang" 
+                                Style="{DynamicResource TongQuan}" Grid.Row="13"
+                                Background="#E2895A" Click="bt_KhachHang_Click">
+                            <TextBlock x:Name="tbl_bt_KhachHang" 
+                                       FontSize="20"
+                                       FontFamily="Cascadia Mono"
+                                       Foreground="#FCF4F0"
+                                       Margin="43 15 70 14">
+                                Khách Hàng
+                            </TextBlock>
+                        </Button>
+                        
+                        
+                        <!-- Nhân viên -->
+                        <Button x:Name="bt_NhanVien" 
+                                Style="{DynamicResource TongQuan}" Grid.Row="15"
+                                Background="#E2895A" Click="bt_NhanVien_Click">
+                            <TextBlock x:Name="tbl_bt_NhanVien" 
+                                       FontSize="20"
+                                       FontFamily="Cascadia Mono"
+                                       Foreground="#FCF4F0"
+                                       Margin="43 15 79 14">
+                                 Nhân Viên
+                            </TextBlock>
+                        </Button>
+                        
+                        
+                        <!-- cài đặt và đăng xuất-->
+                        <Grid Grid.Row="16">
+                            <StackPanel Orientation="Vertical" 
+                                        VerticalAlignment="Bottom">
+                                <Grid Height="57" >
+                                    <!-- Cài Đặt -->
+                                    <Button x:Name="bt_CaiDat" 
+                                            Style="{DynamicResource TongQuan}"
+                                            Background="#E2895A" Click="bt_CaiDat_Click">
+                                        <TextBlock x:Name="tbl_bt_CaiDat" 
+                                                   FontSize="20"
+                                                   FontFamily="Cascadia Mono"
+                                                   Foreground="#FCF4F0"
+                                                   Margin="43 15 103 14">
+                                            Cài Đặt
+                                        </TextBlock>
+                                    </Button>
+                                </Grid>
+                                <Grid Height="57" Margin="0,15,0,24">
+                                    <!-- Đăng Xuất -->
+                                    <Button x:Name="bt_DangXuat" 
+                                            Style="{DynamicResource TongQuan}"
+                                            Background="#E2895A" Click="bt_DangXuat_Click">
+                                        <TextBlock x:Name="tbl_bt_DangXuat" 
+                                                   FontSize="20"
+                                                   FontFamily="Cascadia Mono"
+                                                   Foreground="#FCF4F0"
+                                                   Margin="43 15 80 14">
+                                            Đăng Xuất
+                                        </TextBlock>
+                                    </Button>
+                                </Grid>
+                            </StackPanel>
+                        </Grid>
                     </Grid>
+
                 </Grid>
             </Border>
-            
-            
+
+            <Grid x:Name="grid_NoiDung" Grid.Column="1" Margin="20"></Grid>
             
         </Grid>
     </Border>

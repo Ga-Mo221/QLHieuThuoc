@@ -1,0 +1,460 @@
+﻿<UserControl x:Class="QLHieuThuoc.forms.SanPham"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:us="clr-namespace:QLHieuThuoc.UserControls"
+             xmlns:local="clr-namespace:QLHieuThuoc.forms"
+             mc:Ignorable="d" 
+             d:DesignHeight="848" d:DesignWidth="1096">
+    <UserControl.Resources>
+        <SolidColorBrush x:Key="TextBox.Static.Border" Color="#FFABAdB3"/>
+        <SolidColorBrush x:Key="TextBox.MouseOver.Border" Color="#FF7EB4EA"/>
+        <SolidColorBrush x:Key="TextBox.Focus.Border" Color="#FF569DE5"/>
+        <Style x:Key="timkiem" TargetType="{x:Type TextBox}">
+            <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource TextBox.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="AllowDrop" Value="true"/>
+            <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
+            <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Border x:Name="border" CornerRadius="25" Padding="5" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="True">
+                            <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Opacity" TargetName="border" Value="0.56"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TextBox.MouseOver.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsKeyboardFocused" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TextBox.Focus.Border}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsInactiveSelectionHighlightEnabled" Value="true"/>
+                        <Condition Property="IsSelectionActive" Value="false"/>
+                    </MultiTrigger.Conditions>
+                    <Setter Property="SelectionBrush" Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                </MultiTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" StrokeDashArray="1 2" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" SnapsToDevicePixels="true" StrokeThickness="1"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+        <Style x:Key="MoRong" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" CornerRadius="15" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="FocusVisual1">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" StrokeDashArray="1 2" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" SnapsToDevicePixels="true" StrokeThickness="1"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background1" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border1" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background1" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border1" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background1" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border1" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background1" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border1" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground1" Color="#FF838383"/>
+        <Style x:Key="addsanpham" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual1}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background1}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border1}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" CornerRadius="25" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background1}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border1}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background1}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border1}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background1}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border1}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground1}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <Grid Background="#F7F7F7">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="65"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        
+        <!-- row 0 - thanh tìm kiếm -->
+        <Border Grid.Row="0" CornerRadius="40" Background="White">
+            <Grid>
+                <DockPanel Margin="11">
+                    <!-- tiêu đề -->
+                    <TextBlock x:Name="tbl_TenBang" Text="Sản Phẩm" 
+                               FontSize="22"
+                               FontFamily="Cascadia Mono"
+                               Foreground="#565656"
+                               DockPanel.Dock="Left" 
+                               VerticalAlignment="Center">
+                    </TextBlock>
+                    
+                    
+                    <!-- tên tài khoản -->
+                    <Border BorderBrush="#C9C9C9" BorderThickness="1" CornerRadius="20" DockPanel.Dock="Right" Width="230">
+                        <StackPanel>
+                            <!-- tên nhân viên -->
+                            <TextBlock x:Name="tbl_TenNhanVienThanhTiemKiem" Text="Tên Tài Khoản" 
+                                       FontSize="15"
+                                       FontFamily="Cascadia Mono"
+                                       Foreground="#565656"
+                                       HorizontalAlignment="Center" 
+                                       VerticalAlignment="Top"
+                                       Margin="0 8 0 0">
+                            </TextBlock>
+                            <!-- id nhân viên -->
+                            <TextBlock x:Name="tbl_IdNhanVienThanhTimKiem" Text="#idnv" FontSize="14" FontFamily="Cascadia Mono" Foreground="#C9C9C9"  HorizontalAlignment="Center"></TextBlock>
+                        </StackPanel>
+                    </Border>
+                    
+                    <!-- thông báo -->
+                    <Grid DockPanel.Dock="Right" Width="85">
+                        <Ellipse Height="40" Width="40" Fill="#C9C9C9" HorizontalAlignment="Center"/>
+                        <Ellipse Height="38" Width="38" Fill="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                    
+                    <!-- thanh tìm kiếm -->
+                    <Grid >
+                        <!--<Border BorderBrush="#C9C9C9" BorderThickness="1" CornerRadius="15" Width="379" Height="30" HorizontalAlignment="Center">
+                            <Grid >
+                                <TextBox x:Name="tb_TimKiem" 
+                                         Style="{DynamicResource timkiem}" 
+                                         HorizontalAlignment="Right" 
+                                         VerticalAlignment="Center"
+                                         Text="Tìm Kiếm..."
+                                         FontFamily="Cascadia Mono"
+                                         FontSize="12"
+                                         Foreground="#C9C9C9"
+                                         Width="320">
+                                </TextBox>
+                            </Grid>
+                        </Border>-->
+                    </Grid>
+                </DockPanel>
+            </Grid>
+        </Border>
+        
+        
+        <!-- row 1- Nội Dung -->
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"></RowDefinition>
+                <RowDefinition Height="107"></RowDefinition>
+                <RowDefinition Height="20"></RowDefinition>
+                <!--<RowDefinition Height="283"></RowDefinition>
+                <RowDefinition Height="15"></RowDefinition>-->
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            
+            
+            <!-- row 1- tổng số lượng sản phẩm -->
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition Width="50"></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition Width="50"></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition Width="73"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <us:FSanPham_ThongKe x:Name="us_TongSanPham" Grid.Column="0" ></us:FSanPham_ThongKe>
+                <us:FSanPham_ThongKe x:Name="us_SanPhamTrongKho" Grid.Column="2" ></us:FSanPham_ThongKe>
+                <us:FSanPham_ThongKe x:Name="us_SanPhamDaHet" Grid.Column="4" ></us:FSanPham_ThongKe>
+            </Grid>
+
+            <DockPanel Grid.Row="3">
+                <!-- các loại thuốc -->
+                <Grid x:Name="gird_CacLoaiThuoc" Grid.Row="3" DockPanel.Dock="Top" Height="283">
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition Height="21"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="15"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="15"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="15"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="73"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <us:FSanPham_Loai x:Name="bt_ThuocKhangSinh" Grid.Column="0" Grid.Row="0" LOAISANPHAM="Thuốc Kháng Sinh" MAMAU="#FEB6B4"/>
+                    <us:FSanPham_Loai x:Name="bt_ThuocGiamDau" Grid.Column="0" Grid.Row="2" LOAISANPHAM="Thuốc Kháng Sinh" MAMAU="#FDEBE9"/>
+                    <us:FSanPham_Loai x:Name="bt_Vitamin" Grid.Column="2" Grid.Row="0" LOAISANPHAM="Thuốc Kháng Sinh" MAMAU="#FAE4D9"/>
+                    <us:FSanPham_Loai x:Name="bt_ThucPhamChucNang" Grid.Column="2" Grid.Row="2" LOAISANPHAM="Thuốc Kháng Sinh" MAMAU="#F6C7AD"/>
+                    <us:FSanPham_Loai x:Name="bt_ThuocKhangVirus" Grid.Column="4" Grid.Row="0" LOAISANPHAM="Thuốc Kháng Sinh" MAMAU="#B0DDBC"/>
+                    <us:FSanPham_Loai x:Name="bt_ThuocTimMach" Grid.Column="4" Grid.Row="2" LOAISANPHAM="Thuốc Kháng Sinh" MAMAU="#BADDD6"/>
+                    <us:FSanPham_Loai x:Name="bt_ThuocDiUng" Grid.Column="6" Grid.Row="0" LOAISANPHAM="Thuốc Kháng Sinh" MAMAU="#DCE3BA"/>
+                    <us:FSanPham_Loai x:Name="bt_ThuocHoHap" Grid.Column="6" Grid.Row="2" LOAISANPHAM="Thuốc Kháng Sinh" MAMAU="#CDDCC7"/>
+                </Grid>
+                <Grid DockPanel.Dock="Top" Height="15"> </Grid>
+                
+                <!-- list sản phẩm -->
+                <Grid DockPanel.Dock="Top">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="60"/>
+                    </Grid.ColumnDefinitions>
+                    <Border CornerRadius="15" Background="White">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="65"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+
+                            <!-- thanh tim kiem -->
+                            <DockPanel>
+                                <Grid DockPanel.Dock="Left" Width="30"></Grid>
+
+                                <Border BorderBrush="#C9C9C9" BorderThickness="1" CornerRadius="18" Width="379" Height="40" HorizontalAlignment="Center">
+                                    <Grid >
+                                        <TextBox x:Name="tb_TimKiem" 
+                                                    Style="{DynamicResource timkiem}" 
+                                                    HorizontalAlignment="Right" 
+                                                    VerticalAlignment="Center"
+                                                    Text="Tìm Kiếm..."
+                                                    FontFamily="Cascadia Mono"
+                                                    FontSize="13"
+                                                    Foreground="#C9C9C9"
+                                                    Width="320"
+                                                    GotFocus="tb_TimKiem_GotFocus"
+                                                    LostFocus="tb_TimKiem_LostFocus" TextChanged="tb_TimKiem_TextChanged">
+                                        </TextBox>
+                                    </Grid>
+                                </Border>
+
+
+                                <!-- mở rộng -->
+                                <Grid DockPanel.Dock="Right" Width="73"></Grid>
+                                <Button Style="{DynamicResource MoRong}" x:Name="bt_MoRong"
+                                    Width="50"
+                                    Height="50"
+                                    Background="White"
+                                    DockPanel.Dock="Right" Click="bt_MoRong_Click">
+                                </Button>
+                                <Grid DockPanel.Dock="Right" Width="20"></Grid>
+
+                                <Button Style="{DynamicResource addsanpham}" 
+                                        Background="#E2895A" 
+                                        BorderBrush="#C9C9C9" 
+                                        BorderThickness="0" 
+                                        Height="50" Width="210" 
+                                        DockPanel.Dock="Left" 
+                                        HorizontalAlignment="Right" Click="Button_Click">
+                                    <Button.Content>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Ellipse Width="40" Height="40" Fill="Gray"/>
+                                            <Grid Width="10"></Grid>
+                                            <TextBlock x:Name="tbl_bt_ThemSanPham" 
+                                                       FontFamily="Cascadia Mono"
+                                                       FontSize="16"
+                                                       Foreground="#565656"
+                                                       VerticalAlignment="Center">
+                                                them san pham
+                                            </TextBlock>
+                                        </StackPanel>
+                                    </Button.Content>
+                                </Button>
+                            </DockPanel>
+
+                            <!-- sản phẩm -->
+                            <Grid Grid.Row="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="25"/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="25"/>
+                                </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="50"/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+
+                                <!-- colunm -->
+                                <Border Background="#D9D9D9" CornerRadius="10">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <!-- id sản phẩm -->
+                                        <TextBlock x:Name="tbl_MaSanPham" FontFamily="Cascadia Mono"
+                                                   FontSize="15"
+                                                   Foreground="#565656"
+                                                   HorizontalAlignment="Center"
+                                                   VerticalAlignment="Center"
+                                                   Grid.Column="0">
+                                            ma san pham
+                                        </TextBlock>
+
+                                        <!-- tên sản phẩm -->
+                                        <TextBlock x:Name="tbl_TenSanPham" FontFamily="Cascadia Mono"
+                                                   FontSize="15"
+                                                   Foreground="#565656"
+                                                   HorizontalAlignment="Center"
+                                                   VerticalAlignment="Center"
+                                                   Grid.Column="1">
+                                            ten san pham
+                                        </TextBlock>
+
+                                        <!-- số lượng -->
+                                        <TextBlock x:Name="tbl_SoLuong" FontFamily="Cascadia Mono"
+                                                   FontSize="15"
+                                                   Foreground="#565656"
+                                                   HorizontalAlignment="Center"
+                                                   VerticalAlignment="Center"
+                                                   Grid.Column="2">
+                                            so luong
+                                        </TextBlock>
+
+                                        <!-- giá bán -->
+                                        <TextBlock x:Name="tbl_GiaBan" FontFamily="Cascadia Mono"
+                                                   FontSize="15"
+                                                   Foreground="#565656"
+                                                   HorizontalAlignment="Center"
+                                                   VerticalAlignment="Center"
+                                                   Grid.Column="3">
+                                            gia ban
+                                        </TextBlock>
+
+                                        <!-- trạng thái -->
+                                        <TextBlock x:Name="tbl_TinhTrang" FontFamily="Cascadia Mono"
+                                                   FontSize="15"
+                                                   Foreground="#565656"
+                                                   HorizontalAlignment="Center"
+                                                   VerticalAlignment="Center"
+                                                   Grid.Column="4">
+                                            tinh trang
+                                        </TextBlock>
+
+                                        <!-- loại -->
+                                        <TextBlock x:Name="tbl_loai" FontFamily="Cascadia Mono"
+                                                   FontSize="15"
+                                                   Foreground="#565656"
+                                                   HorizontalAlignment="Center"
+                                                   VerticalAlignment="Center"
+                                                   Grid.Column="5">
+                                            loai
+                                        </TextBlock>
+                                    </Grid>
+                                </Border>
+
+                                <!--list san pham-->
+                                    <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+                                    <StackPanel x:Name="stb_ListSanPham" Orientation="Vertical"></StackPanel>
+                                </ScrollViewer>
+                            </Grid>
+                            </Grid>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </DockPanel>
+            
+
+            
+        </Grid>
+    </Grid>
+</UserControl>

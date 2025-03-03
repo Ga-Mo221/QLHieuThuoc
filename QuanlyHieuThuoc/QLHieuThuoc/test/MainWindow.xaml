@@ -1,0 +1,75 @@
+﻿<Window x:Class="test.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:test"
+        mc:Ignorable="d"
+        Title="Pharmacy Management" Height="930" Width="1440" WindowStartupLocation="CenterScreen" Background="#F5F5F5">
+    <Grid>
+        <!-- Sidebar -->
+        <Grid Width="250" Background="#E87E4D" HorizontalAlignment="Left">
+            <StackPanel>
+                <TextBlock Text="QLHT" FontSize="28" FontWeight="Bold" Foreground="Black" HorizontalAlignment="Center" Margin="0,20,0,40"/>
+                <Button Content="Tổng Quan" Background="#F5F5F5" Margin="10" Height="50" HorizontalContentAlignment="Left" Padding="10"/>
+                <Button Content="Sản Phẩm" Background="Transparent" Margin="10" Height="50" HorizontalContentAlignment="Left" Padding="10"/>
+                <Button Content="Bán Hàng" Background="Transparent" Margin="10" Height="50" HorizontalContentAlignment="Left" Padding="10"/>
+                <Button Content="Nhập Hàng" Background="Transparent" Margin="10" Height="50" HorizontalContentAlignment="Left" Padding="10"/>
+                <Button Content="Thống Kê" Background="Transparent" Margin="10" Height="50" HorizontalContentAlignment="Left" Padding="10"/>
+                <Button Content="Khách Hàng" Background="Transparent" Margin="10" Height="50" HorizontalContentAlignment="Left" Padding="10"/>
+                <Button Content="Nhân Viên" Background="Transparent" Margin="10" Height="50" HorizontalContentAlignment="Left" Padding="10"/>
+                <Button Content="Cài Đặt" Background="Transparent" Margin="10" Height="50" HorizontalContentAlignment="Left" Padding="10"/>
+                <Button Content="Đăng Xuất" Background="Transparent" Margin="10" Height="50" HorizontalContentAlignment="Left" Padding="10"/>
+            </StackPanel>
+        </Grid>
+
+        <!-- Main Content -->
+        <Grid Margin="250,0,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Header -->
+            <DockPanel Grid.Row="0" Background="White" Margin="10" Height="80">
+                <TextBlock Text="Tổng Quan Cửa Hàng" FontSize="20" FontWeight="Bold" VerticalAlignment="Center" Margin="20,0,0,0"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,20,0">
+                    <Button Content="🔔" Width="40" Height="40" Margin="0,0,20,0" Background="Transparent"/>
+                    <Button Content="Nguyễn Văn Hậu #DK0220" Background="LightGray" Width="200" Height="40"/>
+                </StackPanel>
+            </DockPanel>
+
+            <!-- Dashboard Content -->
+            <Grid Grid.Row="1" Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Charts and Stats -->
+                <StackPanel>
+                    <TextBlock Text="Tổng Danh Thu" FontSize="18" FontWeight="Bold" Margin="0,0,0,10"/>
+                    <Rectangle Fill="#E87E4D" Height="200"/>
+                    <TextBlock Text="Đơn Hàng Mới Nhất" FontSize="18" FontWeight="Bold" Margin="0,20,0,10"/>
+                    <DataGrid AutoGenerateColumns="False" Height="200">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Mã Đơn" Width="100"/>
+                            <DataGridTextColumn Header="Tên Khách Hàng" Width="200"/>
+                            <DataGridTextColumn Header="Ngày Mua" Width="150"/>
+                            <DataGridTextColumn Header="Tổng Tiền" Width="100"/>
+                            <DataGridTextColumn Header="Thanh Toán" Width="150"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
+
+                <!-- Top Selling Products -->
+                <StackPanel Grid.Column="1" Margin="20,0,0,0">
+                    <TextBlock Text="Thuốc Bán Chạy Nhất" FontSize="18" FontWeight="Bold"/>
+                    <Button Content="1. Lopradium" Background="#E87E4D" Margin="0,10,0,0" Height="50"/>
+                    <Button Content="2. Lopradium" Background="#E87E4D" Margin="0,10,0,0" Height="50"/>
+                    <Button Content="3. Lopradium" Background="#E87E4D" Margin="0,10,0,0" Height="50"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

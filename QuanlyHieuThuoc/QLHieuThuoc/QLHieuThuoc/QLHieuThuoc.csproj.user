@@ -2,13 +2,49 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
+    <Compile Update="forms\BanHang.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="forms\CaiDat.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="forms\DangNhap.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="forms\KhachHang.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="forms\MainWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="forms\NhanVien.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="forms\NhapHang.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="forms\QuenMK.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="forms\SanPham.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="forms\ThemSanPham.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="forms\ThongKe.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="forms\TongQuan.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UserControls\FSanPham_Loai.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UserControls\FSanPham_SanPham.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UserControls\FSanPham_ThongKe.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

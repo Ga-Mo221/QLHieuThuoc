@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QLHieuThuoc.Model
 {
-    class NhanVien
+    class nhanVien
     {
         private string IdNhanVien;
         private string Ten;
@@ -14,11 +14,11 @@ namespace QLHieuThuoc.Model
         private string Sdt;
         private string DiaChi;
 
-        public NhanVien()
+        public nhanVien()
         {
         }
 
-        public NhanVien(string idNhanVien, string ten, string chucVu, string sdt, string diaChi)
+        public nhanVien(string idNhanVien, string ten, string chucVu, string sdt, string diaChi)
         {
             IdNhanVien = idNhanVien;
             Ten = ten;

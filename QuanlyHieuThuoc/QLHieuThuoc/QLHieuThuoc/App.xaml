@@ -2,12 +2,12 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:QLHieuThuoc"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
              StartupUri="forms/DangNhap.xaml">
     <Application.Resources>
         <Style x:Key="CustomFont">
             <Setter Property="TextElement.FontFamily"
-                    Value="/Fonts/#Kavoon">
-            </Setter>
+                    Value="D:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\Fonts\Kavoon-Regular.ttf#Kavoon"/>
         </Style>
     </Application.Resources>
 </Application>

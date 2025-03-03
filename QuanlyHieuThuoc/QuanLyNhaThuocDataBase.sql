@@ -1,4 +1,4 @@
-CREATE DATABASE quanlynhathuoc;
+rCREATE DATABASE quanlynhathuoc;
 USE quanlynhathuoc;
 
 -- Tạo bảng NHANVIEN trước (vì nhiều bảng khác tham chiếu đến NHANVIEN)

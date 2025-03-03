@@ -1,4 +1,4 @@
-sdfa
+dfs
 Vui lòng nhập mật khẩu!
 Thông Báo
 Tên đăng nhập hoặc mật khẩu không chính xác
@@ -25,3 +25,44 @@ Mật Khẩu Mới
 Xác Nhận
 Tài Khoản không chính xác!
 Đổi Mật Khẩu thành công.
+Tổng Quan
+Sản Phẩm
+Bán Hàng
+Nhập Hàng
+Thống Kê
+Khách Hàng
+Nhân Viên
+Cài Đặt
+Đăng Xuất
+Tổng Sản Phẩm
+Sản Phẩm Trong Kho
+Sản Phẩm Đã Hết
+Tìm Kiếm...
+Thêm Sản Phẩm
+Mã Sản Phẩm
+Tên Sản Phẩm
+Số Lượng
+Giá Bán
+Tình Trạng
+Loại
+Thuốc Kháng Sinh
+Thuốc Giảm Đau
+Vitamin
+Thực Phẩm Chức Năng
+Thuốc Kháng Virus
+Thuốc Tim Mạch
+Thuốc Dị Ứng
+Thuốc Hô Hấp
+Số Lượng
+Giá Nhập
+Giá Bán
+Thành Phần
+Công Dụng
+Chú Ý
+Hàm Lượng
+Cách Dùng
+Thêm
+Hủy
+Thiếu thông tin
+Đã Update Thành Công. Cửa Sổ Sẽ Đóng Lại.
+Đã Thêm Thành Công. Cửa Sổ Sẽ Đóng Lại.

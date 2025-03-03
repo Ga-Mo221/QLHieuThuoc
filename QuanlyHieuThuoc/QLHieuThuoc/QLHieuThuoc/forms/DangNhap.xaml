@@ -407,6 +407,17 @@
             Padding="15">
         <Grid>
             <Grid>
+                <Grid.Resources>
+                    <Style TargetType="{x:Type TextBlock}" x:Key="styletbl">
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="TextDecorations" Value="Underline"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Grid.Resources>
+                
+                
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition></ColumnDefinition>
                     <ColumnDefinition></ColumnDefinition>
@@ -574,7 +585,24 @@
                         <TextBlock x:Name="tbl_txtqldangnhap" 
                                    Text="Đăng Nhập" FontFamily="Cascadia Mono" 
                                    FontWeight="Bold"
-                                   Foreground="#E2895A"/>
+                                   Foreground="#E2895A"
+                                   Style="{StaticResource styletbl}">
+                            <TextBlock.Triggers>
+                                <!-- Bắt sự kiện Click trực tiếp -->
+                                <EventTrigger RoutedEvent="MouseLeftButtonDown">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ThicknessAnimation Storyboard.TargetName="bd_img"
+                                                                Storyboard.TargetProperty="Margin"
+                                                                Duration="0:0:0.200"
+                                                                To="45,0,0,0"
+                                                                FillBehavior="HoldEnd"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                            </TextBlock.Triggers>
+                        </TextBlock>
+
                     </StackPanel>
                 </Grid>
 
@@ -692,7 +720,8 @@
                                    FontFamily="Cascadia Mono" 
                                    FontSize="10" 
                                    HorizontalAlignment="Right" 
-                                   MouseLeftButtonDown="tbl_QuenMatKhau_MouseLeftButtonDown">
+                                   MouseLeftButtonDown="tbl_QuenMatKhau_MouseLeftButtonDown"
+                                   Style="{StaticResource styletbl}">
                             <Underline>
                                 Quên Mật Khẩu?
                             </Underline>
@@ -724,18 +753,35 @@
                         <TextBlock x:Name="tbl_txtquadangky" 
                                    Text="Đăng Ký" FontFamily="Cascadia Mono" 
                                    FontWeight="Bold"
-                                   Foreground="#E2895A"/>
+                                   Foreground="#E2895A"
+                                   Style="{StaticResource styletbl}">
+                            <TextBlock.Triggers>
+                                <!-- Bắt sự kiện Click trực tiếp -->
+                                <EventTrigger RoutedEvent="MouseLeftButtonDown">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ThicknessAnimation Storyboard.TargetName="bd_img"
+                                            Storyboard.TargetProperty="Margin"
+                                            Duration="0:0:0.200"
+                                            To="395,0,0,0"
+                                            FillBehavior="HoldEnd"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                            </TextBlock.Triggers>
+                        </TextBlock>
                     </StackPanel>
                 </Grid>
             </Grid>
             
-            <!--<Border CornerRadius="40" 
+            <Border x:Name="bd_img" 
+                    CornerRadius="40" 
                     Background="Gray"
                     Width="355" Height="485"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Center"
                     Margin="45,0,0,0">
-            </Border>-->
+            </Border>
         </Grid>
     </Border>
     

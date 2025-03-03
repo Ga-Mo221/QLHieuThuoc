@@ -63,32 +63,38 @@ namespace QLHieuThuoc.forms
         // Thoát chương trình
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            System.Windows.Application.Current.Shutdown();
         }
 
 
         // Sự kiện kiểm tra tài khoản mật khẩu và đăng nhập
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            string tk = tb_TaiKhoanDangNhap.Text;
-            string mk = pw_MatKhauDangNhap.Password;
+            //string tk = tb_TaiKhoanDangNhap.Text;
+            //string mk = pw_MatKhauDangNhap.Password;
 
-            if (tk.Trim() == "") { return; }
-            else if (mk.Trim() == "") { MessageBox.Show(NN.nn[1], NN.nn[2], MessageBoxButton.OK, MessageBoxImage.Warning); return; }
-            else
-            {
-                string LenhTruyVan = "Select * from TaiKhoan where TK = '" + tk + "' and MK = '" + mk + "'";
-                if (modify.TaiKhoans(LenhTruyVan).Count > 0)
-                {
-                    MainWindow CuaSoChinh = new MainWindow();
-                    this.Hide();
-                    CuaSoChinh.Show();
-                }
-                else
-                {
-                    MessageBox.Show(NN.nn[3], NN.nn[2], MessageBoxButton.OK, MessageBoxImage.Warning);
-                }
-            }
+            //if (tk.Trim() == "") { return; }
+            //else if (mk.Trim() == "") { MessageBox.Show(NN.nn[1], NN.nn[2], MessageBoxButton.OK, MessageBoxImage.Warning); return; }
+            //else
+            //{
+            //    string LenhTruyVan = "Select * from TaiKhoan where TK = '" + tk + "' and MK = '" + mk + "'";
+            //    List<TaiKhoan> tkl = modify.TaiKhoans(LenhTruyVan);
+            //    if (tkl.Count > 0)
+            //    {
+            //        string idnv = tkl[0].MaNhanVien1;
+            //        MainWindow CuaSoChinh = new MainWindow(idnv);
+            //        this.Hide();
+            //        CuaSoChinh.Show();
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show(NN.nn[3], NN.nn[2], MessageBoxButton.OK, MessageBoxImage.Warning);
+            //    }
+            //}
+            string idnv = "gde";
+            MainWindow CuaSoChinh = new MainWindow(idnv);
+            this.Hide();
+            CuaSoChinh.Show();
         }
 
 

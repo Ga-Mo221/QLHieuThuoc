@@ -1,0 +1,120 @@
+﻿<UserControl x:Class="QLHieuThuoc.forms.NhanVien"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:QLHieuThuoc.forms"
+             mc:Ignorable="d" 
+             d:DesignHeight="848" d:DesignWidth="1096">
+    <UserControl.Resources>
+        <SolidColorBrush x:Key="TextBox.Static.Border" Color="#FFABAdB3"/>
+        <SolidColorBrush x:Key="TextBox.MouseOver.Border" Color="#FF7EB4EA"/>
+        <SolidColorBrush x:Key="TextBox.Focus.Border" Color="#FF569DE5"/>
+        <Style x:Key="TimKiem" TargetType="{x:Type TextBox}">
+            <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource TextBox.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="AllowDrop" Value="true"/>
+            <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
+            <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Border x:Name="border" CornerRadius="25" Padding="5" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="True">
+                            <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Opacity" TargetName="border" Value="0.56"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TextBox.MouseOver.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsKeyboardFocused" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TextBox.Focus.Border}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsInactiveSelectionHighlightEnabled" Value="true"/>
+                        <Condition Property="IsSelectionActive" Value="false"/>
+                    </MultiTrigger.Conditions>
+                    <Setter Property="SelectionBrush" Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                </MultiTrigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+    <Grid Background="#F7F7F7">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+
+        <!-- row 0 - thanh tìm kiếm -->
+        <Border Grid.Row="0" CornerRadius="40" Background="White">
+            <Grid>
+                <DockPanel Margin="11">
+                    <!-- tiêu đề -->
+                    <TextBlock Text="  Nhân Viên" 
+                           FontSize="20"
+                           FontFamily="Cascadia Mono"
+                           Foreground="#565656"
+                           DockPanel.Dock="Left" 
+                           VerticalAlignment="Center">
+                    </TextBlock>
+
+
+                    <!-- tên tài khoản -->
+                    <Border BorderBrush="#C9C9C9" BorderThickness="1" CornerRadius="40" DockPanel.Dock="Right" Width="230">
+                        <StackPanel>
+                            <!-- tên nhân viên -->
+                            <TextBlock Text="Tên Tài Khoản" 
+                                   FontSize="18"
+                                   FontFamily="Cascadia Mono"
+                                   Foreground="#565656"
+                                   HorizontalAlignment="Center" 
+                                   VerticalAlignment="Top"
+                                   Margin="0 8 0 0">
+                            </TextBlock>
+                            <!-- id nhân viên -->
+                            <TextBlock Text="#idnv" FontSize="18" FontFamily="Cascadia Mono" Foreground="#C9C9C9"  HorizontalAlignment="Center"></TextBlock>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- thông báo -->
+                    <Grid DockPanel.Dock="Right" Width="85">
+                        <Ellipse Height="58" Width="58" Fill="#C9C9C9" HorizontalAlignment="Center"/>
+                        <Ellipse Height="56" Width="56" Fill="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+
+                    <!-- thanh tìm kiếm -->
+                    <Grid>
+                        <Border BorderBrush="#C9C9C9" BorderThickness="1" CornerRadius="40" Width="379" HorizontalAlignment="Right">
+                            <Grid >
+                                <TextBox x:Name="tb_TimKiem" 
+                                         Style="{DynamicResource TimKiem}"
+                                         HorizontalAlignment="Right" 
+                                         VerticalAlignment="Center"
+                                         Text="Tìm Kiếm..."
+                                         FontFamily="Cascadia Mono"
+                                         FontSize="22"
+                                         Foreground="#C9C9C9"
+                                         Width="320">
+                                </TextBox>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </DockPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>
