@@ -39,13 +39,15 @@ namespace QLHieuThuoc.forms
         // list sản phẩm
         private List<string> listSanPham;
         private bool check = false;
+        private string masp;
+        private string KEY;
 
 
 
-
-        public ThemSanPham()
+        public ThemSanPham(string form)
         {
             InitializeComponent();
+            KEY = form;
 
             this.Loaded += ThemSanPham_Loaded;
         }
@@ -254,7 +256,7 @@ namespace QLHieuThuoc.forms
             return result.ToString();
         }
 
-
+        // lấy tên sản phẩm add vào combobox
         private void CapNhatSanPham()
         {
             listSanPham = new List<string>();
@@ -266,6 +268,7 @@ namespace QLHieuThuoc.forms
             }
         }
 
+        // tìm sản phẩm bằng combobox
         private void cbb_TenSanPham_TextChanged(object sender, TextChangedEventArgs e)
         {
             string filter = cbb_TenSanPham.Text.ToLower();
@@ -335,24 +338,42 @@ namespace QLHieuThuoc.forms
             string cachdung = tb_CachDung.Text;
             DateTime HSD = Date_HanSuDung.SelectedDate.Value.Date;
 
+
+
             if (!KiemTraDuLieu(soluong, gianhap, giaban)) return;
+            
 
-
-            if (!check)
+            if (KEY == "SanPham")
             {
-                string CauLenhTruyVan = "Insert into SanPham values ('"+id+"','"+tensp+"','"+loaisp+ "','"+soluong+"','"+gianhap+"','"+giaban+ "','"+thanhphan+"','"+congdung+ "','"+chuy+"','"+hamluong+"','"+cachdung+ "','"+HSD+"')";
-                modify.SanPhams(CauLenhTruyVan);
-                MessageBox.Show(NN.nn[66], NN.nn[2], MessageBoxButton.OK, MessageBoxImage.Information);
+                if (!check)
+                {
+                    string CauLenhTruyVan = "Insert into SanPham values ('"+id+"','"+tensp+"','"+loaisp+ "','"+soluong+"','"+gianhap+"','"+giaban+ "','"+thanhphan+"','"+congdung+ "','"+chuy+"','"+hamluong+"','"+cachdung+ "','"+HSD+"')";
+                    modify.SanPhams(CauLenhTruyVan);
+                    MessageBox.Show(NN.nn[66], NN.nn[2], MessageBoxButton.OK, MessageBoxImage.Information);
 
-                check = false;
-                this.Close();
+                    check = false;
+                    this.Close();
+                }
+                else
+                {
+                    // cập nhật lại số lượng của sản phẩm
+                    string caulenh = "select * from SanPham where ID = '" + masp + "'";
+                    List<Sanpham> lsp = modify.SanPhams(caulenh);
+                    int sl = int.Parse(lsp[0].SoLuong1) + int.Parse(soluong);
+                    string SL = sl.ToString();
+
+                    //, GIANHAP = '"+gianhap+"', GIABAN = '"+giaban+"', HANSUDUNG = '"+HSD+"' 
+                    string CauLenhUpdate = "Update SanPham set SOLUONG = '"+SL+ "', GIANHAP = '"+gianhap+"', GIABAN = '"+giaban+"', HANSUDUNG = '"+HSD+"' where ID = '" + id+"'";
+                    modify.ThucThi(CauLenhUpdate);
+                    MessageBox.Show(NN.nn[67], NN.nn[2], MessageBoxButton.OK, MessageBoxImage.Information);
+                    this.Close();
+                }
             }
-            else
+            if (KEY == "NhapHang")
             {
-                //, GIANHAP = '"+gianhap+"', GIABAN = '"+giaban+"', HANSUDUNG = '"+HSD+"' 
-                string CauLenhUpdate = "Update SanPham set SOLUONG = '"+soluong+ "', GIANHAP = '"+gianhap+"', GIABAN = '"+giaban+"', HANSUDUNG = '"+HSD+"' where ID = '" + id+"'";
-                modify.ThucThi(CauLenhUpdate);
-                MessageBox.Show(NN.nn[67], NN.nn[2], MessageBoxButton.OK, MessageBoxImage.Information);
+                Sanpham sp = new Sanpham(id, tensp, loaisp, soluong, gianhap, giaban, thanhphan, hamluong, congdung, cachdung, chuy, HSD);
+                listSpDonHang.sps.Add(sp);
+                MessageBox.Show("da them");
                 this.Close();
             }
         }
@@ -366,6 +387,7 @@ namespace QLHieuThuoc.forms
             if (Sp.Count == 1)
             {
                 tbl_ID.Text = Sp[0].MaSanPham1;
+                masp = Sp[0].MaSanPham1;
                 cbb_LoaiSanPham.SelectedItem = Sp[0].LoaiSanPham1;
                 tb_GiaNhap.Text = Sp[0].GiaNhap1;
                 tb_GiaBan.Text = Sp[0].GiaBan1;

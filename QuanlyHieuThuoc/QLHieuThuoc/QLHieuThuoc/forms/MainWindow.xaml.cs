@@ -220,7 +220,7 @@ namespace QLHieuThuoc.forms
         {
             CheckSelectButton("NhapHang");
 
-            Mo(grid_NoiDung, child, new NhapHang());
+            Mo(grid_NoiDung, child, new NhapHang(IdNv));
         }
 
         // Thống kê

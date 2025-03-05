@@ -1,4 +1,4 @@
-dfs
+asdfa
 Vui lòng nhập mật khẩu!
 Thông Báo
 Tên đăng nhập hoặc mật khẩu không chính xác
@@ -64,5 +64,10 @@ Cách Dùng
 Thêm
 Hủy
 Thiếu thông tin
-Đã Update Thành Công. Cửa Sổ Sẽ Đóng Lại.
-Đã Thêm Thành Công. Cửa Sổ Sẽ Đóng Lại.
+Đã Update Thành Công. Cửa Sổ Sẽ Bị Đóng Lại.
+Đã Thêm Thành Công. Cửa Sổ Sẽ Bị Đóng Lại.
+Thông Tin Sản Phẩm
+Loại Sản Phẩm
+Hạn Sử Dụng
+Bạn có muốn xóa sản phẩm này không?
+Bạn đã xóa thành công. Cửa sổ sẽ bị đóng lại.

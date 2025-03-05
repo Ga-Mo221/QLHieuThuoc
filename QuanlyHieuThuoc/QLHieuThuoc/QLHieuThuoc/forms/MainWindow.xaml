@@ -112,6 +112,7 @@
                             <TextBlock Text="  QLHT" 
                                        Style="{StaticResource CustomFont}" 
                                        FontSize="21"
+                                       Foreground="#565656"
                                        VerticalAlignment="Center">
                             </TextBlock>
                         </StackPanel>
@@ -221,34 +222,35 @@
                         <Grid Grid.Row="16">
                             <StackPanel Orientation="Vertical" 
                                         VerticalAlignment="Bottom">
-                                <Grid Height="57" >
-                                    <!-- Cài Đặt -->
-                                    <Button x:Name="bt_CaiDat" 
-                                            Style="{DynamicResource TongQuan}"
-                                            Background="#E2895A" Click="bt_CaiDat_Click">
-                                        <TextBlock x:Name="tbl_bt_CaiDat" 
-                                                   FontSize="20"
-                                                   FontFamily="Cascadia Mono"
-                                                   Foreground="#FCF4F0"
-                                                   Margin="43 15 103 14">
-                                            Cài Đặt
-                                        </TextBlock>
-                                    </Button>
-                                </Grid>
-                                <Grid Height="57" Margin="0,15,0,24">
-                                    <!-- Đăng Xuất -->
-                                    <Button x:Name="bt_DangXuat" 
-                                            Style="{DynamicResource TongQuan}"
-                                            Background="#E2895A" Click="bt_DangXuat_Click">
-                                        <TextBlock x:Name="tbl_bt_DangXuat" 
-                                                   FontSize="20"
-                                                   FontFamily="Cascadia Mono"
-                                                   Foreground="#FCF4F0"
-                                                   Margin="43 15 80 14">
-                                            Đăng Xuất
-                                        </TextBlock>
-                                    </Button>
-                                </Grid>
+                                <!-- Cài Đặt -->
+                                <Button x:Name="bt_CaiDat" 
+                                        Style="{DynamicResource TongQuan}"
+                                        Height="57"
+                                        Background="#E2895A" 
+                                        Click="bt_CaiDat_Click">
+                                    <TextBlock x:Name="tbl_bt_CaiDat" 
+                                                FontSize="20"
+                                                FontFamily="Cascadia Mono"
+                                                Foreground="#FCF4F0"
+                                                Margin="43 15 103 14">
+                                        Cài Đặt
+                                    </TextBlock>
+                                </Button>
+                                <Grid Height="15"/>
+                                <!-- Đăng Xuất -->
+                                <Button x:Name="bt_DangXuat"
+                                        Height="57"
+                                        Style="{DynamicResource TongQuan}"
+                                        Background="#E2895A" Click="bt_DangXuat_Click">
+                                    <TextBlock x:Name="tbl_bt_DangXuat" 
+                                                FontSize="20"
+                                                FontFamily="Cascadia Mono"
+                                                Foreground="#FCF4F0"
+                                                Margin="43 15 80 14">
+                                        Đăng Xuất
+                                    </TextBlock>
+                                </Button>
+                                <Grid Height="24"/>
                             </StackPanel>
                         </Grid>
                     </Grid>

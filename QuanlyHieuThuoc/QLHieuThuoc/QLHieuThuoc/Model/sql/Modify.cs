@@ -1,5 +1,6 @@
 ﻿using QLHieuThuoc.forms;
 using QLHieuThuoc.Model.Account;
+using QLHieuThuoc.Model.DonNhapHangvsNCC;
 using QLHieuThuoc.Model.SanPham;
 using System.Data.SqlClient;
 
@@ -80,6 +81,28 @@ namespace QLHieuThuoc.Model.sql
             }
 
             return sanphams;
+        }
+
+        // check Nhà Cung Cấp
+        public List<NCC> NhaCungCaps(string LenhTruyVan)
+        {
+            List<NCC> NhaCungCaps = new List<NCC>();
+
+            using (SqlConnection sqlConnection = KetNoi.GetSqlconnection())
+            {
+                sqlConnection.Open();
+
+                sqlConmand = new SqlCommand(LenhTruyVan, sqlConnection);
+                dataReader = sqlConmand.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    NhaCungCaps.Add(new NCC(dataReader.GetString(0), dataReader.GetString(1), dataReader.GetString(2), dataReader.GetString(3)));
+                }
+
+                sqlConnection.Close();
+            }
+
+            return NhaCungCaps;
         }
 
         // Thực hiện lệnh

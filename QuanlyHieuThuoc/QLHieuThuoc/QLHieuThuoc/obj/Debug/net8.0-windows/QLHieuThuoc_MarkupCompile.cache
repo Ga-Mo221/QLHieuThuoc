@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 D:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\App.xaml
-15-422156935
+19-1298914615
 
-241170100564
+301142031349
 1994512393
-forms\BanHang.xaml;forms\CaiDat.xaml;forms\DangNhap.xaml;forms\KhachHang.xaml;forms\MainWindow.xaml;forms\NhanVien.xaml;forms\NhapHang.xaml;forms\QuenMK.xaml;forms\SanPham.xaml;forms\ThemSanPham.xaml;forms\ThongKe.xaml;forms\TongQuan.xaml;UserControls\FSanPham_Loai.xaml;UserControls\FSanPham_SanPham.xaml;UserControls\FSanPham_ThongKe.xaml;
+forms\BanHang.xaml;forms\CaiDat.xaml;forms\DangNhap.xaml;forms\DonNhapHangMoi.xaml;forms\KhachHang.xaml;forms\LoaiSanPham.xaml;forms\MainWindow.xaml;forms\NhanVien.xaml;forms\NhapHang.xaml;forms\QuenMK.xaml;forms\SanPham.xaml;forms\ThemSanPham.xaml;forms\ThongKe.xaml;forms\ThongTinSanPham.xaml;forms\TongQuan.xaml;UserControls\FNhapHang_SanPham.xaml;UserControls\FSanPham_Loai.xaml;UserControls\FSanPham_SanPham.xaml;UserControls\FSanPham_ThongKe.xaml;
 
 False
 

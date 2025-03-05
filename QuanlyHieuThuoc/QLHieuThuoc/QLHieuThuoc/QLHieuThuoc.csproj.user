@@ -11,7 +11,13 @@
     <Compile Update="forms\DangNhap.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="forms\DonNhapHangMoi.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="forms\KhachHang.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="forms\LoaiSanPham.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="forms\MainWindow.xaml.cs">
@@ -35,7 +41,13 @@
     <Compile Update="forms\ThongKe.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="forms\ThongTinSanPham.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="forms\TongQuan.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UserControls\FNhapHang_SanPham.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="UserControls\FSanPham_Loai.xaml.cs">

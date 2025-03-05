@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QLHieuThuoc.Model.SanPham
 {
-    internal class Sanpham
+    public class Sanpham
     {
         private string MaSanPham;
         private string TenSanPham;

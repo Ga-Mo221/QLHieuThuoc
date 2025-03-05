@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QLHieuThuoc.Model.sql;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,53 @@ namespace QLHieuThuoc.forms
     /// </summary>
     public partial class NhapHang : UserControl
     {
-        public NhapHang()
+        Modify modify = new Modify();
+        private string IDNV;
+
+
+        public NhapHang(string idnv)
         {
             InitializeComponent();
+            IDNV = idnv;
+
+            tbl_SoLuongNhaCungCap.Text = SoLuongNhaCungCap();
+            Loaded += NhapHang_Loaded;
+        }
+
+        // set ngôn ngữ
+        private void NhapHang_Loaded(object sender, RoutedEventArgs e)
+        {
+            CapNhatNN();
+        }
+
+        private string SoLuongNhaCungCap()
+        {
+            string caulenh = "select * from NhaCungCap";
+            string sl = modify.NhaCungCaps(caulenh).Count.ToString();
+            return sl;
+        }
+
+        private void bt_ThemDonNhap_Click(object sender, RoutedEventArgs e)
+        {
+            // áp dụng hiệu ứng mờ cho cửa sổ hiện tại
+            this.Effect = new System.Windows.Media.Effects.BlurEffect()
+            {
+                Radius = 10 // độ mờ
+            };
+
+            DonNhapHangMoi donnhapmoi = new DonNhapHangMoi();
+            donnhapmoi.ShowDialog();
+            
+
+            // xóa hiệu ứng làm mờ khi cửa sổ con đóng lại
+            this.Effect = null;
+        }
+
+
+        // lấy ngôn ngữ
+        private void CapNhatNN()
+        {
+
         }
     }
 }
