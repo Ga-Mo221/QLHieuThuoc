@@ -222,6 +222,7 @@
                         <Grid Grid.Row="16">
                             <StackPanel Orientation="Vertical" 
                                         VerticalAlignment="Bottom">
+                                <Button Content="full" Click="Button_Click"></Button>
                                 <!-- Cài Đặt -->
                                 <Button x:Name="bt_CaiDat" 
                                         Style="{DynamicResource TongQuan}"

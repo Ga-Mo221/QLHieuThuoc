@@ -1,0 +1,189 @@
+﻿<Window x:Class="QLHieuThuoc.forms.ChiTietDonNhap"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QLHieuThuoc.forms"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        WindowStartupLocation="CenterScreen"
+        Title="ChiTietDonNhap" Height="550" Width="890">
+    <Window.Resources>
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" StrokeDashArray="1 2" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" SnapsToDevicePixels="true" StrokeThickness="1"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+        <Style x:Key="ButtonStyle1" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" CornerRadius="25" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Border Background="#F7F7F7" BorderBrush="#565656" BorderThickness="1" CornerRadius="15" Padding="20">
+        <Grid>
+            <Grid.Resources>
+                <Style TargetType="TextBlock">
+                    <Setter Property="FontFamily" Value="Cascadia Mono"/>
+                    <Setter Property="FontSize" Value="16"/>
+                    <Setter Property="Foreground" Value="#565656"/>
+                    <Setter Property="HorizontalAlignment" Value="Left"/>
+                    <Setter Property="VerticalAlignment" Value="Center"/>
+                </Style>
+            </Grid.Resources>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            
+            <!-- thanh tiêu đề  -->
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="50"/>
+                </Grid.ColumnDefinitions>
+                
+                <!-- tiêu đề -->
+                <Border Grid.Column="0" Background="#E2895A" BorderThickness="0" CornerRadius="25">
+                    <DockPanel>
+                        <Grid DockPanel.Dock="Left" Width="25"></Grid>
+                        <TextBlock x:Name="tbl_TieuDe" FontSize="20">Chi tiet don hang</TextBlock>
+                    </DockPanel>
+                </Border>
+                
+                <!-- nút thoát -->
+                <Button Style="{DynamicResource ButtonStyle1}" Grid.Column="2" Background="#E2895A" BorderThickness="0" HorizontalAlignment="Left" Width="50" Click="Button_Click">
+                    <Button.Content>
+                        <TextBlock FontSize="25">X</TextBlock>
+                    </Button.Content>
+                </Button>
+            </Grid>
+            
+            <!-- nội dung -->
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="327"/>
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                
+                <!-- bảng thông tin -->
+                <Border Padding="15" Background="White" CornerRadius="15" BorderThickness="0">
+                    <DockPanel>
+                        <!-- thông tin đơn nhập -->
+                        <DockPanel DockPanel.Dock="Top" >
+                            <TextBlock x:Name="tbl_ThongTinDonNhap" DockPanel.Dock="Top" FontSize="20" Foreground="#E2895A" HorizontalAlignment="Center">THONG TIN DON HANG</TextBlock>
+                            <Grid Width="15" DockPanel.Dock="Left"/>
+                            <StackPanel DockPanel.Dock="Top" Height="190">
+                                <Grid Height="22"/>
+                                <TextBlock x:Name="tbl_MaDonNhap">id: #fasjdh23</TextBlock>
+                                <Grid Height="8"/>
+                                <TextBlock x:Name="tbl_SoLuongLoaiSanPham">loai san pham: 34</TextBlock>
+                                <Grid Height="8"/>
+                                <TextBlock x:Name="tbl_TongTien">tong tien: 3998$</TextBlock>
+                                <Grid Height="8"/>
+                                <TextBlock x:Name="tbl_NgayNhap">Ngay Nhap: 2/2/2025</TextBlock>
+                                <Grid Height="8"/>
+                                <TextBlock x:Name="tbl_PhuongThucThanhToan">thanh toan : tien mat</TextBlock>
+                            </StackPanel>
+                        </DockPanel>
+                        
+                        <!-- thông tin nhà cung cấp -->
+                        <DockPanel>
+                            <TextBlock x:Name="tbl_ThongTinNhaCungCap" DockPanel.Dock="Top" FontSize="20" Foreground="#E2895A" HorizontalAlignment="Center">THONG TIN NHA CUNG CAP</TextBlock>
+                            <Grid Width="15" DockPanel.Dock="Left"/>
+                            <StackPanel DockPanel.Dock="Top" Height="190">
+                                <Grid Height="22"/>
+                                <TextBlock x:Name="tbl_MaNhaCungCap">id: #fasjdh23</TextBlock>
+                                <Grid Height="8"/>
+                                <TextBlock x:Name="tbl_TenNhaCungCap">Ten: Nha Ba Sau</TextBlock>
+                                <Grid Height="8"/>
+                                <TextBlock x:Name="tbl_SDT">SDT: 234093248</TextBlock>
+                                <Grid Height="8"/>
+                                <TextBlock x:Name="tbl_DiaChi" TextWrapping="WrapWithOverflow">Địa Chỉ: đường số 7983472 quận hải châu đà nẵng việt nam thế giới chúng ta</TextBlock>
+                            </StackPanel>
+                        </DockPanel>
+                    </DockPanel>
+                </Border>
+                
+                <!-- bảng danh sách sản phẩm -->
+                <Border Grid.Column="2" Background="White" BorderBrush="#565656" BorderThickness="1" CornerRadius="15" Padding="15">
+                    <DockPanel>
+                        <Border DockPanel.Dock="Top" Background="#D9D9D9" Height="46" CornerRadius="5">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                
+                                <!-- tên sản phẩm -->
+                                <TextBlock x:Name="tbl_TenSanPham" HorizontalAlignment="Center"> Ten san pham</TextBlock>
+                                
+                                <!-- số lượng -->
+                                <TextBlock x:Name="tbl_SoLuong" HorizontalAlignment="Center" Grid.Column="1">So Luong</TextBlock>
+                                
+                                <!-- Giá -->
+                                <TextBlock x:Name="tbl_Gia" HorizontalAlignment="Center" Grid.Column="2">Gia</TextBlock>
+                            </Grid>
+                        </Border>
+                        
+                        <!-- list san pham -->
+                        <ScrollViewer VerticalScrollBarVisibility="Auto">
+                            <StackPanel x:Name="stb_ListSanPham"></StackPanel>
+                        </ScrollViewer>
+                    </DockPanel>
+                </Border>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>

@@ -22,23 +22,37 @@ namespace QLHieuThuoc.forms
     {
         private string IdNv;
         UserControl child = null;
+        private int x = 1440;
+        private int y = 930;
 
         public MainWindow(string id)
         {
             InitializeComponent();
             IdNv = id;
-            
+
+            this.Width = x; this.Height = y;
+
             this.Loaded += MainWindow_Loaded;
 
+            //KiemTraQuyenTruyCap();
+        }
+
+        // mở full màn
+        private void FullMan()
+        {
+            //full màn hình
+            this.WindowState = WindowState.Maximized;  // Mở tối đa màn hình
+            this.ResizeMode = ResizeMode.NoResize;     // Không cho phép thay đổi kích thước
+        }
+
+        // kiểm tra quyền truy cập
+        private void KiemTraQuyenTruyCap()
+        {
             if (IdNv != "123")
             {
                 bt_NhanVien.Visibility = Visibility.Collapsed;
                 bt_KhachHang.Visibility = Visibility.Collapsed;
             }
-
-            //full màn hình
-            //this.WindowState = WindowState.Maximized;  // Mở tối đa màn hình
-            //this.ResizeMode = ResizeMode.NoResize;     // Không cho phép thay đổi kích thước
         }
 
         // cập nhật ngôn ngữ
@@ -278,5 +292,23 @@ namespace QLHieuThuoc.forms
             panel1.Children.Add(childform); // Thêm vào Grid
         }
 
+        int s = 0;
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (s == 0)
+            {
+                // mở full màn hình
+                FullMan();
+                s = 1;
+            }else
+            {
+                // Trở về kích thước ban đầu
+                this.WindowState = WindowState.Normal;    // Trở lại kích thước mặc định
+                this.ResizeMode = ResizeMode.CanResize;   // Cho phép thay đổi kích thước
+                this.Width = x;
+                this.Height = y;
+                s = 0;
+            }
+        }
     }
 }

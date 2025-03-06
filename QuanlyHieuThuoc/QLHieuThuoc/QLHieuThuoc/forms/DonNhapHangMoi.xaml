@@ -746,14 +746,14 @@
                                 
                                 <!-- dia chi -->
                                 <Border Grid.Row="4" Background="#D9D9D9" CornerRadius="5">
-                                    <TextBox Template="{DynamicResource TextBoxTemplate1}" x:Name="tb_DiaChi">
+                                    <TextBox Template="{DynamicResource TextBoxTemplate1}" x:Name="tb_DiaChi" GotFocus="tb_DiaChi_GotFocus" LostFocus="tb_DiaChi_LostFocus">
                                         dia chi
                                     </TextBox>
                                 </Border>
                                 
                                 <!-- so dien thoai -->
                                 <Border Grid.Row="6" Background="#D9D9D9" CornerRadius="5">
-                                    <TextBox Template="{DynamicResource TextBoxTemplate1}" x:Name="tb_SDT">
+                                    <TextBox Template="{DynamicResource TextBoxTemplate1}" x:Name="tb_SDT" GotFocus="tb_SDT_GotFocus" LostFocus="tb_SDT_LostFocus">
                                         so dien thoai
                                     </TextBox>
                                 </Border>

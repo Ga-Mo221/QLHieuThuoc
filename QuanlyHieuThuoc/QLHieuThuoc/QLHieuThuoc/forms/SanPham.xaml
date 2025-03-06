@@ -443,7 +443,7 @@
                                 </Border>
 
                                 <!--list san pham-->
-                                    <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+                                <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
                                     <StackPanel x:Name="stb_ListSanPham" Orientation="Vertical"></StackPanel>
                                 </ScrollViewer>
                             </Grid>

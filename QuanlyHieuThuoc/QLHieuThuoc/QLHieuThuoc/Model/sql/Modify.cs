@@ -3,6 +3,7 @@ using QLHieuThuoc.Model.Account;
 using QLHieuThuoc.Model.DonNhapHangvsNCC;
 using QLHieuThuoc.Model.SanPham;
 using System.Data.SqlClient;
+using System.Windows.Data;
 
 namespace QLHieuThuoc.Model.sql
 {
@@ -103,6 +104,49 @@ namespace QLHieuThuoc.Model.sql
             }
 
             return NhaCungCaps;
+        }
+
+        public List<DonNhap> DonNhaps(string LenhTruyVan)
+        {
+            List<DonNhap> donNhaps = new List<DonNhap>();
+
+            using (SqlConnection sqlConnection = KetNoi.GetSqlconnection())
+            {
+                sqlConnection.Open();
+
+                sqlConmand = new SqlCommand(LenhTruyVan, sqlConnection);
+                dataReader = sqlConmand.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    donNhaps.Add(new DonNhap(dataReader.GetString(0), dataReader.GetString(1), dataReader.GetDateTime(2), dataReader.GetDecimal(3).ToString(), dataReader.GetString(4)));
+                }
+
+                sqlConnection.Close();
+            }
+
+            return donNhaps;
+        }
+
+        // check Chi tiết đơn nhập
+        public List<chiTietDonNhap> ChiTietDonNhaps(string LenhTruyVan)
+        {
+            List<chiTietDonNhap> chiTietDonNhaps = new List<chiTietDonNhap>();
+
+            using (SqlConnection sqlConnection = KetNoi.GetSqlconnection())
+            {
+                sqlConnection.Open();
+
+                sqlConmand = new SqlCommand(LenhTruyVan, sqlConnection);
+                dataReader = sqlConmand.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    chiTietDonNhaps.Add(new chiTietDonNhap(dataReader.GetString(0), dataReader.GetString(1), dataReader.GetString(2), dataReader.GetInt32(3).ToString(), dataReader.GetDecimal(4).ToString()));
+                }
+
+                sqlConnection.Close();
+            }
+
+            return chiTietDonNhaps;
         }
 
         // Thực hiện lệnh

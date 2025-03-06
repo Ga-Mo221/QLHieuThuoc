@@ -234,7 +234,7 @@ namespace QLHieuThuoc.forms
                 Radius = 10 // độ mờ
             };
 
-            ThemSanPham CuaSoThemSanPham = new ThemSanPham("SanPHam");
+            ThemSanPham CuaSoThemSanPham = new ThemSanPham("SanPham");
             CuaSoThemSanPham.ShowDialog();
 
             // xóa hiệu ứng làm mờ khi cửa sổ con đóng lại

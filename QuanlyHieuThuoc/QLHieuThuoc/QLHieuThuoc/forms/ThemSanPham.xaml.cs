@@ -38,7 +38,6 @@ namespace QLHieuThuoc.forms
         };
         // list sản phẩm
         private List<string> listSanPham;
-        private bool check = false;
         private string masp;
         private string KEY;
 
@@ -287,21 +286,21 @@ namespace QLHieuThuoc.forms
             // Kiểm tra Số Lượng có phải số nguyên không
             if (!int.TryParse(soluong, out sl))
             {
-                MessageBox.Show("Số lượng phải là số nguyên!", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(NN.nn[74], NN.nn[77], MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
             }
 
             // Kiểm tra Giá Nhập có phải kiểu decimal không
             if (!decimal.TryParse(gianhap, out gn))
             {
-                MessageBox.Show("Giá nhập phải là số thực!", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(NN.nn[75], NN.nn[77], MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
             }
 
             // Kiểm tra Giá Bán có phải kiểu decimal không
             if (!decimal.TryParse(giaban, out gb))
             {
-                MessageBox.Show("Giá bán phải là số thực!", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(NN.nn[76], NN.nn[77], MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
             }
 
@@ -345,13 +344,14 @@ namespace QLHieuThuoc.forms
 
             if (KEY == "SanPham")
             {
-                if (!check)
-                {
-                    string CauLenhTruyVan = "Insert into SanPham values ('"+id+"','"+tensp+"','"+loaisp+ "','"+soluong+"','"+gianhap+"','"+giaban+ "','"+thanhphan+"','"+congdung+ "','"+chuy+"','"+hamluong+"','"+cachdung+ "','"+HSD+"')";
-                    modify.SanPhams(CauLenhTruyVan);
-                    MessageBox.Show(NN.nn[66], NN.nn[2], MessageBoxButton.OK, MessageBoxImage.Information);
+                string Caulenh = "select * from SanPham where TEN = '"+tensp+"'";
 
-                    check = false;
+                if (modify.SanPhams(Caulenh).Count == 0)
+                {
+                    string CauLenhTruyVan = "Insert into SanPham values ('"+id+"', '"+tensp+"','"+loaisp+ "','"+soluong+"','"+gianhap+"','"+giaban+ "','"+thanhphan+"','"+congdung+ "','"+chuy+"','"+hamluong+"','"+cachdung+ "','"+HSD+"')";
+                    modify.SanPhams(CauLenhTruyVan);
+                    MessageBox.Show(NN.nn[67], NN.nn[2], MessageBoxButton.OK, MessageBoxImage.Information);
+
                     this.Close();
                 }
                 else
@@ -363,9 +363,9 @@ namespace QLHieuThuoc.forms
                     string SL = sl.ToString();
 
                     //, GIANHAP = '"+gianhap+"', GIABAN = '"+giaban+"', HANSUDUNG = '"+HSD+"' 
-                    string CauLenhUpdate = "Update SanPham set SOLUONG = '"+SL+ "', GIANHAP = '"+gianhap+"', GIABAN = '"+giaban+"', HANSUDUNG = '"+HSD+"' where ID = '" + id+"'";
+                    string CauLenhUpdate = "Update SanPham set SOLUONG = '"+SL+ "', GIANHAP = '"+gianhap+"', GIABAN = '"+giaban+"', HANSUDUNG = '"+HSD+"' where ID = '"+id+"'";
                     modify.ThucThi(CauLenhUpdate);
-                    MessageBox.Show(NN.nn[67], NN.nn[2], MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show(NN.nn[66], NN.nn[2], MessageBoxButton.OK, MessageBoxImage.Information);
                     this.Close();
                 }
             }
@@ -373,7 +373,7 @@ namespace QLHieuThuoc.forms
             {
                 Sanpham sp = new Sanpham(id, tensp, loaisp, soluong, gianhap, giaban, thanhphan, hamluong, congdung, cachdung, chuy, HSD);
                 listSpDonHang.sps.Add(sp);
-                MessageBox.Show("da them");
+                MessageBox.Show(NN.nn[73], NN.nn[2],MessageBoxButton.OK);
                 this.Close();
             }
         }
@@ -382,7 +382,7 @@ namespace QLHieuThuoc.forms
         private void cbb_TenSanPham_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             string tensp = cbb_TenSanPham.SelectedItem.ToString();
-            string CauLenhTruyVan = "Select * from SanPham where TEN = '" + tensp + "'";
+            string CauLenhTruyVan = "Select * from SanPham where TEN = '"+tensp+"'";
             List<Sanpham> Sp = modify.SanPhams(CauLenhTruyVan);
             if (Sp.Count == 1)
             {
@@ -396,7 +396,6 @@ namespace QLHieuThuoc.forms
                 tb_CongDung.Text = Sp[0].CongDung1;
                 tb_HamLuong.Text = Sp[0].HamLuong1;
                 tb_ThanhPhan.Text = Sp[0].ThanhPhan1;
-                check = true;
             }
         }
     }

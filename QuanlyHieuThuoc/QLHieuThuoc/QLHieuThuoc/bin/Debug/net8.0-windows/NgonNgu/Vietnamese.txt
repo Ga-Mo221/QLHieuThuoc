@@ -1,4 +1,4 @@
-asdfa
+gasdf
 Vui lòng nhập mật khẩu!
 Thông Báo
 Tên đăng nhập hoặc mật khẩu không chính xác
@@ -71,3 +71,31 @@ Loại Sản Phẩm
 Hạn Sử Dụng
 Bạn có muốn xóa sản phẩm này không?
 Bạn đã xóa thành công. Cửa sổ sẽ bị đóng lại.
+Đã Thêm Thành Công
+Số lượng phải là số nguyên!
+Giá nhập phải là số thực!
+Giá bán phải là số thực!
+Lỗi
+Nhà Cung Cấp
+Tổng Đơn Nhập
+Mã Đơn Nhập
+Mã Nhà Cung Cấp
+Ngày Nhập
+Tổng Tiền
+Phương Thức
+Đơn Nhập Hàng Mới
+Địa Chỉ
+Số Điện Thoại
+Tổng Tiền
+Thêm sản Phẩm
+Tên Nhà Cung Cấp
+Áp Dụng
+Đã Cập Nhật Thành Công!
+Chi Tiết Đơn Hàng
+THÔNG TIN ĐƠN HÀNG
+ID
+Thanh Toán
+THÔNG TIN NHÀ CUNG CẤP
+Tên
+SDT
+Loại Sản Phẩm
