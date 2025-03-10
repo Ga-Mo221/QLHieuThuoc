@@ -68,15 +68,15 @@ namespace QLHieuThuoc.forms
         // lấy ngôn ngữ
         private void CapNhatNN()
         {
-            tbl_bt_TongQuan.Text = NN.nn[27];
-            tbl_bt_SanPham.Text = NN.nn[28];
-            tbl_bt_BanHang.Text = NN.nn[29];
-            tbl_bt_NhapHang.Text = NN.nn[30];
-            tbl_bt_ThongKe.Text = NN.nn[31];
-            tbl_bt_KhachHang.Text = NN.nn[32];
-            tbl_bt_NhanVien.Text = NN.nn[33];
-            tbl_bt_CaiDat.Text = NN.nn[34];
-            tbl_bt_DangXuat.Text = NN.nn[35];
+            tbl_bt_TongQuan.Text = $"📊  {NN.nn[27]}";
+            tbl_bt_SanPham.Text = $"📦  {NN.nn[28]}";
+            tbl_bt_BanHang.Text = $"🛒  {NN.nn[29]}";
+            tbl_bt_NhapHang.Text = $"📥  {NN.nn[30]}";
+            tbl_bt_ThongKe.Text = $"📈  {NN.nn[31]}";
+            tbl_bt_KhachHang.Text = $"👥  {NN.nn[32]}";
+            tbl_bt_NhanVien.Text = $"👨‍💼  {NN.nn[33]}";
+            tbl_bt_CaiDat.Text = $"⚙️  {NN.nn[34]}";
+            tbl_bt_DangXuat.Text = $"🔚  {NN.nn[35]}";
         }
 
         // check select button

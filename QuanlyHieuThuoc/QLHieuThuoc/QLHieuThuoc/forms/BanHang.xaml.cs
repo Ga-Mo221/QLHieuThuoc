@@ -76,32 +76,37 @@ namespace QLHieuThuoc.forms
 
         private void AddDonHang(List<Donban> donbans)
         {
-            if (stb_ListDonBan.Children.Count > 0) stb_ListDonBan.Children.Clear();
-
-            tbl_SoLuongDonHangTrongThang.Text = donbans.Count.ToString();
-            tbl_SoLuongTongDonBan.Text = donbans.Count.ToString();
-
-            if (donbans.Count > 0)
+            if (stb_ListDonBan != null)
             {
-                foreach (var s in donbans) 
+                if (stb_ListDonBan.Children.Count > 0) stb_ListDonBan.Children.Clear();
+            }
+            if (tbl_SoLuongDonHangTrongThang != null)
+            {
+                tbl_SoLuongDonHangTrongThang.Text = donbans.Count.ToString();
+                tbl_SoLuongTongDonBan.Text = donbans.Count.ToString();
+
+                if (donbans.Count > 0)
                 {
-                    FNhapHang_DonNhapHang hoadon = new FNhapHang_DonNhapHang();
-                    hoadon.Height = 46;
-                    hoadon.MaDonNhap = s.Id;
-                    hoadon.MaNhaCungCap = s.Idkh;
-                    hoadon.NgayNhap = s.NgayMua;
-                    hoadon.TongTien = s.TongTien;
-                    hoadon.PhuongThuc = s.PhuongThuc;
-                    if (hoadon.PhuongThuc == NN.nn[120])
+                    foreach (var s in donbans)
                     {
-                        hoadon.setcolor("Green");
+                        FNhapHang_DonNhapHang hoadon = new FNhapHang_DonNhapHang();
+                        hoadon.Height = 46;
+                        hoadon.MaDonNhap = s.Id;
+                        hoadon.MaNhaCungCap = s.Idkh;
+                        hoadon.NgayNhap = s.NgayMua;
+                        hoadon.TongTien = s.TongTien;
+                        hoadon.PhuongThuc = s.PhuongThuc;
+                        if (hoadon.PhuongThuc == NN.nn[120])
+                        {
+                            hoadon.setcolor("Green");
+                        }
+                        else
+                        {
+                            hoadon.setcolor("Red");
+                        }
+                        stb_ListDonBan.Children.Add(hoadon);
+                        hoadon.Click += Hoadon_Click;
                     }
-                    else
-                    {
-                        hoadon.setcolor("Red");
-                    }
-                    stb_ListDonBan.Children.Add(hoadon);
-                    hoadon.Click += Hoadon_Click;
                 }
             }
         }
@@ -160,8 +165,11 @@ namespace QLHieuThuoc.forms
 
 
                 // Xóa tất cả sản phẩm cũ trong stackpanel
-                if (tb_TimKiem.Text != NN.nn[39])
-                    stb_ListDonBan.Children.Clear();
+                if (stb_ListDonBan != null)
+                {
+                    if (tb_TimKiem.Text != NN.nn[39])
+                        stb_ListDonBan.Children.Clear();
+                }
                 //MessageBox.Show("xoa roi");
 
                 // Hiển thị sản phẩm tìm được

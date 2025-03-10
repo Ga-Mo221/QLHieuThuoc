@@ -1,0 +1,142 @@
+fsdf
+Please enter your password!
+Notification
+Username or password is incorrect
+Account
+Employee ID
+Please enter Employee ID
+Please enter Account
+Please enter Password
+You have successfully registered. Please go back to log in.
+Account already exists!
+This Employee ID has already been registered!
+Employee ID does not exist!
+Register your account here
+Password
+Forgot Password?
+Login
+Don't have an account?
+Register
+Register your account here
+Already have an account?
+Exit
+Please fill in all information
+New Password
+Confirm
+Incorrect account!
+Password changed successfully.
+Overview
+Products
+Sales
+Purchases
+Statistics
+Customers
+Employees
+Settings
+Logout
+Total Products
+In-stock Products
+Out-of-stock Products
+Search...
+Add Product
+Product Code
+Product Name
+Quantity
+Selling Price
+Status
+Category
+Antibiotics
+Painkillers
+Vitamins
+Supplements
+Antiviral Drugs
+Cardiovascular Drugs
+Allergy Drugs
+Respiratory Drugs
+Quantity
+Purchase Price
+Selling Price
+Ingredients
+Usage
+Warnings
+Dosage
+How to Use
+Add
+Cancel
+Missing information
+Successfully Updated. The window will be closed.
+Successfully Added. The window will be closed.
+Product Information
+Product Type
+Expiration Date
+Do you want to delete this product?
+Successfully deleted. The window will be closed.
+Successfully Added
+Quantity must be an integer!
+Purchase price must be a decimal number!
+Selling price must be a decimal number!
+Error
+Supplier
+Total Purchase Orders
+Purchase Order Code
+Supplier Code
+Purchase Date
+Total Amount
+Method
+New Purchase Order
+Address
+Phone Number
+Total Amount
+Add Product
+Supplier Name
+Apply
+Successfully Updated!
+Order Details
+ORDER INFORMATION
+ID
+Payment
+SUPPLIER INFORMATION
+Name
+Phone Number
+Product Type
+Total Sales Orders
+Sales Orders This Month
+Sales Order Code
+Customer Code
+Create New Invoice
+Points
+Purchase
+Confirm Purchase
+Do you want to use points?
+Enter Points...
+Customer Name
+100...
+CUSTOMER INFORMATION
+Sales Date
+Total Customers
+New Customers
+Added Date
+Last Month
+This Month
+Cash
+Payment Method
+Successfully Purchased!
+Supplier Name is missing!
+Address is missing!
+Phone Number is missing!
+No Products Added!
+No Payment Method Selected!
+Bank Transfer
+Out of Stock
+Running Low
+In Stock
+Customer Name is missing!
+Quantity Updated
+Added to Cart
+Quantity not entered
+Quantity Exceeds Stock!
+Status
+Incorrect Entry!
+Points Exceeded!
+Language has been changed
+Language

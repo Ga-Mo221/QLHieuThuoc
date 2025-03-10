@@ -116,7 +116,10 @@ namespace QLHieuThuoc.forms
         // Cập nhật đơn nhập
         private void AddDonNhap(List<DonNhap> ls)
         {
-            if (stb_ListDonNhap.Children.Count > 0) stb_ListDonNhap.Children.Clear();
+            if (stb_ListDonNhap != null)
+            {
+                if (stb_ListDonNhap.Children.Count > 0) stb_ListDonNhap.Children.Clear();
+            }
 
             foreach (DonNhap d in ls)
             {
@@ -195,10 +198,12 @@ namespace QLHieuThuoc.forms
 
 
                 // Xóa tất cả sản phẩm cũ trong stackpanel
-                if (tb_TimKiem.Text != NN.nn[39])
-                    stb_ListDonNhap.Children.Clear();
-                //MessageBox.Show("xoa roi");
-
+                if (stb_ListDonNhap != null)
+                {
+                    if (tb_TimKiem.Text != NN.nn[39])
+                        stb_ListDonNhap.Children.Clear();
+                    //MessageBox.Show("xoa roi");
+                }
                 // Hiển thị sản phẩm tìm được
                 AddDonNhap(ketQua);
             }

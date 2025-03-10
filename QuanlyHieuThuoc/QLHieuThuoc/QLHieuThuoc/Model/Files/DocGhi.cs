@@ -57,6 +57,33 @@ namespace QLHieuThuoc.Model.Files
                 MessageBox.Show($"không tồn tại {filePath} để đọc", "lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+
+
+        // Ghi file Setting
+        public void SaveSetting(string newSetting)
+        {
+            // Lấy đường dẫn
+            string folderPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Setting");
+            string filePath = Path.Combine(folderPath, "Setting.txt");
+
+            try
+            {
+                // Kiểm tra nếu thư mục chưa tồn tại thì tạo mới
+                if (!Directory.Exists(folderPath))
+                {
+                    Directory.CreateDirectory(folderPath);
+                }
+
+                // Ghi nội dung vào file (Ghi đè nội dung cũ)
+                File.WriteAllText(filePath, newSetting, Encoding.UTF8);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi ghi file: {ex.Message}", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
     }
 
     public static class NN

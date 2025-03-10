@@ -4,15 +4,15 @@
 winexe
 C#
 .cs
-D:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\obj\Debug\net8.0-windows\
+D:\qlht\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\obj\Debug\net8.0-windows\
 QLHieuThuoc
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
-D:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\App.xaml
+D:\qlht\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\App.xaml
 292091212161
 
-48-1352697193
+49711584213
 1994512393
 forms\BanHang.xaml;forms\CaiDat.xaml;forms\ChiTietDonBan.xaml;forms\ChiTietDonNhap.xaml;forms\DangNhap.xaml;forms\DonNhapHangMoi.xaml;forms\KhachHang.xaml;forms\LoaiSanPham.xaml;forms\MainWindow.xaml;forms\NhaCungCap.xaml;forms\NhanVien.xaml;forms\NhapHang.xaml;forms\QuenMK.xaml;forms\SanPham.xaml;forms\ThemDonBan.xaml;forms\ThemSanPham.xaml;forms\ThemSanPhamDonBan.xaml;forms\ThongBao.xaml;forms\ThongKe.xaml;forms\ThongTinSanPham.xaml;forms\TongQuan.xaml;forms\XacNhanMua.xaml;UserControls\FNhapHang_DonNhapHang.xaml;UserControls\FNhapHang_SanPham.xaml;UserControls\FNhapHang_SanPhamChiTiet.xaml;UserControls\FNhapHang_TenNhaCungCap.xaml;UserControls\FSanPham_Loai.xaml;UserControls\FSanPham_SanPham.xaml;UserControls\FSanPham_ThongKe.xaml;
 

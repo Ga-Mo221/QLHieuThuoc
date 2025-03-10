@@ -126,8 +126,7 @@
                             <TextBlock x:Name="tbl_bt_TongQuan" 
                                        FontSize="20"
                                        FontFamily="Cascadia Mono"
-                                       Foreground="#FCF4F0"
-                                       Margin="43 15 76 14">
+                                       Foreground="#FCF4F0">
                                 Tổng Quan
                             </TextBlock>
                         </Button>
@@ -141,8 +140,7 @@
                             <TextBlock x:Name="tbl_bt_SanPham" 
                                        FontSize="20"
                                        FontFamily="Cascadia Mono"
-                                       Foreground="#FCF4F0"
-                                       Margin="43 15 85 14">
+                                       Foreground="#FCF4F0">
                                 Sản Phẩm
                             </TextBlock>
                         </Button>
@@ -155,8 +153,7 @@
                             <TextBlock x:Name="tbl_bt_BanHang" 
                                        FontSize="20"
                                        FontFamily="Cascadia Mono"
-                                       Foreground="#FCF4F0"
-                                       Margin="43 15 85 14">
+                                       Foreground="#FCF4F0">
                                 Bán Hàng
                             </TextBlock>
                         </Button>
@@ -169,8 +166,7 @@
                             <TextBlock x:Name="tbl_bt_NhapHang" 
                                        FontSize="20"
                                        FontFamily="Cascadia Mono"
-                                       Foreground="#FCF4F0"
-                                       Margin="43 15 76 14">
+                                       Foreground="#FCF4F0">
                                 Nhập Hàng
                             </TextBlock>
                         </Button>
@@ -183,8 +179,7 @@
                             <TextBlock x:Name="tbl_bt_ThongKe" 
                                        FontSize="20"
                                        FontFamily="Cascadia Mono"
-                                       Foreground="#FCF4F0"
-                                       Margin="43 15 90 14">
+                                       Foreground="#FCF4F0">
                                 Thống Kê
                             </TextBlock>
                         </Button>
@@ -197,8 +192,7 @@
                             <TextBlock x:Name="tbl_bt_KhachHang" 
                                        FontSize="20"
                                        FontFamily="Cascadia Mono"
-                                       Foreground="#FCF4F0"
-                                       Margin="43 15 70 14">
+                                       Foreground="#FCF4F0">
                                 Khách Hàng
                             </TextBlock>
                         </Button>
@@ -211,8 +205,7 @@
                             <TextBlock x:Name="tbl_bt_NhanVien" 
                                        FontSize="20"
                                        FontFamily="Cascadia Mono"
-                                       Foreground="#FCF4F0"
-                                       Margin="43 15 79 14">
+                                       Foreground="#FCF4F0">
                                  Nhân Viên
                             </TextBlock>
                         </Button>
@@ -232,8 +225,7 @@
                                     <TextBlock x:Name="tbl_bt_CaiDat" 
                                                 FontSize="20"
                                                 FontFamily="Cascadia Mono"
-                                                Foreground="#FCF4F0"
-                                                Margin="43 15 103 14">
+                                                Foreground="#FCF4F0">
                                         Cài Đặt
                                     </TextBlock>
                                 </Button>
@@ -246,8 +238,7 @@
                                     <TextBlock x:Name="tbl_bt_DangXuat" 
                                                 FontSize="20"
                                                 FontFamily="Cascadia Mono"
-                                                Foreground="#FCF4F0"
-                                                Margin="43 15 80 14">
+                                                Foreground="#FCF4F0">
                                         Đăng Xuất
                                     </TextBlock>
                                 </Button>

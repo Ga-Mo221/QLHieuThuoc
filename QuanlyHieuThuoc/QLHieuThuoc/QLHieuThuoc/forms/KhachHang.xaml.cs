@@ -74,8 +74,11 @@ namespace QLHieuThuoc.forms
 
 
                 // Xóa tất cả sản phẩm cũ trong stackpanel
-                if (tb_TimKiem.Text != NN.nn[39])
-                    stb_ListKhachHang.Children.Clear();
+                if (stb_ListKhachHang != null)
+                {
+                    if (tb_TimKiem.Text != NN.nn[39])
+                        stb_ListKhachHang.Children.Clear();
+                }
                 //MessageBox.Show("xoa roi");
 
                 // Hiển thị sản phẩm tìm được

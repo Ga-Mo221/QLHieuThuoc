@@ -395,9 +395,12 @@ namespace QLHieuThuoc.forms
             List<Sanpham> ketQua = sp.Where(x => x.TenSanPham1.ToLower().Contains(tuKhoa)).ToList();
 
             // Xóa tất cả sản phẩm cũ trong stackpanel
-            if (tb_TimKiem.Text != NN.nn[39])
-                stb_ListSanPham.Children.Clear();
-                //MessageBox.Show("xoa roi");
+            if (stb_ListSanPham != null)
+            {
+                if (tb_TimKiem.Text != NN.nn[39])
+                    stb_ListSanPham.Children.Clear();
+            }
+            //MessageBox.Show("xoa roi");
 
             // Hiển thị sản phẩm tìm được
             Aadsanpham(ketQua);
