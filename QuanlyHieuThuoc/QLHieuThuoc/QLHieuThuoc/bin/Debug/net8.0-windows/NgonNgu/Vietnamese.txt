@@ -1,4 +1,4 @@
-gasdf
+fsdf
 Vui lòng nhập mật khẩu!
 Thông Báo
 Tên đăng nhập hoặc mật khẩu không chính xác
@@ -48,7 +48,7 @@ Loại
 Thuốc Kháng Sinh
 Thuốc Giảm Đau
 Vitamin
-Thực Phẩm Chức Năng
+Thực Phẩm Bổ Sung
 Thuốc Kháng Virus
 Thuốc Tim Mạch
 Thuốc Dị Ứng
@@ -99,3 +99,42 @@ THÔNG TIN NHÀ CUNG CẤP
 Tên
 SDT
 Loại Sản Phẩm
+Tổng Số Đơn Bán
+Đơn Bán Tháng Này
+Mã Đơn Bán
+Mã Khách Hàng
+Tạo Hóa Đơn Mới
+Điểm
+Mua
+Xác Nhận Mua Hàng
+Bạn có muốn dùng điểm không?
+Nhập Số Điểm...
+Tên Khách Hàng
+100...
+THÔNG TIN KHÁCH HÀNG
+Ngày Bán
+Tổng Khách Hàng
+Khách Hàng Mới
+Ngày Thêm
+Tháng Trước
+Tháng Này
+Tiền Mặt
+Phương Thức Thanh Toán
+Đã Nhập Hàng Thành Công!
+Chưa Nhập Tên Nhà Cung Cấp!
+Chưa Nhập Địa Chỉ!
+Chưa Nhập Số Điện Thoại!
+Chưa Thêm Sản Phẩm!
+Chưa Chọn Phương Thức Thanh Toán!
+Chuyển Khoản
+Hết Hàng
+Sắp Hết Hàng
+Còn Hàng
+Chưa Nhập Tên Khách Hàng!
+Đã Cập Nhật Số Lượng
+Đã Thêm Vào Giỏ Hàng
+Chưa Nhập Số Lượng
+Số Lượng Vượt Quá Trong Kho!
+Trạng Thái
+Nhập Không Chính Xác!
+Số Điểm Đã Bị Vượt Quá!

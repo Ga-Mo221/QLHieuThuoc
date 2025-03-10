@@ -620,7 +620,7 @@
                                             Foreground="#C9C9C9"
                                             Width="320"
                                              GotFocus="tb_TimKiem_GotFocus"
-                                             LostFocus="tb_TimKiem_LostFocus">
+                                             LostFocus="tb_TimKiem_LostFocus" TextChanged="tb_TimKiem_TextChanged">
                                     </TextBox>
                                 </Grid>
                             </Border>
@@ -723,7 +723,9 @@
                                 </Border>
                                 
                                 <!-- list đơn nhập hàng -->
-                                <StackPanel x:Name="stb_ListDonNhap"></StackPanel>
+                                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                                    <StackPanel x:Name="stb_ListDonNhap"></StackPanel>
+                                </ScrollViewer>
                             </DockPanel>
                         </Grid>
                     </Grid>

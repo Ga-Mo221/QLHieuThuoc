@@ -1,4 +1,5 @@
 ﻿using QLHieuThuoc.Model;
+using QLHieuThuoc.Model.BanHang;
 using QLHieuThuoc.Model.DonNhapHangvsNCC;
 using QLHieuThuoc.Model.Files;
 using QLHieuThuoc.Model.sql;
@@ -28,7 +29,7 @@ namespace QLHieuThuoc.forms
         ClickTextBox clickk = new ClickTextBox();
         Modify modify = new Modify();
         private string IDNV;
-        private List<string> ListThang = new List<string> { "Tháng Trước", "Tháng Này"};
+        private List<string> ListThang = new List<string> { NN.nn[118], NN.nn[119] };
 
 
         public NhapHang(string idnv)
@@ -45,9 +46,15 @@ namespace QLHieuThuoc.forms
         // set ngôn ngữ
         private void NhapHang_Loaded(object sender, RoutedEventArgs e)
         {
-            cbb_Thang.SelectedItem = "Tháng Này";
+            cbb_Thang.SelectedItem = NN.nn[119];
             CapNhatNN();
-            AddDonNhap();
+            string lenhSelect = "select * from DonNhapHang";
+
+            List<DonNhap> ls = modify.DonNhaps(lenhSelect);
+            AddDonNhap(ls);
+
+            string lenSelect = "SELECT * FROM DonNhapHang WHERE MONTH(NGAYNHAP) = MONTH(GETDATE()) AND YEAR(NGAYNHAP) = YEAR(GETDATE())";
+            tbl_SoLuongDonHangTrongThang.Text = modify.DonBans(lenSelect).Count.ToString();
         }
 
         // Cập nhật Tổng đơn Nhập
@@ -81,7 +88,10 @@ namespace QLHieuThuoc.forms
 
             // xóa hiệu ứng làm mờ khi cửa sổ con đóng lại
             this.Effect = null;
-            AddDonNhap();
+
+            string lenhSelect = "select * from DonNhapHang";
+            List<DonNhap> ls = modify.DonNhaps(lenhSelect);
+            AddDonNhap(ls);
             CapNhatTongDonNhap();
             SoLuongNhaCungCap();
         }
@@ -104,13 +114,10 @@ namespace QLHieuThuoc.forms
         }
 
         // Cập nhật đơn nhập
-        private void AddDonNhap()
+        private void AddDonNhap(List<DonNhap> ls)
         {
             if (stb_ListDonNhap.Children.Count > 0) stb_ListDonNhap.Children.Clear();
 
-            string lenhSelect = "select * from DonNhapHang";
-
-            List<DonNhap> ls = modify.DonNhaps(lenhSelect);
             foreach (DonNhap d in ls)
             {
                 FNhapHang_DonNhapHang donnhap = new FNhapHang_DonNhapHang();
@@ -121,7 +128,7 @@ namespace QLHieuThuoc.forms
                 donnhap.TongTien = decimal.Parse(d.TongTien1);
                 donnhap.PhuongThuc = d.PhuongThucThanhToan1;
 
-                if (donnhap.PhuongThuc == "Tien Mat")
+                if (donnhap.PhuongThuc == NN.nn[120])
                 {
                     donnhap.setcolor("Green");
                 }
@@ -142,7 +149,7 @@ namespace QLHieuThuoc.forms
                 Radius = 10 // độ mờ
             };
 
-            ChiTietDonNhap chitietdonnhap = new ChiTietDonNhap(e);
+            ChiTietDonNhap chitietdonnhap = new ChiTietDonNhap(e, "NhapHang");
             chitietdonnhap.ShowDialog();
 
 
@@ -173,6 +180,28 @@ namespace QLHieuThuoc.forms
         private void tb_TimKiem_LostFocus(object sender, RoutedEventArgs e)
         {
             clickk.LostF(tb_TimKiem, NN.nn[39]);
+        }
+
+        private void tb_TimKiem_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (tb_TimKiem.Text != NN.nn[39])
+            {
+                List<DonNhap> sp = modify.DonNhaps("select * from DonNhapHang");
+
+                string tuKhoa = tb_TimKiem.Text.Trim().ToLower();
+
+                // Tìm sản phẩm có tên chứa từ khóa
+                List<DonNhap> ketQua = sp.Where(x => x.MaDonNhapHang1.ToLower().Contains(tuKhoa)).ToList();
+
+
+                // Xóa tất cả sản phẩm cũ trong stackpanel
+                if (tb_TimKiem.Text != NN.nn[39])
+                    stb_ListDonNhap.Children.Clear();
+                //MessageBox.Show("xoa roi");
+
+                // Hiển thị sản phẩm tìm được
+                AddDonNhap(ketQua);
+            }
         }
     }
 }

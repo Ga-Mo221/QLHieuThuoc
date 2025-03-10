@@ -56,17 +56,17 @@ namespace QLHieuThuoc.forms
                 fSanPham_SanPham.Loai = s.LoaiSanPham1;
                 if (s.SoLuong1 == "0")
                 {
-                    fSanPham_SanPham.TinhTrang = "Hết hàng";
+                    fSanPham_SanPham.TinhTrang = NN.nn[129];
                     fSanPham_SanPham.setcolor("Red");
                 }
                 else if (int.Parse(fSanPham_SanPham.SoLuong) < 10)
                 {
-                    fSanPham_SanPham.TinhTrang = "Sắp hết hàng";
+                    fSanPham_SanPham.TinhTrang = NN.nn[130];
                     fSanPham_SanPham.setcolor("Orange");
                 }
                 else
                 {
-                    fSanPham_SanPham.TinhTrang = "Còn hàng";
+                    fSanPham_SanPham.TinhTrang = NN.nn[131];
                     fSanPham_SanPham.setcolor("Green");
                 }
                 fSanPham_SanPham.Height = 50;

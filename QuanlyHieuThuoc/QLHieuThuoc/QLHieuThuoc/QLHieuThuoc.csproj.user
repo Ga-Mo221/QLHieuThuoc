@@ -8,6 +8,9 @@
     <Compile Update="forms\CaiDat.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="forms\ChiTietDonBan.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="forms\ChiTietDonNhap.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -41,7 +44,16 @@
     <Compile Update="forms\SanPham.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="forms\ThemDonBan.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="forms\ThemSanPham.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="forms\ThemSanPhamDonBan.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="forms\ThongBao.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="forms\ThongKe.xaml.cs">
@@ -51,6 +63,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="forms\TongQuan.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="forms\XacNhanMua.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="UserControls\FNhapHang_DonNhapHang.xaml.cs">

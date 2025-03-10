@@ -30,7 +30,7 @@ namespace QLHieuThuoc.forms
         Modify modify = new Modify();
         TaoMaNgauNhien TaoMa = new TaoMaNgauNhien();
         bool checkNCC = false;
-        private List<string> ListItemPhuongThucThanhToan = new List<string> { "Tien Mat", "Chuyen Khoan", "Phương Thức Thanh Toán"};
+        private List<string> ListItemPhuongThucThanhToan = new List<string> { NN.nn[120], NN.nn[128], NN.nn[121] };
 
         public DonNhapHangMoi()
         {
@@ -50,7 +50,7 @@ namespace QLHieuThuoc.forms
         {
             cbb_PhuongThucThanhToan.Items.Clear();
             cbb_PhuongThucThanhToan.ItemsSource = ListItemPhuongThucThanhToan;
-            cbb_PhuongThucThanhToan.SelectedItem = "Phương Thức Thanh Toán";
+            cbb_PhuongThucThanhToan.SelectedItem = NN.nn[121];
 
             cbb_TenNhaCungCap.ItemsSource = ListTenNhaCungCap();
 
@@ -94,6 +94,7 @@ namespace QLHieuThuoc.forms
             {
                 stb_ListSanPham.Children.Clear();
             }
+            tongtien = 0;
             foreach (var sp in listSpDonHang.sps) {
                 FNhapHang_SanPham sanpham = new FNhapHang_SanPham {
                     TenSanPham = sp.TenSanPham1,
@@ -104,12 +105,12 @@ namespace QLHieuThuoc.forms
                 stb_ListSanPham.Children.Add(sanpham);
 
                 // tính tiền
-                tongtien = decimal.Parse(sanpham.GiaSanPham) * int.Parse(sanpham.SoLuong);
+                tongtien += decimal.Parse(sanpham.GiaSanPham) * int.Parse(sanpham.SoLuong);
                 TongTien();
-
+                MessageBox.Show(tongtien.ToString() );
                 sanpham.Click += Sanpham_Click;
             }
-            if (stb_ListSanPham.Children.Count == 0)
+            if (listSpDonHang.sps.Count == 0)
             {
                 tongtien = 0;
                 TongTien();
@@ -133,7 +134,7 @@ namespace QLHieuThuoc.forms
                 ThemDonNhapHangMoi();
                 ThemChiTietDonNhap();
                 ThemSanPham();
-                MessageBox.Show("da them thanh cong");
+                ThongBao.Show("Thông Báo", NN.nn[122], "Cam");
                 this.Close();
             }
         }
@@ -146,9 +147,8 @@ namespace QLHieuThuoc.forms
                 string lenhCheck = "select * from SanPham where ID = '" + sp.MaSanPham1 + "'";
                 if (modify.SanPhams(lenhCheck).Count == 0)
                 {
-                    string lenhInsert = "Insert into SanPham values ('" + sp.MaSanPham1 + "', '" + sp.TenSanPham1 + "','" + sp.LoaiSanPham1 + "','" + sp.SoLuong1 + "','" + sp.GiaNhap1 + "','" + sp.GiaBan1 + "','" + sp.ThanhPhan1 + "','" + sp.CongDung1 + "','" + sp.ChuY1 + "','" + sp.HamLuong1 + "','" + sp.CachDung1 + "','" + sp.HanSuDung1 + "')";
+                    string lenhInsert = "Insert into SanPham values ('" + sp.MaSanPham1 + "', N'" + sp.TenSanPham1 + "', N'" + sp.LoaiSanPham1 + "','" + sp.SoLuong1 + "','" + sp.GiaNhap1 + "','" + sp.GiaBan1 + "', N'" + sp.ThanhPhan1 + "', N'" + sp.CongDung1 + "', N'" + sp.ChuY1 + "', N'" + sp.HamLuong1 + "', N'" + sp.CachDung1 + "','" + sp.HanSuDung1 + "')";
                     modify.ThucThi(lenhInsert);
-                    MessageBox.Show("insert");
                 }
                 else
                 {
@@ -161,7 +161,6 @@ namespace QLHieuThuoc.forms
                     //, GIANHAP = '"+gianhap+"', GIABAN = '"+giaban+"', HANSUDUNG = '"+HSD+"' 
                     string CauLenhUpdate = "Update SanPham set SOLUONG = '" + SL + "', GIANHAP = '" + sp.GiaNhap1 + "', GIABAN = '" + sp.GiaBan1 + "', HANSUDUNG = '" + sp.HanSuDung1 + "' where ID = '" + sp.MaSanPham1 + "'";
                     modify.ThucThi(CauLenhUpdate);
-                    MessageBox.Show("update");
                 }
             }
         }
@@ -183,7 +182,7 @@ namespace QLHieuThuoc.forms
         // thêm đơn nhập mới
         private void ThemDonNhapHangMoi()
         {
-            string lenhInsert = "Insert into DonNhapHang values ('" + tbl_IdDonNhap.Text + "', '" + tbl_IdNhaCungCap.Text + "', cast(getdate() as date), '" + tongtien + "', '" + cbb_PhuongThucThanhToan.SelectedItem.ToString() + "')";
+            string lenhInsert = "Insert into DonNhapHang values ('" + tbl_IdDonNhap.Text + "', '" + tbl_IdNhaCungCap.Text + "', cast(getdate() as date), '" + tongtien + "', N'" + cbb_PhuongThucThanhToan.SelectedItem.ToString() + "')";
             modify.ThucThi(lenhInsert);
         }
 
@@ -191,25 +190,24 @@ namespace QLHieuThuoc.forms
         // Thêm nhà cung cấp
         private void ThemNhaCungCap()
         {
-            string caulenh = "select * from NhaCungCap where TEN = '" + cbb_TenNhaCungCap.Text + "'";
+            string caulenh = "select * from NhaCungCap where TEN = N'" + cbb_TenNhaCungCap.Text + "'";
             if (modify.NhaCungCaps(caulenh).Count == 0)
             {
-                string lenhInsert = "insert into NhaCungCap values ('" + tbl_IdNhaCungCap.Text + "', '" + cbb_TenNhaCungCap.Text + "', '" + tb_SDT.Text + "', '" + tb_DiaChi.Text + "')";
+                string lenhInsert = "insert into NhaCungCap values ('" + tbl_IdNhaCungCap.Text + "', N'" + cbb_TenNhaCungCap.Text + "', '" + tb_SDT.Text + "', N'" + tb_DiaChi.Text + "')";
                 modify.ThucThi(lenhInsert);
-                MessageBox.Show("them nha cc thanh cong");
             }
         }
 
         private bool KiemTra()
         {
             // check nha cung cap
-            if (cbb_TenNhaCungCap.Text == "") { MessageBox.Show("chua nhap ten nha cung cap", "loi", MessageBoxButton.OK); return false; }
-            if (tb_DiaChi.Text == NN.nn[86]) { MessageBox.Show("chua nhap dia chi", "loi", MessageBoxButton.OK); return false; }
-            if (tb_SDT.Text == NN.nn[87]) { MessageBox.Show("chua nhap so dien thoai", "loi", MessageBoxButton.OK); return false; }
+            if (cbb_TenNhaCungCap.Text == "") { ThongBao.Show(NN.nn[77], NN.nn[123], "Do"); return false; }
+            if (tb_DiaChi.Text == NN.nn[86]) { ThongBao.Show(NN.nn[77], NN.nn[124], "Do"); return false; }
+            if (tb_SDT.Text == NN.nn[87]) { ThongBao.Show(NN.nn[77], NN.nn[125], "Do"); return false; }
 
             // check đơn nhập
-            if (tongtien == 0) { MessageBox.Show("chua them sp", "loi", MessageBoxButton.OK); return false; }
-            if (cbb_PhuongThucThanhToan.SelectedItem == "Phương Thức Thanh Toán") { MessageBox.Show("chua chon phuong thuc thanh toan", "loi", MessageBoxButton.OK); return false; }
+            if (tongtien == 0) { ThongBao.Show(NN.nn[77], NN.nn[126], "Do"); return false; }
+            if (cbb_PhuongThucThanhToan.SelectedItem == NN.nn[121]) { ThongBao.Show(NN.nn[77], NN.nn[127], "Do"); return false; }
             
 
             return true;
@@ -242,7 +240,7 @@ namespace QLHieuThuoc.forms
         private void cbb_TenNhaCungCap_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             string TenNCC = cbb_TenNhaCungCap.SelectedItem.ToString();
-            string CauLenh = "select * from NhaCungCap where TEN = '"+TenNCC+"'";
+            string CauLenh = "select * from NhaCungCap where TEN = N'"+TenNCC+"'";
             List<NCC> lNCC = modify.NhaCungCaps(CauLenh);
             if (lNCC.Count == 1)
             {
@@ -267,6 +265,9 @@ namespace QLHieuThuoc.forms
             tbl_bt_ThemSP.Text = NN.nn[89];
             tbl_bt_Huy.Text = NN.nn[64];
             tbl_bt_Them.Text = NN.nn[63];
+            tbl_title_TenSanPham.Text = NN.nn[42];
+            tbl_title_SoLuong.Text = NN.nn[43];
+            tbl_title_GiaNhap.Text = NN.nn[56];
         }
 
         // sự kiện click textblock

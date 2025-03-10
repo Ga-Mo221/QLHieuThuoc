@@ -1,5 +1,6 @@
 ﻿using QLHieuThuoc.forms;
 using QLHieuThuoc.Model.Account;
+using QLHieuThuoc.Model.BanHang;
 using QLHieuThuoc.Model.DonNhapHangvsNCC;
 using QLHieuThuoc.Model.SanPham;
 using System.Data.SqlClient;
@@ -148,6 +149,79 @@ namespace QLHieuThuoc.Model.sql
 
             return chiTietDonNhaps;
         }
+
+        // check đơn bán hàng
+        public List<Donban> DonBans(string LenhTruyVan)
+        {
+            List<Donban> donbans = new List<Donban>();
+
+            using (SqlConnection sqlConnection = KetNoi.GetSqlconnection())
+            {
+                sqlConnection.Open();
+
+                sqlConmand = new SqlCommand(LenhTruyVan, sqlConnection);
+                dataReader = sqlConmand.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    donbans.Add(new Donban(dataReader.GetString(0), dataReader.GetString(1), dataReader.GetDateTime(2), dataReader.GetDecimal(3), dataReader.GetString(4)));
+                }
+
+                sqlConnection.Close();
+            }
+
+            return donbans;
+        }
+
+        // check chi tiết đơn bán hàng
+        public List<Chitietdonban> ChiTietDonBans(string LenhTruyVan)
+        {
+            List<Chitietdonban> chitietdonbans = new List<Chitietdonban>();
+
+            using (SqlConnection sqlConnection = KetNoi.GetSqlconnection())
+            {
+                sqlConnection.Open();
+
+                sqlConmand = new SqlCommand(LenhTruyVan, sqlConnection);
+                dataReader = sqlConmand.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    chitietdonbans.Add(new Chitietdonban(dataReader.GetString(0), dataReader.GetString(1), dataReader.GetString(2), dataReader.GetInt32(3), dataReader.GetDecimal(4)));
+                }
+
+                sqlConnection.Close();
+            }
+
+            return chitietdonbans;
+        }
+
+
+        // check khách hàng
+        public List<Khachhang> KhachHangs(string LenhTruyVan)
+        {
+            List<Khachhang> khachhangs = new List<Khachhang>();
+
+            using (SqlConnection sqlConnection = KetNoi.GetSqlconnection())
+            {
+                sqlConnection.Open();
+
+                sqlConmand = new SqlCommand(LenhTruyVan, sqlConnection);
+                dataReader = sqlConmand.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    khachhangs.Add(new Khachhang(dataReader.GetString(0), dataReader.GetString(1), dataReader.GetString(2), dataReader.GetInt32(3), dataReader.GetDateTime(4)));
+                }
+
+                sqlConnection.Close();
+            }
+
+            return khachhangs;
+        }
+
+
+
+
+
+
 
         // Thực hiện lệnh
         public void ThucThi(string LenhTruyVan)

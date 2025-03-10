@@ -26,14 +26,14 @@ namespace QLHieuThuoc.forms
         // list loại sản phẩm
         private List<string> ListLoaiSanPham = new List<string>
         {
-            "Thuoc Khang Sinh",
-            "Thuoc Giam Dau",
-            "Vitamin",
-            "Thuc Pham Bo Sung",
-            "Thuoc Khang Virus",
-            "Thuoc Tim Mach",
-            "Thuoc Di Ung",
-            "Thuoc Ho Hap"
+            NN.nn[47],
+            NN.nn[48],
+            NN.nn[49],
+            NN.nn[50],
+            NN.nn[51],
+            NN.nn[52],
+            NN.nn[53],
+            NN.nn[54]
         };
 
 
@@ -79,9 +79,9 @@ namespace QLHieuThuoc.forms
         {
             if (KiemTraDuLieu(tb_SoLuong.Text, tb_GiaNhap.Text, tb_GiaBan.Text))
             {
-                string CauLenhUpdate = "Update SanPham set TEN = '"+tb_TenSanPham.Text+"', LOAI = '"+cbb_LoaiSanPham.SelectedItem+"', SOLUONG = '"+tb_SoLuong.Text+"', HAMLUONG = '"+tb_HamLuong.Text+"', HANSUDUNG = '"+date_HanSuDung.SelectedDate+"', GIANHAP = '"+tb_GiaNhap.Text+"', GIABAN = '"+tb_GiaBan.Text+"', THANHPHAN = '"+tb_ThanhPhan.Text+"', CONGDUNG = '"+tb_CongDung.Text+"', CACHDUNG = '"+tb_CachDung.Text+"', CHUY = '"+tb_ChuY.Text+"' where ID = '" + sp.MaSanPham1+"'";
+                string CauLenhUpdate = "Update SanPham set TEN = N'"+tb_TenSanPham.Text+"', LOAI = N'"+cbb_LoaiSanPham.SelectedItem+"', SOLUONG = '"+tb_SoLuong.Text+"', HAMLUONG = N'"+tb_HamLuong.Text+"', HANSUDUNG = '"+date_HanSuDung.SelectedDate+"', GIANHAP = '"+tb_GiaNhap.Text+"', GIABAN = '"+tb_GiaBan.Text+"', THANHPHAN = N'"+tb_ThanhPhan.Text+"', CONGDUNG = N'"+tb_CongDung.Text+"', CACHDUNG = N'"+tb_CachDung.Text+"', CHUY = N'"+tb_ChuY.Text+"' where ID = '" + sp.MaSanPham1+"'";
                 modify.ThucThi(CauLenhUpdate);
-                MessageBox.Show(NN.nn[66], NN.nn[2], MessageBoxButton.OK);
+                ThongBao.Show(NN.nn[2], NN.nn[66], "Cam");
                 this.Close();
             }
         }
@@ -96,21 +96,21 @@ namespace QLHieuThuoc.forms
             // Kiểm tra Số Lượng có phải số nguyên không
             if (!int.TryParse(soluong, out sl))
             {
-                MessageBox.Show("Số lượng phải là số nguyên!", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
+                ThongBao.Show(NN.nn[77], NN.nn[138], "Do");
                 return false;
             }
 
             // Kiểm tra Giá Nhập có phải kiểu decimal không
             if (!decimal.TryParse(gianhap, out gn))
             {
-                MessageBox.Show("Giá nhập phải là số thực!", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
+                ThongBao.Show(NN.nn[77], NN.nn[138], "Do");
                 return false;
             }
 
             // Kiểm tra Giá Bán có phải kiểu decimal không
             if (!decimal.TryParse(giaban, out gb))
             {
-                MessageBox.Show("Giá bán phải là số thực!", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
+                ThongBao.Show(NN.nn[77], NN.nn[138], "Do");
                 return false;
             }
 

@@ -86,9 +86,9 @@ namespace QLHieuThuoc.forms
 
             if (modify.NhaCungCaps(caulenh).Count == 1)
             {
-                string lenhupdate = "update NhaCungCap set TEN = '"+tb_TenNhaCungCap.Text+"', SDT = '"+tb_SDT.Text+"', DIACHI = '"+tb_DiaChi.Text+"' where ID = '"+tbl_MaNhaCungCap.Text+"'";
+                string lenhupdate = "update NhaCungCap set TEN = '"+tb_TenNhaCungCap.Text+"', SDT = '"+tb_SDT.Text+"', DIACHI = N'"+tb_DiaChi.Text+"' where ID = '"+tbl_MaNhaCungCap.Text+"'";
                 modify.ThucThi(lenhupdate);
-                MessageBox.Show(NN.nn[92], NN.nn[2], MessageBoxButton.OK);
+                ThongBao.Show(NN.nn[2], NN.nn[92], "Cam");
                 addNhacungcap();
             }
         }

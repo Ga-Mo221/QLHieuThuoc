@@ -57,7 +57,7 @@ namespace QLHieuThuoc.forms
         // button Thuốc hô hấp
         private void Bt_ThuocHoHap_Click(object? sender, EventArgs e)
         {
-            string CauLenhTruyVan = "select * from SanPham where LOAI = 'Thuoc Ho Hap'";
+            string CauLenhTruyVan = "select * from SanPham where LOAI = N'" + NN.nn[54] + "'";
             List<Sanpham> sp = modify.SanPhams(CauLenhTruyVan);
             // áp dụng hiệu ứng mờ cho cửa sổ hiện tại
             this.Effect = new System.Windows.Media.Effects.BlurEffect()
@@ -74,7 +74,7 @@ namespace QLHieuThuoc.forms
         // button Thuốc dị ứng
         private void Bt_ThuocDiUng_Click(object? sender, EventArgs e)
         {
-            string CauLenhTruyVan = "select * from SanPham where LOAI = 'Thuoc Di Ung'";
+            string CauLenhTruyVan = "select * from SanPham where LOAI = N'" + NN.nn[53] + "'";
             List<Sanpham> sp = modify.SanPhams(CauLenhTruyVan);
             // áp dụng hiệu ứng mờ cho cửa sổ hiện tại
             this.Effect = new System.Windows.Media.Effects.BlurEffect()
@@ -91,7 +91,7 @@ namespace QLHieuThuoc.forms
         // button Thực phẩm chức năng
         private void Bt_ThucPhamChucNang_Click(object? sender, EventArgs e)
         {
-            string CauLenhTruyVan = "select * from SanPham where LOAI = 'Thuc Pham Bo Sung'";
+            string CauLenhTruyVan = "select * from SanPham where LOAI = N'" + NN.nn[50] + "'";
             List<Sanpham> sp = modify.SanPhams(CauLenhTruyVan);
 
             // áp dụng hiệu ứng mờ cho cửa sổ hiện tại
@@ -109,7 +109,7 @@ namespace QLHieuThuoc.forms
         // button Thuốc giảm đau
         private void Bt_ThuocGiamDau_Click(object? sender, EventArgs e)
         {
-            string CauLenhTruyVan = "select * from SanPham where LOAI = 'Thuoc Giam Dau'";
+            string CauLenhTruyVan = "select * from SanPham where LOAI = N'" + NN.nn[48] + "'";
             List<Sanpham> sp = modify.SanPhams(CauLenhTruyVan);
             // áp dụng hiệu ứng mờ cho cửa sổ hiện tại
             this.Effect = new System.Windows.Media.Effects.BlurEffect()
@@ -126,7 +126,7 @@ namespace QLHieuThuoc.forms
         // button Vitamin
         private void Bt_Vitamin_Click(object? sender, EventArgs e)
         {
-            string CauLenhTruyVan = "select * from SanPham where LOAI = 'Vitamin'";
+            string CauLenhTruyVan = "select * from SanPham where LOAI = N'" + NN.nn[49] + "'";
             List<Sanpham> sp = modify.SanPhams(CauLenhTruyVan);
             // áp dụng hiệu ứng mờ cho cửa sổ hiện tại
             this.Effect = new System.Windows.Media.Effects.BlurEffect()
@@ -143,7 +143,7 @@ namespace QLHieuThuoc.forms
         // button ThuocTimMach
         private void Bt_ThuocTimMach_Click(object? sender, EventArgs e)
         {
-            string CauLenhTruyVan = "select * from SanPham where LOAI = 'Thuoc Tim Mach'";
+            string CauLenhTruyVan = "select * from SanPham where LOAI = N'" + NN.nn[52] + "'";
             List<Sanpham> sp = modify.SanPhams(CauLenhTruyVan);
             // áp dụng hiệu ứng mờ cho cửa sổ hiện tại
             this.Effect = new System.Windows.Media.Effects.BlurEffect()
@@ -160,7 +160,7 @@ namespace QLHieuThuoc.forms
         // button Thuốc kháng virus
         private void Bt_ThuocKhangVirus_Click(object? sender, EventArgs e)
         {
-            string CauLenhTruyVan = "select * from SanPham where LOAI = 'Thuoc Khang Virus'";
+            string CauLenhTruyVan = "select * from SanPham where LOAI = N'" + NN.nn[51] +"'";
             List<Sanpham> sp = modify.SanPhams(CauLenhTruyVan);
             // áp dụng hiệu ứng mờ cho cửa sổ hiện tại
             this.Effect = new System.Windows.Media.Effects.BlurEffect()
@@ -177,8 +177,9 @@ namespace QLHieuThuoc.forms
         // button thuốc kháng sinh
         private void Bt_ThuocKhangSinh_Click(object? sender, EventArgs e)
         {
-            string CauLenhTruyVan = "select * from SanPham where LOAI = 'Thuoc Khang Sinh'";
+            string CauLenhTruyVan = "select * from SanPham where LOAI = N'" + NN.nn[47] +"'";
             List<Sanpham> sp = modify.SanPhams(CauLenhTruyVan);
+            
             // áp dụng hiệu ứng mờ cho cửa sổ hiện tại
             this.Effect = new System.Windows.Media.Effects.BlurEffect()
             {
@@ -255,17 +256,17 @@ namespace QLHieuThuoc.forms
                 fSanPham_SanPham.Loai = s.LoaiSanPham1;
                 if (s.SoLuong1 == "0")
                 {
-                    fSanPham_SanPham.TinhTrang = "Hết hàng";
+                    fSanPham_SanPham.TinhTrang = NN.nn[129];
                     fSanPham_SanPham.setcolor("Red");
                 }
                 else if (int.Parse(fSanPham_SanPham.SoLuong) < 10)
                 {
-                    fSanPham_SanPham.TinhTrang = "Sắp hết hàng";
+                    fSanPham_SanPham.TinhTrang = NN.nn[130];
                     fSanPham_SanPham.setcolor("Orange");
                 }
                 else
                 {
-                    fSanPham_SanPham.TinhTrang = "Còn hàng";
+                    fSanPham_SanPham.TinhTrang = NN.nn[131];
                     fSanPham_SanPham.setcolor("Green");
                 }
                 fSanPham_SanPham.Height = 50;
@@ -332,28 +333,28 @@ namespace QLHieuThuoc.forms
 
             
             // Thống Kê Các Loại
-            sanphams = modify.SanPhams("select * from SanPham where LOAI = 'Thuoc Khang Sinh'");
+            sanphams = modify.SanPhams("select * from SanPham where LOAI = N'" + NN.nn[47] +"'");
             bt_ThuocKhangSinh.SOLUONG = sanphams.Count.ToString();
             sanphams.Clear();
-            sanphams = modify.SanPhams("select * from SanPham where LOAI = 'Thuoc Giam Dau'");
+            sanphams = modify.SanPhams("select * from SanPham where LOAI = N'" + NN.nn[48] +"'");
             bt_ThuocGiamDau.SOLUONG = sanphams.Count.ToString();
             sanphams.Clear();
-            sanphams = modify.SanPhams("select * from SanPham where LOAI = 'Thuc Pham Bo Sung'");
+            sanphams = modify.SanPhams("select * from SanPham where LOAI = N'" + NN.nn[50] + "'");
             bt_ThucPhamChucNang.SOLUONG = sanphams.Count.ToString();
             sanphams.Clear();
-            sanphams = modify.SanPhams("select * from SanPham where LOAI = 'Thuoc Khang Virus'");
+            sanphams = modify.SanPhams("select * from SanPham where LOAI = N'" + NN.nn[51] +"'");
             bt_ThuocKhangVirus.SOLUONG = sanphams.Count.ToString();
             sanphams.Clear();
-            sanphams = modify.SanPhams("select * from SanPham where LOAI = 'Vitamin'");
+            sanphams = modify.SanPhams("select * from SanPham where LOAI = N'" + NN.nn[49] + "'");
             bt_Vitamin.SOLUONG = sanphams.Count.ToString();
             sanphams.Clear();
-            sanphams = modify.SanPhams("select * from SanPham where LOAI = 'Thuoc Tim Mach'");
+            sanphams = modify.SanPhams("select * from SanPham where LOAI = N'" + NN.nn[52] + "'");
             bt_ThuocTimMach.SOLUONG = sanphams.Count.ToString();
             sanphams.Clear();
-            sanphams = modify.SanPhams("select * from SanPham where LOAI = 'Thuoc Di Ung'");
+            sanphams = modify.SanPhams("select * from SanPham where LOAI = N'" + NN.nn[53] + "'");
             bt_ThuocDiUng.SOLUONG = sanphams.Count.ToString();
             sanphams.Clear();
-            sanphams = modify.SanPhams("select * from SanPham where LOAI = 'Thuoc Ho Hap'");
+            sanphams = modify.SanPhams("select * from SanPham where LOAI = N'" + NN.nn[54] + "'");
             bt_ThuocHoHap.SOLUONG = sanphams.Count.ToString();
             sanphams.Clear();
         }

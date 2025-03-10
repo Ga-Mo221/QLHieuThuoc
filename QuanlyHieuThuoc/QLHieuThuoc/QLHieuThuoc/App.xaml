@@ -7,7 +7,7 @@
     <Application.Resources>
         <Style x:Key="CustomFont">
             <Setter Property="TextElement.FontFamily"
-                    Value="D:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\Fonts\Kavoon-Regular.ttf#Kavoon"/>
+                    Value="pack://application:,,,/Fonts/Kavoon-Regular.ttf#Kavoon"/>
         </Style>
     </Application.Resources>
 </Application>

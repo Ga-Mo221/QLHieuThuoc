@@ -816,17 +816,17 @@
                                     </Grid.ColumnDefinitions>
                                     
                                     <!-- tiêu đề tên sản phẩm -->
-                                    <TextBlock Grid.Column="0" HorizontalAlignment="Center">
+                                    <TextBlock x:Name="tbl_title_TenSanPham" Grid.Column="0" HorizontalAlignment="Center">
                                         Ten san pham
                                     </TextBlock>
                                     
                                     <!-- tiêu đề số lượng -->
-                                    <TextBlock Grid.Column="1" HorizontalAlignment="Center">
+                                    <TextBlock x:Name="tbl_title_SoLuong" Grid.Column="1" HorizontalAlignment="Center">
                                         so luong
                                     </TextBlock>
                                     
                                     <!-- tiêu đề giá -->
-                                    <TextBlock Grid.Column="2" HorizontalAlignment="Left">
+                                    <TextBlock x:Name="tbl_title_GiaNhap" Grid.Column="2" HorizontalAlignment="Left">
                                         gia
                                     </TextBlock>
                                 </Grid>

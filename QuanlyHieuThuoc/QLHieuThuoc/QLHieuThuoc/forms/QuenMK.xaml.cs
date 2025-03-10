@@ -53,9 +53,9 @@ namespace QLHieuThuoc.forms
             string TK = tb_TaiKhoan.Text;
             string MKM = pw_MatKhau.Password;
 
-            if (IDNV.Trim() == "" || IDNV.Trim() == NN.nn[5]) { MessageBox.Show(NN.nn[6], NN.nn[2], MessageBoxButton.OK, MessageBoxImage.Warning); return; }
-            if (TK.Trim() == "" || TK.Trim() == NN.nn[4]) { MessageBox.Show(NN.nn[7], NN.nn[2], MessageBoxButton.OK, MessageBoxImage.Warning); return; }
-            if (MKM.Trim() == "") { MessageBox.Show(NN.nn[8], NN.nn[2], MessageBoxButton.OK, MessageBoxImage.Warning); return; }
+            if (IDNV.Trim() == "" || IDNV.Trim() == NN.nn[5]) { ThongBao.Show(NN.nn[77], NN.nn[6], "Do"); return; }
+            if (TK.Trim() == "" || TK.Trim() == NN.nn[4]) { ThongBao.Show(NN.nn[77], NN.nn[7], "Do"); return; }
+            if (MKM.Trim() == "") { ThongBao.Show(NN.nn[77], NN.nn[8], "Do"); return; }
 
 
             string CauTruyVanKiemTraIDNV = "Select * from NhanVien where ID = '" + IDNV + "'";
@@ -67,16 +67,16 @@ namespace QLHieuThuoc.forms
                     string CauTruyVanUpdateMK = "Update TaiKhoan set MK = '"+MKM+"' where TK = '"+TK+"'";
                     modify.ThucThi(CauTruyVanUpdateMK);
 
-                    MessageBox.Show(NN.nn[26], NN.nn[2], MessageBoxButton.OK);
+                    ThongBao.Show(NN.nn[2], NN.nn[26], "Do");
                 }
                 else
                 {
-                    MessageBox.Show(NN.nn[25], NN.nn[2], MessageBoxButton.OK, MessageBoxImage.Warning);
+                    ThongBao.Show(NN.nn[2], NN.nn[25], "Do");
                 }
             }
             else
             {
-                MessageBox.Show(NN.nn[12], NN.nn[2], MessageBoxButton.OK, MessageBoxImage.Warning);
+                ThongBao.Show(NN.nn[2], NN.nn[12], "Do");
             }
         }
 

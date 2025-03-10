@@ -2,6 +2,7 @@
 FD:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\App.xaml;;
 FD:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\forms\BanHang.xaml;;
 FD:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\forms\CaiDat.xaml;;
+FD:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\forms\ChiTietDonBan.xaml;;
 FD:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\forms\ChiTietDonNhap.xaml;;
 FD:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\forms\DangNhap.xaml;;
 FD:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\forms\DonNhapHangMoi.xaml;;
@@ -13,15 +14,19 @@ FD:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\forms\NhanVien.xaml;;
 FD:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\forms\NhapHang.xaml;;
 FD:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\forms\QuenMK.xaml;;
 FD:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\forms\SanPham.xaml;;
+FD:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\forms\ThemDonBan.xaml;;
 FD:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\forms\ThemSanPham.xaml;;
+FD:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\forms\ThemSanPhamDonBan.xaml;;
+FD:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\forms\ThongBao.xaml;;
 FD:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\forms\ThongKe.xaml;;
 FD:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\forms\ThongTinSanPham.xaml;;
 FD:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\forms\TongQuan.xaml;;
+FD:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\forms\XacNhanMua.xaml;;
 FD:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\UserControls\FNhapHang_DonNhapHang.xaml;;
 FD:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\UserControls\FNhapHang_SanPham.xaml;;
+FD:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\UserControls\FNhapHang_SanPhamChiTiet.xaml;;
 FD:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\UserControls\FNhapHang_TenNhaCungCap.xaml;;
 FD:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\UserControls\FSanPham_Loai.xaml;;
 FD:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\UserControls\FSanPham_SanPham.xaml;;
 FD:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\UserControls\FSanPham_ThongKe.xaml;;
-FD:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\UserControls\FNhapHang_SanPhamChiTiet.xaml;;
 

@@ -1,7 +1,24 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\QLHieuThuoc\\QuanlyHieuThuoc\\QLHieuThuoc\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{AF183C98-B091-4920-B14C-79D71193BC4C}|QLHieuThuoc\\QLHieuThuoc.csproj|d:\\qlhieuthuoc\\quanlyhieuthuoc\\qlhieuthuoc\\qlhieuthuoc\\forms\\donnhaphangmoi.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "RelativeMoniker": "D:0:0:{AF183C98-B091-4920-B14C-79D71193BC4C}|QLHieuThuoc\\QLHieuThuoc.csproj|solutionrelative:qlhieuthuoc\\forms\\donnhaphangmoi.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF183C98-B091-4920-B14C-79D71193BC4C}|QLHieuThuoc\\QLHieuThuoc.csproj|d:\\qlhieuthuoc\\quanlyhieuthuoc\\qlhieuthuoc\\qlhieuthuoc\\forms\\themsanpham.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "RelativeMoniker": "D:0:0:{AF183C98-B091-4920-B14C-79D71193BC4C}|QLHieuThuoc\\QLHieuThuoc.csproj|solutionrelative:qlhieuthuoc\\forms\\themsanpham.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF183C98-B091-4920-B14C-79D71193BC4C}|QLHieuThuoc\\QLHieuThuoc.csproj|d:\\qlhieuthuoc\\quanlyhieuthuoc\\qlhieuthuoc\\qlhieuthuoc\\forms\\themdonban.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "RelativeMoniker": "D:0:0:{AF183C98-B091-4920-B14C-79D71193BC4C}|QLHieuThuoc\\QLHieuThuoc.csproj|solutionrelative:qlhieuthuoc\\forms\\themdonban.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF183C98-B091-4920-B14C-79D71193BC4C}|QLHieuThuoc\\QLHieuThuoc.csproj|d:\\qlhieuthuoc\\quanlyhieuthuoc\\qlhieuthuoc\\qlhieuthuoc\\forms\\sanpham.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "RelativeMoniker": "D:0:0:{AF183C98-B091-4920-B14C-79D71193BC4C}|QLHieuThuoc\\QLHieuThuoc.csproj|solutionrelative:qlhieuthuoc\\forms\\sanpham.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +26,63 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ThemSanPham.xaml.cs",
+              "DocumentMoniker": "D:\\QLHieuThuoc\\QuanlyHieuThuoc\\QLHieuThuoc\\QLHieuThuoc\\forms\\ThemSanPham.xaml.cs",
+              "RelativeDocumentMoniker": "QLHieuThuoc\\forms\\ThemSanPham.xaml.cs",
+              "ToolTip": "D:\\QLHieuThuoc\\QuanlyHieuThuoc\\QLHieuThuoc\\QLHieuThuoc\\forms\\ThemSanPham.xaml.cs",
+              "RelativeToolTip": "QLHieuThuoc\\forms\\ThemSanPham.xaml.cs",
+              "ViewState": "AgIAAMkAAAAAAAAAAAAxwIABAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T08:16:04.26Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DonNhapHangMoi.xaml.cs",
+              "DocumentMoniker": "D:\\QLHieuThuoc\\QuanlyHieuThuoc\\QLHieuThuoc\\QLHieuThuoc\\forms\\DonNhapHangMoi.xaml.cs",
+              "RelativeDocumentMoniker": "QLHieuThuoc\\forms\\DonNhapHangMoi.xaml.cs",
+              "ToolTip": "D:\\QLHieuThuoc\\QuanlyHieuThuoc\\QLHieuThuoc\\QLHieuThuoc\\forms\\DonNhapHangMoi.xaml.cs",
+              "RelativeToolTip": "QLHieuThuoc\\forms\\DonNhapHangMoi.xaml.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAqwGoAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T08:05:21.212Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ThemDonBan.xaml.cs",
+              "DocumentMoniker": "D:\\QLHieuThuoc\\QuanlyHieuThuoc\\QLHieuThuoc\\QLHieuThuoc\\forms\\ThemDonBan.xaml.cs",
+              "RelativeDocumentMoniker": "QLHieuThuoc\\forms\\ThemDonBan.xaml.cs",
+              "ToolTip": "D:\\QLHieuThuoc\\QuanlyHieuThuoc\\QLHieuThuoc\\QLHieuThuoc\\forms\\ThemDonBan.xaml.cs",
+              "RelativeToolTip": "QLHieuThuoc\\forms\\ThemDonBan.xaml.cs",
+              "ViewState": "AgIAAKAAAAAAAAAAAAAYwN4AAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T07:46:19.64Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SanPham.xaml.cs",
+              "DocumentMoniker": "D:\\QLHieuThuoc\\QuanlyHieuThuoc\\QLHieuThuoc\\QLHieuThuoc\\forms\\SanPham.xaml.cs",
+              "RelativeDocumentMoniker": "QLHieuThuoc\\forms\\SanPham.xaml.cs",
+              "ToolTip": "D:\\QLHieuThuoc\\QuanlyHieuThuoc\\QLHieuThuoc\\QLHieuThuoc\\forms\\SanPham.xaml.cs",
+              "RelativeToolTip": "QLHieuThuoc\\forms\\SanPham.xaml.cs",
+              "ViewState": "AgIAAMkAAAAAAAAAAAAqwGQBAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T07:30:32.661Z",
+              "EditorCaption": ""
             }
           ]
         }

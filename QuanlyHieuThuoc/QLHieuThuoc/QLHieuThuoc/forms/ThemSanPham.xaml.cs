@@ -27,14 +27,14 @@ namespace QLHieuThuoc.forms
         // list loại sản phẩm
         private List<string> ListLoaiSanPham = new List<string>
         {
-            "Thuoc Khang Sinh",
-            "Thuoc Giam Dau",
-            "Vitamin",
-            "Thuc Pham Bo Sung",
-            "Thuoc Khang Virus",
-            "Thuoc Tim Mach",
-            "Thuoc Di Ung",
-            "Thuoc Ho Hap"
+            NN.nn[47],
+            NN.nn[48],
+            NN.nn[49],
+            NN.nn[50],
+            NN.nn[51],
+            NN.nn[52],
+            NN.nn[53],
+            NN.nn[54]
         };
         // list sản phẩm
         private List<string> listSanPham;
@@ -286,21 +286,21 @@ namespace QLHieuThuoc.forms
             // Kiểm tra Số Lượng có phải số nguyên không
             if (!int.TryParse(soluong, out sl))
             {
-                MessageBox.Show(NN.nn[74], NN.nn[77], MessageBoxButton.OK, MessageBoxImage.Error);
+                ThongBao.Show(NN.nn[77], NN.nn[74], "Do");
                 return false;
             }
 
             // Kiểm tra Giá Nhập có phải kiểu decimal không
             if (!decimal.TryParse(gianhap, out gn))
             {
-                MessageBox.Show(NN.nn[75], NN.nn[77], MessageBoxButton.OK, MessageBoxImage.Error);
+                ThongBao.Show(NN.nn[77], NN.nn[75], "Do"); ;
                 return false;
             }
 
             // Kiểm tra Giá Bán có phải kiểu decimal không
             if (!decimal.TryParse(giaban, out gb))
             {
-                MessageBox.Show(NN.nn[76], NN.nn[77], MessageBoxButton.OK, MessageBoxImage.Error);
+                ThongBao.Show(NN.nn[77], NN.nn[76], "Do");
                 return false;
             }
 
@@ -311,17 +311,17 @@ namespace QLHieuThuoc.forms
         // Thêm sản phẩm
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            if (cbb_TenSanPham.Text == "") { MessageBox.Show(NN.nn[65], NN.nn[2], MessageBoxButton.OK, MessageBoxImage.Warning) ; return; }
-            if (cbb_LoaiSanPham.Text == "") { MessageBox.Show(NN.nn[65], NN.nn[2], MessageBoxButton.OK, MessageBoxImage.Warning); return; }
-            if (tb_SoLuong.Text == "" || tb_SoLuong.Text == NN.nn[55]) { MessageBox.Show(NN.nn[65], NN.nn[2], MessageBoxButton.OK, MessageBoxImage.Warning); return; }
-            if (tb_GiaNhap.Text == "" || tb_GiaNhap.Text == NN.nn[56]) { MessageBox.Show(NN.nn[65], NN.nn[2], MessageBoxButton.OK, MessageBoxImage.Warning); return; }
-            if (tb_GiaBan.Text == "" || tb_GiaBan.Text == NN.nn[57]) { MessageBox.Show(NN.nn[65], NN.nn[2], MessageBoxButton.OK, MessageBoxImage.Warning); return; }
-            if (tb_ThanhPhan.Text == "" || tb_ThanhPhan.Text == NN.nn[58]) { MessageBox.Show(NN.nn[65], NN.nn[2], MessageBoxButton.OK, MessageBoxImage.Warning); return; }
-            if (tb_CongDung.Text == "" || tb_CongDung.Text == NN.nn[59]) { MessageBox.Show(NN.nn[65], NN.nn[2], MessageBoxButton.OK, MessageBoxImage.Warning); return; }
-            if (tb_ChuY.Text == "" || tb_ChuY.Text == NN.nn[60]) { MessageBox.Show(NN.nn[65], NN.nn[2], MessageBoxButton.OK, MessageBoxImage.Warning); return; }
-            if (tb_HamLuong.Text == "" || tb_HamLuong.Text == NN.nn[61]) { MessageBox.Show(NN.nn[65], NN.nn[2], MessageBoxButton.OK, MessageBoxImage.Warning); return; }
-            if (tb_CachDung.Text == "" || tb_CachDung.Text == NN.nn[62]) { MessageBox.Show(NN.nn[65], NN.nn[2], MessageBoxButton.OK, MessageBoxImage.Warning); return; }
-            if (Date_HanSuDung.SelectedDate == null) { MessageBox.Show(NN.nn[65], NN.nn[2], MessageBoxButton.OK, MessageBoxImage.Warning); return; }
+            if (cbb_TenSanPham.Text == "") { ThongBao.Show(NN.nn[77], NN.nn[65], "Do"); return; }
+            if (cbb_LoaiSanPham.Text == "") { ThongBao.Show(NN.nn[77], NN.nn[65], "Do"); return; }
+            if (tb_SoLuong.Text == "" || tb_SoLuong.Text == NN.nn[55]) { ThongBao.Show(NN.nn[77], NN.nn[65], "Do"); return; }
+            if (tb_GiaNhap.Text == "" || tb_GiaNhap.Text == NN.nn[56]) { ThongBao.Show(NN.nn[77], NN.nn[65], "Do"); return; }
+            if (tb_GiaBan.Text == "" || tb_GiaBan.Text == NN.nn[57]) { ThongBao.Show(NN.nn[77], NN.nn[65], "Do"); return; }
+            if (tb_ThanhPhan.Text == "" || tb_ThanhPhan.Text == NN.nn[58]) { ThongBao.Show(NN.nn[77], NN.nn[65], "Do"); return; }
+            if (tb_CongDung.Text == "" || tb_CongDung.Text == NN.nn[59]) { ThongBao.Show(NN.nn[77], NN.nn[65], "Do"); return; }
+            if (tb_ChuY.Text == "" || tb_ChuY.Text == NN.nn[60]) { ThongBao.Show(NN.nn[77], NN.nn[65], "Do"); return; }
+            if (tb_HamLuong.Text == "" || tb_HamLuong.Text == NN.nn[61]) { ThongBao.Show(NN.nn[77], NN.nn[65], "Do"); return; }
+            if (tb_CachDung.Text == "" || tb_CachDung.Text == NN.nn[62]) { ThongBao.Show(NN.nn[77], NN.nn[65], "Do"); return; }
+            if (Date_HanSuDung.SelectedDate == null) { ThongBao.Show(NN.nn[77], NN.nn[65], "Do"); return; }
 
 
             string id = tbl_ID.Text;
@@ -348,9 +348,9 @@ namespace QLHieuThuoc.forms
 
                 if (modify.SanPhams(Caulenh).Count == 0)
                 {
-                    string CauLenhTruyVan = "Insert into SanPham values ('"+id+"', '"+tensp+"','"+loaisp+ "','"+soluong+"','"+gianhap+"','"+giaban+ "','"+thanhphan+"','"+congdung+ "','"+chuy+"','"+hamluong+"','"+cachdung+ "','"+HSD+"')";
+                    string CauLenhTruyVan = "Insert into SanPham values ('"+id+"', N'"+tensp+"',N'"+loaisp+ "','"+soluong+"','"+gianhap+"','"+giaban+ "',N'"+thanhphan+"',N'"+congdung+ "',N'"+chuy+"',N'"+hamluong+"',N'"+cachdung+ "','"+HSD+"')";
                     modify.SanPhams(CauLenhTruyVan);
-                    MessageBox.Show(NN.nn[67], NN.nn[2], MessageBoxButton.OK, MessageBoxImage.Information);
+                    ThongBao.Show(NN.nn[2], NN.nn[67], "Cam");
 
                     this.Close();
                 }
@@ -365,7 +365,7 @@ namespace QLHieuThuoc.forms
                     //, GIANHAP = '"+gianhap+"', GIABAN = '"+giaban+"', HANSUDUNG = '"+HSD+"' 
                     string CauLenhUpdate = "Update SanPham set SOLUONG = '"+SL+ "', GIANHAP = '"+gianhap+"', GIABAN = '"+giaban+"', HANSUDUNG = '"+HSD+"' where ID = '"+id+"'";
                     modify.ThucThi(CauLenhUpdate);
-                    MessageBox.Show(NN.nn[66], NN.nn[2], MessageBoxButton.OK, MessageBoxImage.Information);
+                    ThongBao.Show(NN.nn[2], NN.nn[66], "Cam");
                     this.Close();
                 }
             }
@@ -373,7 +373,7 @@ namespace QLHieuThuoc.forms
             {
                 Sanpham sp = new Sanpham(id, tensp, loaisp, soluong, gianhap, giaban, thanhphan, hamluong, congdung, cachdung, chuy, HSD);
                 listSpDonHang.sps.Add(sp);
-                MessageBox.Show(NN.nn[73], NN.nn[2],MessageBoxButton.OK);
+                ThongBao.Show(NN.nn[2], NN.nn[73], "Cam");
                 this.Close();
             }
         }
@@ -382,7 +382,7 @@ namespace QLHieuThuoc.forms
         private void cbb_TenSanPham_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             string tensp = cbb_TenSanPham.SelectedItem.ToString();
-            string CauLenhTruyVan = "Select * from SanPham where TEN = '"+tensp+"'";
+            string CauLenhTruyVan = "Select * from SanPham where TEN = N'"+tensp+"'";
             List<Sanpham> Sp = modify.SanPhams(CauLenhTruyVan);
             if (Sp.Count == 1)
             {

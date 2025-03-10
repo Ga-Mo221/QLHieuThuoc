@@ -26,11 +26,13 @@ namespace QLHieuThuoc.forms
     {
         Modify modify = new Modify();
         private string Id;
-        public ChiTietDonNhap(string IdDonNhap)
+        private string TenBang;
+        public ChiTietDonNhap(string IdDonNhap, string tenabang)
         {
             InitializeComponent();
             Loaded += ChiTietDonNhap_Loaded;
             Id = IdDonNhap;
+            TenBang = tenabang;
         }
 
         private void ChiTietDonNhap_Loaded(object sender, RoutedEventArgs e)
@@ -162,5 +164,27 @@ namespace QLHieuThuoc.forms
         public string TenSanPham { get => tenSanPham; set => tenSanPham = value; }
         public string Soluong { get => soluong; set => soluong = value; }
         public string Gianhap { get => gianhap; set => gianhap = value; }
+    }
+
+    public class ChiTietSanPhamBanHang
+    {
+        private string tenSanPham;
+        private string soluong;
+        private string giaban;
+
+        public ChiTietSanPhamBanHang()
+        {
+        }
+
+        public ChiTietSanPhamBanHang(string tenSanPham, string soluong, string giaban)
+        {
+            this.tenSanPham = tenSanPham;
+            this.soluong = soluong;
+            this.giaban = giaban;
+        }
+
+        public string TenSanPham { get => tenSanPham; set => tenSanPham = value; }
+        public string Soluong { get => soluong; set => soluong = value; }
+        public string Giaban { get => giaban; set => giaban = value; }
     }
 }

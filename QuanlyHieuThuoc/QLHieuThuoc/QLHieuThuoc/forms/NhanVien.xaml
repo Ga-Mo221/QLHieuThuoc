@@ -54,7 +54,7 @@
     </UserControl.Resources>
     <Grid Background="#F7F7F7">
         <Grid.RowDefinitions>
-            <RowDefinition Height="80"></RowDefinition>
+            <RowDefinition Height="65"></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
 
@@ -64,54 +64,55 @@
             <Grid>
                 <DockPanel Margin="11">
                     <!-- tiêu đề -->
-                    <TextBlock Text="  Nhân Viên" 
-                           FontSize="20"
-                           FontFamily="Cascadia Mono"
-                           Foreground="#565656"
-                           DockPanel.Dock="Left" 
-                           VerticalAlignment="Center">
+                    <TextBlock x:Name="tbl_TenBang" 
+                       Text="Nhan Vien" 
+                       FontSize="22"
+                       FontFamily="Cascadia Mono"
+                       Foreground="#565656"
+                       DockPanel.Dock="Left" 
+                       VerticalAlignment="Center">
                     </TextBlock>
 
 
                     <!-- tên tài khoản -->
-                    <Border BorderBrush="#C9C9C9" BorderThickness="1" CornerRadius="40" DockPanel.Dock="Right" Width="230">
+                    <Border BorderBrush="#C9C9C9" BorderThickness="1" CornerRadius="20" DockPanel.Dock="Right" Width="230">
                         <StackPanel>
                             <!-- tên nhân viên -->
-                            <TextBlock Text="Tên Tài Khoản" 
-                                   FontSize="18"
-                                   FontFamily="Cascadia Mono"
-                                   Foreground="#565656"
-                                   HorizontalAlignment="Center" 
-                                   VerticalAlignment="Top"
-                                   Margin="0 8 0 0">
+                            <TextBlock x:Name="tbl_TenNhanVienThanhTiemKiem" Text="Tên Tài Khoản" 
+                       FontSize="15"
+                       FontFamily="Cascadia Mono"
+                       Foreground="#565656"
+                       HorizontalAlignment="Center" 
+                       VerticalAlignment="Top"
+                       Margin="0 8 0 0">
                             </TextBlock>
                             <!-- id nhân viên -->
-                            <TextBlock Text="#idnv" FontSize="18" FontFamily="Cascadia Mono" Foreground="#C9C9C9"  HorizontalAlignment="Center"></TextBlock>
+                            <TextBlock x:Name="tbl_IdNhanVienThanhTimKiem" Text="#idnv" FontSize="14" FontFamily="Cascadia Mono" Foreground="#C9C9C9"  HorizontalAlignment="Center"></TextBlock>
                         </StackPanel>
                     </Border>
 
                     <!-- thông báo -->
                     <Grid DockPanel.Dock="Right" Width="85">
-                        <Ellipse Height="58" Width="58" Fill="#C9C9C9" HorizontalAlignment="Center"/>
-                        <Ellipse Height="56" Width="56" Fill="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <Ellipse Height="40" Width="40" Fill="#C9C9C9" HorizontalAlignment="Center"/>
+                        <Ellipse Height="38" Width="38" Fill="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </Grid>
 
                     <!-- thanh tìm kiếm -->
-                    <Grid>
-                        <Border BorderBrush="#C9C9C9" BorderThickness="1" CornerRadius="40" Width="379" HorizontalAlignment="Right">
-                            <Grid >
-                                <TextBox x:Name="tb_TimKiem" 
-                                         Style="{DynamicResource TimKiem}"
-                                         HorizontalAlignment="Right" 
-                                         VerticalAlignment="Center"
-                                         Text="Tìm Kiếm..."
-                                         FontFamily="Cascadia Mono"
-                                         FontSize="22"
-                                         Foreground="#C9C9C9"
-                                         Width="320">
-                                </TextBox>
-                            </Grid>
-                        </Border>
+                    <Grid >
+                        <!--<Border BorderBrush="#C9C9C9" BorderThickness="1" CornerRadius="15" Width="379" Height="30" HorizontalAlignment="Center">
+                    <Grid >
+                        <TextBox x:Name="tb_TimKiem" 
+                                 Style="{DynamicResource timkiem}" 
+                                 HorizontalAlignment="Right" 
+                                 VerticalAlignment="Center"
+                                 Text="Tìm Kiếm..."
+                                 FontFamily="Cascadia Mono"
+                                 FontSize="12"
+                                 Foreground="#C9C9C9"
+                                 Width="320">
+                        </TextBox>
+                    </Grid>
+                </Border>-->
                     </Grid>
                 </DockPanel>
             </Grid>
