@@ -10,6 +10,27 @@
 
   <ItemGroup>
     <None Remove="Fonts\Kavoon-Regular.ttf" />
+    <None Remove="forms\tongdonban.png" />
+    <None Remove="Photos\anhnen.png" />
+    <None Remove="Photos\anhtongquan.png" />
+    <None Remove="Photos\asthma.png" />
+    <None Remove="Photos\donbanthangnay.png" />
+    <None Remove="Photos\khachhang.png" />
+    <None Remove="Photos\khachhangmoi.png" />
+    <None Remove="Photos\logo.png" />
+    <None Remove="Photos\nhacungcap.png" />
+    <None Remove="Photos\sanphamhet.png" />
+    <None Remove="Photos\sanphamtrongkho.png" />
+    <None Remove="Photos\sneeze.png" />
+    <None Remove="Photos\thuoc %282%29.png" />
+    <None Remove="Photos\thuoc %283%29.png" />
+    <None Remove="Photos\thuoc.png" />
+    <None Remove="Photos\thuoc1.png" />
+    <None Remove="Photos\thuocgiamdau.png" />
+    <None Remove="Photos\Tim.png" />
+    <None Remove="Photos\tongdonnhap.png" />
+    <None Remove="Photos\tongsanpham.png" />
+    <None Remove="Photos\vitamin.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -18,6 +39,27 @@
 
   <ItemGroup>
     <Resource Include="Fonts\Kavoon-Regular.ttf" />
+    <Resource Include="Photos\anhnen.png" />
+    <Resource Include="Photos\anhtongquan.png" />
+    <Resource Include="Photos\khachhang.png" />
+    <Resource Include="Photos\khachhangmoi.png" />
+    <Resource Include="Photos\logo.png" />
+    <Resource Include="Photos\nhacungcap.png" />
+    <Resource Include="Photos\tongdonban.png" />
+    <Resource Include="Photos\asthma.png" />
+    <Resource Include="Photos\donbanthangnay.png" />
+    <Resource Include="Photos\sanphamhet.png" />
+    <Resource Include="Photos\sanphamtrongkho.png" />
+    <Resource Include="Photos\sneeze.png" />
+    <Resource Include="Photos\thuoc (2).png" />
+    <Resource Include="Photos\thuoc (3).png" />
+    <Resource Include="Photos\thuoc.png" />
+    <Resource Include="Photos\thuoc1.png" />
+    <Resource Include="Photos\thuocgiamdau.png" />
+    <Resource Include="Photos\Tim.png" />
+    <Resource Include="Photos\tongdonnhap.png" />
+    <Resource Include="Photos\tongsanpham.png" />
+    <Resource Include="Photos\vitamin.png" />
   </ItemGroup>
 
 </Project>

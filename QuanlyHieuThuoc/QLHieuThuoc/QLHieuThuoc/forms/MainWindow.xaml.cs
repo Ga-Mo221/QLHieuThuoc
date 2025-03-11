@@ -37,13 +37,7 @@ namespace QLHieuThuoc.forms
             //KiemTraQuyenTruyCap();
         }
 
-        // mở full màn
-        private void FullMan()
-        {
-            //full màn hình
-            this.WindowState = WindowState.Maximized;  // Mở tối đa màn hình
-            this.ResizeMode = ResizeMode.NoResize;     // Không cho phép thay đổi kích thước
-        }
+        
 
         // kiểm tra quyền truy cập
         private void KiemTraQuyenTruyCap()
@@ -68,15 +62,15 @@ namespace QLHieuThuoc.forms
         // lấy ngôn ngữ
         private void CapNhatNN()
         {
-            tbl_bt_TongQuan.Text = $"📊  {NN.nn[27]}";
-            tbl_bt_SanPham.Text = $"📦  {NN.nn[28]}";
-            tbl_bt_BanHang.Text = $"🛒  {NN.nn[29]}";
-            tbl_bt_NhapHang.Text = $"📥  {NN.nn[30]}";
-            tbl_bt_ThongKe.Text = $"📈  {NN.nn[31]}";
+            tbl_bt_TongQuan.Text =  $"📊  {NN.nn[27]}";
+            tbl_bt_SanPham.Text =   $"📦   {NN.nn[28]}";
+            tbl_bt_BanHang.Text =   $"🛒   {NN.nn[29]}";
+            tbl_bt_NhapHang.Text =  $"📥  {NN.nn[30]}";
+            tbl_bt_ThongKe.Text =   $"📈   {NN.nn[31]}";
             tbl_bt_KhachHang.Text = $"👥  {NN.nn[32]}";
-            tbl_bt_NhanVien.Text = $"👨‍💼  {NN.nn[33]}";
-            tbl_bt_CaiDat.Text = $"⚙️  {NN.nn[34]}";
-            tbl_bt_DangXuat.Text = $"🔚  {NN.nn[35]}";
+            tbl_bt_NhanVien.Text =  $"👨‍💼   {NN.nn[33]}";
+            tbl_bt_CaiDat.Text =    $"⚙️    {NN.nn[34]}";
+            tbl_bt_DangXuat.Text =  $"🔚  {NN.nn[35]}";
         }
 
         // check select button
@@ -290,25 +284,6 @@ namespace QLHieuThuoc.forms
             }
             activeform = childform; // Gán giao diện mới
             panel1.Children.Add(childform); // Thêm vào Grid
-        }
-
-        int s = 0;
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            if (s == 0)
-            {
-                // mở full màn hình
-                FullMan();
-                s = 1;
-            }else
-            {
-                // Trở về kích thước ban đầu
-                this.WindowState = WindowState.Normal;    // Trở lại kích thước mặc định
-                this.ResizeMode = ResizeMode.CanResize;   // Cho phép thay đổi kích thước
-                this.Width = x;
-                this.Height = y;
-                s = 0;
-            }
         }
     }
 }

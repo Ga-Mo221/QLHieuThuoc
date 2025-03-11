@@ -76,7 +76,7 @@ namespace QLHieuThuoc.Model.sql
                 dataReader = sqlConmand.ExecuteReader();
                 while (dataReader.Read())
                 {
-                    sanphams.Add(new Sanpham(dataReader.GetString(0), dataReader.GetString(1), dataReader.GetString(2), dataReader.GetInt32(3).ToString(), dataReader.GetDecimal(4).ToString(), dataReader.GetDecimal(5).ToString(), dataReader.GetString(6), dataReader.GetString(7), dataReader.GetString(8), dataReader.GetString(9), dataReader.GetString(10), dataReader.GetDateTime(11)));
+                    sanphams.Add(new Sanpham(dataReader.GetString(0), dataReader.GetString(1), dataReader.GetString(2), dataReader.GetInt32(3), dataReader.GetDecimal(4).ToString(), dataReader.GetDecimal(5).ToString(), dataReader.GetString(6), dataReader.GetString(7), dataReader.GetString(8), dataReader.GetString(9), dataReader.GetString(10), dataReader.GetDateTime(11)));
                 }
 
                 sqlConnection.Close();

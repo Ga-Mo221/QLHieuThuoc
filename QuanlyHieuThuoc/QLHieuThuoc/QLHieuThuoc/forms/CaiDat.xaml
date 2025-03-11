@@ -386,6 +386,38 @@
                               SelectionChanged="cbb_NgonNgu_SelectionChanged"></ComboBox>
                 </Grid>
             </Border>
+
+            <Grid Height="5"></Grid>
+
+            <Border Background="#D9D9D9" Height="50" CornerRadius="9">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="25"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock x:Name="tbl_TiLeManHinh"
+                   FontSize="20"
+                   FontFamily="Cascadia Mono"
+                   Foreground="#565656"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Left"
+                   Grid.Column="1">
+                        Ti Le Man Hinh
+                    </TextBlock>
+
+                    <ComboBox Style="{DynamicResource ComboBoxStyle1}" x:Name="cbb_TiLeManHinh"
+                      Grid.Column="3"
+                      Height="35"
+                      FontSize="17"
+                      FontFamily="Cascadia Mono"
+                      Foreground="#565656"
+                      Background="#E2895A"
+                      SelectionChanged="cbb_TiLeManHinh_SelectionChanged"></ComboBox>
+                </Grid>
+            </Border>
         </StackPanel>
     </Grid>
 </UserControl>

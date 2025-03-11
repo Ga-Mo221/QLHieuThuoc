@@ -484,6 +484,7 @@
                 <!-- giỏ hàng -->
                 <Grid Grid.Column="2">
                     <Ellipse Height="50" Width="50" Fill="#E2895A"></Ellipse>
+                    <TextBlock FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center">🛒</TextBlock>
                     <Grid Width="22" Height="22" HorizontalAlignment="Right" VerticalAlignment="Bottom">
                         <Ellipse Height="22" Width="22" Fill="Red"></Ellipse>
                         <TextBlock x:Name="tbl_SoLuongSanPhamGioHang" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White">0</TextBlock>
@@ -519,18 +520,21 @@
 
                         <!-- tìm sản phẩm -->
                         <Border Style="{StaticResource bordertrong}" CornerRadius="20" Width="245" HorizontalAlignment="Right">
-                            <TextBox Style="{DynamicResource TextBoxStyle1}" x:Name="tb_TimKiem"
-                                     FontFamily="Cascadia Mono"
-                                     FontSize="16"
-                                     Background="#D9D9D9"
-                                     Width="190"
-                                     Height="20"
-                                     Foreground="#565656"
-                                     HorizontalAlignment="Right"
-                                     VerticalAlignment="Center"
-                                     Text="Tim Kiem..."
-                                     GotFocus="tb_TimKiem_GotFocus"
-                                     LostFocus="tb_TimKiem_LostFocus"></TextBox>
+                            <Grid>
+                                <TextBlock FontSize="25" Text=" 🔍" VerticalAlignment="Center"></TextBlock>
+                                <TextBox Style="{DynamicResource TextBoxStyle1}" x:Name="tb_TimKiem"
+                                         FontFamily="Cascadia Mono"
+                                         FontSize="16"
+                                         Background="#D9D9D9"
+                                         Width="190"
+                                         Height="20"
+                                         Foreground="#565656"
+                                         HorizontalAlignment="Right"
+                                         VerticalAlignment="Center"
+                                         Text="Tim Kiem..."
+                                         GotFocus="tb_TimKiem_GotFocus"
+                                         LostFocus="tb_TimKiem_LostFocus"></TextBox>
+                            </Grid>
                         </Border>
 
                         <!-- list sản phẩm -->

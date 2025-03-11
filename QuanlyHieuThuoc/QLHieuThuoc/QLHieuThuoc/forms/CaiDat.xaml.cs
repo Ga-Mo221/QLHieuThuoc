@@ -22,8 +22,11 @@ namespace QLHieuThuoc.forms
     public partial class CaiDat : UserControl
     {
         private List<string> NgonNgus = new List<string>();
+        private List<string> TiLeManHinh = new List<string> { NN.nn[144], NN.nn[143] };
         CheckFileNN CF = new CheckFileNN();
         DocGhi dg = new DocGhi();
+        private int x = 1440;
+        private int y = 930;
 
         public CaiDat()
         {
@@ -37,6 +40,8 @@ namespace QLHieuThuoc.forms
             NgonNgus = CF.GetNameFileTXT();
             cbb_NgonNgu.ItemsSource = NgonNgus;
             cbb_NgonNgu.SelectedItem = NN.NgonNguSetting;
+            cbb_TiLeManHinh.ItemsSource = TiLeManHinh;
+            cbb_TiLeManHinh.SelectedItem = NN.nn[144];
         }
 
         private void cbb_NgonNgu_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -54,6 +59,46 @@ namespace QLHieuThuoc.forms
         {
             tbl_TenBang.Text = $"  {NN.nn[35]}";
             tbl_LoaiNgonNgu.Text = NN.nn[141];
+            tbl_TiLeManHinh.Text = NN.nn[145];
+        }
+
+        // mở full màn
+        private void FullMan()
+        {
+            // Lấy Window cha của UserControl
+            Window mainWindow = Window.GetWindow(this);
+
+            if (mainWindow != null)
+            {
+                mainWindow.WindowState = WindowState.Maximized; // Full màn hình
+                mainWindow.ResizeMode = ResizeMode.NoResize;    // Không cho phép thay đổi kích thước
+            }
+        }
+
+        private void RestoreWindow(double x, double y)
+        {
+            // Lấy Window cha của UserControl
+            Window mainWindow = Window.GetWindow(this);
+
+            if (mainWindow != null)
+            {
+                mainWindow.WindowState = WindowState.Normal;    // Trở lại kích thước mặc định
+                mainWindow.ResizeMode = ResizeMode.CanResize;  // Cho phép thay đổi kích thước
+                mainWindow.Width = x;  // Gán lại kích thước chiều rộng
+                mainWindow.Height = y; // Gán lại kích thước chiều cao
+            }
+        }
+
+
+        private void cbb_TiLeManHinh_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cbb_TiLeManHinh.SelectedItem == NN.nn[144])
+            {
+                RestoreWindow(x,y);
+            }else if (cbb_TiLeManHinh.SelectedItem == NN.nn[143])
+            {
+                FullMan();
+            }
         }
     }
 }

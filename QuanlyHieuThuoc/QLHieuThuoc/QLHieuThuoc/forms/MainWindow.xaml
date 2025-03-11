@@ -108,7 +108,10 @@
                         
                         <!-- logo và thương hiệu-->
                         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
-                            <Ellipse Height="63" Width="63" Fill="#FCF4F0"></Ellipse>
+                            <Grid Height="63" Width="63">
+                                <Ellipse Height="63" Width="63" Fill="#FCF4F0"></Ellipse>
+                                <Image Height="63" Width="63" Source="pack://application:,,,/Photos/logo.png"/>
+                            </Grid>
                             <TextBlock Text="  QLHT" 
                                        Style="{StaticResource CustomFont}" 
                                        FontSize="21"
@@ -215,7 +218,7 @@
                         <Grid Grid.Row="16">
                             <StackPanel Orientation="Vertical" 
                                         VerticalAlignment="Bottom">
-                                <Button Content="full" Click="Button_Click"></Button>
+                                
                                 <!-- Cài Đặt -->
                                 <Button x:Name="bt_CaiDat" 
                                         Style="{DynamicResource TongQuan}"

@@ -75,7 +75,7 @@ namespace QLHieuThuoc.forms
         private void Tsp_Click(object? sender, string e)
         {
             check = false;
-            string lenhSelect = "select * from SanPham where TEN = '"+e+"'";
+            string lenhSelect = "select * from SanPham where TEN = N'"+e+"'";
             tb_SoLuong.Text = NN.nn[112];
             tb_SoLuong.Foreground = new BrushConverter().ConvertFromString("#A4A4A4") as Brush;
 
@@ -85,7 +85,7 @@ namespace QLHieuThuoc.forms
                 sp.Ten = sanPhamDuocChon[0].TenSanPham1;
                 sp.Giaban = decimal.Parse(sanPhamDuocChon[0].GiaBan1);
                 sp.Soluong = 0;
-                soluong = Int32.Parse(sanPhamDuocChon[0].SoLuong1);
+                soluong = sanPhamDuocChon[0].SoLuong1;
             }
             tbl_TenSanPham.Text = sp.Ten;
             tbl_GiaBan.Text = sp.Giaban.ToString();

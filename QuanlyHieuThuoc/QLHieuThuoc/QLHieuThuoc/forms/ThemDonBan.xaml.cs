@@ -104,7 +104,7 @@ namespace QLHieuThuoc.forms
                 LuuThongTinKhachHang();
                 LuuThongTinDonBan();
                 LuuThongTinChiTietDonBan();
-                MessageBox.Show("Da Mua Thanh Cong");
+                ThongBao.Show(NN.nn[2], NN.nn[142], "Cam");
                 XacNhan.XN = false;
                 XacNhan.YN = false;
                 this.Close() ;
@@ -226,12 +226,13 @@ namespace QLHieuThuoc.forms
             {
                 string id = TaoMa.TaoMa();
                 string idsp = "000";
-                string lenhCheck = "Select * from SanPham where TEN = '"+i.Ten+"'";
+                string lenhCheck = "Select * from SanPham where TEN = N'"+i.Ten+"'";
                 List<Sanpham> sp = modify.SanPhams(lenhCheck);
                 if (sp.Count > 0)
                 {
                     idsp = sp[0].MaSanPham1;
-                    int sl = int.Parse(sp[0].SoLuong1);
+                    int sl = sp[0].SoLuong1;
+
                     sl -= i.Soluong;
                     string LenhUpdate = "Update SanPham set SOLUONG = '"+sl+"' where ID = '"+idsp+"'";
                     modify.ThucThi(LenhUpdate);

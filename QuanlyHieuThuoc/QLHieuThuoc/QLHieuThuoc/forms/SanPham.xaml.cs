@@ -222,8 +222,17 @@ namespace QLHieuThuoc.forms
         // mở rộng bảng sản phẩm
         private void bt_MoRong_Click(object sender, RoutedEventArgs e)
         {
-            gird_CacLoaiThuoc.Visibility = gird_CacLoaiThuoc.Visibility == System.Windows.Visibility.Collapsed ? System.Windows.Visibility.Visible :
-                System.Windows.Visibility.Collapsed;
+            if (gird_CacLoaiThuoc.Visibility == System.Windows.Visibility.Collapsed)
+            {
+                tbl_kytumorong.Text = "⏫";
+                gird_CacLoaiThuoc.Visibility = System.Windows.Visibility.Visible;
+            }
+            else
+            {
+                tbl_kytumorong.Text = "⏬";
+                gird_CacLoaiThuoc.Visibility = System.Windows.Visibility.Collapsed;
+            }
+
         }
 
         // thêm sản phẩm
@@ -251,10 +260,10 @@ namespace QLHieuThuoc.forms
 
                 fSanPham_SanPham.Id = s.MaSanPham1;
                 fSanPham_SanPham.TenSP = s.TenSanPham1;
-                fSanPham_SanPham.SoLuong = s.SoLuong1;
+                fSanPham_SanPham.SoLuong = s.SoLuong1.ToString();
                 fSanPham_SanPham.GiaBan = s.GiaBan1;
                 fSanPham_SanPham.Loai = s.LoaiSanPham1;
-                if (s.SoLuong1 == "0")
+                if (s.SoLuong1 == 0)
                 {
                     fSanPham_SanPham.TinhTrang = NN.nn[129];
                     fSanPham_SanPham.setcolor("Red");
@@ -368,7 +377,7 @@ namespace QLHieuThuoc.forms
             us_SanPhamTrongKho.Title = NN.nn[37];
             us_SanPhamDaHet.Title = NN.nn[38];
             tb_TimKiem.Text = NN.nn[39];
-            tbl_bt_ThemSanPham.Text = NN.nn[40];
+            //tbl_bt_ThemSanPham.Text = NN.nn[40];
             tbl_MaSanPham.Text = NN.nn[41];
             tbl_TenSanPham.Text = NN.nn[42];
             tbl_SoLuong.Text = NN.nn[43];

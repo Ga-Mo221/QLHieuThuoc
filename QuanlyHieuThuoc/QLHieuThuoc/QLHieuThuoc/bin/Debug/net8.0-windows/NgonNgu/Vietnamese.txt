@@ -1,4 +1,4 @@
-fsdf
+sdà
 Vui lòng nhập mật khẩu!
 Thông Báo
 Tên đăng nhập hoặc mật khẩu không chính xác
@@ -140,3 +140,12 @@ Nhập Không Chính Xác!
 Số Điểm Đã Bị Vượt Quá!
 Ngôn Ngữ đã được Thay đổi
 Ngôn Ngữ
+Đã Tạo hóa Đơn Thành Công!
+Toàn Màn Hình
+Thu Nhỏ
+Tỉ Lệ Màn Hình
+Danh Thu
+Lượt Mua
+Tổng Danh Thu
+Đơn Hàng Mới Nhất
+Thuốc Bán Chạy Nhất

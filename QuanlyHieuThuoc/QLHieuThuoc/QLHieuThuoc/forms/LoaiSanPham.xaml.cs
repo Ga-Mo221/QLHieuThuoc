@@ -51,10 +51,10 @@ namespace QLHieuThuoc.forms
 
                 fSanPham_SanPham.Id = s.MaSanPham1;
                 fSanPham_SanPham.TenSP = s.TenSanPham1;
-                fSanPham_SanPham.SoLuong = s.SoLuong1;
+                fSanPham_SanPham.SoLuong = s.SoLuong1.ToString();
                 fSanPham_SanPham.GiaBan = s.GiaBan1;
                 fSanPham_SanPham.Loai = s.LoaiSanPham1;
-                if (s.SoLuong1 == "0")
+                if (s.SoLuong1 == 0)
                 {
                     fSanPham_SanPham.TinhTrang = NN.nn[129];
                     fSanPham_SanPham.setcolor("Red");

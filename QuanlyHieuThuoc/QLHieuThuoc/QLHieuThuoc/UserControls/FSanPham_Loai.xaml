@@ -99,7 +99,7 @@
                 </TextBlock>
 
                 <!-- so luong và img -->
-                <Ellipse Height="60" Width="60" Fill="#565656" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Right"/>
+                <Image Source="{Binding SourceImgBitmap}" Height="60" Width="60" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Right"/>
                 <TextBlock x:Name="tbl_soluong"
                            FontSize="50"
                            FontFamily="Cascadia Mono"
@@ -112,7 +112,7 @@
                 </TextBlock>
 
                 <!-- tăng giảm -->
-                <Border CornerRadius="10" Background="#D0F2CA" Width="40" Height="15" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left">
+                <!--<Border CornerRadius="10" Background="#D0F2CA" Width="40" Height="15" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left">
                     <Grid >
                         <TextBlock x:Name="tbl_tanggiam" 
                                    Foreground="#56A946" 
@@ -122,7 +122,7 @@
                             +2%
                         </TextBlock>
                     </Grid>
-                </Border>
+                </Border>-->
             </Grid>
         </Button.Content>
     </Button>

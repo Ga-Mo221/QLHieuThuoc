@@ -507,8 +507,8 @@
                                 <ColumnDefinition Width="10"/>
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
-                            <Ellipse Grid.Column="1" Height="70" Width="70" Fill="Gray"/>
-                            <Grid Grid.Column="3">
+                            <Image Grid.Column="1" Height="70" Width="70" Source="pack://application:,,,/Photos/tongdonban.png"/>
+                        <Grid Grid.Column="3">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="*"/>
                                     <RowDefinition Height="10"/>
@@ -551,7 +551,7 @@
                             <ColumnDefinition Width="10"/>
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
-                        <Ellipse Grid.Column="1" Height="70" Width="70" Fill="Gray"/>
+                        <Image Grid.Column="1" Height="70" Width="70" Source="pack://application:,,,/Photos/donbanthangnay.png"/>
                         <Grid Grid.Column="3">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*"/>
@@ -607,6 +607,7 @@
                             <!-- thanh tim kiem don ban -->
                             <Border Grid.Column="1" BorderBrush="#C9C9C9" BorderThickness="1" CornerRadius="18" Width="379" Height="35" HorizontalAlignment="Left">
                                 <Grid >
+                                    <TextBlock HorizontalAlignment="Left" FontSize="24" Foreground="#565656" Text="  🔍"></TextBlock>
                                     <TextBox Style="{DynamicResource TextBoxStyle1}" x:Name="tb_TimKiem" 
                                             HorizontalAlignment="Right" 
                                             VerticalAlignment="Center"

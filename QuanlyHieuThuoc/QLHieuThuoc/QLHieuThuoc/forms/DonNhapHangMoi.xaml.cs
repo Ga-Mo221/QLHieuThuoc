@@ -98,7 +98,7 @@ namespace QLHieuThuoc.forms
             foreach (var sp in listSpDonHang.sps) {
                 FNhapHang_SanPham sanpham = new FNhapHang_SanPham {
                     TenSanPham = sp.TenSanPham1,
-                    SoLuong = sp.SoLuong1,
+                    SoLuong = sp.SoLuong1.ToString(),
                     GiaSanPham = sp.GiaNhap1
                 };
 
@@ -155,7 +155,7 @@ namespace QLHieuThuoc.forms
                     // cập nhật lại số lượng của sản phẩm
                     string caulenh = "select * from SanPham where ID = '" + sp.MaSanPham1 + "'";
                     List<Sanpham> lsp = modify.SanPhams(caulenh);
-                    int sl = int.Parse(lsp[0].SoLuong1) + int.Parse(sp.SoLuong1);
+                    int sl = lsp[0].SoLuong1 + sp.SoLuong1;
                     string SL = sl.ToString();
 
                     //, GIANHAP = '"+gianhap+"', GIABAN = '"+giaban+"', HANSUDUNG = '"+HSD+"' 

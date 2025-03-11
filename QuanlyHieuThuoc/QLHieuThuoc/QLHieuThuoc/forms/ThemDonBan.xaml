@@ -603,13 +603,24 @@
                     </Border>
                     
                     <!-- nút thêm sản phẩm -->
-                    <StackPanel Grid.Column="3" Margin="10">
-                        <Button Style="{DynamicResource ButtonStyle2}" Height="40" Background="#E2895A" Click="Button_Click_2">
+                    <DockPanel Grid.Column="3" Margin="10">
+                        <Button DockPanel.Dock="Top" Style="{DynamicResource ButtonStyle2}" Height="40" Background="#E2895A" Click="Button_Click_2">
                             <Button.Content>
                                 <TextBlock x:Name="tbl_bt_ThemSanPham">Them San Pham</TextBlock>
                             </Button.Content>
                         </Button>
-                    </StackPanel>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="10"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <!--<Border Width="128" Height="364" CornerRadius="10" Grid.Row="1">
+                                <Border.Background>
+                                    <ImageBrush ImageSource="pack://application:,,,/Photos/anhbengoc.png"/>
+                                </Border.Background>
+                            </Border>-->
+                        </Grid>
+                    </DockPanel>
                 </Grid>
             </Border>
 

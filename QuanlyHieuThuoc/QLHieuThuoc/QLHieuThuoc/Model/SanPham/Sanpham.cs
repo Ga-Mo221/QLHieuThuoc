@@ -11,7 +11,7 @@ namespace QLHieuThuoc.Model.SanPham
         private string MaSanPham;
         private string TenSanPham;
         private string LoaiSanPham;
-        private string SoLuong;
+        private int SoLuong;
         private string GiaNhap;
         private string GiaBan;
         private string ThanhPhan;
@@ -25,7 +25,7 @@ namespace QLHieuThuoc.Model.SanPham
         {
         }
 
-        public Sanpham(string maSanPham, string tenSanPham, string loaiSanPham, string soLuong, string giaNhap, string giaBan, string thanhPhan, string hamLuong, string congDung, string cachDung, string chuY, DateTime hanSuDung)
+        public Sanpham(string maSanPham, string tenSanPham, string loaiSanPham, int soLuong, string giaNhap, string giaBan, string thanhPhan, string hamLuong, string congDung, string cachDung, string chuY, DateTime hanSuDung)
         {
             MaSanPham = maSanPham;
             TenSanPham = tenSanPham;
@@ -44,7 +44,7 @@ namespace QLHieuThuoc.Model.SanPham
         public string MaSanPham1 { get => MaSanPham; set => MaSanPham = value; }
         public string TenSanPham1 { get => TenSanPham; set => TenSanPham = value; }
         public string LoaiSanPham1 { get => LoaiSanPham; set => LoaiSanPham = value; }
-        public string SoLuong1 { get => SoLuong; set => SoLuong = value; }
+        public int SoLuong1 { get => SoLuong; set => SoLuong = value; }
         public string GiaNhap1 { get => GiaNhap; set => GiaNhap = value; }
         public string GiaBan1 { get => GiaBan; set => GiaBan = value; }
         public string ThanhPhan1 { get => ThanhPhan; set => ThanhPhan = value; }

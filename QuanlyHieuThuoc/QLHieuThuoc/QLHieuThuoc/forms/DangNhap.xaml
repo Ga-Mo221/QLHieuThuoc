@@ -460,7 +460,10 @@
                     </Grid.RowDefinitions>
                     <!-- logo và thương hiệu -->
                     <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
-                        <Ellipse Width="42" Height="42" Fill="#E2895A"/>
+                        <Grid Width="42" Height="42">
+                            <Ellipse Width="42" Height="42" Fill="#E2895A"></Ellipse>
+                            <Image Width="42" Height="42" Source="pack://application:,,,/Photos/logo.png"/>
+                        </Grid>
                         <TextBlock Style="{StaticResource CustomFont}" 
                                    Text="QLHT"
                                    Grid.Row="3"
@@ -631,7 +634,10 @@
 
                     <!-- logo và thương hiệu -->
                     <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
-                        <Ellipse Width="42" Height="42" Fill="#E2895A"/>
+                        <Grid Width="42" Height="42">
+                            <Ellipse Width="42" Height="42" Fill="#E2895A"></Ellipse>
+                            <Image Width="42" Height="42" Source="pack://application:,,,/Photos/logo.png"/>
+                        </Grid>
                         <TextBlock Style="{StaticResource CustomFont}"
                                Text="QLHT"
                                Grid.Row="3"
@@ -773,14 +779,16 @@
                     </StackPanel>
                 </Grid>
             </Grid>
-            
+
             <Border x:Name="bd_img" 
                     CornerRadius="40" 
-                    Background="Gray"
                     Width="355" Height="485"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Center"
                     Margin="45,0,0,0">
+                <Border.Background>
+                    <ImageBrush ImageSource="pack://application:,,,/Photos/anhnen.png" Stretch="Fill"/>
+                </Border.Background>
             </Border>
         </Grid>
     </Border>

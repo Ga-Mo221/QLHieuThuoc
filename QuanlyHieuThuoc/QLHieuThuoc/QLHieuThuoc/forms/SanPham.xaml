@@ -252,9 +252,9 @@
                     <ColumnDefinition Width="73"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
 
-                <us:FSanPham_ThongKe x:Name="us_TongSanPham" Grid.Column="0" ></us:FSanPham_ThongKe>
-                <us:FSanPham_ThongKe x:Name="us_SanPhamTrongKho" Grid.Column="2" ></us:FSanPham_ThongKe>
-                <us:FSanPham_ThongKe x:Name="us_SanPhamDaHet" Grid.Column="4" ></us:FSanPham_ThongKe>
+                <us:FSanPham_ThongKe x:Name="us_TongSanPham" Grid.Column="0" SourceImg="pack://application:,,,/Photos/tongsanpham.png"></us:FSanPham_ThongKe>
+                <us:FSanPham_ThongKe x:Name="us_SanPhamTrongKho" Grid.Column="2" SourceImg="pack://application:,,,/Photos/sanphamtrongkho.png"></us:FSanPham_ThongKe>
+                <us:FSanPham_ThongKe x:Name="us_SanPhamDaHet" Grid.Column="4" SourceImg="pack://application:,,,/Photos/sanphamhet.png"></us:FSanPham_ThongKe>
             </Grid>
 
             <DockPanel Grid.Row="3">
@@ -276,14 +276,14 @@
                         <ColumnDefinition Width="73"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
 
-                    <us:FSanPham_Loai x:Name="bt_ThuocKhangSinh" Grid.Column="0" Grid.Row="0" LOAISANPHAM="Thuốc Kháng Sinh" MAMAU="#FEB6B4"/>
-                    <us:FSanPham_Loai x:Name="bt_ThuocGiamDau" Grid.Column="0" Grid.Row="2" LOAISANPHAM="Thuốc Kháng Sinh" MAMAU="#FDEBE9"/>
-                    <us:FSanPham_Loai x:Name="bt_Vitamin" Grid.Column="2" Grid.Row="0" LOAISANPHAM="Thuốc Kháng Sinh" MAMAU="#FAE4D9"/>
-                    <us:FSanPham_Loai x:Name="bt_ThucPhamChucNang" Grid.Column="2" Grid.Row="2" LOAISANPHAM="Thuốc Kháng Sinh" MAMAU="#F6C7AD"/>
-                    <us:FSanPham_Loai x:Name="bt_ThuocKhangVirus" Grid.Column="4" Grid.Row="0" LOAISANPHAM="Thuốc Kháng Sinh" MAMAU="#B0DDBC"/>
-                    <us:FSanPham_Loai x:Name="bt_ThuocTimMach" Grid.Column="4" Grid.Row="2" LOAISANPHAM="Thuốc Kháng Sinh" MAMAU="#BADDD6"/>
-                    <us:FSanPham_Loai x:Name="bt_ThuocDiUng" Grid.Column="6" Grid.Row="0" LOAISANPHAM="Thuốc Kháng Sinh" MAMAU="#DCE3BA"/>
-                    <us:FSanPham_Loai x:Name="bt_ThuocHoHap" Grid.Column="6" Grid.Row="2" LOAISANPHAM="Thuốc Kháng Sinh" MAMAU="#CDDCC7"/>
+                    <us:FSanPham_Loai x:Name="bt_ThuocKhangSinh" Grid.Column="0" Grid.Row="0" LOAISANPHAM="Thuốc Kháng Sinh" MAMAU="#FEB6B4" SourceImg="pack://application:,,,/Photos/thuoc.png"/>
+                    <us:FSanPham_Loai x:Name="bt_ThuocGiamDau" Grid.Column="0" Grid.Row="2" LOAISANPHAM="Thuốc Kháng Sinh" MAMAU="#FDEBE9" SourceImg="pack://application:,,,/Photos/thuocgiamdau.png"/>
+                    <us:FSanPham_Loai x:Name="bt_Vitamin" Grid.Column="2" Grid.Row="0" LOAISANPHAM="Thuốc Kháng Sinh" MAMAU="#FAE4D9" SourceImg="pack://application:,,,/Photos/vitamin.png"/>
+                    <us:FSanPham_Loai x:Name="bt_ThucPhamChucNang" Grid.Column="2" Grid.Row="2" LOAISANPHAM="Thuốc Kháng Sinh" MAMAU="#F6C7AD" SourceImg="pack://application:,,,/Photos/thuoc (3).png"/>
+                    <us:FSanPham_Loai x:Name="bt_ThuocKhangVirus" Grid.Column="4" Grid.Row="0" LOAISANPHAM="Thuốc Kháng Sinh" MAMAU="#B0DDBC" SourceImg="pack://application:,,,/Photos/thuoc (2).png"/>
+                    <us:FSanPham_Loai x:Name="bt_ThuocTimMach" Grid.Column="4" Grid.Row="2" LOAISANPHAM="Thuốc Kháng Sinh" MAMAU="#BADDD6" SourceImg="pack://application:,,,/Photos/Tim.png"/>
+                    <us:FSanPham_Loai x:Name="bt_ThuocDiUng" Grid.Column="6" Grid.Row="0" LOAISANPHAM="Thuốc Kháng Sinh" MAMAU="#DCE3BA" SourceImg="pack://application:,,,/Photos/sneeze.png"/>
+                    <us:FSanPham_Loai x:Name="bt_ThuocHoHap" Grid.Column="6" Grid.Row="2" LOAISANPHAM="Thuốc Kháng Sinh" MAMAU="#CDDCC7" SourceImg="pack://application:,,,/Photos/asthma.png"/>
                 </Grid>
                 <Grid DockPanel.Dock="Top" Height="15"> </Grid>
                 
@@ -306,6 +306,7 @@
 
                                 <Border BorderBrush="#C9C9C9" BorderThickness="1" CornerRadius="18" Width="379" Height="40" HorizontalAlignment="Center">
                                     <Grid >
+                                        <TextBlock HorizontalAlignment="Left" FontSize="27" Foreground="#565656" Text="  🔍"></TextBlock>
                                         <TextBox x:Name="tb_TimKiem" 
                                                     Style="{DynamicResource timkiem}" 
                                                     HorizontalAlignment="Right" 
@@ -329,10 +330,13 @@
                                     Height="50"
                                     Background="White"
                                     DockPanel.Dock="Right" Click="bt_MoRong_Click">
+                                    <Button.Content>
+                                        <TextBlock x:Name="tbl_kytumorong" FontSize="30" Foreground="#565656">⏫</TextBlock>
+                                    </Button.Content>
                                 </Button>
                                 <Grid DockPanel.Dock="Right" Width="20"></Grid>
 
-                                <Button Style="{DynamicResource addsanpham}" 
+                                <!--<Button Style="{DynamicResource addsanpham}" 
                                         Background="#E2895A" 
                                         BorderBrush="#C9C9C9" 
                                         BorderThickness="0" 
@@ -352,7 +356,7 @@
                                             </TextBlock>
                                         </StackPanel>
                                     </Button.Content>
-                                </Button>
+                                </Button>-->
                             </DockPanel>
 
                             <!-- sản phẩm -->

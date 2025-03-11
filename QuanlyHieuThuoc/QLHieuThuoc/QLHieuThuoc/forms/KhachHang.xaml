@@ -201,7 +201,7 @@
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
 
-                            <Ellipse Grid.Column="1" Width="90" Height="90" Fill="Gray"/>
+                            <Image Grid.Column="1" Width="90" Height="90" Source="pack://application:,,,/Photos/khachhang.png"/>
 
                             <Grid Grid.Column="3">
                                 <Grid.RowDefinitions>
@@ -233,7 +233,7 @@
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
 
-                            <Ellipse Grid.Column="1" Width="90" Height="90" Fill="Gray"/>
+                            <Image Grid.Column="1" Width="90" Height="90" Source="pack://application:,,,/Photos/khachhangmoi.png"/>
 
                             <Grid Grid.Column="3">
                                 <Grid.RowDefinitions>
@@ -283,6 +283,7 @@
                         <!-- thanh tim kiem don nhap -->
                         <Border Grid.Column="1" BorderBrush="#C9C9C9" BorderThickness="1" CornerRadius="18" Width="379" Height="35" HorizontalAlignment="Left">
                             <Grid >
+                                <TextBlock HorizontalAlignment="Left" FontSize="24" Foreground="#565656" Text=" 🔍" VerticalAlignment="Center"></TextBlock>
                                 <TextBox Style="{DynamicResource TextBoxStyle1}"  x:Name="tb_TimKiem" 
                                         HorizontalAlignment="Right" 
                                         VerticalAlignment="Center"

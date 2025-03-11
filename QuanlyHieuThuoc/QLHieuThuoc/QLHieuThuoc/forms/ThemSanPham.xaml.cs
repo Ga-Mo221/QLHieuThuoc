@@ -359,7 +359,7 @@ namespace QLHieuThuoc.forms
                     // cập nhật lại số lượng của sản phẩm
                     string caulenh = "select * from SanPham where ID = '" + masp + "'";
                     List<Sanpham> lsp = modify.SanPhams(caulenh);
-                    int sl = int.Parse(lsp[0].SoLuong1) + int.Parse(soluong);
+                    int sl = lsp[0].SoLuong1 + int.Parse(soluong);
                     string SL = sl.ToString();
 
                     //, GIANHAP = '"+gianhap+"', GIABAN = '"+giaban+"', HANSUDUNG = '"+HSD+"' 
@@ -371,7 +371,7 @@ namespace QLHieuThuoc.forms
             }
             if (KEY == "NhapHang")
             {
-                Sanpham sp = new Sanpham(id, tensp, loaisp, soluong, gianhap, giaban, thanhphan, hamluong, congdung, cachdung, chuy, HSD);
+                Sanpham sp = new Sanpham(id, tensp, loaisp, int.Parse(soluong), gianhap, giaban, thanhphan, hamluong, congdung, cachdung, chuy, HSD);
                 listSpDonHang.sps.Add(sp);
                 ThongBao.Show(NN.nn[2], NN.nn[73], "Cam");
                 this.Close();

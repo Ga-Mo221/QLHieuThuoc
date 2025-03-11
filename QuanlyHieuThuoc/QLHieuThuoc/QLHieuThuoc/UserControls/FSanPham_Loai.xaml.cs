@@ -26,8 +26,8 @@ namespace QLHieuThuoc.UserControls
 
         private string loaiSanPham;
         private string soLuong;
-        private string phanTram;
         private string maMau;
+        private string sourceImg;
 
         public FSanPham_Loai()
         {
@@ -79,17 +79,6 @@ namespace QLHieuThuoc.UserControls
             }
         }
 
-        public string PHANTRAM
-        {
-            get => phanTram;
-            set
-            {
-                phanTram = value;
-                tbl_tanggiam.Text = value;
-                OnPropertyChanged(nameof(PHANTRAM));
-            }
-        }
-
         public string MAMAU
         {
             get => maMau;
@@ -98,6 +87,27 @@ namespace QLHieuThuoc.UserControls
                 maMau = value;
                 OnPropertyChanged(nameof(MAMAU));
                 UpdateBackground(maMau);
+            }
+        }
+
+        public string SourceImg
+        {
+            get => sourceImg;
+            set
+            {
+                sourceImg = value;
+                OnPropertyChanged(nameof(SourceImg));
+                OnPropertyChanged(nameof(SourceImgBitmap));
+            }
+        }
+
+        public BitmapImage SourceImgBitmap
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(SourceImg))
+                    return null;
+                return new BitmapImage(new Uri(SourceImg, UriKind.RelativeOrAbsolute));
             }
         }
 

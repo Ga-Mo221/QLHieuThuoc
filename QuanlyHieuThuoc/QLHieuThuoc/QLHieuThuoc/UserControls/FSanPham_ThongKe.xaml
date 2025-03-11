@@ -10,7 +10,10 @@
         <Grid>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                 <Grid Width="20"></Grid>
-                <Ellipse Width="50" Height="50" Fill="#565656"/>
+                <Grid Width="50" Height="50">
+                    <Ellipse Width="50" Height="50" Fill="#E2895A"/>
+                    <Image Width="50" Height="50" Source="{Binding SourceImgBitmap}"/>
+                </Grid>
                 <Grid Width="15"/>
                 <Grid Width="200" Height="80">
                     <Grid.RowDefinitions>

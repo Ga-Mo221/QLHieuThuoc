@@ -7,8 +7,21 @@
              mc:Ignorable="d" 
              d:DesignHeight="848" d:DesignWidth="1096">
     <Grid Background="#F7F7F7">
+        <Grid.Resources>
+            <Style x:Key="borderNgoai" TargetType="Border">
+                <Setter Property="Background" Value="White"/>
+                <Setter Property="CornerRadius" Value="15"/>
+                <Setter Property="BorderThickness" Value="0"/>
+            </Style>
+            <Style TargetType="TextBlock">
+                <Setter Property="FontFamily" Value="Cascadia Mono"/>
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="Foreground" Value="#565656"/>
+            </Style>
+        </Grid.Resources>
         <Grid.RowDefinitions>
             <RowDefinition Height="65"></RowDefinition>
+            <RowDefinition Height="20"></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
 
@@ -71,5 +84,400 @@
                 </DockPanel>
             </Grid>
         </Border>
+        
+        
+        <!-- row 2 - nội dung -->
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            
+            <!-- column 2 - nội dung bên phải -->
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="1.2*"/>
+                </Grid.RowDefinitions>
+                
+                <!-- hình ảnh -->
+                <Border CornerRadius="15">
+                    <Border.Background>
+                        <ImageBrush ImageSource="pack://application:,,,/Photos/anhtongquan.png" Stretch="Fill"/>
+                    </Border.Background>
+                </Border>
+                <!-- thuốc bán chạy -->
+                <Border Style="{StaticResource borderNgoai}" Grid.Row="2" Padding="20">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="0.1*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="0.1*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        
+                        <!-- txt thuoc ban chay nhat -->
+                        <TextBlock x:Name="tbl_ThuocBanChayNhat" Width="170" HorizontalAlignment="Left" FontSize="31" TextWrapping="WrapWithOverflow">Thuoc Ban Chay Nhat</TextBlock>
+
+                        <Border Grid.Row="1" Background="#E2895A" CornerRadius="15" Padding="10">
+                            <Grid>
+                                <Border Background="White" CornerRadius="8" Width="50" HorizontalAlignment="Left">
+                                    <TextBlock FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFB02E">🏆</TextBlock>
+                                </Border>
+                                <TextBlock x:Name="tbl_TenThuoc1" HorizontalAlignment="Center" VerticalAlignment="Center">horilan</TextBlock>
+                            </Grid>
+                        </Border>
+                        <Border Grid.Row="3" Background="#E8A17B" CornerRadius="15" Padding="10">
+                            <Grid>
+                                <Border Background="White" CornerRadius="8" Width="50" HorizontalAlignment="Left">
+                                    <TextBlock FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center">2</TextBlock>
+                                </Border>
+                                <TextBlock x:Name="tbl_TenThuoc2" HorizontalAlignment="Center" VerticalAlignment="Center">horilan</TextBlock>
+                            </Grid>
+                        </Border>
+                        <Border Grid.Row="5" Background="#EEB99D" CornerRadius="15" Padding="10">
+                            <Grid>
+                                <Border Background="White" CornerRadius="8" Width="50" HorizontalAlignment="Left">
+                                    <TextBlock FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center">3</TextBlock>
+                                </Border>
+                                <TextBlock x:Name="tbl_TenThuoc3" HorizontalAlignment="Center" VerticalAlignment="Center">horilan</TextBlock>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </Border>
+            </Grid>
+
+
+
+            <!-- column 0 - nội dung bên trái -->
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="1.5*"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="1.5*"/>
+                </Grid.RowDefinitions>
+
+
+                <Grid>
+                    <Grid.Resources>
+                        <Style x:Key="borderTrai" TargetType="Border">
+                            <Setter Property="Background" Value="#F7F7F7"/>
+                            <Setter Property="CornerRadius" Value="5"/>
+                            <Setter Property="Width" Value="34"/>
+                            <Setter Property="HorizontalAlignment" Value="Left"/>
+                        </Style>
+                        <Style x:Key="borderPhai" TargetType="Border">
+                            <Setter Property="Background" Value="#D0F2CA"/>
+                            <Setter Property="CornerRadius" Value="10"/>
+                            <Setter Property="Height" Value="20"/>
+                            <Setter Property="Width" Value="85"/>
+                            <Setter Property="HorizontalAlignment" Value="Right"/>
+                        </Style>
+                    </Grid.Resources>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    
+                    
+                    <!-- column 0 - danh thu -->
+                    <Border Style="{StaticResource borderNgoai}" Background="#E2895A" Padding="10">
+                        <Grid>
+                            <Grid Margin="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="1.25*"/>
+                                    <RowDefinition Height="1.25*"/>
+                                    <RowDefinition Height="0.6*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="0.6*"/>
+                                    <RowDefinition Height="0.8*"/>
+                                </Grid.RowDefinitions>
+
+                                <Border Style="{StaticResource borderTrai}">
+                                    <Grid>
+                                        <Ellipse Width="25" Height="25" Fill="#E2895A"></Ellipse>
+                                        <TextBlock HorizontalAlignment="Center"
+                                                   VerticalAlignment="Center"
+                                                   FontSize="20"
+                                                   FontWeight="Bold"
+                                                   Foreground="#565656">$</TextBlock>
+                                    </Grid>
+                                </Border>
+                                <Border x:Name="bd_PhanTram1" Style="{StaticResource borderPhai}">
+                                    <TextBlock Name="tbl_PhanTram1" HorizontalAlignment="Center" FontSize="16">2%</TextBlock>
+                                </Border>
+
+                                <TextBlock x:Name="tbl_DanhThu" Grid.Row="2" Foreground="White" FontSize="12"> Danh Thu</TextBlock>
+                                <TextBlock x:Name="tbl_TienDanhThu" Grid.Row="3" FontWeight="Bold"> $12,500</TextBlock>
+                                <TextBlock x:Name="tbl_ThangNay1" Grid.Row="4" Foreground="White" FontSize="12"> Thang Nay</TextBlock>
+                            </Grid>
+                            <Grid Width="90" Height="90" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="0.2*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="0.2*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Border Background="#E5956B" CornerRadius="13" Height="40" VerticalAlignment="Bottom"></Border>
+                                <Border Background="#E5956B" CornerRadius="13" Height="65" VerticalAlignment="Bottom" Grid.Column="2"></Border>
+                                <Border Background="#E5956B" CornerRadius="13" Grid.Column="4"></Border>
+                            </Grid>
+                        </Grid>
+                    </Border>
+                    
+                    <!-- column 2 - khách hàng mới -->
+                    <Border Style="{StaticResource borderNgoai}" Grid.Column="2" Padding="10">
+                        <Grid>
+                            <Grid Margin="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="1.25*"/>
+                                    <RowDefinition Height="1.25*"/>
+                                    <RowDefinition Height="0.6*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="0.6*"/>
+                                    <RowDefinition Height="0.8*"/>
+                                </Grid.RowDefinitions>
+
+                                <Border Style="{StaticResource borderTrai}">
+                                    <Grid>
+                                        <TextBlock HorizontalAlignment="Center"
+                                                   VerticalAlignment="Center"
+                                                   FontSize="20"
+                                                   FontWeight="Bold">
+                                            👥
+                                        </TextBlock>
+                                    </Grid>
+                                </Border>
+                                <Border x:Name="bd_PhanTram2" Style="{StaticResource borderPhai}">
+                                    <TextBlock Name="tbl_PhanTram2" HorizontalAlignment="Center" FontSize="16">2%</TextBlock>
+                                </Border>
+
+                                <TextBlock x:Name="tbl_KhachHangMoi" Grid.Row="2" FontSize="12"> Khach Hang Moi</TextBlock>
+                                <TextBlock x:Name="tbl_LuongKhachHangMoi" Grid.Row="3" FontWeight="Bold"> 500</TextBlock>
+                                <TextBlock x:Name="tbl_ThangNay2" Grid.Row="4" FontSize="12"> Thang Nay</TextBlock>
+                            </Grid>
+                            <Grid Width="90" Height="90" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="0.2*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="0.2*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Border Background="#F7F7F7" CornerRadius="13" Height="40" VerticalAlignment="Bottom"></Border>
+                                <Border Background="#F7F7F7" CornerRadius="13" Height="65" VerticalAlignment="Bottom" Grid.Column="2"></Border>
+                                <Border Background="#F7F7F7" CornerRadius="13" Grid.Column="4"></Border>
+                            </Grid>
+                        </Grid>
+                    </Border>
+
+                    <!-- column 4 - lượt mua -->
+                    <Border Style="{StaticResource borderNgoai}" Grid.Column="4" Padding="10">
+                        <Grid>
+                            <Grid Margin="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="1.25*"/>
+                                    <RowDefinition Height="1.25*"/>
+                                    <RowDefinition Height="0.6*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="0.6*"/>
+                                    <RowDefinition Height="0.8*"/>
+                                </Grid.RowDefinitions>
+
+                                <Border Style="{StaticResource borderTrai}">
+                                    <Grid>
+                                        <TextBlock HorizontalAlignment="Center"
+                                                   VerticalAlignment="Center"
+                                                   FontSize="20"
+                                                   FontWeight="Bold">
+                                            🛒
+                                        </TextBlock>
+                                    </Grid>
+                                </Border>
+                                <Border x:Name="bd_PhanTram3" Style="{StaticResource borderPhai}">
+                                    <TextBlock Name="tbl_PhanTram3" HorizontalAlignment="Center" FontSize="16">2%</TextBlock>
+                                </Border>
+
+                                <TextBlock x:Name="tbl_LuotMua" Grid.Row="2" FontSize="12"> Luot Mua</TextBlock>
+                                <TextBlock x:Name="tbl_LuongLuotMua" Grid.Row="3" FontWeight="Bold"> 1,500</TextBlock>
+                                <TextBlock x:Name="tbl_ThangNay3" Grid.Row="4" FontSize="12"> Thang Nay</TextBlock>
+                            </Grid>
+                            <Grid Width="90" Height="90" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="0.2*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="0.2*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Border Background="#F7F7F7" CornerRadius="13" Height="40" VerticalAlignment="Bottom"></Border>
+                                <Border Background="#F7F7F7" CornerRadius="13" Height="65" VerticalAlignment="Bottom" Grid.Column="2"></Border>
+                                <Border Background="#F7F7F7" CornerRadius="13" Grid.Column="4"></Border>
+                            </Grid>
+                        </Grid>
+                    </Border>
+                </Grid>
+                
+                <!-- row 2 - sơ đồ cột danh thu -->
+                <Border Style="{StaticResource borderNgoai}" Grid.Row="2" Padding="20">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1.3*"/>
+                            <RowDefinition Height="11.2*"/>
+                        </Grid.RowDefinitions>
+                        
+                        <!-- Txt Tổng danh thu -->
+                        <TextBlock x:Name="tbl_TongDanhThu">Tong Danh Thu</TextBlock>
+
+                        <Grid Grid.Row="1">
+                            <Grid.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="Background" Value="#E2895A"></Setter>
+                                    <Setter Property="CornerRadius" Value="5"/>
+                                </Style>
+                            </Grid.Resources>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="0.3*"/>
+                                <RowDefinition Height="10*"/>
+                                <RowDefinition Height="0.3*"/>
+                                <RowDefinition Height="0.6*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="0.2*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="0.2*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="0.2*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="0.2*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="0.2*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="0.2*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="0.2*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="0.2*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="0.2*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="0.2*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="0.2*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid x:Name="gr" Grid.Column="1" Grid.Row="1">
+                                <Border x:Name="Thang1" VerticalAlignment="Bottom"></Border>
+                            </Grid>
+                            <Border x:Name="Thang2" Grid.Column="3" Grid.Row="1" VerticalAlignment="Bottom"></Border>
+                            <Border x:Name="Thang3" Grid.Column="5" Grid.Row="1" VerticalAlignment="Bottom"></Border>
+                            <Border x:Name="Thang4" Grid.Column="7" Grid.Row="1" VerticalAlignment="Bottom"></Border>
+                            <Border x:Name="Thang5" Grid.Column="9" Grid.Row="1" VerticalAlignment="Bottom"></Border>
+                            <Border x:Name="Thang6" Grid.Column="11" Grid.Row="1" VerticalAlignment="Bottom"></Border>
+                            <Border x:Name="Thang7" Grid.Column="13" Grid.Row="1" VerticalAlignment="Bottom"></Border>
+                            <Border x:Name="Thang8" Grid.Column="15" Grid.Row="1" VerticalAlignment="Bottom"></Border>
+                            <Border x:Name="Thang9" Grid.Column="17" Grid.Row="1" VerticalAlignment="Bottom"></Border>
+                            <Border x:Name="Thang10" Grid.Column="19" Grid.Row="1" VerticalAlignment="Bottom"></Border>
+                            <Border x:Name="Thang11" Grid.Column="21" Grid.Row="1" VerticalAlignment="Bottom"></Border>
+                            <Border x:Name="Thang12" Grid.Column="23" Grid.Row="1" VerticalAlignment="Bottom"></Border>
+                            
+                            
+                            <!-- cot x -->
+                            <Grid Grid.Column="0" Grid.Row="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+
+                                <TextBlock Grid.Row="0" FontSize="14">25tr</TextBlock>
+                                <TextBlock Grid.Row="2" FontSize="14">20tr</TextBlock>
+                                <TextBlock Grid.Row="4" FontSize="14">15tr</TextBlock>
+                                <TextBlock Grid.Row="6" FontSize="14">10tr</TextBlock>
+                                <TextBlock Grid.Row="8" FontSize="14">5tr</TextBlock>
+                                <TextBlock Grid.Row="10" FontSize="14">0tr</TextBlock>
+                            </Grid>
+                            <!-- cot y -->
+                            <TextBlock Grid.Row="3" Grid.Column="1" FontSize="11" HorizontalAlignment="Center">01</TextBlock>
+                            <TextBlock Grid.Row="3" Grid.Column="3" FontSize="11" HorizontalAlignment="Center">02</TextBlock>
+                            <TextBlock Grid.Row="3" Grid.Column="5" FontSize="11" HorizontalAlignment="Center">03</TextBlock>
+                            <TextBlock Grid.Row="3" Grid.Column="7" FontSize="11" HorizontalAlignment="Center">04</TextBlock>
+                            <TextBlock Grid.Row="3" Grid.Column="9" FontSize="11" HorizontalAlignment="Center">05</TextBlock>
+                            <TextBlock Grid.Row="3" Grid.Column="11" FontSize="11" HorizontalAlignment="Center">06</TextBlock>
+                            <TextBlock Grid.Row="3" Grid.Column="13" FontSize="11" HorizontalAlignment="Center">07</TextBlock>
+                            <TextBlock Grid.Row="3" Grid.Column="15" FontSize="11" HorizontalAlignment="Center">08</TextBlock>
+                            <TextBlock Grid.Row="3" Grid.Column="17" FontSize="11" HorizontalAlignment="Center">09</TextBlock>
+                            <TextBlock Grid.Row="3" Grid.Column="19" FontSize="11" HorizontalAlignment="Center">10</TextBlock>
+                            <TextBlock Grid.Row="3" Grid.Column="21" FontSize="11" HorizontalAlignment="Center">11</TextBlock>
+                            <TextBlock Grid.Row="3" Grid.Column="23" FontSize="11" HorizontalAlignment="Center">12</TextBlock>
+                        </Grid>
+                        
+                    </Grid>
+                </Border>
+                
+                <!-- row 4 - đơn hàng mới nhất -->
+                <Border Style="{StaticResource borderNgoai}" Grid.Row="4" Padding="20">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="0.3*"/>
+                            <RowDefinition Height="7*"/>
+                        </Grid.RowDefinitions>
+                        
+                        <!-- txt Don Hang Moi Nhat-->
+                        <TextBlock x:Name="tbl_DonHangMoiNhat">Don Hang Moi Nhat</TextBlock>
+                        <!-- noi dung -->
+                        <Grid Grid.Row="2">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="46"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+
+                            <Border Background="#F1F0F0" CornerRadius="5">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock x:Name="tbl_Id" FontSize="16" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">Ma Don</TextBlock>
+                                    <TextBlock x:Name="tbl_Idkh" FontSize="16" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">Ma Khach Hang</TextBlock>
+                                    <TextBlock x:Name="tbl_NgayMua" FontSize="16" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center">Ngay Mua</TextBlock>
+                                    <TextBlock x:Name="tbl_TongTien" FontSize="16" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center">Tong Tien</TextBlock>
+                                    <TextBlock x:Name="tbl_ThanhToan" FontSize="16" Grid.Column="4" HorizontalAlignment="Center" VerticalAlignment="Center">Thanh Toan</TextBlock>
+                                </Grid>
+                            </Border>
+                            <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+                                <StackPanel x:Name="stb_lisdonban"/>
+                            </ScrollViewer>
+                        </Grid>
+                    </Grid>
+                </Border>
+                
+            </Grid>
+        </Grid>
     </Grid>
 </UserControl>

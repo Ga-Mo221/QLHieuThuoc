@@ -140,7 +140,7 @@ namespace QLHieuThuoc.forms
         {
             tbl_Id.Text = sp.MaSanPham1;
             tb_TenSanPham.Text = sp.TenSanPham1;
-            tb_SoLuong.Text = sp.SoLuong1;
+            tb_SoLuong.Text = sp.SoLuong1.ToString();
             cbb_LoaiSanPham.SelectedItem = sp.LoaiSanPham1;
             tb_GiaBan.Text = sp.GiaBan1;
             tb_GiaNhap.Text = sp.GiaNhap1;
