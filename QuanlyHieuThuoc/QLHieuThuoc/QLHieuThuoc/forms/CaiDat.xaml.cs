@@ -41,7 +41,10 @@ namespace QLHieuThuoc.forms
             cbb_NgonNgu.ItemsSource = NgonNgus;
             cbb_NgonNgu.SelectedItem = NN.NgonNguSetting;
             cbb_TiLeManHinh.ItemsSource = TiLeManHinh;
-            cbb_TiLeManHinh.SelectedItem = NN.nn[144];
+            if (NN.TileManHinh == null)
+                cbb_TiLeManHinh.SelectedItem = NN.nn[144];
+            else
+                cbb_TiLeManHinh.SelectedItem = NN.TileManHinh;
         }
 
         private void cbb_NgonNgu_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -95,10 +98,14 @@ namespace QLHieuThuoc.forms
             if (cbb_TiLeManHinh.SelectedItem == NN.nn[144])
             {
                 RestoreWindow(x,y);
-            }else if (cbb_TiLeManHinh.SelectedItem == NN.nn[143])
+                NN.TileManHinh = cbb_TiLeManHinh.SelectedItem.ToString();
+            }
+            else if (cbb_TiLeManHinh.SelectedItem == NN.nn[143])
             {
                 FullMan();
+                NN.TileManHinh = cbb_TiLeManHinh.SelectedItem.ToString();
             }
         }
     }
+
 }

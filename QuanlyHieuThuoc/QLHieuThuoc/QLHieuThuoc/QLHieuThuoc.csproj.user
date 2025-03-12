@@ -20,6 +20,15 @@
     <Compile Update="forms\DonNhapHangMoi.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="forms\FNhanVien\LichLam.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="forms\FNhanVien\Luong.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="forms\FNhanVien\QlGioLam.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="forms\KhachHang.xaml.cs">
       <SubType>Code</SubType>
     </Compile>

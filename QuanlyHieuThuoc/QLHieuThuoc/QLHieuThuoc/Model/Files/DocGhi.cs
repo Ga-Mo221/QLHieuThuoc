@@ -90,5 +90,6 @@ namespace QLHieuThuoc.Model.Files
     {
         public static List<string> nn = new List<string>();
         public static string NgonNguSetting;
+        public static string TileManHinh;
     }
 }

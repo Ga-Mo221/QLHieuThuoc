@@ -1,0 +1,50 @@
+﻿<UserControl x:Class="QLHieuThuoc.forms.FNhanVien.LichLam"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:QLHieuThuoc.forms.FNhanVien"
+             mc:Ignorable="d" 
+             d:DesignHeight="703" d:DesignWidth="1096">
+
+    <Grid x:Name="gridngay" Background="#F7F7F7">
+        <Grid.Resources>
+            <Style TargetType="TextBlock">
+                <Setter Property="FontFamily" Value="Cascadia Mono"/>
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="Foreground" Value="#565656"/>
+                <Setter Property="HorizontalAlignment" Value="Center"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+            </Style>
+        </Grid.Resources>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.4*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Hiển thị thứ trong tuần -->
+        <TextBlock Text="Thứ Hai" Grid.Column="0"/>
+        <TextBlock Text="Thứ Ba" Grid.Column="1"/>
+        <TextBlock Text="Thứ Tư" Grid.Column="2"/>
+        <TextBlock Text="Thứ Năm" Grid.Column="3"/>
+        <TextBlock Text="Thứ Sáu" Grid.Column="4"/>
+        <TextBlock Text="Thứ Bảy" Grid.Column="5"/>
+        <TextBlock Text="Chủ Nhật" Grid.Column="6"/>
+    </Grid>
+</UserControl>

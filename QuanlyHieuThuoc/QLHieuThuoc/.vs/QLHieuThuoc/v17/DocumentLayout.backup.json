@@ -3,16 +3,8 @@
   "WorkspaceRootPath": "D:\\QLHieuThuoc\\QuanlyHieuThuoc\\QLHieuThuoc\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AF183C98-B091-4920-B14C-79D71193BC4C}|QLHieuThuoc\\QLHieuThuoc.csproj|d:\\qlhieuthuoc\\quanlyhieuthuoc\\qlhieuthuoc\\qlhieuthuoc\\forms\\themdonban.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{AF183C98-B091-4920-B14C-79D71193BC4C}|QLHieuThuoc\\QLHieuThuoc.csproj|solutionrelative:qlhieuthuoc\\forms\\themdonban.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AF183C98-B091-4920-B14C-79D71193BC4C}|QLHieuThuoc\\QLHieuThuoc.csproj|d:\\qlhieuthuoc\\quanlyhieuthuoc\\qlhieuthuoc\\qlhieuthuoc\\forms\\themsanphamdonban.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{AF183C98-B091-4920-B14C-79D71193BC4C}|QLHieuThuoc\\QLHieuThuoc.csproj|solutionrelative:qlhieuthuoc\\forms\\themsanphamdonban.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AF183C98-B091-4920-B14C-79D71193BC4C}|QLHieuThuoc\\QLHieuThuoc.csproj|d:\\qlhieuthuoc\\quanlyhieuthuoc\\qlhieuthuoc\\qlhieuthuoc\\forms\\banhang.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{AF183C98-B091-4920-B14C-79D71193BC4C}|QLHieuThuoc\\QLHieuThuoc.csproj|solutionrelative:qlhieuthuoc\\forms\\banhang.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{AF183C98-B091-4920-B14C-79D71193BC4C}|QLHieuThuoc\\QLHieuThuoc.csproj|d:\\qlhieuthuoc\\quanlyhieuthuoc\\qlhieuthuoc\\qlhieuthuoc\\forms\\fnhanvien\\qlgiolam.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{AF183C98-B091-4920-B14C-79D71193BC4C}|QLHieuThuoc\\QLHieuThuoc.csproj|solutionrelative:qlhieuthuoc\\forms\\fnhanvien\\qlgiolam.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,37 +19,13 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ThemDonBan.xaml",
-              "DocumentMoniker": "D:\\QLHieuThuoc\\QuanlyHieuThuoc\\QLHieuThuoc\\QLHieuThuoc\\forms\\ThemDonBan.xaml",
-              "RelativeDocumentMoniker": "QLHieuThuoc\\forms\\ThemDonBan.xaml",
-              "ToolTip": "D:\\QLHieuThuoc\\QuanlyHieuThuoc\\QLHieuThuoc\\QLHieuThuoc\\forms\\ThemDonBan.xaml*",
-              "RelativeToolTip": "QLHieuThuoc\\forms\\ThemDonBan.xaml*",
+              "Title": "QlGioLam.xaml",
+              "DocumentMoniker": "D:\\QLHieuThuoc\\QuanlyHieuThuoc\\QLHieuThuoc\\QLHieuThuoc\\forms\\FNhanVien\\QlGioLam.xaml",
+              "RelativeDocumentMoniker": "QLHieuThuoc\\forms\\FNhanVien\\QlGioLam.xaml",
+              "ToolTip": "D:\\QLHieuThuoc\\QuanlyHieuThuoc\\QLHieuThuoc\\QLHieuThuoc\\forms\\FNhanVien\\QlGioLam.xaml*",
+              "RelativeToolTip": "QLHieuThuoc\\forms\\FNhanVien\\QlGioLam.xaml*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-03-11T12:24:15.68Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "BanHang.xaml",
-              "DocumentMoniker": "D:\\QLHieuThuoc\\QuanlyHieuThuoc\\QLHieuThuoc\\QLHieuThuoc\\forms\\BanHang.xaml",
-              "RelativeDocumentMoniker": "QLHieuThuoc\\forms\\BanHang.xaml",
-              "ToolTip": "D:\\QLHieuThuoc\\QuanlyHieuThuoc\\QLHieuThuoc\\QLHieuThuoc\\forms\\BanHang.xaml",
-              "RelativeToolTip": "QLHieuThuoc\\forms\\BanHang.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-03-11T12:20:48.279Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ThemSanPhamDonBan.xaml",
-              "DocumentMoniker": "D:\\QLHieuThuoc\\QuanlyHieuThuoc\\QLHieuThuoc\\QLHieuThuoc\\forms\\ThemSanPhamDonBan.xaml",
-              "RelativeDocumentMoniker": "QLHieuThuoc\\forms\\ThemSanPhamDonBan.xaml",
-              "ToolTip": "D:\\QLHieuThuoc\\QuanlyHieuThuoc\\QLHieuThuoc\\QLHieuThuoc\\forms\\ThemSanPhamDonBan.xaml",
-              "RelativeToolTip": "QLHieuThuoc\\forms\\ThemSanPhamDonBan.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-03-11T12:18:33.031Z",
+              "WhenOpened": "2025-03-12T07:50:24.828Z",
               "EditorCaption": ""
             }
           ]

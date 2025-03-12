@@ -1,4 +1,4 @@
-sdà
+sadf
 Vui lòng nhập mật khẩu!
 Thông Báo
 Tên đăng nhập hoặc mật khẩu không chính xác
@@ -149,3 +149,6 @@ Lượt Mua
 Tổng Danh Thu
 Đơn Hàng Mới Nhất
 Thuốc Bán Chạy Nhất
+Lịch Làm
+Quản Lý Giờ Làm
+Bảng Lương

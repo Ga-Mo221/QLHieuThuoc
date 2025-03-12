@@ -357,7 +357,7 @@
         </Border>
 
         <StackPanel Grid.Row="2">
-            <Border Background="#D9D9D9" Height="50" CornerRadius="9">
+            <Border Background="White" Height="50" CornerRadius="9">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="25"/>
@@ -389,7 +389,7 @@
 
             <Grid Height="5"></Grid>
 
-            <Border Background="#D9D9D9" Height="50" CornerRadius="9">
+            <Border Background="White" Height="50" CornerRadius="9">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="25"/>

@@ -181,6 +181,7 @@ namespace QLHieuThuoc.forms
             foreach (var i in lspmua.listspmua)
             {
                 FNhapHang_SanPham sanpham = new FNhapHang_SanPham();
+                sanpham.Height = 46;
                 sanpham.TenSanPham = i.Ten;
                 sanpham.SoLuong = i.Soluong.ToString();
                 sanpham.GiaSanPham = i.Giaban.ToString();

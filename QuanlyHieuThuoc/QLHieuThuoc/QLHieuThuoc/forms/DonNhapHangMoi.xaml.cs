@@ -101,6 +101,7 @@ namespace QLHieuThuoc.forms
                     SoLuong = sp.SoLuong1.ToString(),
                     GiaSanPham = sp.GiaNhap1
                 };
+                sanpham.Height = 46;
 
                 stb_ListSanPham.Children.Add(sanpham);
 
@@ -132,9 +133,9 @@ namespace QLHieuThuoc.forms
             {
                 ThemNhaCungCap();
                 ThemDonNhapHangMoi();
-                ThemChiTietDonNhap();
                 ThemSanPham();
-                ThongBao.Show("Thông Báo", NN.nn[122], "Cam");
+                ThemChiTietDonNhap();
+                ThongBao.Show(NN.nn[2], NN.nn[122], "Cam");
                 this.Close();
             }
         }
