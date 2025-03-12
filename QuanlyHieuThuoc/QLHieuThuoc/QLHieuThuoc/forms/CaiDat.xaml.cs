@@ -51,9 +51,19 @@ namespace QLHieuThuoc.forms
         {
             if (cbb_NgonNgu.SelectedItem != NN.NgonNguSetting)
             {
-                dg.SaveSetting($"{cbb_NgonNgu.SelectedItem.ToString()},gsdaf");
-                ThongBao.Show(NN.nn[2], NN.nn[140], "Cam");
-                System.Windows.Application.Current.Shutdown();
+                List<string> kiemtra = new List<string>();
+                dg.Ngongu(kiemtra, cbb_NgonNgu.SelectedItem.ToString());
+                if (kiemtra.Count == NN.nn.Count)
+                {
+                    dg.SaveSetting($"{cbb_NgonNgu.SelectedItem.ToString()},gsdaf");
+                    ThongBao.Show(NN.nn[2], NN.nn[140], "Cam");
+                    System.Windows.Application.Current.Shutdown();
+                }
+                else
+                {
+                    cbb_NgonNgu.SelectedItem = NN.NgonNguSetting;
+                    ThongBao.Show(NN.nn[2], NN.nn[154], "Cam");
+                }
             }
         }
 
@@ -97,7 +107,7 @@ namespace QLHieuThuoc.forms
         {
             if (cbb_TiLeManHinh.SelectedItem == NN.nn[144])
             {
-                RestoreWindow(x,y);
+                RestoreWindow(x, y);
                 NN.TileManHinh = cbb_TiLeManHinh.SelectedItem.ToString();
             }
             else if (cbb_TiLeManHinh.SelectedItem == NN.nn[143])
