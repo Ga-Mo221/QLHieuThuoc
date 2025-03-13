@@ -1,5 +1,5 @@
-﻿using QLHieuThuoc.Model;
-using QLHieuThuoc.Model.DonNhapHangvsNCC;
+﻿using QLHieuThuoc.Model.DonNhapHangvsNCC;
+using QLHieuThuoc.Model.DungNhanh;
 using QLHieuThuoc.Model.Files;
 using QLHieuThuoc.Model.SanPham;
 using QLHieuThuoc.Model.sql;

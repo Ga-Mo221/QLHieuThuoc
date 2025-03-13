@@ -1,5 +1,5 @@
-﻿using QLHieuThuoc.Model;
-using QLHieuThuoc.Model.BanHang;
+﻿using QLHieuThuoc.Model.BanHang;
+using QLHieuThuoc.Model.DungNhanh;
 using QLHieuThuoc.Model.Files;
 using QLHieuThuoc.Model.sql;
 using QLHieuThuoc.UserControls;

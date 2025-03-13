@@ -1,6 +1,6 @@
-﻿using QLHieuThuoc.Model;
-using QLHieuThuoc.Model.BanHang;
+﻿using QLHieuThuoc.Model.BanHang;
 using QLHieuThuoc.Model.DonNhapHangvsNCC;
+using QLHieuThuoc.Model.DungNhanh;
 using QLHieuThuoc.Model.Files;
 using QLHieuThuoc.Model.sql;
 using QLHieuThuoc.UserControls;
@@ -76,18 +76,11 @@ namespace QLHieuThuoc.forms
         // Thêm Đơn nhập mới
         private void bt_ThemDonNhap_Click(object sender, RoutedEventArgs e)
         {
-            // áp dụng hiệu ứng mờ cho cửa sổ hiện tại
-            this.Effect = new System.Windows.Media.Effects.BlurEffect()
+            MainWindow mainWindow = Window.GetWindow(this) as MainWindow;
+            if (mainWindow != null)
             {
-                Radius = 10 // độ mờ
-            };
-
-            DonNhapHangMoi donnhapmoi = new DonNhapHangMoi();
-            donnhapmoi.ShowDialog();
-            
-
-            // xóa hiệu ứng làm mờ khi cửa sổ con đóng lại
-            this.Effect = null;
+                Mo.OpenWindowWithBlur(mainWindow, new DonNhapHangMoi());
+            }
 
             string lenhSelect = "select * from DonNhapHang";
             List<DonNhap> ls = modify.DonNhaps(lenhSelect);
@@ -99,18 +92,11 @@ namespace QLHieuThuoc.forms
         // button mở danh sách nhà cung cấp
         private void bt_NhaCungCap_Click(object sender, RoutedEventArgs e)
         {
-            // áp dụng hiệu ứng mờ cho cửa sổ hiện tại
-            this.Effect = new System.Windows.Media.Effects.BlurEffect()
+            MainWindow mainWindow = Window.GetWindow(this) as MainWindow;
+            if (mainWindow != null)
             {
-                Radius = 10 // độ mờ
-            };
-
-            NhaCungCap nhaCungCap = new NhaCungCap();
-            nhaCungCap.ShowDialog();
-
-
-            // xóa hiệu ứng làm mờ khi cửa sổ con đóng lại
-            this.Effect = null;
+                Mo.OpenWindowWithBlur(mainWindow, new NhaCungCap());
+            }
         }
 
         // Cập nhật đơn nhập
@@ -146,18 +132,11 @@ namespace QLHieuThuoc.forms
 
         private void Donnhap_Click(object? sender, string e)
         {
-            // áp dụng hiệu ứng mờ cho cửa sổ hiện tại
-            this.Effect = new System.Windows.Media.Effects.BlurEffect()
+            MainWindow mainWindow = Window.GetWindow(this) as MainWindow;
+            if (mainWindow != null)
             {
-                Radius = 10 // độ mờ
-            };
-
-            ChiTietDonNhap chitietdonnhap = new ChiTietDonNhap(e, "NhapHang");
-            chitietdonnhap.ShowDialog();
-
-
-            // xóa hiệu ứng làm mờ khi cửa sổ con đóng lại
-            this.Effect = null;
+                Mo.OpenWindowWithBlur(mainWindow, new ChiTietDonNhap(e, "NhapHang"));
+            }
         }
 
         // lấy ngôn ngữ

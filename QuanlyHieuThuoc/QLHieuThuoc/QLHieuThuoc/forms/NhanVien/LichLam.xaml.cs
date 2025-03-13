@@ -1,8 +1,14 @@
-﻿using System;
+﻿using QLHieuThuoc.forms.NhanVien;
+using QLHieuThuoc.Model.DungNhanh;
+using QLHieuThuoc.Model.NhanVien;
+using QLHieuThuoc.Model.sql;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
+using System.Reflection;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -22,14 +28,48 @@ namespace QLHieuThuoc.forms.FNhanVien
     /// </summary>
     public partial class LichLam : UserControl
     {
+        Modify modify = new Modify();
         public LichLam()
         {
             InitializeComponent();
             HienThiLich();
         }
 
+        private void TaoGridNgay()
+        {
+            // Xóa cấu trúc cũ nếu có
+            gridngay.ColumnDefinitions.Clear();
+            gridngay.RowDefinitions.Clear();
+
+            // Tạo 7 cột
+            for (int i = 0; i < 7; i++)
+            {
+                ColumnDefinition col = new ColumnDefinition
+                {
+                    Width = new GridLength(1, GridUnitType.Star)
+                };
+                gridngay.ColumnDefinitions.Add(col);
+            }
+
+            // Tạo 6 hàng
+            for (int i = 0; i < 6; i++)
+            {
+                RowDefinition row = new RowDefinition
+                {
+                    Height = new GridLength(1, GridUnitType.Star)
+                };
+                gridngay.RowDefinitions.Add(row);
+            }
+        }
+
+
         private void HienThiLich()
         {
+            if (gridngay != null)
+            {
+                gridngay.Children.Clear();
+                TaoGridNgay();
+            }
 
             DateTime today = DateTime.Today;
             int year = today.Year;
@@ -44,42 +84,73 @@ namespace QLHieuThuoc.forms.FNhanVien
 
             int dayNumber = 1;
 
-            for (int row = 1; row < 7; row++) // Duyệt qua từng hàng
+            for (int row = 0; row < 6; row++) // Duyệt qua từng hàng
             {
                 for (int col = 0; col < 7; col++) // Duyệt qua từng cột
                 {
-                    if (row == 1 && col < startDay) continue; // Bỏ qua ô trống trước ngày 1
+                    if (row == 0 && col < startDay) continue; // Bỏ qua ô trống trước ngày 1
 
                     if (dayNumber > daysInMonth) return; // Dừng nếu vượt quá số ngày của tháng
 
-                    Border border = borderr(dayNumber);
+                    Button dayButton = CreateDayButton(dayNumber);
 
                     // Đặt vào đúng vị trí trong Grid
-                    Grid.SetColumn(border, col);
-                    Grid.SetRow(border, row);
-                    gridngay.Children.Add(border);
+                    Grid.SetColumn(dayButton, col);
+                    Grid.SetRow(dayButton, row);
+                    
+                    gridngay.Children.Add(dayButton);
 
-                    dayNumber++; // Tăng ngày
+
+                    if (dayNumber < DateTime.Now.Day)
+                    {
+                        dayButton.IsEnabled = false;
+                    }
+                    if (dayNumber == DateTime.Now.Day)
+                    {
+                        dayButton.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#E2895A"));
+                    }
+
+
+                        dayNumber++; // Tăng ngày
                 }
             }
         }
 
 
-        private Border borderr(int dayNumber)
+        private Button CreateDayButton(int dayNumber)
         {
-            // Tạo Border bao quanh
-            Border border = new Border
-            {
-                BorderThickness = new Thickness(1),
-                BorderBrush = new SolidColorBrush(Colors.Gray),
-                CornerRadius = new CornerRadius(5),
+            Button button = new Button
+            { 
+                //Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString(MaMau())),
+                Background = new SolidColorBrush(Colors.White),
+                BorderThickness = new Thickness(0),
                 Padding = new Thickness(5),
                 Margin = new Thickness(2),
-                Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString(MaMau()))
+                FontSize = 16,
+                FontWeight = FontWeights.Bold,
+                Foreground = new SolidColorBrush(Colors.Black)
+            };
+            // Tạo Grid với 2 hàng (RowDefinitions)
+            Grid grid = new Grid
+            {
+                HorizontalAlignment = HorizontalAlignment.Stretch, // tôi muốn đặt chiều cao và chiều dài của grid = chiều cao và dài của button
+                VerticalAlignment = VerticalAlignment.Stretch,
             };
 
-            // Tạo Grid với 2 hàng (RowDefinitions)
-            Grid grid = new Grid();
+            // Binding Width từ Button
+            Binding widthBinding = new Binding("ActualWidth")
+            {
+                RelativeSource = new RelativeSource(RelativeSourceMode.FindAncestor, typeof(Button), 1)
+            };
+            grid.SetBinding(FrameworkElement.WidthProperty, widthBinding);
+
+            // Binding Height từ Button
+            Binding heightBinding = new Binding("ActualHeight")
+            {
+                RelativeSource = new RelativeSource(RelativeSourceMode.FindAncestor, typeof(Button), 1)
+            };
+            grid.SetBinding(FrameworkElement.HeightProperty, heightBinding);
+
             grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(2, GridUnitType.Star) }); // Hàng trên
             grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(3, GridUnitType.Star) }); // Hàng dưới
 
@@ -94,15 +165,82 @@ namespace QLHieuThuoc.forms.FNhanVien
                 Foreground = new SolidColorBrush(Colors.Black)
             };
             Grid.SetRow(ngay, 0); // Đặt vào hàng đầu tiên của Grid
+            StackPanel s = stackPanel(dayNumber);
+            Grid.SetRow(s, 1);
 
             // Thêm TextBlock vào Grid
             grid.Children.Add(ngay);
+            grid.Children.Add(s);
 
             // Đặt Grid vào Border
-            border.Child = grid;
-            return border;
+            button.Content = grid;
+
+            // Bắt sự kiện Click
+            button.Click += (s, e) => dabutton_click(s,e, dayNumber);   
+
+            return button;
         }
 
+
+
+
+        private void dabutton_click(object s, RoutedEventArgs e, int dayNumber)
+        {
+            MainWindow mainWindow = Window.GetWindow(this) as MainWindow;
+            if (mainWindow != null)
+            {
+                Mo.OpenWindowWithBlur(mainWindow, new ThemLichLam(dayNumber));
+                HienThiLich();
+            }
+        }
+
+
+
+
+        private StackPanel stackPanel(int day)
+        {
+            StackPanel stp = new StackPanel
+            {
+            };
+
+            string lenhSelect = "select L.ID as ID_LichLam, NV.TEN as TenNhanVien, L.NGAYLAM, L.TRANGTHAI from LichLam L join NhanVien NV on L.IDNV = NV.ID where day(L.NGAYLAM) = '"+day+"' and month(L.NGAYLAM) = month(GETDATE()) and year(L.NGAYLAM) = year(GETDATE())";
+            List<Lichlam> ll = modify.lichlams(lenhSelect);
+            if (ll != null)
+            {
+                foreach (Lichlam l in ll)
+                {
+                    Grid grid = new Grid()
+                    {
+                        Background = new SolidColorBrush(Colors.Aqua),
+                    };
+
+                    // Tạo TextBlock để hiển thị ngày, đặt vào hàng đầu tiên
+                    TextBlock ngay = new TextBlock
+                    {
+                        Text = l.Idnv,
+                        HorizontalAlignment = HorizontalAlignment.Center,
+                        VerticalAlignment = VerticalAlignment.Center,
+                        FontSize = 13,
+                        FontWeight = FontWeights.Bold,
+                        Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#565656"))
+                    };
+                    grid.Children.Add(ngay);
+                    
+                    stp.Children.Add(grid);
+
+                    if (l.TrangThai == "OK")
+                    {
+                        grid.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#BAFFC2"));
+                    }
+                    else if (l.TrangThai == "NOTOK")
+                    {
+                        grid.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF6868"));
+                    }
+                }
+            }
+
+            return stp;
+        }
 
         private string MaMau()
         {

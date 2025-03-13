@@ -1,4 +1,6 @@
-﻿using QLHieuThuoc.Model.Account;
+﻿using QLHieuThuoc.forms.NhanVien;
+using QLHieuThuoc.Model.Account;
+using QLHieuThuoc.Model.DungNhanh;
 using QLHieuThuoc.Model.Files;
 using System;
 using System.Collections.Generic;
@@ -53,8 +55,8 @@ namespace QLHieuThuoc.forms
                 Radius = 10 // độ mờ
             };
 
-            QuenMK QuenMatKhau_windown = new QuenMK();
-            QuenMatKhau_windown.ShowDialog();
+            QuenMK quenMK = new QuenMK();
+            quenMK.ShowDialog();
 
             // xóa hiệu ứng làm mờ khi cửa sổ con đóng lại
             this.Effect = null;

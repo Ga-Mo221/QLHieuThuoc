@@ -160,7 +160,6 @@ D:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\obj\Debug\net8.0-windows\
 D:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\obj\Debug\net8.0-windows\forms\SanPham\LoaiSanPham.g.cs
 D:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\obj\Debug\net8.0-windows\forms\SanPham\SanPham.g.cs
 D:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\obj\Debug\net8.0-windows\forms\SanPham\ThongTinSanPham.g.cs
-D:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\obj\Debug\net8.0-windows\forms\ThongKe.g.cs
 D:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\obj\Debug\net8.0-windows\forms\ThongKe\ThongBao.g.cs
 D:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\obj\Debug\net8.0-windows\forms\TongQuan\TongQuan.g.cs
 D:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\obj\Debug\net8.0-windows\UserControls\FNhapHang_DonNhapHang.g.cs
@@ -199,7 +198,6 @@ D:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\obj\Debug\net8.0-windows\
 D:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\obj\Debug\net8.0-windows\forms\SanPham\LoaiSanPham.baml
 D:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\obj\Debug\net8.0-windows\forms\SanPham\SanPham.baml
 D:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\obj\Debug\net8.0-windows\forms\SanPham\ThongTinSanPham.baml
-D:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\obj\Debug\net8.0-windows\forms\ThongKe.baml
 D:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\obj\Debug\net8.0-windows\forms\ThongKe\ThongBao.baml
 D:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\obj\Debug\net8.0-windows\forms\TongQuan\TongQuan.baml
 D:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\obj\Debug\net8.0-windows\UserControls\FNhapHang_DonNhapHang.baml
@@ -221,3 +219,13 @@ D:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\obj\Debug\net8.0-windows\
 D:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\obj\Debug\net8.0-windows\QLHieuThuoc.pdb
 D:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\obj\Debug\net8.0-windows\QLHieuThuoc.genruntimeconfig.cache
 D:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\obj\Debug\net8.0-windows\ref\QLHieuThuoc.dll
+D:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\obj\Debug\net8.0-windows\UserControls\NhanVien\TenNhanVien.g.cs
+D:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\obj\Debug\net8.0-windows\UserControls\NhanVien\TenNhanVien.baml
+D:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\obj\Debug\net8.0-windows\UserControls\NhanVien\ThoiGianLamCuaNhanVien.g.cs
+D:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\obj\Debug\net8.0-windows\UserControls\NhanVien\ThoiGianLamCuaNhanVien.baml
+D:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\obj\Debug\net8.0-windows\forms\NhanVien\ThemLichLam.g.cs
+D:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\obj\Debug\net8.0-windows\forms\NhanVien\ThemLichLam.baml
+D:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\obj\Debug\net8.0-windows\UserControls\NhanVien\NhanVienLichLam.g.cs
+D:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\obj\Debug\net8.0-windows\UserControls\NhanVien\NhanVienLichLam.baml
+D:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\obj\Debug\net8.0-windows\forms\ThongKe\ThongKe.g.cs
+D:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\obj\Debug\net8.0-windows\forms\ThongKe\ThongKe.baml

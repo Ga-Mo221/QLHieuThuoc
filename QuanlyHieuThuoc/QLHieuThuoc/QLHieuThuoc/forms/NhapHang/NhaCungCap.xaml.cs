@@ -61,7 +61,7 @@ namespace QLHieuThuoc.forms
         // sự kiện chọn vào nhà cung cấp muốn xem thông tin
         private void NCC_Name_Click(object? sender, string e)
         {
-            string caulenh = "select * from NhaCungCap where TEN = '" + e + "'";
+            string caulenh = "select * from NhaCungCap where TEN = N'" + e + "'";
 
             List<NCC> lsncc = modify.NhaCungCaps(caulenh);
             if (lsncc.Count == 1)
@@ -86,7 +86,7 @@ namespace QLHieuThuoc.forms
 
             if (modify.NhaCungCaps(caulenh).Count == 1)
             {
-                string lenhupdate = "update NhaCungCap set TEN = '"+tb_TenNhaCungCap.Text+"', SDT = '"+tb_SDT.Text+"', DIACHI = N'"+tb_DiaChi.Text+"' where ID = '"+tbl_MaNhaCungCap.Text+"'";
+                string lenhupdate = "update NhaCungCap set TEN = N'"+tb_TenNhaCungCap.Text+"', SDT = '"+tb_SDT.Text+"', DIACHI = N'"+tb_DiaChi.Text+"' where ID = '"+tbl_MaNhaCungCap.Text+"'";
                 modify.ThucThi(lenhupdate);
                 ThongBao.Show(NN.nn[2], NN.nn[92], "Cam");
                 addNhacungcap();

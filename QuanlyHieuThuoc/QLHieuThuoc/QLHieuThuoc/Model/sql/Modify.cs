@@ -2,6 +2,7 @@
 using QLHieuThuoc.Model.Account;
 using QLHieuThuoc.Model.BanHang;
 using QLHieuThuoc.Model.DonNhapHangvsNCC;
+using QLHieuThuoc.Model.NhanVien;
 using QLHieuThuoc.Model.SanPham;
 using System.Data.SqlClient;
 using System.Windows.Data;
@@ -54,7 +55,7 @@ namespace QLHieuThuoc.Model.sql
                 dataReader = sqlConmand.ExecuteReader();
                 while (dataReader.Read())
                 {
-                    nhanViens.Add(new nhanVien(dataReader.GetString(0), dataReader.GetString(1), dataReader.GetString(2), dataReader.GetString(3), dataReader.GetString(4)));
+                    nhanViens.Add(new nhanVien(dataReader.GetString(0), dataReader.GetString(1), dataReader.GetString(2), dataReader.GetString(3), dataReader.GetString(4), dataReader.GetDateTime(5)));
                 }
 
                 sqlConnection.Close();
@@ -217,8 +218,49 @@ namespace QLHieuThuoc.Model.sql
             return khachhangs;
         }
 
+        // check Thời Gian Làm Việc Của Nhân Viên
+        public List<ThoiGianLam> ThoiGianLams(string LenhTruyVan)
+        {
+            List<ThoiGianLam> thoiGianLams = new List<ThoiGianLam>();
 
+            using (SqlConnection sqlConnection = KetNoi.GetSqlconnection())
+            {
+                sqlConnection.Open();
 
+                sqlConmand = new SqlCommand(LenhTruyVan, sqlConnection);
+                dataReader = sqlConmand.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    thoiGianLams.Add( new ThoiGianLam(dataReader.GetString(0), dataReader.GetString(1), dataReader.GetDateTime(2), dataReader.GetTimeSpan(3), dataReader.GetTimeSpan(4), dataReader.GetDecimal(5)));
+                }
+
+                sqlConnection.Close();
+            }
+
+            return thoiGianLams;
+        }
+
+        // check Lịch Làm
+        public List<Lichlam> lichlams(string LenhTruyVan)
+        {
+            List<Lichlam> lichLams = new List<Lichlam>();
+
+            using (SqlConnection sqlConnection = KetNoi.GetSqlconnection())
+            {
+                sqlConnection.Open();
+
+                sqlConmand = new SqlCommand(LenhTruyVan, sqlConnection);
+                dataReader = sqlConmand.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    lichLams.Add(new Lichlam(dataReader.GetString(0), dataReader.GetString(1), dataReader.GetDateTime(2), dataReader.GetString(3)));
+                }
+
+                sqlConnection.Close();
+            }
+
+            return lichLams;
+        }
 
 
 

@@ -1,5 +1,6 @@
-﻿using QLHieuThuoc.Model;
+﻿using QLHieuThuoc.Model.DungNhanh;
 using QLHieuThuoc.Model.Files;
+using QLHieuThuoc.Model.NhanVien;
 using QLHieuThuoc.Model.SanPham;
 using QLHieuThuoc.Model.sql;
 using QLHieuThuoc.UserControls;
@@ -59,17 +60,12 @@ namespace QLHieuThuoc.forms
         {
             string CauLenhTruyVan = "select * from SanPham where LOAI = N'" + NN.nn[54] + "'";
             List<Sanpham> sp = modify.SanPhams(CauLenhTruyVan);
-            // áp dụng hiệu ứng mờ cho cửa sổ hiện tại
-            this.Effect = new System.Windows.Media.Effects.BlurEffect()
+
+            MainWindow mainWindow = Window.GetWindow(this) as MainWindow;
+            if (mainWindow != null)
             {
-                Radius = 10 // độ mờ
-            };
-
-            LoaiSanPham loaisp = new LoaiSanPham(sp, NN.nn[54]);
-            loaisp.ShowDialog();
-
-            // xóa hiệu ứng làm mờ khi cửa sổ con đóng lại
-            this.Effect = null;
+                Mo.OpenWindowWithBlur(mainWindow, new LoaiSanPham(sp, NN.nn[54]));
+            }
         }
         // button Thuốc dị ứng
         private void Bt_ThuocDiUng_Click(object? sender, EventArgs e)
@@ -77,16 +73,11 @@ namespace QLHieuThuoc.forms
             string CauLenhTruyVan = "select * from SanPham where LOAI = N'" + NN.nn[53] + "'";
             List<Sanpham> sp = modify.SanPhams(CauLenhTruyVan);
             // áp dụng hiệu ứng mờ cho cửa sổ hiện tại
-            this.Effect = new System.Windows.Media.Effects.BlurEffect()
+            MainWindow mainWindow = Window.GetWindow(this) as MainWindow;
+            if (mainWindow != null)
             {
-                Radius = 10 // độ mờ
-            };
-
-            LoaiSanPham loaisp = new LoaiSanPham(sp, NN.nn[53]);
-            loaisp.ShowDialog();
-
-            // xóa hiệu ứng làm mờ khi cửa sổ con đóng lại
-            this.Effect = null;
+                Mo.OpenWindowWithBlur(mainWindow, new LoaiSanPham(sp, NN.nn[53]));
+            }
         }
         // button Thực phẩm chức năng
         private void Bt_ThucPhamChucNang_Click(object? sender, EventArgs e)
@@ -95,16 +86,11 @@ namespace QLHieuThuoc.forms
             List<Sanpham> sp = modify.SanPhams(CauLenhTruyVan);
 
             // áp dụng hiệu ứng mờ cho cửa sổ hiện tại
-            this.Effect = new System.Windows.Media.Effects.BlurEffect()
+            MainWindow mainWindow = Window.GetWindow(this) as MainWindow;
+            if (mainWindow != null)
             {
-                Radius = 10 // độ mờ
-            };
-
-            LoaiSanPham loaisp = new LoaiSanPham(sp, NN.nn[50]);
-            loaisp.ShowDialog();
-
-            // xóa hiệu ứng làm mờ khi cửa sổ con đóng lại
-            this.Effect = null;
+                Mo.OpenWindowWithBlur(mainWindow, new LoaiSanPham(sp, NN.nn[50]));
+            }
         }
         // button Thuốc giảm đau
         private void Bt_ThuocGiamDau_Click(object? sender, EventArgs e)
@@ -112,16 +98,11 @@ namespace QLHieuThuoc.forms
             string CauLenhTruyVan = "select * from SanPham where LOAI = N'" + NN.nn[48] + "'";
             List<Sanpham> sp = modify.SanPhams(CauLenhTruyVan);
             // áp dụng hiệu ứng mờ cho cửa sổ hiện tại
-            this.Effect = new System.Windows.Media.Effects.BlurEffect()
+            MainWindow mainWindow = Window.GetWindow(this) as MainWindow;
+            if (mainWindow != null)
             {
-                Radius = 10 // độ mờ
-            };
-
-            LoaiSanPham loaisp = new LoaiSanPham(sp, NN.nn[48]);
-            loaisp.ShowDialog();
-
-            // xóa hiệu ứng làm mờ khi cửa sổ con đóng lại
-            this.Effect = null;
+                Mo.OpenWindowWithBlur(mainWindow, new LoaiSanPham(sp, NN.nn[48]));
+            }
         }
         // button Vitamin
         private void Bt_Vitamin_Click(object? sender, EventArgs e)
@@ -129,16 +110,11 @@ namespace QLHieuThuoc.forms
             string CauLenhTruyVan = "select * from SanPham where LOAI = N'" + NN.nn[49] + "'";
             List<Sanpham> sp = modify.SanPhams(CauLenhTruyVan);
             // áp dụng hiệu ứng mờ cho cửa sổ hiện tại
-            this.Effect = new System.Windows.Media.Effects.BlurEffect()
+            MainWindow mainWindow = Window.GetWindow(this) as MainWindow;
+            if (mainWindow != null)
             {
-                Radius = 10 // độ mờ
-            };
-
-            LoaiSanPham loaisp = new LoaiSanPham(sp, NN.nn[49]);
-            loaisp.ShowDialog();
-
-            // xóa hiệu ứng làm mờ khi cửa sổ con đóng lại
-            this.Effect = null;
+                Mo.OpenWindowWithBlur(mainWindow, new LoaiSanPham(sp, NN.nn[49]));
+            }
         }
         // button ThuocTimMach
         private void Bt_ThuocTimMach_Click(object? sender, EventArgs e)
@@ -146,16 +122,11 @@ namespace QLHieuThuoc.forms
             string CauLenhTruyVan = "select * from SanPham where LOAI = N'" + NN.nn[52] + "'";
             List<Sanpham> sp = modify.SanPhams(CauLenhTruyVan);
             // áp dụng hiệu ứng mờ cho cửa sổ hiện tại
-            this.Effect = new System.Windows.Media.Effects.BlurEffect()
+            MainWindow mainWindow = Window.GetWindow(this) as MainWindow;
+            if (mainWindow != null)
             {
-                Radius = 10 // độ mờ
-            };
-
-            LoaiSanPham loaisp = new LoaiSanPham(sp, NN.nn[52]);
-            loaisp.ShowDialog();
-
-            // xóa hiệu ứng làm mờ khi cửa sổ con đóng lại
-            this.Effect = null;
+                Mo.OpenWindowWithBlur(mainWindow, new LoaiSanPham(sp, NN.nn[52]));
+            }
         }
         // button Thuốc kháng virus
         private void Bt_ThuocKhangVirus_Click(object? sender, EventArgs e)
@@ -163,34 +134,24 @@ namespace QLHieuThuoc.forms
             string CauLenhTruyVan = "select * from SanPham where LOAI = N'" + NN.nn[51] +"'";
             List<Sanpham> sp = modify.SanPhams(CauLenhTruyVan);
             // áp dụng hiệu ứng mờ cho cửa sổ hiện tại
-            this.Effect = new System.Windows.Media.Effects.BlurEffect()
+            MainWindow mainWindow = Window.GetWindow(this) as MainWindow;
+            if (mainWindow != null)
             {
-                Radius = 10 // độ mờ
-            };
-
-            LoaiSanPham loaisp = new LoaiSanPham(sp, NN.nn[51]);
-            loaisp.ShowDialog();
-
-            // xóa hiệu ứng làm mờ khi cửa sổ con đóng lại
-            this.Effect = null;
+                Mo.OpenWindowWithBlur(mainWindow, new LoaiSanPham(sp, NN.nn[51]));
+            }
         }
         // button thuốc kháng sinh
         private void Bt_ThuocKhangSinh_Click(object? sender, EventArgs e)
         {
             string CauLenhTruyVan = "select * from SanPham where LOAI = N'" + NN.nn[47] +"'";
             List<Sanpham> sp = modify.SanPhams(CauLenhTruyVan);
-            
+
             // áp dụng hiệu ứng mờ cho cửa sổ hiện tại
-            this.Effect = new System.Windows.Media.Effects.BlurEffect()
+            MainWindow mainWindow = Window.GetWindow(this) as MainWindow;
+            if (mainWindow != null)
             {
-                Radius = 10 // độ mờ
-            };
-
-            LoaiSanPham loaisp = new LoaiSanPham(sp, NN.nn[47]);
-            loaisp.ShowDialog();
-
-            // xóa hiệu ứng làm mờ khi cửa sổ con đóng lại
-            this.Effect = null;
+                Mo.OpenWindowWithBlur(mainWindow, new LoaiSanPham(sp, NN.nn[47]));
+            }
         }
         //--------------------------------------------
 
@@ -238,17 +199,11 @@ namespace QLHieuThuoc.forms
         // thêm sản phẩm
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            // áp dụng hiệu ứng mờ cho cửa sổ hiện tại
-            this.Effect = new System.Windows.Media.Effects.BlurEffect()
+            MainWindow mainWindow = Window.GetWindow(this) as MainWindow;
+            if (mainWindow != null)
             {
-                Radius = 10 // độ mờ
-            };
-
-            ThemSanPham CuaSoThemSanPham = new ThemSanPham("SanPham");
-            CuaSoThemSanPham.ShowDialog();
-
-            // xóa hiệu ứng làm mờ khi cửa sổ con đóng lại
-            this.Effect = null;
+                Mo.OpenWindowWithBlur(mainWindow, new ThemSanPham("SanPham"));
+            }
         }
 
 
@@ -293,15 +248,11 @@ namespace QLHieuThuoc.forms
             List<Sanpham> sp = modify.SanPhams(CauLenhTruyVan);
             ThongTinSanPham ttsp = new ThongTinSanPham(sp[0]);
             // áp dụng hiệu ứng mờ cho cửa sổ hiện tại
-            this.Effect = new System.Windows.Media.Effects.BlurEffect()
+            MainWindow mainWindow = Window.GetWindow(this) as MainWindow;
+            if (mainWindow != null)
             {
-                Radius = 10 // độ mờ
-            };
-
-            ttsp.ShowDialog();
-            
-            // xóa hiệu ứng làm mờ khi cửa sổ con đóng lại
-            this.Effect = null;
+                Mo.OpenWindowWithBlur(mainWindow, ttsp);
+            }
         }
 
 

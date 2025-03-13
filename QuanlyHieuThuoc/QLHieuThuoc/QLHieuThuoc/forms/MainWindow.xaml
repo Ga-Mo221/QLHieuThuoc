@@ -67,194 +67,201 @@
             </Setter>
         </Style>
     </Window.Resources>
-    <Border Background="#F7F7F7" 
-            CornerRadius="10"
-            BorderThickness="1"
-            BorderBrush="Black"
-            Padding="20">
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="262"></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-            </Grid.ColumnDefinitions>
+    <Grid>
+        <Border Background="#F7F7F7" 
+                CornerRadius="10"
+                BorderThickness="1"
+                BorderBrush="Black"
+                Padding="20">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="262"></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
 
             
-            <!-- grid colunm 0 -->
-            <Border Background="#E2895A"
-                    CornerRadius="20"
-                    Grid.Column="0">
-                <Grid>
-                    <Grid Margin="16">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="24"></RowDefinition>
-                            <RowDefinition Height="63"></RowDefinition>
-                            <RowDefinition Height="34"></RowDefinition>
-                            <RowDefinition Height="57"></RowDefinition>
-                            <RowDefinition Height="15"></RowDefinition>
-                            <RowDefinition Height="57"></RowDefinition>
-                            <RowDefinition Height="15"></RowDefinition>
-                            <RowDefinition Height="57"></RowDefinition>
-                            <RowDefinition Height="15"></RowDefinition>
-                            <RowDefinition Height="57"></RowDefinition>
-                            <RowDefinition Height="15"></RowDefinition>
-                            <RowDefinition Height="57"></RowDefinition>
-                            <RowDefinition Height="15"></RowDefinition>
-                            <RowDefinition Height="57"></RowDefinition>
-                            <RowDefinition Height="15"></RowDefinition>
-                            <RowDefinition Height="57"></RowDefinition>
-                            <RowDefinition></RowDefinition>
-                        </Grid.RowDefinitions>
+                <!-- grid colunm 0 -->
+                <Border Background="#E2895A"
+                        CornerRadius="20"
+                        Grid.Column="0">
+                    <Grid>
+                        <Grid Margin="16">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="24"></RowDefinition>
+                                <RowDefinition Height="63"></RowDefinition>
+                                <RowDefinition Height="34"></RowDefinition>
+                                <RowDefinition Height="57"></RowDefinition>
+                                <RowDefinition Height="15"></RowDefinition>
+                                <RowDefinition Height="57"></RowDefinition>
+                                <RowDefinition Height="15"></RowDefinition>
+                                <RowDefinition Height="57"></RowDefinition>
+                                <RowDefinition Height="15"></RowDefinition>
+                                <RowDefinition Height="57"></RowDefinition>
+                                <RowDefinition Height="15"></RowDefinition>
+                                <RowDefinition Height="57"></RowDefinition>
+                                <RowDefinition Height="15"></RowDefinition>
+                                <RowDefinition Height="57"></RowDefinition>
+                                <RowDefinition Height="15"></RowDefinition>
+                                <RowDefinition Height="57"></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions>
                         
                         
-                        <!-- logo và thương hiệu-->
-                        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
-                            <Grid Height="63" Width="63">
-                                <Ellipse Height="63" Width="63" Fill="#FCF4F0"></Ellipse>
-                                <Image Height="63" Width="63" Source="pack://application:,,,/Photos/logo.png"/>
-                            </Grid>
-                            <TextBlock Text="  QLHT" 
-                                       Style="{StaticResource CustomFont}" 
-                                       FontSize="21"
-                                       Foreground="#565656"
-                                       VerticalAlignment="Center">
-                            </TextBlock>
-                        </StackPanel>
+                            <!-- logo và thương hiệu-->
+                            <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                                <Grid Height="63" Width="63">
+                                    <Ellipse Height="63" Width="63" Fill="#FCF4F0"></Ellipse>
+                                    <Image Height="63" Width="63" Source="pack://application:,,,/Photos/logo.png"/>
+                                </Grid>
+                                <TextBlock Text="  QLHT" 
+                                           Style="{StaticResource CustomFont}" 
+                                           FontSize="21"
+                                           Foreground="#565656"
+                                           VerticalAlignment="Center">
+                                </TextBlock>
+                            </StackPanel>
                         
                                                
-                        <!-- Tổng quan -->
-                        <Button x:Name="bt_TongQuan" 
-                                Style="{DynamicResource TongQuan}" 
-                                Grid.Row="3"
-                                Background="#E2895A" Click="bt_TongQuan_Click">
-                            <TextBlock x:Name="tbl_bt_TongQuan" 
-                                       FontSize="20"
-                                       FontFamily="Cascadia Mono"
-                                       Foreground="#FCF4F0">
-                                Tổng Quan
-                            </TextBlock>
-                        </Button>
+                            <!-- Tổng quan -->
+                            <Button x:Name="bt_TongQuan" 
+                                    Style="{DynamicResource TongQuan}" 
+                                    Grid.Row="3"
+                                    Background="#E2895A" Click="bt_TongQuan_Click">
+                                <TextBlock x:Name="tbl_bt_TongQuan" 
+                                           FontSize="20"
+                                           FontFamily="Cascadia Mono"
+                                           Foreground="#FCF4F0">
+                                    Tổng Quan
+                                </TextBlock>
+                            </Button>
                         
                         
-                        <!-- Sản phẩm -->
-                        <Button x:Name="bt_SanPham" 
-                                Style="{DynamicResource TongQuan}" 
-                                Grid.Row="5"
-                                Background="#E2895A" Click="bt_SanPham_Click">
-                            <TextBlock x:Name="tbl_bt_SanPham" 
-                                       FontSize="20"
-                                       FontFamily="Cascadia Mono"
-                                       Foreground="#FCF4F0">
-                                Sản Phẩm
-                            </TextBlock>
-                        </Button>
+                            <!-- Sản phẩm -->
+                            <Button x:Name="bt_SanPham" 
+                                    Style="{DynamicResource TongQuan}" 
+                                    Grid.Row="5"
+                                    Background="#E2895A" Click="bt_SanPham_Click">
+                                <TextBlock x:Name="tbl_bt_SanPham" 
+                                           FontSize="20"
+                                           FontFamily="Cascadia Mono"
+                                           Foreground="#FCF4F0">
+                                    Sản Phẩm
+                                </TextBlock>
+                            </Button>
                         
                         
-                        <!-- Bán hàng -->
-                        <Button x:Name="bt_BanHang" 
-                                Style="{DynamicResource TongQuan}" Grid.Row="7"
-                                Background="#E2895A" Click="bt_BanHang_Click">
-                            <TextBlock x:Name="tbl_bt_BanHang" 
-                                       FontSize="20"
-                                       FontFamily="Cascadia Mono"
-                                       Foreground="#FCF4F0">
-                                Bán Hàng
-                            </TextBlock>
-                        </Button>
+                            <!-- Bán hàng -->
+                            <Button x:Name="bt_BanHang" 
+                                    Style="{DynamicResource TongQuan}" Grid.Row="7"
+                                    Background="#E2895A" Click="bt_BanHang_Click">
+                                <TextBlock x:Name="tbl_bt_BanHang" 
+                                           FontSize="20"
+                                           FontFamily="Cascadia Mono"
+                                           Foreground="#FCF4F0">
+                                    Bán Hàng
+                                </TextBlock>
+                            </Button>
                         
                         
-                        <!-- Nhập hàng -->
-                        <Button x:Name="bt_NhapHang" 
-                                Style="{DynamicResource TongQuan}" Grid.Row="9"
-                                Background="#E2895A" Click="bt_NhapHang_Click">
-                            <TextBlock x:Name="tbl_bt_NhapHang" 
-                                       FontSize="20"
-                                       FontFamily="Cascadia Mono"
-                                       Foreground="#FCF4F0">
-                                Nhập Hàng
-                            </TextBlock>
-                        </Button>
+                            <!-- Nhập hàng -->
+                            <Button x:Name="bt_NhapHang" 
+                                    Style="{DynamicResource TongQuan}" Grid.Row="9"
+                                    Background="#E2895A" Click="bt_NhapHang_Click">
+                                <TextBlock x:Name="tbl_bt_NhapHang" 
+                                           FontSize="20"
+                                           FontFamily="Cascadia Mono"
+                                           Foreground="#FCF4F0">
+                                    Nhập Hàng
+                                </TextBlock>
+                            </Button>
                         
                         
-                        <!-- Thống kê -->
-                        <Button x:Name="bt_ThongKe" 
-                                Style="{DynamicResource TongQuan}" Grid.Row="11"
-                                Background="#E2895A" Click="bt_ThongKe_Click">
-                            <TextBlock x:Name="tbl_bt_ThongKe" 
-                                       FontSize="20"
-                                       FontFamily="Cascadia Mono"
-                                       Foreground="#FCF4F0">
-                                Thống Kê
-                            </TextBlock>
-                        </Button>
+                            <!-- Thống kê -->
+                            <Button x:Name="bt_ThongKe" 
+                                    Style="{DynamicResource TongQuan}" Grid.Row="11"
+                                    Background="#E2895A" Click="bt_ThongKe_Click">
+                                <TextBlock x:Name="tbl_bt_ThongKe" 
+                                           FontSize="20"
+                                           FontFamily="Cascadia Mono"
+                                           Foreground="#FCF4F0">
+                                    Thống Kê
+                                </TextBlock>
+                            </Button>
                         
                         
-                        <!-- Khách Hàng -->
-                        <Button x:Name="bt_KhachHang" 
-                                Style="{DynamicResource TongQuan}" Grid.Row="13"
-                                Background="#E2895A" Click="bt_KhachHang_Click">
-                            <TextBlock x:Name="tbl_bt_KhachHang" 
-                                       FontSize="20"
-                                       FontFamily="Cascadia Mono"
-                                       Foreground="#FCF4F0">
-                                Khách Hàng
-                            </TextBlock>
-                        </Button>
+                            <!-- Khách Hàng -->
+                            <Button x:Name="bt_KhachHang" 
+                                    Style="{DynamicResource TongQuan}" Grid.Row="13"
+                                    Background="#E2895A" Click="bt_KhachHang_Click">
+                                <TextBlock x:Name="tbl_bt_KhachHang" 
+                                           FontSize="20"
+                                           FontFamily="Cascadia Mono"
+                                           Foreground="#FCF4F0">
+                                    Khách Hàng
+                                </TextBlock>
+                            </Button>
                         
                         
-                        <!-- Nhân viên -->
-                        <Button x:Name="bt_NhanVien" 
-                                Style="{DynamicResource TongQuan}" Grid.Row="15"
-                                Background="#E2895A" Click="bt_NhanVien_Click">
-                            <TextBlock x:Name="tbl_bt_NhanVien" 
-                                       FontSize="20"
-                                       FontFamily="Cascadia Mono"
-                                       Foreground="#FCF4F0">
-                                 Nhân Viên
-                            </TextBlock>
-                        </Button>
+                            <!-- Nhân viên -->
+                            <Button x:Name="bt_NhanVien" 
+                                    Style="{DynamicResource TongQuan}" Grid.Row="15"
+                                    Background="#E2895A" Click="bt_NhanVien_Click">
+                                <TextBlock x:Name="tbl_bt_NhanVien" 
+                                           FontSize="20"
+                                           FontFamily="Cascadia Mono"
+                                           Foreground="#FCF4F0">
+                                     Nhân Viên
+                                </TextBlock>
+                            </Button>
                         
                         
-                        <!-- cài đặt và đăng xuất-->
-                        <Grid Grid.Row="16">
-                            <StackPanel Orientation="Vertical" 
-                                        VerticalAlignment="Bottom">
+                            <!-- cài đặt và đăng xuất-->
+                            <Grid Grid.Row="16">
+                                <StackPanel Orientation="Vertical" 
+                                            VerticalAlignment="Bottom">
                                 
-                                <!-- Cài Đặt -->
-                                <Button x:Name="bt_CaiDat" 
-                                        Style="{DynamicResource TongQuan}"
-                                        Height="57"
-                                        Background="#E2895A" 
-                                        Click="bt_CaiDat_Click">
-                                    <TextBlock x:Name="tbl_bt_CaiDat" 
-                                                FontSize="20"
-                                                FontFamily="Cascadia Mono"
-                                                Foreground="#FCF4F0">
-                                        Cài Đặt
-                                    </TextBlock>
-                                </Button>
-                                <Grid Height="15"/>
-                                <!-- Đăng Xuất -->
-                                <Button x:Name="bt_DangXuat"
-                                        Height="57"
-                                        Style="{DynamicResource TongQuan}"
-                                        Background="#E2895A" Click="bt_DangXuat_Click">
-                                    <TextBlock x:Name="tbl_bt_DangXuat" 
-                                                FontSize="20"
-                                                FontFamily="Cascadia Mono"
-                                                Foreground="#FCF4F0">
-                                        Đăng Xuất
-                                    </TextBlock>
-                                </Button>
-                                <Grid Height="24"/>
-                            </StackPanel>
+                                    <!-- Cài Đặt -->
+                                    <Button x:Name="bt_CaiDat" 
+                                            Style="{DynamicResource TongQuan}"
+                                            Height="57"
+                                            Background="#E2895A" 
+                                            Click="bt_CaiDat_Click">
+                                        <TextBlock x:Name="tbl_bt_CaiDat" 
+                                                    FontSize="20"
+                                                    FontFamily="Cascadia Mono"
+                                                    Foreground="#FCF4F0">
+                                            Cài Đặt
+                                        </TextBlock>
+                                    </Button>
+                                    <Grid Height="15"/>
+                                    <!-- Đăng Xuất -->
+                                    <Button x:Name="bt_DangXuat"
+                                            Height="57"
+                                            Style="{DynamicResource TongQuan}"
+                                            Background="#E2895A" Click="bt_DangXuat_Click">
+                                        <TextBlock x:Name="tbl_bt_DangXuat" 
+                                                    FontSize="20"
+                                                    FontFamily="Cascadia Mono"
+                                                    Foreground="#FCF4F0">
+                                            Đăng Xuất
+                                        </TextBlock>
+                                    </Button>
+                                    <Grid Height="24"/>
+                                </StackPanel>
+                            </Grid>
                         </Grid>
+
                     </Grid>
+                </Border>
 
-                </Grid>
-            </Border>
-
-            <Grid x:Name="grid_NoiDung" Grid.Column="1" Margin="20"></Grid>
+                <Grid x:Name="grid_NoiDung" Grid.Column="1" Margin="20"></Grid>
             
-        </Grid>
-    </Border>
+            </Grid>
+        </Border>
+        <Rectangle x:Name="Overlay"
+               Fill="Black"
+               Opacity="0"
+               Visibility="Collapsed"
+               Panel.ZIndex="1"/>
+    </Grid>
 </Window>

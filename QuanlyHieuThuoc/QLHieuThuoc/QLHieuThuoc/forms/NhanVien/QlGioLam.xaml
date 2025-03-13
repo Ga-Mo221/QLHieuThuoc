@@ -574,12 +574,12 @@
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
 
-                                <TextBlock x:Name="tbl_IdNhanVien" HorizontalAlignment="Left" VerticalAlignment="Center">ID:#93hfkjs</TextBlock>
+                                <TextBlock x:Name="tbl_IdNhanVien" HorizontalAlignment="Left" VerticalAlignment="Center">ID:</TextBlock>
                                 <TextBlock x:Name="tbl_Tennhanvien" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center">Ten: </TextBlock>
-                                <TextBox Template="{DynamicResource TextBoxTemplate1}" x:Name="tb_TenNhanVien" HorizontalAlignment="Right" Width="275" VerticalAlignment="Center" Grid.Column="1" Text="Nguyen Thi a"></TextBox>
-                                <Button Style="{DynamicResource ButtonStyle2}" Grid.Column="2" Height="40" HorizontalAlignment="Right" Width="120" Background="#E2895A">
+                                <TextBox Template="{DynamicResource TextBoxTemplate1}" x:Name="tb_TenNhanVien" HorizontalAlignment="Right" Width="275" VerticalAlignment="Center" Grid.Column="1"></TextBox>
+                                <Button Style="{DynamicResource ButtonStyle2}" Grid.Column="2" Height="40" HorizontalAlignment="Right" Width="120" Background="#E2895A" Click="Button_Click_1">
                                     <Button.Content>
-                                        <TextBlock>Sua</TextBlock>
+                                        <TextBlock x:Name="tbl_bt_sua">Sua</TextBlock>
                                     </Button.Content>
                                 </Button>
                             </Grid>
@@ -591,15 +591,15 @@
                                 </Grid.ColumnDefinitions>
 
                                 <TextBlock x:Name="tbl_ChucVu" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center">Chuc Vu:</TextBlock>
-                                <ComboBox Style="{DynamicResource ComboBoxStyle1}" x:Name="cbb_ChucVu" HorizontalAlignment="Right" VerticalAlignment="Center" Width="100" Margin="0 0 10 0"></ComboBox>
+                                <ComboBox Style="{DynamicResource ComboBoxStyle1}" x:Name="cbb_ChucVu" FontFamily="Cascadia Mono" FontSize="16" Foreground="#565656" HorizontalAlignment="Right" VerticalAlignment="Center" Width="100" Margin="0 0 10 0"></ComboBox>
                                 <TextBlock x:Name="tbl_Sdt" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center">So Dien Thoai:</TextBlock>
-                                <TextBox Template="{DynamicResource TextBoxTemplate1}" x:Name="tb_Sdt" HorizontalAlignment="Right" Width="270" VerticalAlignment="Center" Grid.Column="1" Text="034867893"></TextBox>
+                                <TextBox Template="{DynamicResource TextBoxTemplate1}" x:Name="tb_Sdt" HorizontalAlignment="Right" Width="270" VerticalAlignment="Center" Grid.Column="1"></TextBox>
 
                             </Grid>
                             <!-- dia chi -->
                             <Grid Grid.Row="2">
                                 <TextBlock x:Name="tbl_DiaChi" HorizontalAlignment="Left" VerticalAlignment="Center">Dia Chi: </TextBlock>
-                                <TextBox Template="{DynamicResource TextBoxTemplate1}" x:Name="tb_DiaChi" HorizontalAlignment="Center" Width="460" VerticalAlignment="Center" Grid.Column="1" Text="Da Nang Quang Nam"></TextBox>
+                                <TextBox Template="{DynamicResource TextBoxTemplate1}" x:Name="tb_DiaChi" HorizontalAlignment="Center" Width="460" VerticalAlignment="Center" Grid.Column="1"></TextBox>
                             </Grid>
                         </Grid>
                         <!-- thoi gian lam -->

@@ -1,4 +1,4 @@
-﻿using QLHieuThuoc.Model;
+﻿using QLHieuThuoc.Model.DungNhanh;
 using QLHieuThuoc.Model.Files;
 using System;
 using System.Collections.Generic;

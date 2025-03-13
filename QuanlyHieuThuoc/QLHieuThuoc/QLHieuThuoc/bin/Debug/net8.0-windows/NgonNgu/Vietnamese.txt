@@ -1,4 +1,4 @@
-sadf
+ádf
 Vui lòng nhập mật khẩu!
 Thông Báo
 Tên đăng nhập hoặc mật khẩu không chính xác
@@ -153,3 +153,21 @@ Lịch Làm
 Quản Lý Giờ Làm
 Bảng Lương
 Ngôn Ngữ Chưa Sẳn Sàn!
+Nhân Viên
+Quản Lý
+Thêm Nhân Viên
+Chưa nhập tên nhân viên!
+Đã Thêm Nhân Viên Thành Công!
+Sửa
+Tổng Nhân Viên
+Nhân Viên Mới
+Chức Vụ
+Ngày Làm
+Giờ Ra
+Giờ Vào
+Tổng Giờ Làm
+Tên Nhân Viên
+NGÀY
+Lịch Làm
+Thêm Nhân Viên
+Ghi Chú

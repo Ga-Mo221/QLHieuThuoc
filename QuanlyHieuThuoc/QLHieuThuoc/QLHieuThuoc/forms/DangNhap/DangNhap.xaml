@@ -399,398 +399,404 @@
             </Setter>
         </Style>
     </Window.Resources>
-
-    <Border Background="White" 
-            CornerRadius="35"
-            BorderThickness="1"
-            BorderBrush="Black"
-            Padding="15">
-        <Grid>
+    <Grid>
+        <Border Background="White" 
+                CornerRadius="35"
+                BorderThickness="1"
+                BorderBrush="Black"
+                Padding="15">
             <Grid>
-                <Grid.Resources>
-                    <Style TargetType="{x:Type TextBlock}" x:Key="styletbl">
-                        <Style.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="TextDecorations" Value="Underline"/>
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </Grid.Resources>
+                <Grid>
+                    <Grid.Resources>
+                        <Style TargetType="{x:Type TextBlock}" x:Key="styletbl">
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="TextDecorations" Value="Underline"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Grid.Resources>
                 
                 
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                </Grid.ColumnDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
 
-                <!-- nút thoát -->
-                <Button Style="{DynamicResource radiusButton}" Grid.Column="1"
-                        Width="64" Height="22"
-                        Background="#E2895A"
-                        HorizontalAlignment="Right"
-                        VerticalAlignment="Top"
-                        Click="Button_Click">
-                    <Button.Content>
-                        <TextBlock x:Name="tbl_bt_thoat" 
-                                   Text="Thoát"
-                                   FontSize="11" FontFamily="Cascadia Mono" FontWeight="Bold"
-                                   />
-                    </Button.Content>
-                </Button>
+                    <!-- nút thoát -->
+                    <Button Style="{DynamicResource radiusButton}" Grid.Column="1"
+                            Width="64" Height="22"
+                            Background="#E2895A"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Top"
+                            Click="Button_Click">
+                        <Button.Content>
+                            <TextBlock x:Name="tbl_bt_thoat" 
+                                       Text="Thoát"
+                                       FontSize="11" FontFamily="Cascadia Mono" FontWeight="Bold"
+                                       />
+                        </Button.Content>
+                    </Button>
 
-                <!-- Đăng ký -->
-                <Grid Grid.Column="0">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="79"></RowDefinition>
-                        <RowDefinition Height="42"></RowDefinition>
-                        <RowDefinition Height="17"></RowDefinition>
-                        <RowDefinition Height="34"></RowDefinition>
-                        <RowDefinition Height="13"></RowDefinition>
-                        <RowDefinition Height="34"></RowDefinition>
-                        <RowDefinition Height="48"></RowDefinition>
-                        <RowDefinition Height="17"></RowDefinition>
-                        <RowDefinition Height="48"></RowDefinition>
-                        <RowDefinition Height="17"></RowDefinition>
-                        <RowDefinition Height="48"></RowDefinition>
-                        <RowDefinition Height="32"></RowDefinition>
-                        <RowDefinition Height="48"></RowDefinition>
-                        <RowDefinition Height="16"></RowDefinition>
-                        <RowDefinition Height="13"></RowDefinition>
-                        <RowDefinition Height="69"></RowDefinition>
-                    </Grid.RowDefinitions>
-                    <!-- logo và thương hiệu -->
-                    <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
-                        <Grid Width="42" Height="42">
-                            <Ellipse Width="42" Height="42" Fill="#E2895A"></Ellipse>
-                            <Image Width="42" Height="42" Source="pack://application:,,,/Photos/logo.png"/>
-                        </Grid>
+                    <!-- Đăng ký -->
+                    <Grid Grid.Column="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="79"></RowDefinition>
+                            <RowDefinition Height="42"></RowDefinition>
+                            <RowDefinition Height="17"></RowDefinition>
+                            <RowDefinition Height="34"></RowDefinition>
+                            <RowDefinition Height="13"></RowDefinition>
+                            <RowDefinition Height="34"></RowDefinition>
+                            <RowDefinition Height="48"></RowDefinition>
+                            <RowDefinition Height="17"></RowDefinition>
+                            <RowDefinition Height="48"></RowDefinition>
+                            <RowDefinition Height="17"></RowDefinition>
+                            <RowDefinition Height="48"></RowDefinition>
+                            <RowDefinition Height="32"></RowDefinition>
+                            <RowDefinition Height="48"></RowDefinition>
+                            <RowDefinition Height="16"></RowDefinition>
+                            <RowDefinition Height="13"></RowDefinition>
+                            <RowDefinition Height="69"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <!-- logo và thương hiệu -->
+                        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Grid Width="42" Height="42">
+                                <Ellipse Width="42" Height="42" Fill="#E2895A"></Ellipse>
+                                <Image Width="42" Height="42" Source="pack://application:,,,/Photos/logo.png"/>
+                            </Grid>
+                            <TextBlock Style="{StaticResource CustomFont}" 
+                                       Text="QLHT"
+                                       Grid.Row="3"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       FontSize="21"/>
+                        </StackPanel>
+
+
+                        <!-- welcome Back -->
                         <TextBlock Style="{StaticResource CustomFont}" 
+                                   Text="Welcome"
+                                   Grid.Row="3"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Top"
+                                   FontSize="28">
+                        </TextBlock>
+
+
+                        <!-- hãy đăng ký tại đây -->
+                        <TextBlock x:Name="tbl_titel2" Text="Hãy đăng ký tài khoản tại đây"
+                                   FontFamily="Cascadia Mono"
+                                   Grid.Row="4"
+                                   HorizontalAlignment="Center"
+                                   FontSize="9">
+                        </TextBlock>
+
+
+                        <!-- nhập mã nhân viên -->
+                        <Border x:Name="mybordermanv" 
+                                Background="#D9D9D9" 
+                                CornerRadius="10"
+                                Width="295"
+                                Grid.Row="6">
+                            <TextBox x:Name="tb_MaNhanVien"
+                                     Style="{DynamicResource TextBoxStylemanhanvien}" 
+                                     Background="{Binding Background, ElementName=mybordermanv}"
+                                     Width="250" Height="20"
+                                     FontFamily="Cascadia Mono"
+                                     FontSize="17"
+                                     Foreground="#8C8C8C"
+                                     Text="Mã Nhân Viên"
+                                     GotFocus="tb_MaNhanVien_GotFocus"
+                                     LostFocus="tb_MaNhanVien_LostFocus">
+                            </TextBox>
+                        </Border>
+
+
+                        <!-- nhập tài khoản -->
+                        <Border x:Name="mybordertk" 
+                                Background="#D9D9D9" 
+                                CornerRadius="10"
+                                Width="295"
+                                Grid.Row="8">
+                            <TextBox x:Name="tb_TaiKhoanDangKy" 
+                                     Style="{DynamicResource TextBoxStyletk}" Background="{Binding Background, ElementName=mybordertk}"
+                                     Width="250" Height="20"
+                                     FontFamily="Cascadia Mono"
+                                     FontSize="17"
+                                     Foreground="#8C8C8C"
+                                     Text="Tài Khoản"
+                                     GotFocus="tb_TaiKhoanDangKy_GotFocus"
+                                     LostFocus="tb_TaiKhoanDangKy_LostFocus">
+                            </TextBox>
+                        </Border>
+
+
+                        <!-- nhập mật khẩu -->
+                        <Border x:Name="myborder" 
+                                Background="#D9D9D9" 
+                                CornerRadius="10"
+                                Width="295"
+                                Grid.Row="10">
+                            <Grid>
+                                <PasswordBox x:Name="pw_MatKhauDangKy" 
+                                             Style="{DynamicResource PasswordBoxStyle1}" 
+                                             Height="20" 
+                                             Background="{Binding Background, ElementName=myborder}"
+                                             Width="250"
+                                             FontFamily="Cascadia Mono"
+                                             FontSize="17"
+                                             Panel.ZIndex="0"
+                                             GotFocus="pw_MatKhauDangKy_GotFocus"
+                                             LostFocus="pw_MatKhauDangKy_LostFocus">
+                                </PasswordBox>
+                                <TextBlock x:Name="tbl_HienThiMatKhauDangKy" 
+                                           Height="20" 
+                                           Width="72"
+                                           FontFamily="Cascadia Mono"
+                                           FontSize="15"
+                                           Foreground="#8C8C8C"
+                                           Text="Mật Khẩu"
+                                           HorizontalAlignment="Left"
+                                           Margin="22.5,0,0,0"
+                                           Panel.ZIndex="1"/>
+                            </Grid>
+                        </Border>
+
+
+                        <!-- gird 12 button đăng ký -->
+                        <Button Style="{DynamicResource bogocbuttondangky}" Grid.Row="12"
+                                Background="#E2895A"
+                                Width="295" Click="Button_Click_2">
+                            <Button.Content>
+                                <TextBlock x:Name="tbl_bt_Dangky"
+                                           Text="Đăng Ký"
+                                           FontFamily="Cascadia Mono"
+                                           FontSize="20"
+                                           FontWeight="ExtraBold"
+                                           >
+                                </TextBlock>
+                            </Button.Content>
+                        </Button>
+
+
+                        <!-- grid 14 - Quay lại đăng nhập -->
+                        <StackPanel Grid.Row="14" HorizontalAlignment="Center" Orientation="Horizontal">
+                            <TextBlock x:Name="tbl_qldangnhap" 
+                                       Text="Bạn đã có tài khoản?  " 
+                                       FontFamily="Cascadia Mono" 
+                                       HorizontalAlignment="Center"/>
+                            <TextBlock x:Name="tbl_txtqldangnhap" 
+                                       Text="Đăng Nhập" FontFamily="Cascadia Mono" 
+                                       FontWeight="Bold"
+                                       Foreground="#E2895A"
+                                       Style="{StaticResource styletbl}">
+                                <TextBlock.Triggers>
+                                    <!-- Bắt sự kiện Click trực tiếp -->
+                                    <EventTrigger RoutedEvent="MouseLeftButtonDown">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <ThicknessAnimation Storyboard.TargetName="bd_img"
+                                                                    Storyboard.TargetProperty="Margin"
+                                                                    Duration="0:0:0.200"
+                                                                    To="45,0,0,0"
+                                                                    FillBehavior="HoldEnd"/>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                </TextBlock.Triggers>
+                            </TextBlock>
+
+                        </StackPanel>
+                    </Grid>
+
+
+                    <!-- Đăng nhập -->
+                    <Grid Grid.Column="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="105"></RowDefinition>
+                            <RowDefinition Height="42"></RowDefinition>
+                            <RowDefinition Height="17"></RowDefinition>
+                            <RowDefinition Height="34"></RowDefinition>
+                            <RowDefinition Height="13"></RowDefinition>
+                            <RowDefinition Height="44"></RowDefinition>
+                            <RowDefinition Height="48"></RowDefinition>
+                            <RowDefinition Height="17"></RowDefinition>
+                            <RowDefinition Height="48"></RowDefinition>
+                            <RowDefinition Height="8"></RowDefinition>
+                            <RowDefinition Height="11"></RowDefinition>
+                            <RowDefinition Height="25"></RowDefinition>
+                            <RowDefinition Height="48"></RowDefinition>
+                            <RowDefinition Height="24"></RowDefinition>
+                            <RowDefinition Height="13"></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+
+
+                        <!-- logo và thương hiệu -->
+                        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Grid Width="42" Height="42">
+                                <Ellipse Width="42" Height="42" Fill="#E2895A"></Ellipse>
+                                <Image Width="42" Height="42" Source="pack://application:,,,/Photos/logo.png"/>
+                            </Grid>
+                            <TextBlock Style="{StaticResource CustomFont}"
                                    Text="QLHT"
                                    Grid.Row="3"
                                    HorizontalAlignment="Center"
                                    VerticalAlignment="Center"
-                                   FontSize="21"/>
-                    </StackPanel>
+                                   FontSize="21">
+                            </TextBlock> 
+                        </StackPanel>
 
 
-                    <!-- welcome Back -->
-                    <TextBlock Style="{StaticResource CustomFont}" 
-                               Text="Welcome"
-                               Grid.Row="3"
-                               HorizontalAlignment="Center"
-                               VerticalAlignment="Top"
-                               FontSize="28">
-                    </TextBlock>
-
-
-                    <!-- hãy đăng ký tại đây -->
-                    <TextBlock x:Name="tbl_titel2" Text="Hãy đăng ký tài khoản tại đây"
-                               FontFamily="Cascadia Mono"
-                               Grid.Row="4"
-                               HorizontalAlignment="Center"
-                               FontSize="9">
-                    </TextBlock>
-
-
-                    <!-- nhập mã nhân viên -->
-                    <Border x:Name="mybordermanv" 
-                            Background="#D9D9D9" 
-                            CornerRadius="10"
-                            Width="295"
-                            Grid.Row="6">
-                        <TextBox x:Name="tb_MaNhanVien"
-                                 Style="{DynamicResource TextBoxStylemanhanvien}" 
-                                 Background="{Binding Background, ElementName=mybordermanv}"
-                                 Width="250" Height="20"
-                                 FontFamily="Cascadia Mono"
-                                 FontSize="17"
-                                 Foreground="#8C8C8C"
-                                 Text="Mã Nhân Viên"
-                                 GotFocus="tb_MaNhanVien_GotFocus"
-                                 LostFocus="tb_MaNhanVien_LostFocus">
-                        </TextBox>
-                    </Border>
-
-
-                    <!-- nhập tài khoản -->
-                    <Border x:Name="mybordertk" 
-                            Background="#D9D9D9" 
-                            CornerRadius="10"
-                            Width="295"
-                            Grid.Row="8">
-                        <TextBox x:Name="tb_TaiKhoanDangKy" 
-                                 Style="{DynamicResource TextBoxStyletk}" Background="{Binding Background, ElementName=mybordertk}"
-                                 Width="250" Height="20"
-                                 FontFamily="Cascadia Mono"
-                                 FontSize="17"
-                                 Foreground="#8C8C8C"
-                                 Text="Tài Khoản"
-                                 GotFocus="tb_TaiKhoanDangKy_GotFocus"
-                                 LostFocus="tb_TaiKhoanDangKy_LostFocus">
-                        </TextBox>
-                    </Border>
-
-
-                    <!-- nhập mật khẩu -->
-                    <Border x:Name="myborder" 
-                            Background="#D9D9D9" 
-                            CornerRadius="10"
-                            Width="295"
-                            Grid.Row="10">
-                        <Grid>
-                            <PasswordBox x:Name="pw_MatKhauDangKy" 
-                                         Style="{DynamicResource PasswordBoxStyle1}" 
-                                         Height="20" 
-                                         Background="{Binding Background, ElementName=myborder}"
-                                         Width="250"
-                                         FontFamily="Cascadia Mono"
-                                         FontSize="17"
-                                         Panel.ZIndex="0"
-                                         GotFocus="pw_MatKhauDangKy_GotFocus"
-                                         LostFocus="pw_MatKhauDangKy_LostFocus">
-                            </PasswordBox>
-                            <TextBlock x:Name="tbl_HienThiMatKhauDangKy" 
-                                       Height="20" 
-                                       Width="72"
-                                       FontFamily="Cascadia Mono"
-                                       FontSize="15"
-                                       Foreground="#8C8C8C"
-                                       Text="Mật Khẩu"
-                                       HorizontalAlignment="Left"
-                                       Margin="22.5,0,0,0"
-                                       Panel.ZIndex="1"/>
-                        </Grid>
-                    </Border>
-
-
-                    <!-- gird 12 button đăng ký -->
-                    <Button Style="{DynamicResource bogocbuttondangky}" Grid.Row="12"
-                            Background="#E2895A"
-                            Width="295" Click="Button_Click_2">
-                        <Button.Content>
-                            <TextBlock x:Name="tbl_bt_Dangky"
-                                       Text="Đăng Ký"
-                                       FontFamily="Cascadia Mono"
-                                       FontSize="20"
-                                       FontWeight="ExtraBold"
-                                       >
-                            </TextBlock>
-                        </Button.Content>
-                    </Button>
-
-
-                    <!-- grid 14 - Quay lại đăng nhập -->
-                    <StackPanel Grid.Row="14" HorizontalAlignment="Center" Orientation="Horizontal">
-                        <TextBlock x:Name="tbl_qldangnhap" 
-                                   Text="Bạn đã có tài khoản?  " 
-                                   FontFamily="Cascadia Mono" 
-                                   HorizontalAlignment="Center"/>
-                        <TextBlock x:Name="tbl_txtqldangnhap" 
-                                   Text="Đăng Nhập" FontFamily="Cascadia Mono" 
-                                   FontWeight="Bold"
-                                   Foreground="#E2895A"
-                                   Style="{StaticResource styletbl}">
-                            <TextBlock.Triggers>
-                                <!-- Bắt sự kiện Click trực tiếp -->
-                                <EventTrigger RoutedEvent="MouseLeftButtonDown">
-                                    <BeginStoryboard>
-                                        <Storyboard>
-                                            <ThicknessAnimation Storyboard.TargetName="bd_img"
-                                                                Storyboard.TargetProperty="Margin"
-                                                                Duration="0:0:0.200"
-                                                                To="45,0,0,0"
-                                                                FillBehavior="HoldEnd"/>
-                                        </Storyboard>
-                                    </BeginStoryboard>
-                                </EventTrigger>
-                            </TextBlock.Triggers>
-                        </TextBlock>
-
-                    </StackPanel>
-                </Grid>
-
-
-                <!-- Đăng nhập -->
-                <Grid Grid.Column="1">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="105"></RowDefinition>
-                        <RowDefinition Height="42"></RowDefinition>
-                        <RowDefinition Height="17"></RowDefinition>
-                        <RowDefinition Height="34"></RowDefinition>
-                        <RowDefinition Height="13"></RowDefinition>
-                        <RowDefinition Height="44"></RowDefinition>
-                        <RowDefinition Height="48"></RowDefinition>
-                        <RowDefinition Height="17"></RowDefinition>
-                        <RowDefinition Height="48"></RowDefinition>
-                        <RowDefinition Height="8"></RowDefinition>
-                        <RowDefinition Height="11"></RowDefinition>
-                        <RowDefinition Height="25"></RowDefinition>
-                        <RowDefinition Height="48"></RowDefinition>
-                        <RowDefinition Height="24"></RowDefinition>
-                        <RowDefinition Height="13"></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                    </Grid.RowDefinitions>
-
-
-                    <!-- logo và thương hiệu -->
-                    <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
-                        <Grid Width="42" Height="42">
-                            <Ellipse Width="42" Height="42" Fill="#E2895A"></Ellipse>
-                            <Image Width="42" Height="42" Source="pack://application:,,,/Photos/logo.png"/>
-                        </Grid>
+                        <!-- Welcome back -->
                         <TextBlock Style="{StaticResource CustomFont}"
-                               Text="QLHT"
-                               Grid.Row="3"
-                               HorizontalAlignment="Center"
-                               VerticalAlignment="Center"
-                               FontSize="21">
-                        </TextBlock> 
-                    </StackPanel>
-
-
-                    <!-- Welcome back -->
-                    <TextBlock Style="{StaticResource CustomFont}"
-                               Text="Welcome Back"
-                               Grid.Row="3"
-                               HorizontalAlignment="Center"
-                               VerticalAlignment="Top"
-                               FontSize="28" >
-                    </TextBlock>
-
-
-                    <!-- vui lòng hãy đăng nhập -->
-                    <TextBlock x:Name="tbl_titel1" 
-                               Text="Hãy đăng ký tài khoản tại đây"
-                               FontFamily="Cascadia Mono"
-                               Grid.Row="4"
-                               HorizontalAlignment="Center"
-                               FontSize="9">
-                    </TextBlock>
-
-
-                    <!-- nhập tài khoản -->
-                    <Border x:Name="mybordertkdn" 
-                            Background="#D9D9D9" 
-                            CornerRadius="10"
-                            Width="295"
-                            Grid.Row="6">
-                        <TextBox x:Name="tb_TaiKhoanDangNhap"
-                                 Style="{DynamicResource TextBoxtaikhoandangnhap}" 
-                                 Background="{Binding Background, ElementName=mybordertkdn}"
-                                 Width="250" Height="20"
-                                 FontFamily="Cascadia Mono"
-                                 FontSize="17"
-                                 Foreground="#8C8C8C"
-                                 Text="Tài Khoản"
-                                 GotFocus="tb_TaiKhoanDangNhap_GotFocus"
-                                 LostFocus="tb_TaiKhoanDangNhap_LostFocus">
-                        </TextBox>
-                    </Border>
-
-
-                    <!-- nhập mật khẩu -->
-                    <Border x:Name="mybordermk" 
-                            Background="#D9D9D9" 
-                            CornerRadius="10"
-                            Width="295"
-                            Grid.Row="8">
-                        <Grid>
-                            <PasswordBox x:Name="pw_MatKhauDangNhap"
-                                         Style="{DynamicResource password}" Height="20" 
-                                         Background="{Binding Background, ElementName=myborder}"
-                                         Width="250"
-                                         FontFamily="Cascadia Mono"
-                                         FontSize="17"
-                                         Panel.ZIndex="0"
-                                         GotFocus="pw_MatKhauDangNhap_GotFocus"
-                                         LostFocus="pw_MatKhauDangNhap_LostFocus">
-                            </PasswordBox>
-                            <TextBlock  x:Name="tbl_HienThiMatKhau"
-                                        Height="20" 
-                                        Width="72"
-                                        FontFamily="Cascadia Mono"
-                                        FontSize="15"
-                                        Foreground="#8C8C8C"
-                                        Text="Mật Khẩu"
-                                        HorizontalAlignment="Left"
-                                        Margin="22.5,0,0,0"
-                                        Panel.ZIndex="1"/>
-                        </Grid>
-                    </Border>
-
-
-                    <!-- quên mật khẩu -->
-                    <Grid Grid.Row="10"
-                          Width="295">
-                        <TextBlock x:Name="tbl_QuenMatKhau" 
-                                   FontFamily="Cascadia Mono" 
-                                   FontSize="10" 
-                                   HorizontalAlignment="Right" 
-                                   MouseLeftButtonDown="tbl_QuenMatKhau_MouseLeftButtonDown"
-                                   Style="{StaticResource styletbl}">
-                            <Underline>
-                                Quên Mật Khẩu?
-                            </Underline>
+                                   Text="Welcome Back"
+                                   Grid.Row="3"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Top"
+                                   FontSize="28" >
                         </TextBlock>
-                    </Grid>
 
 
-                    <!-- đăng nhập -->
-                    <Button Style="{DynamicResource ButtonStyledangnhap}" Grid.Row="12"
-                            Background="#E2895A"
-                            Width="295" Click="Button_Click_1">
-                        <Button.Content>
-                            <TextBlock x:Name="tbl_bt_Dangnhap"
-                                       Text="Đăng Nhập"
-                                       FontFamily="Cascadia Mono"
-                                       FontSize="20"
-                                       FontWeight="ExtraBold">
+                        <!-- vui lòng hãy đăng nhập -->
+                        <TextBlock x:Name="tbl_titel1" 
+                                   Text="Hãy đăng ký tài khoản tại đây"
+                                   FontFamily="Cascadia Mono"
+                                   Grid.Row="4"
+                                   HorizontalAlignment="Center"
+                                   FontSize="9">
+                        </TextBlock>
+
+
+                        <!-- nhập tài khoản -->
+                        <Border x:Name="mybordertkdn" 
+                                Background="#D9D9D9" 
+                                CornerRadius="10"
+                                Width="295"
+                                Grid.Row="6">
+                            <TextBox x:Name="tb_TaiKhoanDangNhap"
+                                     Style="{DynamicResource TextBoxtaikhoandangnhap}" 
+                                     Background="{Binding Background, ElementName=mybordertkdn}"
+                                     Width="250" Height="20"
+                                     FontFamily="Cascadia Mono"
+                                     FontSize="17"
+                                     Foreground="#8C8C8C"
+                                     Text="Tài Khoản"
+                                     GotFocus="tb_TaiKhoanDangNhap_GotFocus"
+                                     LostFocus="tb_TaiKhoanDangNhap_LostFocus">
+                            </TextBox>
+                        </Border>
+
+
+                        <!-- nhập mật khẩu -->
+                        <Border x:Name="mybordermk" 
+                                Background="#D9D9D9" 
+                                CornerRadius="10"
+                                Width="295"
+                                Grid.Row="8">
+                            <Grid>
+                                <PasswordBox x:Name="pw_MatKhauDangNhap"
+                                             Style="{DynamicResource password}" Height="20" 
+                                             Background="{Binding Background, ElementName=myborder}"
+                                             Width="250"
+                                             FontFamily="Cascadia Mono"
+                                             FontSize="17"
+                                             Panel.ZIndex="0"
+                                             GotFocus="pw_MatKhauDangNhap_GotFocus"
+                                             LostFocus="pw_MatKhauDangNhap_LostFocus">
+                                </PasswordBox>
+                                <TextBlock  x:Name="tbl_HienThiMatKhau"
+                                            Height="20" 
+                                            Width="72"
+                                            FontFamily="Cascadia Mono"
+                                            FontSize="15"
+                                            Foreground="#8C8C8C"
+                                            Text="Mật Khẩu"
+                                            HorizontalAlignment="Left"
+                                            Margin="22.5,0,0,0"
+                                            Panel.ZIndex="1"/>
+                            </Grid>
+                        </Border>
+
+
+                        <!-- quên mật khẩu -->
+                        <Grid Grid.Row="10"
+                              Width="295">
+                            <TextBlock x:Name="tbl_QuenMatKhau" 
+                                       FontFamily="Cascadia Mono" 
+                                       FontSize="10" 
+                                       HorizontalAlignment="Right" 
+                                       MouseLeftButtonDown="tbl_QuenMatKhau_MouseLeftButtonDown"
+                                       Style="{StaticResource styletbl}">
+                                <Underline>
+                                    Quên Mật Khẩu?
+                                </Underline>
                             </TextBlock>
-                        </Button.Content>
-                    </Button>
+                        </Grid>
 
 
-                    <!-- đăng ký -->
-                    <StackPanel Grid.Row="14" HorizontalAlignment="Center" Orientation="Horizontal">
-                        <TextBlock x:Name="tbl_quadangky" 
-                                   Text="Bạn chưa có tài khoản?  " 
-                                   FontFamily="Cascadia Mono" 
-                                   HorizontalAlignment="Center"/>
-                        <TextBlock x:Name="tbl_txtquadangky" 
-                                   Text="Đăng Ký" FontFamily="Cascadia Mono" 
-                                   FontWeight="Bold"
-                                   Foreground="#E2895A"
-                                   Style="{StaticResource styletbl}">
-                            <TextBlock.Triggers>
-                                <!-- Bắt sự kiện Click trực tiếp -->
-                                <EventTrigger RoutedEvent="MouseLeftButtonDown">
-                                    <BeginStoryboard>
-                                        <Storyboard>
-                                            <ThicknessAnimation Storyboard.TargetName="bd_img"
-                                            Storyboard.TargetProperty="Margin"
-                                            Duration="0:0:0.200"
-                                            To="395,0,0,0"
-                                            FillBehavior="HoldEnd"/>
-                                        </Storyboard>
-                                    </BeginStoryboard>
-                                </EventTrigger>
-                            </TextBlock.Triggers>
-                        </TextBlock>
-                    </StackPanel>
+                        <!-- đăng nhập -->
+                        <Button Style="{DynamicResource ButtonStyledangnhap}" Grid.Row="12"
+                                Background="#E2895A"
+                                Width="295" Click="Button_Click_1">
+                            <Button.Content>
+                                <TextBlock x:Name="tbl_bt_Dangnhap"
+                                           Text="Đăng Nhập"
+                                           FontFamily="Cascadia Mono"
+                                           FontSize="20"
+                                           FontWeight="ExtraBold">
+                                </TextBlock>
+                            </Button.Content>
+                        </Button>
+
+
+                        <!-- đăng ký -->
+                        <StackPanel Grid.Row="14" HorizontalAlignment="Center" Orientation="Horizontal">
+                            <TextBlock x:Name="tbl_quadangky" 
+                                       Text="Bạn chưa có tài khoản?  " 
+                                       FontFamily="Cascadia Mono" 
+                                       HorizontalAlignment="Center"/>
+                            <TextBlock x:Name="tbl_txtquadangky" 
+                                       Text="Đăng Ký" FontFamily="Cascadia Mono" 
+                                       FontWeight="Bold"
+                                       Foreground="#E2895A"
+                                       Style="{StaticResource styletbl}">
+                                <TextBlock.Triggers>
+                                    <!-- Bắt sự kiện Click trực tiếp -->
+                                    <EventTrigger RoutedEvent="MouseLeftButtonDown">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <ThicknessAnimation Storyboard.TargetName="bd_img"
+                                                Storyboard.TargetProperty="Margin"
+                                                Duration="0:0:0.200"
+                                                To="395,0,0,0"
+                                                FillBehavior="HoldEnd"/>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                </TextBlock.Triggers>
+                            </TextBlock>
+                        </StackPanel>
+                    </Grid>
                 </Grid>
-            </Grid>
 
-            <Border x:Name="bd_img" 
-                    CornerRadius="40" 
-                    Width="355" Height="485"
-                    HorizontalAlignment="Left"
-                    VerticalAlignment="Center"
-                    Margin="45,0,0,0">
-                <Border.Background>
-                    <ImageBrush ImageSource="pack://application:,,,/Photos/anhnen.png" Stretch="Fill"/>
-                </Border.Background>
-            </Border>
-        </Grid>
-    </Border>
+                <Border x:Name="bd_img" 
+                        CornerRadius="40" 
+                        Width="355" Height="485"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        Margin="45,0,0,0">
+                    <Border.Background>
+                        <ImageBrush ImageSource="pack://application:,,,/Photos/anhnen.png" Stretch="Fill"/>
+                    </Border.Background>
+                </Border>
+
+            
+                
+            </Grid>
+        </Border>
+
+        <Border x:Name="Overlay" Background="Black" CornerRadius="35" Opacity="0" Visibility="Collapsed" Panel.ZIndex="1"/>
+    </Grid>
     
 </Window>

@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="703" d:DesignWidth="1096">
 
-    <Grid x:Name="gridngay" Background="#F7F7F7">
+    <Grid  Background="#F7F7F7">
         <Grid.Resources>
             <Style TargetType="TextBlock">
                 <Setter Property="FontFamily" Value="Cascadia Mono"/>
@@ -18,33 +18,34 @@
             </Style>
         </Grid.Resources>
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-
         <Grid.RowDefinitions>
             <RowDefinition Height="0.4*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="6*"/>
         </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <!-- Hiển thị thứ trong tuần -->
+            <TextBlock Text="Thứ Hai" Grid.Column="0"/>
+            <TextBlock Text="Thứ Ba" Grid.Column="1"/>
+            <TextBlock Text="Thứ Tư" Grid.Column="2"/>
+            <TextBlock Text="Thứ Năm" Grid.Column="3"/>
+            <TextBlock Text="Thứ Sáu" Grid.Column="4"/>
+            <TextBlock Text="Thứ Bảy" Grid.Column="5"/>
+            <TextBlock Text="Chủ Nhật" Grid.Column="6"/>
+        </Grid>
 
-        <!-- Hiển thị thứ trong tuần -->
-        <TextBlock Text="Thứ Hai" Grid.Column="0"/>
-        <TextBlock Text="Thứ Ba" Grid.Column="1"/>
-        <TextBlock Text="Thứ Tư" Grid.Column="2"/>
-        <TextBlock Text="Thứ Năm" Grid.Column="3"/>
-        <TextBlock Text="Thứ Sáu" Grid.Column="4"/>
-        <TextBlock Text="Thứ Bảy" Grid.Column="5"/>
-        <TextBlock Text="Chủ Nhật" Grid.Column="6"/>
+        <Grid x:Name="gridngay" Grid.Row="2">
+            
+        </Grid>
+
+
     </Grid>
 </UserControl>

@@ -1,6 +1,7 @@
-﻿using QLHieuThuoc.Model;
+﻿using QLHieuThuoc.forms.NhanVien;
 using QLHieuThuoc.Model.BanHang;
 using QLHieuThuoc.Model.DonNhapHangvsNCC;
+using QLHieuThuoc.Model.DungNhanh;
 using QLHieuThuoc.Model.Files;
 using QLHieuThuoc.Model.SanPham;
 using QLHieuThuoc.Model.sql;
@@ -56,18 +57,11 @@ namespace QLHieuThuoc.forms
         // Thêm đơn bán mới
         private void bt_ThemDonBan_Click(object sender, RoutedEventArgs e)
         {
-            // áp dụng hiệu ứng mờ cho cửa sổ hiện tại
-            this.Effect = new System.Windows.Media.Effects.BlurEffect()
+            MainWindow mainWindow = Window.GetWindow(this) as MainWindow;
+            if (mainWindow != null)
             {
-                Radius = 10 // độ mờ
-            };
-
-            ThemDonBan themDonBan = new ThemDonBan();
-            themDonBan.ShowDialog();
-
-
-            // xóa hiệu ứng làm mờ khi cửa sổ con đóng lại
-            this.Effect = null;
+                Mo.OpenWindowWithBlur(mainWindow, new ThemDonBan());
+            }
             string lenhSelect = "select * from DonBan";
             List<Donban> donbans = modify.DonBans(lenhSelect);
             AddDonHang(donbans);
@@ -113,19 +107,12 @@ namespace QLHieuThuoc.forms
 
         private void Hoadon_Click(object? sender, string e)
         {
-            // áp dụng hiệu ứng mờ cho cửa sổ hiện tại
-            this.Effect = new System.Windows.Media.Effects.BlurEffect()
-            {
-                Radius = 10 // độ mờ
-            };
-
-
             List<string> s = new List<string> { e, "BanHang" };
-            ChiTietDonBan chiTietDonBan = new ChiTietDonBan(s);
-            chiTietDonBan.ShowDialog();
-
-            // xóa hiệu ứng làm mờ khi cửa sổ con đóng lại
-            this.Effect = null;
+            MainWindow mainWindow = Window.GetWindow(this) as MainWindow;
+            if (mainWindow != null)
+            {
+                Mo.OpenWindowWithBlur(mainWindow, new ChiTietDonBan(s));
+            }
         }
 
         // cập nhật ngôn ngữ

@@ -248,7 +248,7 @@
                     </theme:SystemDropShadowChrome>
                 </Popup>
                 <ToggleButton x:Name="toggleButton" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Grid.ColumnSpan="2" IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource Mode=TemplatedParent}}" Style="{StaticResource ComboBoxToggleButton}"/>
-                <ContentPresenter x:Name="contentPresenter" ContentStringFormat="{TemplateBinding SelectionBoxItemStringFormat}" ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}" Content="{TemplateBinding SelectionBoxItem}" ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" IsHitTestVisible="false" Margin="{TemplateBinding Padding}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                <ContentPresenter x:Name="contentPresenter" ContentStringFormat="{TemplateBinding SelectionBoxItemStringFormat}" ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}" Content="{TemplateBinding SelectionBoxItem}" ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" IsHitTestVisible="false" Margin="{TemplateBinding Padding}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="Center"/>
             </Grid>
             <ControlTemplate.Triggers>
                 <Trigger Property="HasDropShadow" SourceName="PART_Popup" Value="true">
@@ -347,6 +347,24 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <SolidColorBrush x:Key="TextBox.MouseOver.Border" Color="#FF7EB4EA"/>
+        <SolidColorBrush x:Key="TextBox.Focus.Border" Color="#FF569DE5"/>
+        <ControlTemplate x:Key="TextBoxTemplate1" TargetType="{x:Type TextBoxBase}">
+            <Border x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0" SnapsToDevicePixels="True">
+                <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsEnabled" Value="false">
+                    <Setter Property="Opacity" TargetName="border" Value="0.56"/>
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="true">
+                    <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TextBox.MouseOver.Border}"/>
+                </Trigger>
+                <Trigger Property="IsKeyboardFocused" Value="true">
+                    <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TextBox.Focus.Border}"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
     </Window.Resources>
     <Border Background="#F7F7F7" CornerRadius="15" Padding="20">
         <Grid>
@@ -387,7 +405,9 @@
                             <Setter Property="Foreground" Value="#565656"/>
                             <Setter Property="HorizontalAlignment" Value="Center"/>
                             <Setter Property="VerticalAlignment" Value="Center"/>
+                            <Setter Property="Background" Value="#D9D9D9"/>
                         </Style>
+
                     </Grid.Resources>
 
 
@@ -409,10 +429,10 @@
                         </Grid.ColumnDefinitions>
 
                         <Border>
-                            <TextBlock>ID:#jh0-99-0</TextBlock>
+                            <TextBlock x:Name="tbl_Id">ID:#jh0-99-0</TextBlock>
                         </Border>
 
-                        <ComboBox Style="{DynamicResource ComboBoxStyle1}" Grid.Column="2"></ComboBox>
+                        <ComboBox x:Name="cbb_ChucVu" FontFamily="Cascadia Mono" FontSize="16" Foreground="#565656" Style="{DynamicResource ComboBoxStyle1}" Grid.Column="2"></ComboBox>
                     </Grid>
 
                     <Border Grid.Row="2">
@@ -423,8 +443,8 @@
                                 <ColumnDefinition Width="5*"/>
                             </Grid.ColumnDefinitions>
 
-                            <TextBlock>Ten:</TextBlock>
-                            <TextBlock Grid.Column="2" Width="220" Text="Nguyen Thi A"></TextBlock>
+                            <TextBlock x:Name="tbl_Ten">Ten:</TextBlock>
+                            <TextBox Template="{DynamicResource TextBoxTemplate1}" x:Name="tb_Ten" Grid.Column="2" Width="220"></TextBox>
                         </Grid>
                     </Border>
 
@@ -436,8 +456,8 @@
                                 <ColumnDefinition Width="5*"/>
                             </Grid.ColumnDefinitions>
 
-                            <TextBlock>SDT:</TextBlock>
-                            <TextBlock Grid.Column="2" Width="220" Text="013247683"></TextBlock>
+                            <TextBlock x:Name="tbl_Sdt">SDT:</TextBlock>
+                            <TextBox Template="{DynamicResource TextBoxTemplate1}" x:Name="tb_Sdt" Grid.Column="2" Width="220"></TextBox>
                         </Grid>
                     </Border>
 
@@ -449,23 +469,23 @@
                                 <ColumnDefinition Width="2.5*"/>
                             </Grid.ColumnDefinitions>
 
-                            <TextBlock VerticalAlignment="Top">Dia Chi:</TextBlock>
-                            <TextBlock Grid.Column="2" Width="188" Height="100" TextWrapping="WrapWithOverflow" VerticalAlignment="Top" Text="Gia Lai Viet nam"></TextBlock>
+                            <TextBlock x:Name="tbl_DiaChi" VerticalAlignment="Top">Dia Chi:</TextBlock>
+                            <TextBox Template="{DynamicResource TextBoxTemplate1}" x:Name="tb_DiaChi" Grid.Column="2" Width="188" Height="100" TextWrapping="WrapWithOverflow" VerticalAlignment="Top"></TextBox>
                         </Grid>
                     </Border>
                 </Grid>
             </Border>
 
             <DockPanel Grid.Row="4">
-                <Button Style="{DynamicResource ButtonStyle1}" DockPanel.Dock="Right" Width="90" Background="#E2895A">
+                <Button Style="{DynamicResource ButtonStyle1}" DockPanel.Dock="Right" Width="90" Background="#E2895A" Click="Button_Click">
                     <Button.Content>
-                        <TextBlock>Huy</TextBlock>
+                        <TextBlock x:Name="tbl_bt_huy">Huy</TextBlock>
                     </Button.Content>
                 </Button>
                 <Grid DockPanel.Dock="Right" Width="13"></Grid>
-                <Button Style="{DynamicResource ButtonStyle1}" DockPanel.Dock="Right" Width="90" Background="#E2895A">
+                <Button Style="{DynamicResource ButtonStyle1}" DockPanel.Dock="Right" Width="90" Background="#E2895A" Click="Button_Click_1">
                     <Button.Content>
-                        <TextBlock>Them</TextBlock>
+                        <TextBlock x:Name="tbl_bt_Them">Them</TextBlock>
                     </Button.Content>
                 </Button>
                 <Grid></Grid>

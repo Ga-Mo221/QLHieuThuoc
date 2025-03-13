@@ -421,237 +421,240 @@
             </Style.Triggers>
         </Style>
     </Window.Resources>
-    <Border Background="#F7F7F7" CornerRadius="15" BorderThickness="1" BorderBrush="#565656" Padding="20">
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="50"/>
-                <RowDefinition Height="12"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="12"/>
-                <RowDefinition Height="40"/>
-            </Grid.RowDefinitions>
-            <!-- thanh tiêu đề -->
-            <Border Background="#E2895A" CornerRadius="25">
-                <StackPanel Orientation="Horizontal">
-                    <Grid Width="20"/>
-                    <TextBlock x:Name="tbl_tieude"
-                       Foreground="#565656"
-                       FontFamily="Cascadia Mono"
-                       FontSize="20"
-                       VerticalAlignment="Center">
-                tao hoa don moi
-                    </TextBlock>
-                </StackPanel>
-            </Border>
-            
-            
-            <!-- nội dung -->
-            <Border Grid.Row="2" Background="White" CornerRadius="15" Padding="20">
-                <Grid>
-                    <Grid.Resources>
-                        <Style TargetType="TextBlock">
-                            <Setter Property="FontFamily" Value="Cascadia Mono"/>
-                            <Setter Property="FontSize" Value="16"/>
-                            <Setter Property="Foreground" Value="#565656"/>
-                            <Setter Property="HorizontalAlignment" Value="Center"/>
-                            <Setter Property="VerticalAlignment" Value="Center"/>
-                        </Style>
+    <Grid>
+        <Border Background="#F7F7F7" CornerRadius="15" BorderThickness="1" BorderBrush="#565656" Padding="20">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="12"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="12"/>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+                <!-- thanh tiêu đề -->
+                <Border Background="#E2895A" CornerRadius="25">
+                    <StackPanel Orientation="Horizontal">
+                        <Grid Width="20"/>
+                        <TextBlock x:Name="tbl_tieude"
+                           Foreground="#565656"
+                           FontFamily="Cascadia Mono"
+                           FontSize="20"
+                           VerticalAlignment="Center">
+                    tao hoa don moi
+                        </TextBlock>
+                    </StackPanel>
+                </Border>
 
-                        <Style x:Key="borderngoai" TargetType="Border">
-                            <Setter Property="BorderBrush" Value="#565656"/>
-                            <Setter Property="BorderThickness" Value="1"/>
-                            <Setter Property="Background" Value="White"/>
-                            <Setter Property="CornerRadius" Value="15"/>
-                        </Style>
 
-                        <Style x:Key="bordertrong" TargetType="Border">
-                            <Setter Property="BorderThickness" Value="0"/>
-                            <Setter Property="Background" Value="#D9D9D9"/>
-                            <Setter Property="CornerRadius" Value="5"/>
-                        </Style>
-                    </Grid.Resources>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="293"/>
-                        <ColumnDefinition Width="20"/>
-                        <ColumnDefinition Width="610"/>
-                        <ColumnDefinition/>
-                    </Grid.ColumnDefinitions>
-                    
-                    <!-- bảng khách hàng và bảng thông tin hóa đơn -->
+                <!-- nội dung -->
+                <Border Grid.Row="2" Background="White" CornerRadius="15" Padding="20">
                     <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="230"/>
-                            <RowDefinition Height="20"/>
-                            <RowDefinition/>
-                        </Grid.RowDefinitions>
-                        
-                        
-                        <!-- bảng khách hàng -->
-                        <Border Style="{StaticResource borderngoai}" Padding="20">
-                            <Grid>
-                                <Grid.Resources>
-                                    <Style TargetType="TextBox">
-                                        <Setter Property="FontFamily" Value="Cascadia Mono"/>
-                                        <Setter Property="FontSize" Value="16"/>
-                                        <Setter Property="Foreground" Value="#565656"/>
-                                        <Setter Property="Width" Value="220"/>
-                                        <Setter Property="HorizontalAlignment" Value="Center"/>
-                                        <Setter Property="VerticalAlignment" Value="Center"/>
-                                        <Setter Property="Background" Value="#D9D9D9"/>
-                                    </Style>
-                                </Grid.Resources>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition/>
-                                    <RowDefinition Height="10"/>
-                                    <RowDefinition/>
-                                    <RowDefinition Height="10"/>
-                                    <RowDefinition/>
-                                    <RowDefinition Height="10"/>
-                                    <RowDefinition/>
-                                </Grid.RowDefinitions>
-                                
-                                <!-- id -->
-                                <Border Style="{StaticResource bordertrong}" Width="113" HorizontalAlignment="Left">
-                                    <TextBlock x:Name="tbl_IdKhachHang">#ID</TextBlock>
-                                </Border>
-                                
-                                <!-- số điện thoại -->
-                                <Border Grid.Row="2" Style="{StaticResource bordertrong}">
-                                    <TextBox Template="{DynamicResource TextBoxTemplate1}" x:Name="tb_SoDienThoai" Text="So dien Thoai" GotFocus="tb_SoDienThoai_GotFocus" LostFocus="tb_SoDienThoai_LostFocus" TextChanged="tb_SoDienThoai_TextChanged"></TextBox>
-                                </Border>
-                                
-                                <!-- tên khách hàng -->
-                                <Border Grid.Row="4" Style="{StaticResource bordertrong}">
-                                    <TextBox Template="{DynamicResource TextBoxTemplate1}" x:Name="tb_TenKhachHang" Text="Ten Khach Hang" GotFocus="tb_TenKhachHang_GotFocus" LostFocus="tb_TenKhachHang_LostFocus"></TextBox>
-                                </Border>
-                                
-                                <!-- điểm -->
-                                <Border Style="{StaticResource bordertrong}" Width="113" HorizontalAlignment="Left" Grid.Row="6">
-                                    <DockPanel>
-                                        <Grid Width="10" DockPanel.Dock="Left"></Grid>
-                                        <TextBlock x:Name="tbl_Diem" HorizontalAlignment="Left">Diem : 0</TextBlock>
-                                    </DockPanel>
-                                </Border>
-                            </Grid>
-                        </Border>
-                        
-                        <!-- bảng thông tin hóa đơn -->
-                        <Border Style="{StaticResource borderngoai}" Grid.Row="2" Padding="20">
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition/>
-                                    <RowDefinition Height="10"/>
-                                    <RowDefinition/>
-                                    <RowDefinition Height="10"/>
-                                    <RowDefinition/>
-                                </Grid.RowDefinitions>
-                                
-                                <!-- id -->
-                                <Border Style="{StaticResource bordertrong}" Width="113" HorizontalAlignment="Left">
-                                    <TextBlock x:Name="tbl_IdDonBan">#ID</TextBlock>
-                                </Border>
-                                
-                                <!-- tổng tiền -->
-                                <Border Style="{StaticResource bordertrong}" Grid.Row="2">
-                                    <DockPanel>
-                                        <Grid Width="10" DockPanel.Dock="Left"></Grid>
-                                        <TextBlock x:Name="tbl_TongTien" HorizontalAlignment="Left">Tong tien : 200$ </TextBlock>
-                                    </DockPanel>
-                                </Border>
-                                
-                                <!-- Phương thức thanh toán -->
-                                <ComboBox Style="{DynamicResource ComboBoxStyle1}" 
-                                          x:Name="cbb_PhuongThucThanhToan"
-                                          Grid.Row="4" Background="#D9D9D9" 
-                                          BorderThickness="0"
-                                          FontFamily="Cascadia Mono"
-                                          FontSize="16"
-                                          Foreground="#565656"></ComboBox>
-                                
-                            </Grid>
-                        </Border>
-                    </Grid>
-                    
-                    <!-- bảng giỏ hàng -->
-                    <Border Style="{StaticResource borderngoai}" Grid.Column="2" Padding="20">
-                        <DockPanel>
-                            <!-- thanh thuộc tính -->
-                            <Border Style="{StaticResource bordertrong}" DockPanel.Dock="Top"  Height="40">
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition/>
-                                        <ColumnDefinition/>
-                                        <ColumnDefinition/>
-                                    </Grid.ColumnDefinitions>
-                                    
-                                    <!-- tiêu đề tên sản phẩm -->
-                                    <TextBlock x:Name="tbl_title_TenSanPham"> ten san pham </TextBlock>
-                                    
-                                    <!-- tiêu đề số lượng -->
-                                    <TextBlock x:Name="tbl_title_SoLuong" Grid.Column="1">So luong</TextBlock>
-                                    
-                                    <!-- tiêu đề giá -->
-                                    <TextBlock x:Name="tbl_title_GiaBan" HorizontalAlignment="Left" Grid.Column="2">Gia ban</TextBlock>
-                                </Grid>
-                            </Border>
-                            
-                            <!-- lis sản phẩm -->
-                            <ScrollViewer VerticalScrollBarVisibility="Auto">
-                                <StackPanel x:Name="stb_ListSanPham"></StackPanel>
-                            </ScrollViewer>
-                        </DockPanel>
-                    </Border>
-                    
-                    <!-- nút thêm sản phẩm -->
-                    <DockPanel Grid.Column="3" Margin="10">
-                        <Button DockPanel.Dock="Top" Style="{DynamicResource ButtonStyle2}" Height="40" Background="#E2895A" Click="Button_Click_2">
-                            <Button.Content>
-                                <TextBlock x:Name="tbl_bt_ThemSanPham">Them San Pham</TextBlock>
-                            </Button.Content>
-                        </Button>
+                        <Grid.Resources>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="FontFamily" Value="Cascadia Mono"/>
+                                <Setter Property="FontSize" Value="16"/>
+                                <Setter Property="Foreground" Value="#565656"/>
+                                <Setter Property="HorizontalAlignment" Value="Center"/>
+                                <Setter Property="VerticalAlignment" Value="Center"/>
+                            </Style>
+
+                            <Style x:Key="borderngoai" TargetType="Border">
+                                <Setter Property="BorderBrush" Value="#565656"/>
+                                <Setter Property="BorderThickness" Value="1"/>
+                                <Setter Property="Background" Value="White"/>
+                                <Setter Property="CornerRadius" Value="15"/>
+                            </Style>
+
+                            <Style x:Key="bordertrong" TargetType="Border">
+                                <Setter Property="BorderThickness" Value="0"/>
+                                <Setter Property="Background" Value="#D9D9D9"/>
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </Grid.Resources>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="293"/>
+                            <ColumnDefinition Width="20"/>
+                            <ColumnDefinition Width="610"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- bảng khách hàng và bảng thông tin hóa đơn -->
                         <Grid>
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="10"/>
+                                <RowDefinition Height="230"/>
+                                <RowDefinition Height="20"/>
                                 <RowDefinition/>
                             </Grid.RowDefinitions>
-                            <!--<Border Width="128" Height="364" CornerRadius="10" Grid.Row="1">
-                                <Border.Background>
-                                    <ImageBrush ImageSource="pack://application:,,,/Photos/anhbengoc.png"/>
-                                </Border.Background>
-                            </Border>-->
+
+
+                            <!-- bảng khách hàng -->
+                            <Border Style="{StaticResource borderngoai}" Padding="20">
+                                <Grid>
+                                    <Grid.Resources>
+                                        <Style TargetType="TextBox">
+                                            <Setter Property="FontFamily" Value="Cascadia Mono"/>
+                                            <Setter Property="FontSize" Value="16"/>
+                                            <Setter Property="Foreground" Value="#565656"/>
+                                            <Setter Property="Width" Value="220"/>
+                                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                                            <Setter Property="VerticalAlignment" Value="Center"/>
+                                            <Setter Property="Background" Value="#D9D9D9"/>
+                                        </Style>
+                                    </Grid.Resources>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition Height="10"/>
+                                        <RowDefinition/>
+                                        <RowDefinition Height="10"/>
+                                        <RowDefinition/>
+                                        <RowDefinition Height="10"/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+
+                                    <!-- id -->
+                                    <Border Style="{StaticResource bordertrong}" Width="113" HorizontalAlignment="Left">
+                                        <TextBlock x:Name="tbl_IdKhachHang">#ID</TextBlock>
+                                    </Border>
+
+                                    <!-- số điện thoại -->
+                                    <Border Grid.Row="2" Style="{StaticResource bordertrong}">
+                                        <TextBox Template="{DynamicResource TextBoxTemplate1}" x:Name="tb_SoDienThoai" Text="So dien Thoai" GotFocus="tb_SoDienThoai_GotFocus" LostFocus="tb_SoDienThoai_LostFocus" TextChanged="tb_SoDienThoai_TextChanged"></TextBox>
+                                    </Border>
+
+                                    <!-- tên khách hàng -->
+                                    <Border Grid.Row="4" Style="{StaticResource bordertrong}">
+                                        <TextBox Template="{DynamicResource TextBoxTemplate1}" x:Name="tb_TenKhachHang" Text="Ten Khach Hang" GotFocus="tb_TenKhachHang_GotFocus" LostFocus="tb_TenKhachHang_LostFocus"></TextBox>
+                                    </Border>
+
+                                    <!-- điểm -->
+                                    <Border Style="{StaticResource bordertrong}" Width="113" HorizontalAlignment="Left" Grid.Row="6">
+                                        <DockPanel>
+                                            <Grid Width="10" DockPanel.Dock="Left"></Grid>
+                                            <TextBlock x:Name="tbl_Diem" HorizontalAlignment="Left">Diem : 0</TextBlock>
+                                        </DockPanel>
+                                    </Border>
+                                </Grid>
+                            </Border>
+
+                            <!-- bảng thông tin hóa đơn -->
+                            <Border Style="{StaticResource borderngoai}" Grid.Row="2" Padding="20">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition Height="10"/>
+                                        <RowDefinition/>
+                                        <RowDefinition Height="10"/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+
+                                    <!-- id -->
+                                    <Border Style="{StaticResource bordertrong}" Width="113" HorizontalAlignment="Left">
+                                        <TextBlock x:Name="tbl_IdDonBan">#ID</TextBlock>
+                                    </Border>
+
+                                    <!-- tổng tiền -->
+                                    <Border Style="{StaticResource bordertrong}" Grid.Row="2">
+                                        <DockPanel>
+                                            <Grid Width="10" DockPanel.Dock="Left"></Grid>
+                                            <TextBlock x:Name="tbl_TongTien" HorizontalAlignment="Left">Tong tien : 200$</TextBlock>
+                                        </DockPanel>
+                                    </Border>
+
+                                    <!-- Phương thức thanh toán -->
+                                    <ComboBox Style="{DynamicResource ComboBoxStyle1}" 
+                                              x:Name="cbb_PhuongThucThanhToan"
+                                              Grid.Row="4" Background="#D9D9D9" 
+                                              BorderThickness="0"
+                                              FontFamily="Cascadia Mono"
+                                              FontSize="16"
+                                              Foreground="#565656"></ComboBox>
+
+                                </Grid>
+                            </Border>
                         </Grid>
-                    </DockPanel>
-                </Grid>
-            </Border>
+
+                        <!-- bảng giỏ hàng -->
+                        <Border Style="{StaticResource borderngoai}" Grid.Column="2" Padding="20">
+                            <DockPanel>
+                                <!-- thanh thuộc tính -->
+                                <Border Style="{StaticResource bordertrong}" DockPanel.Dock="Top"  Height="40">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <!-- tiêu đề tên sản phẩm -->
+                                        <TextBlock x:Name="tbl_title_TenSanPham"> ten san pham</TextBlock>
+
+                                        <!-- tiêu đề số lượng -->
+                                        <TextBlock x:Name="tbl_title_SoLuong" Grid.Column="1">So luong</TextBlock>
+
+                                        <!-- tiêu đề giá -->
+                                        <TextBlock x:Name="tbl_title_GiaBan" HorizontalAlignment="Left" Grid.Column="2">Gia ban</TextBlock>
+                                    </Grid>
+                                </Border>
+
+                                <!-- lis sản phẩm -->
+                                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                                    <StackPanel x:Name="stb_ListSanPham"></StackPanel>
+                                </ScrollViewer>
+                            </DockPanel>
+                        </Border>
+
+                        <!-- nút thêm sản phẩm -->
+                        <DockPanel Grid.Column="3" Margin="10">
+                            <Button DockPanel.Dock="Top" Style="{DynamicResource ButtonStyle2}" Height="40" Background="#E2895A" Click="Button_Click_2">
+                                <Button.Content>
+                                    <TextBlock x:Name="tbl_bt_ThemSanPham">Them San Pham</TextBlock>
+                                </Button.Content>
+                            </Button>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="10"/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <!--<Border Width="128" Height="364" CornerRadius="10" Grid.Row="1">
+                                    <Border.Background>
+                                        <ImageBrush ImageSource="pack://application:,,,/Photos/anhbengoc.png"/>
+                                    </Border.Background>
+                                </Border>-->
+                            </Grid>
+                        </DockPanel>
+                    </Grid>
+                </Border>
 
 
-            <!-- các nút -->
-            <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Right">
-                <StackPanel.Resources>
-                    <Style TargetType="TextBlock">
-                        <Setter Property="FontFamily" Value="Cascadia Mono"/>
-                        <Setter Property="FontSize" Value="20"/>
-                        <Setter Property="Foreground" Value="#565656"/>
-                    </Style>
-                </StackPanel.Resources>
-                <!-- nút Mua -->
-                <Button Style="{DynamicResource ButtonStyle1}" Width="90" Background="#E2895A" Click="Button_Click_1">
-                    <Button.Content>
-                        <TextBlock x:Name="tbl_bt_Mua">
-                            Mua
-                        </TextBlock>
-                    </Button.Content>
-                </Button>
-                <Grid Width="15"/>
-                <!-- nút hủy -->
-                <Button Style="{DynamicResource ButtonStyle1}" Width="90" Background="#E2895A" Click="Button_Click">
-                    <Button.Content>
-                        <TextBlock x:Name="tbl_bt_Huy">
-                Huy
-                        </TextBlock>
-                    </Button.Content>
-                </Button>
-            </StackPanel>
-        </Grid>
-    </Border>
+                <!-- các nút -->
+                <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <StackPanel.Resources>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="FontFamily" Value="Cascadia Mono"/>
+                            <Setter Property="FontSize" Value="20"/>
+                            <Setter Property="Foreground" Value="#565656"/>
+                        </Style>
+                    </StackPanel.Resources>
+                    <!-- nút Mua -->
+                    <Button Style="{DynamicResource ButtonStyle1}" Width="90" Background="#E2895A" Click="Button_Click_1">
+                        <Button.Content>
+                            <TextBlock x:Name="tbl_bt_Mua">
+                                Mua
+                            </TextBlock>
+                        </Button.Content>
+                    </Button>
+                    <Grid Width="15"/>
+                    <!-- nút hủy -->
+                    <Button Style="{DynamicResource ButtonStyle1}" Width="90" Background="#E2895A" Click="Button_Click">
+                        <Button.Content>
+                            <TextBlock x:Name="tbl_bt_Huy">
+                    Huy
+                            </TextBlock>
+                        </Button.Content>
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Border>
+        <Border x:Name="Overlay" Background="Black" CornerRadius="15" Opacity="0" Visibility="Collapsed" Panel.ZIndex="1"/>
+    </Grid>
 </Window>
