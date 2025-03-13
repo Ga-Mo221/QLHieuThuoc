@@ -1,16 +1,7 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\qlht\\QLHieuThuoc\\QuanlyHieuThuoc\\QLHieuThuoc\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{AF183C98-B091-4920-B14C-79D71193BC4C}|QLHieuThuoc\\QLHieuThuoc.csproj|d:\\qlht\\qlhieuthuoc\\quanlyhieuthuoc\\qlhieuthuoc\\qlhieuthuoc\\forms\\fnhanvien\\luong.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{AF183C98-B091-4920-B14C-79D71193BC4C}|QLHieuThuoc\\QLHieuThuoc.csproj|solutionrelative:qlhieuthuoc\\forms\\fnhanvien\\luong.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AF183C98-B091-4920-B14C-79D71193BC4C}|QLHieuThuoc\\QLHieuThuoc.csproj|d:\\qlht\\qlhieuthuoc\\quanlyhieuthuoc\\qlhieuthuoc\\qlhieuthuoc\\forms\\fnhanvien\\qlgiolam.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{AF183C98-B091-4920-B14C-79D71193BC4C}|QLHieuThuoc\\QLHieuThuoc.csproj|solutionrelative:qlhieuthuoc\\forms\\fnhanvien\\qlgiolam.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    }
-  ],
+  "WorkspaceRootPath": "D:\\QLHieuThuoc\\QuanlyHieuThuoc\\QLHieuThuoc\\",
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -18,39 +9,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "QlGioLam.xaml",
-              "DocumentMoniker": "D:\\qlht\\QLHieuThuoc\\QuanlyHieuThuoc\\QLHieuThuoc\\QLHieuThuoc\\forms\\FNhanVien\\QlGioLam.xaml",
-              "RelativeDocumentMoniker": "QLHieuThuoc\\forms\\FNhanVien\\QlGioLam.xaml",
-              "ToolTip": "D:\\qlht\\QLHieuThuoc\\QuanlyHieuThuoc\\QLHieuThuoc\\QLHieuThuoc\\forms\\FNhanVien\\QlGioLam.xaml",
-              "RelativeToolTip": "QLHieuThuoc\\forms\\FNhanVien\\QlGioLam.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-03-12T12:28:51.757Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Luong.xaml",
-              "DocumentMoniker": "D:\\qlht\\QLHieuThuoc\\QuanlyHieuThuoc\\QLHieuThuoc\\QLHieuThuoc\\forms\\FNhanVien\\Luong.xaml",
-              "RelativeDocumentMoniker": "QLHieuThuoc\\forms\\FNhanVien\\Luong.xaml",
-              "ToolTip": "D:\\qlht\\QLHieuThuoc\\QuanlyHieuThuoc\\QLHieuThuoc\\QLHieuThuoc\\forms\\FNhanVien\\Luong.xaml",
-              "RelativeToolTip": "QLHieuThuoc\\forms\\FNhanVien\\Luong.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-03-12T12:22:37.143Z",
-              "EditorCaption": ""
             }
           ]
         }

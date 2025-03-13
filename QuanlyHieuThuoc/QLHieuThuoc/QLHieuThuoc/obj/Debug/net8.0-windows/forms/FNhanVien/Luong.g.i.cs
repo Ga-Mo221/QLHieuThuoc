@@ -101,7 +101,7 @@ namespace QLHieuThuoc.forms.FNhanVien {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/QLHieuThuoc;component/forms/fnhanvien/luong.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/QLHieuThuoc;V1.0.0.0;component/forms/fnhanvien/luong.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\forms\FNhanVien\Luong.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

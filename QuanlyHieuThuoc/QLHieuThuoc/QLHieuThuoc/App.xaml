@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:QLHieuThuoc"
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
-             StartupUri="forms/DangNhap.xaml">
+             StartupUri="forms/DangNhap/DangNhap.xaml">
     <Application.Resources>
         <Style x:Key="CustomFont">
             <Setter Property="TextElement.FontFamily"

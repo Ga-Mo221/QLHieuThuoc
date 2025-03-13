@@ -206,7 +206,7 @@ namespace QLHieuThuoc.forms {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/QLHieuThuoc;component/forms/nhaphang.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/QLHieuThuoc;V1.0.0.0;component/forms/nhaphang.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\forms\NhapHang.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

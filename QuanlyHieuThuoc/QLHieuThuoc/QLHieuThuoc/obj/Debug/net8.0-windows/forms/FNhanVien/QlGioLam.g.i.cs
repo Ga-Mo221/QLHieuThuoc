@@ -246,7 +246,7 @@ namespace QLHieuThuoc.forms.FNhanVien {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/QLHieuThuoc;component/forms/fnhanvien/qlgiolam.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/QLHieuThuoc;V1.0.0.0;component/forms/fnhanvien/qlgiolam.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\forms\FNhanVien\QlGioLam.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

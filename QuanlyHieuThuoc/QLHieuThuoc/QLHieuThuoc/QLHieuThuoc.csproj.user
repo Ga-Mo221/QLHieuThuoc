@@ -2,79 +2,85 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
-    <Compile Update="forms\BanHang.xaml.cs">
+    <Compile Update="forms\DonBanHang\BanHang.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="forms\CaiDat.xaml.cs">
+    <Compile Update="forms\CaiDat\CaiDat.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="forms\ChiTietDonBan.xaml.cs">
+    <Compile Update="forms\DonBanHang\ChiTietDonBan.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="forms\ChiTietDonNhap.xaml.cs">
+    <Compile Update="forms\NhanVien\CTBangLuong.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="forms\DangNhap.xaml.cs">
+    <Compile Update="forms\NhanVien\ThemNhanVien.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="forms\DonNhapHangMoi.xaml.cs">
+    <Compile Update="forms\NhapHang\ChiTietDonNhap.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="forms\FNhanVien\LichLam.xaml.cs">
+    <Compile Update="forms\DangNhap\DangNhap.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="forms\FNhanVien\Luong.xaml.cs">
+    <Compile Update="forms\NhapHang\DonNhapHangMoi.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="forms\FNhanVien\QlGioLam.xaml.cs">
+    <Compile Update="forms\NhanVien\LichLam.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="forms\KhachHang.xaml.cs">
+    <Compile Update="forms\NhanVien\Luong.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="forms\LoaiSanPham.xaml.cs">
+    <Compile Update="forms\NhanVien\QlGioLam.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="forms\KhachHang\KhachHang.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="forms\SanPham\LoaiSanPham.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="forms\MainWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="forms\NhaCungCap.xaml.cs">
+    <Compile Update="forms\NhapHang\NhaCungCap.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="forms\NhanVien.xaml.cs">
+    <Compile Update="forms\NhanVien\NhanVien.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="forms\NhapHang.xaml.cs">
+    <Compile Update="forms\NhapHang\NhapHang.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="forms\QuenMK.xaml.cs">
+    <Compile Update="forms\DangNhap\QuenMK.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="forms\SanPham.xaml.cs">
+    <Compile Update="forms\SanPham\SanPham.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="forms\ThemDonBan.xaml.cs">
+    <Compile Update="forms\DonBanHang\ThemDonBan.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="forms\ThemSanPham.xaml.cs">
+    <Compile Update="forms\NhapHang\ThemSanPham.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="forms\ThemSanPhamDonBan.xaml.cs">
+    <Compile Update="forms\DonBanHang\ThemSanPhamDonBan.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="forms\ThongBao.xaml.cs">
+    <Compile Update="forms\ThongKe\ThongBao.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="forms\ThongKe.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="forms\ThongTinSanPham.xaml.cs">
+    <Compile Update="forms\SanPham\ThongTinSanPham.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="forms\TongQuan.xaml.cs">
+    <Compile Update="forms\TongQuan\TongQuan.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="forms\XacNhanMua.xaml.cs">
+    <Compile Update="forms\DonBanHang\XacNhanMua.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="UserControls\FNhapHang_DonNhapHang.xaml.cs">

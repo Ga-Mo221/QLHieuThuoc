@@ -1,4 +1,5 @@
-﻿using QLHieuThuoc.Model.Files;
+﻿using QLHieuThuoc.forms.NhanVien;
+using QLHieuThuoc.Model.Files;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -252,7 +253,7 @@ namespace QLHieuThuoc.forms
         {
             CheckSelectButton("NhanVien");
 
-            Mo(grid_NoiDung, child, new NhanVien());
+            Mo(grid_NoiDung, child, new NhanVien.NhanVien());
         }
 
         // Cài đặt
