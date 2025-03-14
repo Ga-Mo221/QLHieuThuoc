@@ -262,6 +262,45 @@ namespace QLHieuThuoc.Model.sql
             return lichLams;
         }
 
+        // check bang luong day du
+        public List<BangLuongDayDu> bangLuongDayDus(string LenhTruyVan)
+        {
+            List<BangLuongDayDu> bangluongdaydus = new List<BangLuongDayDu>();
+
+            using (SqlConnection sqlConnection = KetNoi.GetSqlconnection())
+            {
+                sqlConnection.Open();
+
+                SqlCommand sqlCommand = new SqlCommand(LenhTruyVan, sqlConnection);
+                SqlDataReader dataReader = sqlCommand.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    bangluongdaydus.Add(new BangLuongDayDu(
+                        dataReader.GetString(0),                                 // IDNhanVien
+                        dataReader.GetString(1),                                 // TEN
+                        dataReader.IsDBNull(2) ? "N/A" : dataReader.GetString(2), // CHUCVU
+                        dataReader.IsDBNull(3) ? "N/A" : dataReader.GetString(3), // SDT
+                        dataReader.IsDBNull(4) ? "N/A" : dataReader.GetString(4), // DIACHI
+                        dataReader.IsDBNull(5) ? DateTime.MinValue : dataReader.GetDateTime(5), // NGAYTHEM
+                        dataReader.IsDBNull(6) ? "Chưa có lương" : dataReader.GetString(6), // IDLuong
+                        dataReader.IsDBNull(7) ? 0 : dataReader.GetInt32(7),  // THANG
+                        dataReader.IsDBNull(8) ? 0 : dataReader.GetInt32(8),  // NAM
+                        dataReader.IsDBNull(9) ? DateTime.MinValue : dataReader.GetDateTime(9), // NGAYTAO
+                        dataReader.IsDBNull(10) ? 0 : dataReader.GetDecimal(10), // SONGIOLAM
+                        dataReader.IsDBNull(11) ? 0 : dataReader.GetDecimal(11), // TIENTHUONG
+                        dataReader.IsDBNull(12) ? 0 : dataReader.GetDecimal(12), // TIENTROCAP
+                        dataReader.IsDBNull(13) ? 0 : dataReader.GetDecimal(13)  // LUONG
+                    ));
+                }
+
+                sqlConnection.Close();
+            }
+
+            return bangluongdaydus;
+        }
+
+
 
 
 

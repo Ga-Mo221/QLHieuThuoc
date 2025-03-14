@@ -23,8 +23,8 @@ namespace QLHieuThuoc.forms
     {
         private string IdNv;
         UserControl child = null;
-        private int x = 1440;
-        private int y = 930;
+        private int x = 1240;
+        private int y = 800;
 
         public MainWindow(string id)
         {

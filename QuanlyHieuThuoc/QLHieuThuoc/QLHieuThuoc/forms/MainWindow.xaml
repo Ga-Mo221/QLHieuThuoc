@@ -87,23 +87,23 @@
                     <Grid>
                         <Grid Margin="16">
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="24"></RowDefinition>
-                                <RowDefinition Height="63"></RowDefinition>
-                                <RowDefinition Height="34"></RowDefinition>
-                                <RowDefinition Height="57"></RowDefinition>
-                                <RowDefinition Height="15"></RowDefinition>
-                                <RowDefinition Height="57"></RowDefinition>
-                                <RowDefinition Height="15"></RowDefinition>
-                                <RowDefinition Height="57"></RowDefinition>
-                                <RowDefinition Height="15"></RowDefinition>
-                                <RowDefinition Height="57"></RowDefinition>
-                                <RowDefinition Height="15"></RowDefinition>
-                                <RowDefinition Height="57"></RowDefinition>
-                                <RowDefinition Height="15"></RowDefinition>
-                                <RowDefinition Height="57"></RowDefinition>
-                                <RowDefinition Height="15"></RowDefinition>
-                                <RowDefinition Height="57"></RowDefinition>
-                                <RowDefinition></RowDefinition>
+                                <RowDefinition Height="0.7*"></RowDefinition>
+                                <RowDefinition Height="1.5*"></RowDefinition>
+                                <RowDefinition Height="0.3*"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="0.2*"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="0.2*"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="0.2*"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="0.2*"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="0.2*"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="0.2*"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="4*"></RowDefinition>
                             </Grid.RowDefinitions>
                         
                         

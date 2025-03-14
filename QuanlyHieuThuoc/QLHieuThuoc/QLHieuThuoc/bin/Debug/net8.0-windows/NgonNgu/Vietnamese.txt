@@ -1,4 +1,4 @@
-ádf
+fákjhj
 Vui lòng nhập mật khẩu!
 Thông Báo
 Tên đăng nhập hoặc mật khẩu không chính xác
@@ -171,3 +171,9 @@ NGÀY
 Lịch Làm
 Thêm Nhân Viên
 Ghi Chú
+Năm
+Tháng
+Mã Bảng Lương
+Tháng Lương
+Số Giờ Làm
+Lương

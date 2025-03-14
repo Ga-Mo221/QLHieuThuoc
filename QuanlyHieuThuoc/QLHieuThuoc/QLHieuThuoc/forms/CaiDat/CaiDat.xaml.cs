@@ -25,8 +25,8 @@ namespace QLHieuThuoc.forms
         private List<string> TiLeManHinh = new List<string> { NN.nn[144], NN.nn[143] };
         CheckFileNN CF = new CheckFileNN();
         DocGhi dg = new DocGhi();
-        private int x = 1440;
-        private int y = 930;
+        private int x = 1240;
+        private int y = 800;
 
         public CaiDat()
         {

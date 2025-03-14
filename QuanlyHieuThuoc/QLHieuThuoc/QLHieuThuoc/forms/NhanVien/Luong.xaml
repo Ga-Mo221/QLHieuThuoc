@@ -266,42 +266,43 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-
-        <StackPanel>
-            <Border Height="40" CornerRadius="5" Background="#E2895A">
-                <TextBlock x:Name="tbl_Nam">Nam</TextBlock>
-            </Border>
-            <Grid Height="5"></Grid>
-            <ComboBox Template="{DynamicResource ComboBoxTemplate1}" x:Name="cbb_Nam"></ComboBox>
-            <Grid Height="5"></Grid>
-            <Border Height="40" CornerRadius="5" Background="#E2895A">
-                <TextBlock x:Name="tbl_Thang">Thang</TextBlock>
-            </Border>
-            <Grid Height="5"></Grid>
-            <Button Style="{DynamicResource ButtonStyle1}" Background="#FCB48E" Height="40" Content="1" FontFamily="Cascadia Mono" FontSize="20" Foreground="#565656" Click="Button_Click"></Button>
-            <Grid Height="5"></Grid>
-            <Button Style="{DynamicResource ButtonStyle1}" Background="#FCB48E" Height="40" Content="2" FontFamily="Cascadia Mono" FontSize="20" Foreground="#565656" Click="Button_Click_1"></Button>
-            <Grid Height="5"></Grid>
-            <Button Style="{DynamicResource ButtonStyle1}" Background="#FCB48E" Height="40" Content="3" FontFamily="Cascadia Mono" FontSize="20" Foreground="#565656" Click="Button_Click_2"></Button>
-            <Grid Height="5"></Grid>
-            <Button Style="{DynamicResource ButtonStyle1}" Background="#FCB48E" Height="40" Content="4" FontFamily="Cascadia Mono" FontSize="20" Foreground="#565656" Click="Button_Click_3"></Button>
-            <Grid Height="5"></Grid>
-            <Button Style="{DynamicResource ButtonStyle1}" Background="#FCB48E" Height="40" Content="5" FontFamily="Cascadia Mono" FontSize="20" Foreground="#565656" Click="Button_Click_4"></Button>
-            <Grid Height="5"></Grid>
-            <Button Style="{DynamicResource ButtonStyle1}" Background="#FCB48E" Height="40" Content="6" FontFamily="Cascadia Mono" FontSize="20" Foreground="#565656" Click="Button_Click_5"></Button>
-            <Grid Height="5"></Grid>
-            <Button Style="{DynamicResource ButtonStyle1}" Background="#FCB48E" Height="40" Content="7" FontFamily="Cascadia Mono" FontSize="20" Foreground="#565656" Click="Button_Click_6"></Button>
-            <Grid Height="5"></Grid>
-            <Button Style="{DynamicResource ButtonStyle1}" Background="#FCB48E" Height="40" Content="8" FontFamily="Cascadia Mono" FontSize="20" Foreground="#565656" Click="Button_Click_7"></Button>
-            <Grid Height="5"></Grid>
-            <Button Style="{DynamicResource ButtonStyle1}" Background="#FCB48E" Height="40" Content="9" FontFamily="Cascadia Mono" FontSize="20" Foreground="#565656" Click="Button_Click_8"></Button>
-            <Grid Height="5"></Grid>
-            <Button Style="{DynamicResource ButtonStyle1}" Background="#FCB48E" Height="40" Content="10" FontFamily="Cascadia Mono" FontSize="20" Foreground="#565656" Click="Button_Click_9"></Button>
-            <Grid Height="5"></Grid>
-            <Button Style="{DynamicResource ButtonStyle1}" Background="#FCB48E" Height="40" Content="11" FontFamily="Cascadia Mono" FontSize="20" Foreground="#565656" Click="Button_Click_10"></Button>
-            <Grid Height="5"></Grid>
-            <Button Style="{DynamicResource ButtonStyle1}" Background="#FCB48E" Height="40" Content="12" FontFamily="Cascadia Mono" FontSize="20" Foreground="#565656" Click="Button_Click_11"></Button>
-        </StackPanel>
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel>
+                <Border Height="40" CornerRadius="5" Background="#E2895A">
+                    <TextBlock x:Name="tbl_Nam">Nam</TextBlock>
+                </Border>
+                <Grid Height="5"></Grid>
+                <ComboBox Template="{DynamicResource ComboBoxTemplate1}" x:Name="cbb_Nam"></ComboBox>
+                <Grid Height="5"></Grid>
+                <Border Height="40" CornerRadius="5" Background="#E2895A">
+                    <TextBlock x:Name="tbl_Thang">Thang</TextBlock>
+                </Border>
+                <Grid Height="5"></Grid>
+                <Button x:Name="Thang1" Style="{DynamicResource ButtonStyle1}" Background="#FCB48E" Height="40" Content="1" FontFamily="Cascadia Mono" FontSize="20" Foreground="#565656" Click="Button_Click"></Button>
+                <Grid Height="5"></Grid>
+                <Button x:Name="Thang2" Style="{DynamicResource ButtonStyle1}" Background="#FCB48E" Height="40" Content="2" FontFamily="Cascadia Mono" FontSize="20" Foreground="#565656" Click="Button_Click_1"></Button>
+                <Grid Height="5"></Grid>
+                <Button x:Name="Thang3" Style="{DynamicResource ButtonStyle1}" Background="#FCB48E" Height="40" Content="3" FontFamily="Cascadia Mono" FontSize="20" Foreground="#565656" Click="Button_Click_2"></Button>
+                <Grid Height="5"></Grid>
+                <Button x:Name="Thang4" Style="{DynamicResource ButtonStyle1}" Background="#FCB48E" Height="40" Content="4" FontFamily="Cascadia Mono" FontSize="20" Foreground="#565656" Click="Button_Click_3"></Button>
+                <Grid Height="5"></Grid>
+                <Button x:Name="Thang5" Style="{DynamicResource ButtonStyle1}" Background="#FCB48E" Height="40" Content="5" FontFamily="Cascadia Mono" FontSize="20" Foreground="#565656" Click="Button_Click_4"></Button>
+                <Grid Height="5"></Grid>
+                <Button x:Name="Thang6" Style="{DynamicResource ButtonStyle1}" Background="#FCB48E" Height="40" Content="6" FontFamily="Cascadia Mono" FontSize="20" Foreground="#565656" Click="Button_Click_5"></Button>
+                <Grid Height="5"></Grid>
+                <Button x:Name="Thang7" Style="{DynamicResource ButtonStyle1}" Background="#FCB48E" Height="40" Content="7" FontFamily="Cascadia Mono" FontSize="20" Foreground="#565656" Click="Button_Click_6"></Button>
+                <Grid Height="5"></Grid>
+                <Button x:Name="Thang8" Style="{DynamicResource ButtonStyle1}" Background="#FCB48E" Height="40" Content="8" FontFamily="Cascadia Mono" FontSize="20" Foreground="#565656" Click="Button_Click_7"></Button>
+                <Grid Height="5"></Grid>
+                <Button x:Name="Thang9" Style="{DynamicResource ButtonStyle1}" Background="#FCB48E" Height="40" Content="9" FontFamily="Cascadia Mono" FontSize="20" Foreground="#565656" Click="Button_Click_8"></Button>
+                <Grid Height="5"></Grid>
+                <Button x:Name="Thang10" Style="{DynamicResource ButtonStyle1}" Background="#FCB48E" Height="40" Content="10" FontFamily="Cascadia Mono" FontSize="20" Foreground="#565656" Click="Button_Click_9"></Button>
+                <Grid Height="5"></Grid>
+                <Button x:Name="Thang11" Style="{DynamicResource ButtonStyle1}" Background="#FCB48E" Height="40" Content="11" FontFamily="Cascadia Mono" FontSize="20" Foreground="#565656" Click="Button_Click_10"></Button>
+                <Grid Height="5"></Grid>
+                <Button x:Name="Thang12" Style="{DynamicResource ButtonStyle1}" Background="#FCB48E" Height="40" Content="12" FontFamily="Cascadia Mono" FontSize="20" Foreground="#565656" Click="Button_Click_11"></Button>
+            </StackPanel>
+        </ScrollViewer>
         
         
         

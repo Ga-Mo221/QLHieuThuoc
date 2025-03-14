@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "52ykISVkkzA=",
+  "dgSpecHash": "ovhwVHqoOfQ=",
   "success": true,
-  "projectFilePath": "D:\\QLHieuThuoc\\QuanlyHieuThuoc\\QLHieuThuoc\\QLHieuThuoc\\QLHieuThuoc.csproj",
+  "projectFilePath": "D:\\qlht\\QLHieuThuoc\\QuanlyHieuThuoc\\QLHieuThuoc\\QLHieuThuoc\\QLHieuThuoc.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\yeu52\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\yeu52\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",

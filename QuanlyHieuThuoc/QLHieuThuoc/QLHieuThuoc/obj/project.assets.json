@@ -178,11 +178,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\QLHieuThuoc\\QuanlyHieuThuoc\\QLHieuThuoc\\QLHieuThuoc\\QLHieuThuoc.csproj",
+      "projectUniqueName": "D:\\qlht\\QLHieuThuoc\\QuanlyHieuThuoc\\QLHieuThuoc\\QLHieuThuoc\\QLHieuThuoc.csproj",
       "projectName": "QLHieuThuoc",
-      "projectPath": "D:\\QLHieuThuoc\\QuanlyHieuThuoc\\QLHieuThuoc\\QLHieuThuoc\\QLHieuThuoc.csproj",
+      "projectPath": "D:\\qlht\\QLHieuThuoc\\QuanlyHieuThuoc\\QLHieuThuoc\\QLHieuThuoc\\QLHieuThuoc.csproj",
       "packagesPath": "C:\\Users\\yeu52\\.nuget\\packages\\",
-      "outputPath": "D:\\QLHieuThuoc\\QuanlyHieuThuoc\\QLHieuThuoc\\QLHieuThuoc\\obj\\",
+      "outputPath": "D:\\qlht\\QLHieuThuoc\\QuanlyHieuThuoc\\QLHieuThuoc\\QLHieuThuoc\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
