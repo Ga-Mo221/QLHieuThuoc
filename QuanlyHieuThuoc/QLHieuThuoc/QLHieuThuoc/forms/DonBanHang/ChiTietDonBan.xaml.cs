@@ -1,5 +1,6 @@
 ﻿using QLHieuThuoc.Model.BanHang;
 using QLHieuThuoc.Model.Files;
+using QLHieuThuoc.Model.NhanVien;
 using QLHieuThuoc.Model.sql;
 using QLHieuThuoc.UserControls;
 using System;
@@ -67,6 +68,9 @@ namespace QLHieuThuoc.forms
                 tbl_TongTien.Text = $"{NN.nn[83]} : {hoadon[0].TongTien}";
                 tbl_NgayBan.Text = $"{NN.nn[114]} : {hoadon[0].NgayMua}";
                 tbl_PhuongThucThanhToan.Text = $"{NN.nn[84]} : {hoadon[0].PhuongThuc}";
+                string lenh = "select * from NhanVien where ID = '" + hoadon[0].Idnv + "'";
+                List<nhanVien> nv = modify.NhanViens(lenh);
+                tbl_ThuNgan.Text = $"{NN.nn[192]} : {nv[0].Ten1}";
                 CapNhatKhachHang(hoadon[0].Idkh);
                 AddSanPhamMuaHang(iddb);
             }
@@ -113,6 +117,9 @@ namespace QLHieuThuoc.forms
             tbl_TongTien.Text = $"{NN.nn[83]} : {hoadon.TongTien}";
             tbl_NgayBan.Text = $"{NN.nn[114]} : {hoadon.NgayMua}";
             tbl_PhuongThucThanhToan.Text = $"{NN.nn[84]} : {hoadon.PhuongThuc}";
+            string lenh = "select * from NhanVien where ID = '" + hoadon.Idnv + "'";
+            List<nhanVien> nv = modify.NhanViens(lenh);
+            tbl_ThuNgan.Text = $"{NN.nn[192]} : {nv[0].Ten1}";
         }
 
         private void CapNhatKhachHang(Khachhang kh)

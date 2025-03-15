@@ -29,6 +29,7 @@ namespace QLHieuThuoc.forms.FNhanVien
     {
         Modify modify = new Modify();
         private List<string> ChucVu = new List<string> { NN.nn[155], NN.nn[156] };
+        private string idnvduocchon;
 
         public QlGioLam()
         {
@@ -98,6 +99,7 @@ namespace QLHieuThuoc.forms.FNhanVien
 
             if (nhanViens != null)
             {
+                idnvduocchon = nhanViens[0].IdNhanVien1;
                 tbl_IdNhanVien.Text = $"ID: {nhanViens[0].IdNhanVien1}";
                 tb_TenNhanVien.Text = nhanViens[0].Ten1;
                 tb_Sdt.Text = nhanViens[0].Sdt1 ;
@@ -191,6 +193,11 @@ namespace QLHieuThuoc.forms.FNhanVien
             }
             else if (tbl_bt_sua.Text == NN.nn[91])
             {
+                string lenh = "update NhanVien set TEN = N'"+tb_TenNhanVien.Text+"', SDT = '"+tb_Sdt.Text+"', DIACHI = N'"+tb_DiaChi.Text+"', CHUCVU = N'"+cbb_ChucVu.SelectedItem.ToString()+"' where ID = '"+idnvduocchon+"'";
+
+                modify.ThucThi(lenh);
+                ThongBao.Show(NN.nn[2], NN.nn[92], "Cam");
+
                 tbl_bt_sua.Text = NN.nn[160];
                 OnOffTB("Off");
             }

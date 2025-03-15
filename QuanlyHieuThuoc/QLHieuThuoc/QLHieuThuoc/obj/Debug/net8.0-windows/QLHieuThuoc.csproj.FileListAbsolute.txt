@@ -241,3 +241,9 @@ D:\qlht\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\obj\Debug\net8.0-win
 D:\qlht\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\obj\Debug\net8.0-windows\UserControls\NhanVien\NhanVienLichLam.baml
 D:\qlht\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\obj\Debug\net8.0-windows\UserControls\NhanVien\TenNhanVien.baml
 D:\qlht\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\obj\Debug\net8.0-windows\UserControls\NhanVien\ThoiGianLamCuaNhanVien.baml
+D:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\obj\Debug\net8.0-windows\UserControls\NhanVien\LuongNhanVien.g.cs
+D:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\obj\Debug\net8.0-windows\UserControls\NhanVien\LuongNhanVien.baml
+D:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\obj\Debug\net8.0-windows\forms\DonBanHang\HoaDon.g.cs
+D:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\obj\Debug\net8.0-windows\forms\DonBanHang\HoaDon.baml
+D:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\obj\Debug\net8.0-windows\UserControls\HoaDonDonBan\ThanhSanPhamHoaDon.g.cs
+D:\QLHieuThuoc\QuanlyHieuThuoc\QLHieuThuoc\QLHieuThuoc\obj\Debug\net8.0-windows\UserControls\HoaDonDonBan\ThanhSanPhamHoaDon.baml

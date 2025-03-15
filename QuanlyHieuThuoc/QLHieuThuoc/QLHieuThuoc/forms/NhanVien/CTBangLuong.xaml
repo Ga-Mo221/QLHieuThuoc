@@ -67,139 +67,162 @@
             </Setter>
         </Style>
     </Window.Resources>
-    <Border Background="#F7F7F7" CornerRadius="15" Padding="20">
-        <Grid>
-            <Grid.Resources>
-                <Style TargetType="TextBlock">
-                    <Setter Property="FontFamily" Value="Cascadia Mono"/>
-                    <Setter Property="FontSize" Value="16"/>
-                    <Setter Property="Foreground" Value="#565656"/>
-                    <Setter Property="HorizontalAlignment" Value="Center"/>
-                    <Setter Property="VerticalAlignment" Value="Center"/>
-                </Style>
-            </Grid.Resources>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="50"/>
-                <RowDefinition Height="51"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="80"/>
-                <RowDefinition Height="40"/>
-            </Grid.RowDefinitions>
-
+    <Grid>
+        <Grid.Resources>
+            <Style TargetType="TextBlock">
+                <Setter Property="FontFamily" Value="Cascadia Mono"/>
+                <Setter Property="FontSize" Value="16"/>
+                <Setter Property="Foreground" Value="#565656"/>
+                <Setter Property="HorizontalAlignment" Value="Center"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+            </Style>
+        </Grid.Resources>
+        <Border Background="#F7F7F7" CornerRadius="15" Height="447" Width="848" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Grid>
-                <TextBlock FontSize="26" FontWeight="Bold">Thang 2 Nam 2025</TextBlock>
-            </Grid>
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="180"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Border Background="#E2895A" CornerRadius="25">
-                    
-                        <TextBlock FontSize="20" Grid.Column="1">Bang Luong</TextBlock>
-                </Border>
-            </Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="60"/>
+                </Grid.RowDefinitions>
+                <Border x:Name="border_bangluong" CornerRadius="15" Background="#F7F7F7">
+                    <Grid  Margin="20">
+                        <Grid.Resources>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="FontFamily" Value="Cascadia Mono"/>
+                                <Setter Property="FontSize" Value="16"/>
+                                <Setter Property="Foreground" Value="#565656"/>
+                                <Setter Property="HorizontalAlignment" Value="Center"/>
+                                <Setter Property="VerticalAlignment" Value="Center"/>
+                            </Style>
+                        </Grid.Resources>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="51"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="60"/>
+                        </Grid.RowDefinitions>
 
-            <Grid Grid.Row="2">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="76"/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition Width="76"/>
-                </Grid.ColumnDefinitions>
-
-                <Grid Grid.Column="1">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="25"/>
-                        <RowDefinition Height="50"/>
-                        <RowDefinition Height="11"/>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>
-
-                    <TextBlock HorizontalAlignment="Left">Ten : Nguyen Thi A</TextBlock>
-                    <TextBlock HorizontalAlignment="Left" Grid.Row="1">So Dien Thoai : 02349728343</TextBlock>
-                    <TextBlock HorizontalAlignment="Left" Grid.Row="2">Dia Chi : Gia Lai Viet Nam</TextBlock>
-
-                    <Border Grid.Row="4" Background="#565656" Padding="0.5">
                         <Grid>
-                            <Grid.Resources>
-                                <Style TargetType="TextBlock">
-                                    <Setter Property="FontFamily" Value="Cascadia Mono"/>
-                                    <Setter Property="FontSize" Value="13"/>
-                                    <Setter Property="Foreground" Value="#565656"/>
-                                    <Setter Property="HorizontalAlignment" Value="Center"/>
-                                    <Setter Property="VerticalAlignment" Value="Center"/>
-                                </Style>
-                            </Grid.Resources>
+                            <TextBlock x:Name="tbl_ThangNam" FontSize="26" FontWeight="Bold">Thang 2 Nam 2025</TextBlock>
+                        </Grid>
+                        <Grid>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition/>
-                                <ColumnDefinition/>
-                                <ColumnDefinition/>
-                                <ColumnDefinition/>
-                                <ColumnDefinition/>
-                                <ColumnDefinition/>
+                                <ColumnDefinition Width="180"/>
+                                <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
-                            <Grid.RowDefinitions>
-                                <RowDefinition/>
-                                <RowDefinition/>
-                            </Grid.RowDefinitions>
+                            <Border Background="#E2895A" CornerRadius="25">
+                    
+                                    <TextBlock x:Name="tbl_TenBang" FontSize="20" Grid.Column="1">Bang Luong</TextBlock>
+                            </Border>
+                        </Grid>
 
-                            <Grid Background="#F7F7F7" Margin="0.5">
-                                <TextBlock>Thang</TextBlock>
-                            </Grid>
-                            <Grid Background="#F7F7F7" Grid.Column="1" Grid.Row="0" Margin="0.5">
-                                <TextBlock>Ngay Tao</TextBlock>
-                            </Grid>
-                            <Grid Background="#F7F7F7" Grid.Column="2" Grid.Row="0" Margin="0.5">
-                                <TextBlock>Tien Thuong</TextBlock>
-                            </Grid>
-                            <Grid Background="#F7F7F7" Grid.Column="3" Grid.Row="0" Margin="0.5">
-                                <TextBlock>Tien Tro Cap</TextBlock>
-                            </Grid>
-                            <Grid Background="#F7F7F7" Grid.Column="4" Grid.Row="0" Margin="0.5">
-                                <TextBlock>So Gio Lam</TextBlock>
-                            </Grid>
-                            <Grid Background="#F7F7F7" Grid.Column="5" Grid.Row="0" Margin="0.5">
-                                <TextBlock>Luong</TextBlock>
-                            </Grid>
+                        <Grid Grid.Row="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="76"/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="76"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Grid Grid.Column="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="25"/>
+                                    <RowDefinition Height="50"/>
+                                    <RowDefinition Height="11"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+
+                                <TextBlock x:Name="tbl_Ten" HorizontalAlignment="Left">Ten : Nguyen Thi A</TextBlock>
+                                <TextBlock x:Name="tbl_Sdt" HorizontalAlignment="Left" Grid.Row="1">So Dien Thoai : 02349728343</TextBlock>
+                                <TextBlock x:Name="tbl_DiaChi" HorizontalAlignment="Left" Grid.Row="2">Dia Chi : Gia Lai Viet Nam</TextBlock>
+
+                                <Border Grid.Row="4" Background="#565656" Padding="0.5">
+                                    <Grid>
+                                        <Grid.Resources>
+                                            <Style TargetType="TextBlock">
+                                                <Setter Property="FontFamily" Value="Cascadia Mono"/>
+                                                <Setter Property="FontSize" Value="13"/>
+                                                <Setter Property="Foreground" Value="#565656"/>
+                                                <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                <Setter Property="VerticalAlignment" Value="Center"/>
+                                            </Style>
+                                        </Grid.Resources>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
+
+                                        <Grid Background="#F7F7F7" Margin="0.5">
+                                            <TextBlock x:Name="tbl_TThang">Thang</TextBlock>
+                                        </Grid>
+                                        <Grid Background="#F7F7F7" Grid.Column="1" Grid.Row="0" Margin="0.5">
+                                            <TextBlock x:Name="tbl_TNgayTao">Ngay Tao</TextBlock>
+                                        </Grid>
+                                        <Grid Background="#F7F7F7" Grid.Column="2" Grid.Row="0" Margin="0.5">
+                                            <TextBlock x:Name="tbl_TTienThuong">Tien Thuong</TextBlock>
+                                        </Grid>
+                                        <Grid Background="#F7F7F7" Grid.Column="3" Grid.Row="0" Margin="0.5">
+                                            <TextBlock x:Name="tbl_TTienTroCap">Tien Tro Cap</TextBlock>
+                                        </Grid>
+                                        <Grid Background="#F7F7F7" Grid.Column="4" Grid.Row="0" Margin="0.5">
+                                            <TextBlock x:Name="tbl_TSoGioLam">So Gio Lam</TextBlock>
+                                        </Grid>
+                                        <Grid Background="#F7F7F7" Grid.Column="5" Grid.Row="0" Margin="0.5">
+                                            <TextBlock x:Name="tbl_TLuong">Luong</TextBlock>
+                                        </Grid>
 
 
 
-                            <Grid Background="#F7F7F7" Grid.Column="0" Grid.Row="1" Margin="0.5">
-                                <TextBlock>1</TextBlock>
-                            </Grid>
-                            <Grid Background="#F7F7F7" Grid.Column="1" Grid.Row="1" Margin="0.5">
-                                <TextBlock>13/3/2025</TextBlock>
-                            </Grid>
-                            <Grid Background="#F7F7F7" Grid.Column="2" Grid.Row="1" Margin="0.5">
-                                <TextBlock>200000</TextBlock>
-                            </Grid>
-                            <Grid Background="#F7F7F7" Grid.Column="3" Grid.Row="1" Margin="0.5">
-                                <TextBlock>300000</TextBlock>
-                            </Grid>
-                            <Grid Background="#F7F7F7" Grid.Column="4" Grid.Row="1" Margin="0.5">
-                                <TextBlock>200</TextBlock>
-                            </Grid>
-                            <Grid Background="#F7F7F7" Grid.Column="5" Grid.Row="1" Margin="0.5">
-                                <TextBlock>20000000</TextBlock>
+                                        <Grid Background="#F7F7F7" Grid.Column="0" Grid.Row="1" Margin="0.5">
+                                            <TextBlock x:Name="tbl_DThang">1</TextBlock>
+                                        </Grid>
+                                        <Grid Background="#F7F7F7" Grid.Column="1" Grid.Row="1" Margin="0.5">
+                                            <TextBlock x:Name="tbl_DNgayTao">13/3/2025</TextBlock>
+                                        </Grid>
+                                        <Grid Background="#F7F7F7" Grid.Column="2" Grid.Row="1" Margin="0.5">
+                                            <TextBlock x:Name="tbl_DTienThuong">200000</TextBlock>
+                                        </Grid>
+                                        <Grid Background="#F7F7F7" Grid.Column="3" Grid.Row="1" Margin="0.5">
+                                            <TextBlock x:Name="tbl_DTienTroCap">300000</TextBlock>
+                                        </Grid>
+                                        <Grid Background="#F7F7F7" Grid.Column="4" Grid.Row="1" Margin="0.5">
+                                            <TextBlock x:Name="tbl_DSoGioLam">200</TextBlock>
+                                        </Grid>
+                                        <Grid Background="#F7F7F7" Grid.Column="5" Grid.Row="1" Margin="0.5">
+                                            <TextBlock x:Name="tbl_DLuong">20000000</TextBlock>
+                                        </Grid>
+                                    </Grid>
+                                </Border>
+
+                                <TextBlock Grid.Row="6" HorizontalAlignment="Left"> ID Bang : #fhlsk034</TextBlock>
                             </Grid>
                         </Grid>
-                    </Border>
-
-                    <TextBlock Grid.Row="6" HorizontalAlignment="Left"> ID Bang : #fhlsk034</TextBlock>
-                </Grid>
+                    </Grid>
+                </Border>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Row="4">
+                    <Button Style="{DynamicResource ButtonStyle1}" Height="40" VerticalAlignment="Top" Background="#E2895A" Width="207" HorizontalAlignment="Right" Click="Button_Click_1">
+                        <Button.Content>
+                            <TextBlock x:Name="tbl_bt_XuatHoaDon">Xuat Bang Luong</TextBlock>
+                        </Button.Content>
+                    </Button>
+                    <Grid Width="10"/>
+                    <Button Style="{DynamicResource ButtonStyle1}" Height="40" VerticalAlignment="Top" Background="#E2895A" Width="100" HorizontalAlignment="Right" Click="Button_Click">
+                        <Button.Content>
+                            <TextBlock x:Name="tbl_bt_Thoat">Thoat</TextBlock>
+                        </Button.Content>
+                    </Button>
+                    <Grid Width="20"/>
+                </StackPanel>
             </Grid>
-
-
-            <Grid Grid.Row="4">
-                <Button Style="{DynamicResource ButtonStyle1}" Background="#E2895A" Width="207" HorizontalAlignment="Right">
-                    <Button.Content>
-                        <TextBlock>Xuat Bang Luong</TextBlock>
-                    </Button.Content>
-                </Button>
-            </Grid>
-        </Grid>
-    </Border>
+        </Border>
+    </Grid>
 </Window>

@@ -272,7 +272,7 @@
                     <TextBlock x:Name="tbl_Nam">Nam</TextBlock>
                 </Border>
                 <Grid Height="5"></Grid>
-                <ComboBox Template="{DynamicResource ComboBoxTemplate1}" x:Name="cbb_Nam"></ComboBox>
+                <ComboBox Template="{DynamicResource ComboBoxTemplate1}" x:Name="cbb_Nam" SelectionChanged="cbb_Nam_SelectionChanged"></ComboBox>
                 <Grid Height="5"></Grid>
                 <Border Height="40" CornerRadius="5" Background="#E2895A">
                     <TextBlock x:Name="tbl_Thang">Thang</TextBlock>

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QLHieuThuoc.Model.NhanVien
 {
-    class BangLuongDayDu
+    public class BangLuongDayDu
     {
         private string idNhanVien;
         private string ten;

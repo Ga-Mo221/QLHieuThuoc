@@ -189,6 +189,8 @@
                                 <TextBlock x:Name="tbl_NgayBan">Ngay Nhap: 2/2/2025</TextBlock>
                                 <Grid Height="8"/>
                                 <TextBlock x:Name="tbl_PhuongThucThanhToan">thanh toan : tien mat</TextBlock>
+                                <Grid Height="8"/>
+                                <TextBlock x:Name="tbl_ThuNgan">thu ngan : Nguyen thi a</TextBlock>
                             </StackPanel>
                         </DockPanel>
 

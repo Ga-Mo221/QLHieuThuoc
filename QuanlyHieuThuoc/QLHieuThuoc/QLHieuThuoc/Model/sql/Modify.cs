@@ -164,7 +164,7 @@ namespace QLHieuThuoc.Model.sql
                 dataReader = sqlConmand.ExecuteReader();
                 while (dataReader.Read())
                 {
-                    donbans.Add(new Donban(dataReader.GetString(0), dataReader.GetString(1), dataReader.GetDateTime(2), dataReader.GetDecimal(3), dataReader.GetString(4)));
+                    donbans.Add(new Donban(dataReader.GetString(0), dataReader.GetString(1), dataReader.GetDateTime(2), dataReader.GetDecimal(3), dataReader.GetString(4), dataReader.GetString(5)));
                 }
 
                 sqlConnection.Close();
@@ -300,6 +300,88 @@ namespace QLHieuThuoc.Model.sql
             return bangluongdaydus;
         }
 
+
+        // check Lương
+        public List<BangLuong> Luongs(string LenhTruyVan)
+        {
+            List<BangLuong> luongs = new List<BangLuong>();
+
+            using (SqlConnection sqlConnection = KetNoi.GetSqlconnection())
+            {
+                sqlConnection.Open();
+
+                sqlConmand = new SqlCommand(LenhTruyVan, sqlConnection);
+                dataReader = sqlConmand.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    luongs.Add(new BangLuong(dataReader.GetString(0), dataReader.GetString(1), dataReader.GetInt32(2), dataReader.GetInt32(3), dataReader.GetDateTime(4), dataReader.GetDecimal(5), dataReader.GetDecimal(6), dataReader.GetDecimal(7), dataReader.GetDecimal(8))) ;
+                }
+
+                sqlConnection.Close();
+            }
+
+            return luongs;
+        }
+
+        public List<ThongTinHoaDon> ThongTinHoaDons(string LenhTruyVan)
+        {
+            List<ThongTinHoaDon> thongtinhoadons = new List<ThongTinHoaDon>();
+
+            using (SqlConnection sqlConnection = KetNoi.GetSqlconnection())
+            {
+                sqlConnection.Open();
+
+                sqlConmand = new SqlCommand(LenhTruyVan, sqlConnection);
+                dataReader = sqlConmand.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    thongtinhoadons.Add(new ThongTinHoaDon(dataReader.GetString(0), dataReader.GetDateTime(1), dataReader.GetString(2), dataReader.GetString(3), dataReader.GetDecimal(4)));
+                }
+
+                sqlConnection.Close();
+            }
+
+            return thongtinhoadons;
+        }
+
+        public List<ThongTinSanPhamHoaDon> ThongTinSPHDs(string LenhTruyVan)
+        {
+            List<ThongTinSanPhamHoaDon> thongtinsphds = new List<ThongTinSanPhamHoaDon>();
+
+            using (SqlConnection sqlConnection = KetNoi.GetSqlconnection())
+            {
+                sqlConnection.Open();
+
+                sqlConmand = new SqlCommand(LenhTruyVan, sqlConnection);
+                dataReader = sqlConmand.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    thongtinsphds.Add(new ThongTinSanPhamHoaDon(dataReader.GetString(0), dataReader.GetInt32(1), dataReader.GetDecimal(2)));
+                }
+
+                sqlConnection.Close();
+            }
+
+            return thongtinsphds;
+        }
+
+
+
+
+
+
+        public object LayGiaTri(string LenhTruyVan)
+        {
+            object result = null;
+            using (SqlConnection sqlConnection = KetNoi.GetSqlconnection())
+            {
+                sqlConnection.Open();
+                sqlConmand = new SqlCommand(LenhTruyVan, sqlConnection);
+                result = sqlConmand.ExecuteScalar(); // Lấy giá trị đơn lẻ từ truy vấn
+                sqlConnection.Close();
+            }
+            return result ?? 0; // Trả về 0 nếu giá trị null để tránh lỗi
+        }
 
 
 

@@ -1,14 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\qlht\\QLHieuThuoc\\QuanlyHieuThuoc\\QLHieuThuoc\\",
+  "WorkspaceRootPath": "D:\\QLHieuThuoc\\QuanlyHieuThuoc\\QLHieuThuoc\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AF183C98-B091-4920-B14C-79D71193BC4C}|QLHieuThuoc\\QLHieuThuoc.csproj|d:\\qlht\\qlhieuthuoc\\quanlyhieuthuoc\\qlhieuthuoc\\qlhieuthuoc\\forms\\sanpham\\thongtinsanpham.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
-      "RelativeMoniker": "D:0:0:{AF183C98-B091-4920-B14C-79D71193BC4C}|QLHieuThuoc\\QLHieuThuoc.csproj|solutionrelative:qlhieuthuoc\\forms\\sanpham\\thongtinsanpham.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+      "AbsoluteMoniker": "D:0:0:{AF183C98-B091-4920-B14C-79D71193BC4C}|QLHieuThuoc\\QLHieuThuoc.csproj|d:\\qlhieuthuoc\\quanlyhieuthuoc\\qlhieuthuoc\\qlhieuthuoc\\forms\\tongquan\\tongquan.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "RelativeMoniker": "D:0:0:{AF183C98-B091-4920-B14C-79D71193BC4C}|QLHieuThuoc\\QLHieuThuoc.csproj|solutionrelative:qlhieuthuoc\\forms\\tongquan\\tongquan.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AF183C98-B091-4920-B14C-79D71193BC4C}|QLHieuThuoc\\QLHieuThuoc.csproj|d:\\qlht\\qlhieuthuoc\\quanlyhieuthuoc\\qlhieuthuoc\\qlhieuthuoc\\forms\\sanpham\\thongtinsanpham.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{AF183C98-B091-4920-B14C-79D71193BC4C}|QLHieuThuoc\\QLHieuThuoc.csproj|solutionrelative:qlhieuthuoc\\forms\\sanpham\\thongtinsanpham.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{AF183C98-B091-4920-B14C-79D71193BC4C}|QLHieuThuoc\\QLHieuThuoc.csproj|d:\\qlhieuthuoc\\quanlyhieuthuoc\\qlhieuthuoc\\qlhieuthuoc\\forms\\tongquan\\tongquan.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{AF183C98-B091-4920-B14C-79D71193BC4C}|QLHieuThuoc\\QLHieuThuoc.csproj|solutionrelative:qlhieuthuoc\\forms\\tongquan\\tongquan.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,39 +18,35 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ThongTinSanPham.xaml",
-              "DocumentMoniker": "D:\\qlht\\QLHieuThuoc\\QuanlyHieuThuoc\\QLHieuThuoc\\QLHieuThuoc\\forms\\SanPham\\ThongTinSanPham.xaml",
-              "RelativeDocumentMoniker": "QLHieuThuoc\\forms\\SanPham\\ThongTinSanPham.xaml",
-              "ToolTip": "D:\\qlht\\QLHieuThuoc\\QuanlyHieuThuoc\\QLHieuThuoc\\QLHieuThuoc\\forms\\SanPham\\ThongTinSanPham.xaml",
-              "RelativeToolTip": "QLHieuThuoc\\forms\\SanPham\\ThongTinSanPham.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-03-14T12:11:11.613Z",
+              "DocumentIndex": 0,
+              "Title": "TongQuan.xaml.cs",
+              "DocumentMoniker": "D:\\QLHieuThuoc\\QuanlyHieuThuoc\\QLHieuThuoc\\QLHieuThuoc\\forms\\TongQuan\\TongQuan.xaml.cs",
+              "RelativeDocumentMoniker": "QLHieuThuoc\\forms\\TongQuan\\TongQuan.xaml.cs",
+              "ToolTip": "D:\\QLHieuThuoc\\QuanlyHieuThuoc\\QLHieuThuoc\\QLHieuThuoc\\forms\\TongQuan\\TongQuan.xaml.cs",
+              "RelativeToolTip": "QLHieuThuoc\\forms\\TongQuan\\TongQuan.xaml.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAQwLwAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-15T09:44:13.816Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ThongTinSanPham.xaml.cs",
-              "DocumentMoniker": "D:\\qlht\\QLHieuThuoc\\QuanlyHieuThuoc\\QLHieuThuoc\\QLHieuThuoc\\forms\\SanPham\\ThongTinSanPham.xaml.cs",
-              "RelativeDocumentMoniker": "QLHieuThuoc\\forms\\SanPham\\ThongTinSanPham.xaml.cs",
-              "ToolTip": "D:\\qlht\\QLHieuThuoc\\QuanlyHieuThuoc\\QLHieuThuoc\\QLHieuThuoc\\forms\\SanPham\\ThongTinSanPham.xaml.cs",
-              "RelativeToolTip": "QLHieuThuoc\\forms\\SanPham\\ThongTinSanPham.xaml.cs",
-              "ViewState": "AgIAAHgAAAAAAAAAAAA/wJIAAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-14T12:10:39.651Z",
+              "DocumentIndex": 1,
+              "Title": "TongQuan.xaml",
+              "DocumentMoniker": "D:\\QLHieuThuoc\\QuanlyHieuThuoc\\QLHieuThuoc\\QLHieuThuoc\\forms\\TongQuan\\TongQuan.xaml",
+              "RelativeDocumentMoniker": "QLHieuThuoc\\forms\\TongQuan\\TongQuan.xaml",
+              "ToolTip": "D:\\QLHieuThuoc\\QuanlyHieuThuoc\\QLHieuThuoc\\QLHieuThuoc\\forms\\TongQuan\\TongQuan.xaml",
+              "RelativeToolTip": "QLHieuThuoc\\forms\\TongQuan\\TongQuan.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-03-15T09:44:09.53Z",
               "EditorCaption": ""
             }
           ]

@@ -47,9 +47,11 @@ namespace QLHieuThuoc.Model.Files
                 foreach (string line in lines)
                 {
                     // tách thông tin từ dòng
-                    string[] parts = line.Split(new[] { "," }, StringSplitOptions.None);
+                    string[] parts = line.Split(new[] { "|" }, StringSplitOptions.None);
 
                     NN.NgonNguSetting = parts[0];
+                    NN.folderPathLuong = parts[1];
+                    NN.folderPathHoaDon = parts[2];
                 }
             }
             else
@@ -91,5 +93,7 @@ namespace QLHieuThuoc.Model.Files
         public static List<string> nn = new List<string>();
         public static string NgonNguSetting;
         public static string TileManHinh;
+        public static string folderPathLuong;
+        public static string folderPathHoaDon;
     }
 }

@@ -300,6 +300,22 @@
         <!-- row 0 - thanh tìm kiếm -->
         <Border Grid.Row="0" CornerRadius="40" Background="White">
             <Grid>
+                <Grid.Resources>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="Foreground" Value="#565656"/>
+                        <Setter Property="FontFamily" Value="Cascadia Mono"/>
+                        <Setter Property="FontSize" Value="15"/>
+                        <Setter Property="VerticalAlignment" Value="Center"/>
+                        <Setter Property="HorizontalAlignment" Value="Center"/>
+                    </Style>
+                    <Style TargetType="TextBox">
+                        <Setter Property="Foreground" Value="#565656"/>
+                        <Setter Property="FontFamily" Value="Cascadia Mono"/>
+                        <Setter Property="FontSize" Value="15"/>
+                        <Setter Property="VerticalAlignment" Value="Center"/>
+                        <Setter Property="HorizontalAlignment" Value="Center"/>
+                    </Style>
+                </Grid.Resources>
                 <DockPanel Margin="11">
                     <!-- tiêu đề -->
                     <TextBlock x:Name="tbl_TenBang" 
@@ -357,6 +373,22 @@
         </Border>
 
         <StackPanel Grid.Row="2">
+            <StackPanel.Resources>
+                <Style TargetType="TextBlock">
+                    <Setter Property="Foreground" Value="#565656"/>
+                    <Setter Property="FontFamily" Value="Cascadia Mono"/>
+                    <Setter Property="FontSize" Value="20"/>
+                    <Setter Property="VerticalAlignment" Value="Center"/>
+                    <Setter Property="HorizontalAlignment" Value="Left"/>
+                </Style>
+                <Style TargetType="TextBox">
+                    <Setter Property="Foreground" Value="#565656"/>
+                    <Setter Property="FontFamily" Value="Cascadia Mono"/>
+                    <Setter Property="FontSize" Value="15"/>
+                    <Setter Property="VerticalAlignment" Value="Center"/>
+                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                </Style>
+            </StackPanel.Resources>
             <Border Background="White" Height="50" CornerRadius="9">
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -416,6 +448,40 @@
                       Foreground="#565656"
                       Background="#E2895A"
                       SelectionChanged="cbb_TiLeManHinh_SelectionChanged"></ComboBox>
+                </Grid>
+            </Border>
+
+            <Grid Height="5"></Grid>
+
+            <Border Background="White" Height="50" CornerRadius="9">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="1.5*"/>
+                        <ColumnDefinition Width="25"/>
+                    </Grid.ColumnDefinitions>
+
+
+                    <TextBlock x:Name="tbl_FolderPathLuong" Grid.Column="1">Duong Dan luu bang luong</TextBlock>
+                    <TextBox x:Name="tb_FolderPathLuong" Grid.Column="2" HorizontalAlignment="Stretch" TextChanged="tb_FolderPathLuong_TextChanged"></TextBox>
+                </Grid>
+            </Border>
+
+            <Grid Height="5"></Grid>
+
+            <Border Background="White" Height="50" CornerRadius="9">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="1.5*"/>
+                        <ColumnDefinition Width="25"/>
+                    </Grid.ColumnDefinitions>
+
+
+                    <TextBlock x:Name="tbl_FolderPathHoaDon" Grid.Column="1">Duong Dan luu Hoa Don</TextBlock>
+                    <TextBox x:Name="tb_FolderPathHoaDon" Grid.Column="2" HorizontalAlignment="Stretch" TextChanged="tb_FolderPathHoaDon_TextChanged"></TextBox>
                 </Grid>
             </Border>
         </StackPanel>

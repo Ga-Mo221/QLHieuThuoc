@@ -22,11 +22,13 @@ namespace QLHieuThuoc.forms
     public partial class CaiDat : UserControl
     {
         private List<string> NgonNgus = new List<string>();
-        private List<string> TiLeManHinh = new List<string> { NN.nn[144], NN.nn[143] };
+        private List<string> TiLeManHinh = new List<string> { NN.nn[144], NN.nn[143], "1440x950"};
         CheckFileNN CF = new CheckFileNN();
         DocGhi dg = new DocGhi();
         private int x = 1240;
         private int y = 800;
+        private int x1 = 1440;
+        private int y1 = 950;
 
         public CaiDat()
         {
@@ -55,7 +57,7 @@ namespace QLHieuThuoc.forms
                 dg.Ngongu(kiemtra, cbb_NgonNgu.SelectedItem.ToString());
                 if (kiemtra.Count == NN.nn.Count)
                 {
-                    dg.SaveSetting($"{cbb_NgonNgu.SelectedItem.ToString()},gsdaf");
+                    dg.SaveSetting($"{cbb_NgonNgu.SelectedItem.ToString()}|{NN.folderPathLuong}|{NN.folderPathHoaDon}");
                     ThongBao.Show(NN.nn[2], NN.nn[140], "Cam");
                     System.Windows.Application.Current.Shutdown();
                 }
@@ -73,7 +75,34 @@ namespace QLHieuThuoc.forms
             tbl_TenBang.Text = $"  {NN.nn[35]}";
             tbl_LoaiNgonNgu.Text = NN.nn[141];
             tbl_TiLeManHinh.Text = NN.nn[145];
+            tbl_FolderPathLuong.Text = NN.nn[184];
+            tbl_FolderPathHoaDon.Text = NN.nn[185];
+            tb_FolderPathHoaDon.Text = NN.folderPathHoaDon;
+            tb_FolderPathLuong.Text = NN.folderPathLuong;
         }
+
+
+        private void cbb_TiLeManHinh_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cbb_TiLeManHinh.SelectedItem == NN.nn[144])
+            {
+                RestoreWindow(x, y);
+                NN.TileManHinh = cbb_TiLeManHinh.SelectedItem.ToString();
+            }
+            else if (cbb_TiLeManHinh.SelectedItem == NN.nn[143])
+            {
+                FullMan();
+                NN.TileManHinh = cbb_TiLeManHinh.SelectedItem.ToString();
+            }
+            else if (cbb_TiLeManHinh.SelectedItem == "1440x950")
+            {
+                RestoreWindow(x1, y1);
+                NN.TileManHinh = cbb_TiLeManHinh.SelectedItem.ToString();
+            }
+        }
+
+
+
 
         // mở full màn
         private void FullMan()
@@ -102,18 +131,27 @@ namespace QLHieuThuoc.forms
             }
         }
 
-
-        private void cbb_TiLeManHinh_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void tb_FolderPathLuong_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (cbb_TiLeManHinh.SelectedItem == NN.nn[144])
+            if (tb_FolderPathLuong !=  null)
             {
-                RestoreWindow(x, y);
-                NN.TileManHinh = cbb_TiLeManHinh.SelectedItem.ToString();
+                if (tb_FolderPathLuong.Text.Length > 0 && tb_FolderPathLuong.Text != NN.folderPathLuong)
+                {
+                    dg.SaveSetting($"{cbb_NgonNgu.SelectedItem.ToString()}|{tb_FolderPathLuong.Text}|{NN.folderPathHoaDon}");
+                    dg.Setting();
+                }
             }
-            else if (cbb_TiLeManHinh.SelectedItem == NN.nn[143])
+        }
+
+        private void tb_FolderPathHoaDon_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (tb_FolderPathHoaDon != null)
             {
-                FullMan();
-                NN.TileManHinh = cbb_TiLeManHinh.SelectedItem.ToString();
+                if (tb_FolderPathHoaDon.Text.Length > 0 && tb_FolderPathHoaDon.Text != NN.folderPathHoaDon)
+                {
+                    dg.SaveSetting($"{cbb_NgonNgu.SelectedItem.ToString()}|{NN.folderPathLuong}|{tb_FolderPathHoaDon.Text}");
+                    dg.Setting();
+                }
             }
         }
     }

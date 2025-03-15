@@ -93,7 +93,7 @@ namespace QLHieuThuoc.forms
             //        MessageBox.Show(NN.nn[3], NN.nn[2], MessageBoxButton.OK, MessageBoxImage.Warning);
             //    }
             //}
-            string idnv = "gde";
+            string idnv = "#g7d7ny";
             MainWindow CuaSoChinh = new MainWindow(idnv);
             this.Hide();
             CuaSoChinh.Show();

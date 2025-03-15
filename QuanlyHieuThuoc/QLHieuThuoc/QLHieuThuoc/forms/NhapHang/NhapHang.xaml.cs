@@ -54,7 +54,7 @@ namespace QLHieuThuoc.forms
             AddDonNhap(ls);
 
             string lenSelect = "SELECT * FROM DonNhapHang WHERE MONTH(NGAYNHAP) = MONTH(GETDATE()) AND YEAR(NGAYNHAP) = YEAR(GETDATE())";
-            tbl_SoLuongDonHangTrongThang.Text = modify.DonBans(lenSelect).Count.ToString();
+            tbl_SoLuongDonHangTrongThang.Text = modify.DonNhaps(lenSelect).Count.ToString();
         }
 
         // Cập nhật Tổng đơn Nhập

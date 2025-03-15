@@ -31,12 +31,13 @@ namespace QLHieuThuoc.forms
         Modify modify = new Modify();
         ClickTextBox cl = new ClickTextBox();
         private List<string> ListThang = new List<string> { NN.nn[118], NN.nn[119] };
+        private string idnv;
 
-
-        public BanHang()
+        public BanHang(string id)
         {
             InitializeComponent();
             Loaded += BanHang_Loaded;
+            idnv = id;
         }
 
         private void BanHang_Loaded(object sender, RoutedEventArgs e)
@@ -60,7 +61,7 @@ namespace QLHieuThuoc.forms
             MainWindow mainWindow = Window.GetWindow(this) as MainWindow;
             if (mainWindow != null)
             {
-                Mo.OpenWindowWithBlur(mainWindow, new ThemDonBan());
+                Mo.OpenWindowWithBlur(mainWindow, new ThemDonBan(idnv));
             }
             string lenhSelect = "select * from DonBan";
             List<Donban> donbans = modify.DonBans(lenhSelect);

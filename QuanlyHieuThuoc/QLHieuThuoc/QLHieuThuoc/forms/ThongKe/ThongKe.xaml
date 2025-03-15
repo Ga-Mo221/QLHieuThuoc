@@ -7,8 +7,10 @@
              mc:Ignorable="d" 
              d:DesignHeight="848" d:DesignWidth="1096">
     <Grid Background="#F7F7F7">
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="65"></RowDefinition>
+            <RowDefinition Height="20"></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
 
@@ -71,5 +73,499 @@
                 </DockPanel>
             </Grid>
         </Border>
+
+        <!-- chia nội dung làm 2 -->
+        <Grid Grid.Row="2">
+
+            <Grid.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="15"></Setter>
+                </Style>
+
+                <Style TargetType="TextBlock">
+                    <Setter Property="Foreground" Value="#565656"/>
+                    <Setter Property="FontFamily" Value="Cascadia Mono"/>
+                    <Setter Property="FontSize" Value="16"/>
+                    <Setter Property="VerticalAlignment" Value="Center"/>
+                </Style>
+            </Grid.Resources>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="0.05*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            
+            <!-- bên trái -->
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="0.1*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="0.1*"/>
+                    <RowDefinition Height="2*"/>
+                </Grid.RowDefinitions>
+                
+                
+                <!-- hàng trên cùng -->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="0.08*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <!-- tổng sản phẩm- sản phẩm đã hết - sản phầm sắp hết-->
+                    <Border Background="#E2895A">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.5*"/>
+                                <ColumnDefinition Width="0.9*"/>
+                                <ColumnDefinition Width="0.3*"/>
+                                <ColumnDefinition Width="3*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="0.4*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="0.1*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="0.1*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="0.4*"/>
+                            </Grid.RowDefinitions>
+
+                            <Grid Grid.Row="1" Grid.Column="1">
+                                <Ellipse Fill="#F7F7F7"></Ellipse>
+                            </Grid>
+                            <Grid Grid.Row="3" Grid.Column="1">
+                                <Ellipse Fill="#F7F7F7"></Ellipse>
+                            </Grid>
+                            <Grid Grid.Row="5" Grid.Column="1">
+                                <Ellipse Fill="#F7F7F7"></Ellipse>
+                            </Grid>
+
+                            <Grid Grid.Row="1" Grid.Column="3">
+                                <DockPanel>
+                                    <TextBlock x:Name="tbl_TongSanPham" FontSize="10" DockPanel.Dock="Top">Tổng Sản Phẩm</TextBlock>
+                                    <TextBlock x:Name="tbl_SoTongSanPham" FontSize="40" Foreground="White">100</TextBlock>
+                                </DockPanel>
+                            </Grid>
+                            <Grid Grid.Row="3" Grid.Column="3">
+                                <DockPanel>
+                                    <TextBlock x:Name="tbl_SanPhamDaHet" FontSize="10" DockPanel.Dock="Top">Sản Phẩm Đã Hết</TextBlock>
+                                    <TextBlock x:Name="tbl_SoSanPhamDaHet" FontSize="40" Foreground="#E01B1B">100</TextBlock>
+                                </DockPanel>
+                            </Grid>
+                            <Grid Grid.Row="5" Grid.Column="3">
+                                <DockPanel>
+                                    <TextBlock x:Name="tbl_SanPhamSapHet" FontSize="10" DockPanel.Dock="Top">Sản Phẩm Sắp Hết</TextBlock>
+                                    <TextBlock x:Name="tbl_SoSanPhamSapHet" FontSize="40" Foreground="#198628">100</TextBlock>
+                                </DockPanel>
+                            </Grid>
+                        </Grid>
+                    </Border>
+                    
+                    <!-- sản phẩm bán chạy nhất -->
+                    <Border Background="White" Grid.Column="2" Padding="10">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="4*"/>
+                            </Grid.RowDefinitions>
+
+                            <TextBlock> Sản Phẩm Bán Chạy Nhất</TextBlock>
+                            <DockPanel Grid.Row="1">
+                                <Border DockPanel.Dock="Top" Height="40" CornerRadius="5" Background="#D9D9D9">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="3*"/>
+                                            <ColumnDefinition Width="3*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock HorizontalAlignment="Center">1</TextBlock>
+                                        <TextBlock x:Name="tbl_TenSanPhamTop1" HorizontalAlignment="Center" Grid.Column="1">ten san pham</TextBlock>
+                                        <TextBlock x:Name="tbl_LoaiSanPhamTop1" HorizontalAlignment="Center" Grid.Column="2">loai sản pham</TextBlock>
+                                    </Grid>
+                                </Border>
+                                <Grid Height="5" DockPanel.Dock="Top"></Grid>
+                                <Border DockPanel.Dock="Top" Height="40" CornerRadius="5" Background="#D9D9D9">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="3*"/>
+                                            <ColumnDefinition Width="3*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock HorizontalAlignment="Center">1</TextBlock>
+                                        <TextBlock x:Name="tbl_TenSanPhamTop2" HorizontalAlignment="Center" Grid.Column="1">ten san pham</TextBlock>
+                                        <TextBlock x:Name="tbl_LoaiSanPhamTop2" HorizontalAlignment="Center" Grid.Column="2">loai sản pham</TextBlock>
+                                    </Grid>
+                                </Border>
+                                <Grid Height="5" DockPanel.Dock="Top"></Grid>
+                                <Border DockPanel.Dock="Top" CornerRadius="5" Background="#D9D9D9">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="3*"/>
+                                            <ColumnDefinition Width="3*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock HorizontalAlignment="Center">1</TextBlock>
+                                        <TextBlock x:Name="tbl_TenSanPhamTop3" HorizontalAlignment="Center" Grid.Column="1">ten san pham</TextBlock>
+                                        <TextBlock x:Name="tbl_LoaiSanPhamTop3" HorizontalAlignment="Center" Grid.Column="2">loai sản pham</TextBlock>
+                                    </Grid>
+                                </Border>
+                            </DockPanel>
+                        </Grid>
+                    </Border>
+                </Grid>
+
+                <!-- hàng chính giữa -->
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="0.05*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <!-- tổng số đơn nhập -->
+                    <Border Background="White">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.3*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="0.2*"/>
+                                <ColumnDefinition Width="3*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="1.5*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Row="1">
+                                    <Ellipse Fill="#E2895A"></Ellipse>
+                                </Grid>
+                            </Grid>
+                            <Grid Grid.Column="3">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="0.4*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="0.1*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="0.4*"/>
+                                </Grid.RowDefinitions>
+
+                                <DockPanel Grid.Row="1">
+                                    <TextBlock x:Name="tbl_TongSoDonNhap" DockPanel.Dock="Top" FontSize="12">tổng số đơn nhập</TextBlock>
+                                    <TextBlock x:Name="tbl_SoTongSoDonNhap" FontSize="40">50</TextBlock>
+                                </DockPanel>
+                                <DockPanel Grid.Row="3">
+                                    <TextBlock x:Name="tbl_TongChiPhi" DockPanel.Dock="Top" FontSize="12">Tổng Chi Phí</TextBlock>
+                                    <TextBlock x:Name="tbl_SoChiPhi" FontSize="40" Foreground="#E01B1B">1000000$</TextBlock>
+                                </DockPanel>
+                            </Grid>
+                        </Grid>
+                    </Border>
+                    
+                    <!-- tổng số đơn bán -->
+                    <Border Grid.Column="2" Background="White">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.3*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="0.2*"/>
+                                <ColumnDefinition Width="3*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="1.5*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Row="1">
+                                    <Ellipse Fill="#E2895A"></Ellipse>
+                                </Grid>
+                            </Grid>
+                            <Grid Grid.Column="3">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="0.4*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="0.1*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="0.4*"/>
+                                </Grid.RowDefinitions>
+
+                                <DockPanel Grid.Row="1">
+                                    <TextBlock x:Name="tbl_TongSoDonBan" DockPanel.Dock="Top" FontSize="12">tổng số đơn nhập</TextBlock>
+                                    <TextBlock x:Name="tbl_SoTongSoDonBan" FontSize="40">100</TextBlock>
+                                </DockPanel>
+                                <DockPanel Grid.Row="3">
+                                    <TextBlock x:Name="tbl_TongThuNhap" DockPanel.Dock="Top" FontSize="12">Tổng Chi Phí</TextBlock>
+                                    <TextBlock x:Name="tbl_SoThuNhap" FontSize="40" Foreground="#E2895A">2000000$</TextBlock>
+                                </DockPanel>
+                            </Grid>
+                        </Grid>
+                    </Border>
+                </Grid>
+                
+                <!-- hàng cuối cùng -->
+                <Grid Grid.Row="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="0.06*"/>
+                        <ColumnDefinition Width="1.5*"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <!-- lợi nhuận - tổng số lượng khách hàng -->
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="0.15*"/>
+                            <RowDefinition Height="2*"/>
+                        </Grid.RowDefinitions>
+                        
+                        <!-- lợi nhuận-->
+                        <Border Background="#8EE78C" Padding="20">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="0.1*"/>
+                                    <ColumnDefinition Width="2*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Grid>
+                                    <Ellipse Fill="#E2895A"/>
+                                </Grid>
+
+                                <DockPanel Grid.Column="2">
+                                    <TextBlock x:Name="tbl_LoiNhuan" FontSize="12" DockPanel.Dock="Top">Lợi Nhuận</TextBlock>
+                                    <TextBlock x:Name="tbl_SoLoiNhuan" FontSize="30" DockPanel.Dock="Top" Foreground="White">1000000$</TextBlock>
+                                </DockPanel>
+                            </Grid>
+                        </Border>
+                        
+                        <!-- tổng số lượng khách hàng -->
+                        <Border Background="White" Grid.Row="2" Padding="15">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="1.5*"/>
+                                </Grid.RowDefinitions>
+                                <DockPanel>
+                                    <TextBlock x:Name="tbl_TongSoLuongKhachHang" DockPanel.Dock="Top" FontSize="10" HorizontalAlignment="Center">Tổng số lượng khách Hàng</TextBlock>
+                                    <TextBlock x:Name="tbl_SoTongSoLuongKhachHang" DockPanel.Dock="Top" FontSize="23" HorizontalAlignment="Center">100</TextBlock>
+                                    <TextBlock x:Name="tbl_KhachHangMoi" DockPanel.Dock="Top" FontSize="10" HorizontalAlignment="Center">Khách Hàng Mới</TextBlock>
+                                    <TextBlock x:Name="tbl_SoKhachHangMoi" DockPanel.Dock="Top" FontSize="23" HorizontalAlignment="Center">50</TextBlock>
+                                </DockPanel>
+                                <Grid Grid.Row="1">
+                                    <Grid.Resources>
+                                        <Style TargetType="Border">
+                                            <Setter Property="CornerRadius" Value="5"/>
+                                            <Setter Property="Background" Value="#D9D9D9"/>
+                                        </Style>
+                                    </Grid.Resources>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="0.1*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="0.1*"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Border>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="0.7*"/>
+                                                <ColumnDefinition Width="3*"/>
+                                                <ColumnDefinition Width="1.5*"/>
+                                            </Grid.ColumnDefinitions>
+
+                                            <TextBlock HorizontalAlignment="Center">1</TextBlock>
+                                            <TextBlock x:Name="tbl_TenKhachHangTop1" Grid.Column="1" HorizontalAlignment="Center">Nguyen thi a</TextBlock>
+                                            <TextBlock x:Name="tbl_DiemKhachHangTop1" Grid.Column="2" HorizontalAlignment="Center">1000</TextBlock>
+                                        </Grid>
+                                    </Border>
+                                    <Border Grid.Row="2">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="0.7*"/>
+                                                <ColumnDefinition Width="3*"/>
+                                                <ColumnDefinition Width="1.5*"/>
+                                            </Grid.ColumnDefinitions>
+
+                                            <TextBlock HorizontalAlignment="Center">1</TextBlock>
+                                            <TextBlock x:Name="tbl_TenKhachHangTop2" Grid.Column="1" HorizontalAlignment="Center">Nguyen thi a</TextBlock>
+                                            <TextBlock x:Name="tbl_DiemKhachHangTop2" Grid.Column="2" HorizontalAlignment="Center">1000</TextBlock>
+                                        </Grid>
+                                    </Border>
+                                    <Border Grid.Row="4">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="0.7*"/>
+                                                <ColumnDefinition Width="3*"/>
+                                                <ColumnDefinition Width="1.5*"/>
+                                            </Grid.ColumnDefinitions>
+
+                                            <TextBlock HorizontalAlignment="Center">1</TextBlock>
+                                            <TextBlock x:Name="tbl_TenKhachHangTop3" Grid.Column="1" HorizontalAlignment="Center">Nguyen thi a</TextBlock>
+                                            <TextBlock x:Name="tbl_DiemKhachHangTop3" Grid.Column="2" HorizontalAlignment="Center">1000</TextBlock>
+                                        </Grid>
+                                    </Border>
+                                </Grid>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                    
+                    <!-- nhân viên -->
+                    <Border Grid.Column="2" Background="#E2895A" Padding="5">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="10*"/>
+                            </Grid.RowDefinitions>
+
+                            <TextBlock x:Name="tbl_NhanVien">Nhân Viên </TextBlock>
+
+                            <Border Grid.Row="1" Background="#F7F7F7" CornerRadius="15" Padding="15">
+                                <Grid>
+                                    <Grid.Resources>
+                                        <Style TargetType="Border">
+                                            <Setter Property="CornerRadius" Value="5"/>
+                                            <Setter Property="Background" Value="#D9D9D9"/>
+                                        </Style>
+                                    </Grid.Resources>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="0.1*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="0.1*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="0.1*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="0.1*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="0.1*"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+
+                                    <Border Grid.Row="0">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="2*"/>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="1.2*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock x:Name="tbl_TenNhanVienTop1" HorizontalAlignment="Center" Grid.Column="0">Nguyen van a</TextBlock>
+                                            <TextBlock x:Name="tbl_SoGioLamTop1" HorizontalAlignment="Center" Grid.Column="1">200</TextBlock>
+                                            <TextBlock x:Name="tbl_LuongTop1" HorizontalAlignment="Center" Grid.Column="2">50000000</TextBlock>
+                                        </Grid>
+                                    </Border>
+                                    <Border Grid.Row="2">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="2*"/>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="1.2*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock x:Name="tbl_TenNhanVienTop2" HorizontalAlignment="Center" Grid.Column="0">Nguyen van a</TextBlock>
+                                            <TextBlock x:Name="tbl_SoGioLamTop2" HorizontalAlignment="Center" Grid.Column="1">200</TextBlock>
+                                            <TextBlock x:Name="tbl_LuongTop2" HorizontalAlignment="Center" Grid.Column="2">50000000</TextBlock>
+                                        </Grid>
+                                    </Border>
+                                    <Border Grid.Row="4">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="2*"/>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="1.2*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock x:Name="tbl_TenNhanVienTop3" HorizontalAlignment="Center" Grid.Column="0">Nguyen van a</TextBlock>
+                                            <TextBlock x:Name="tbl_SoGioLamTop3" HorizontalAlignment="Center" Grid.Column="1">200</TextBlock>
+                                            <TextBlock x:Name="tbl_LuongTop3" HorizontalAlignment="Center" Grid.Column="2">50000000</TextBlock>
+                                        </Grid>
+                                    </Border>
+                                    <Border Grid.Row="6">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="2*"/>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="1.2*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock x:Name="tbl_TenNhanVienTop4" HorizontalAlignment="Center" Grid.Column="0">Nguyen van a</TextBlock>
+                                            <TextBlock x:Name="tbl_SoGioLamTop4" HorizontalAlignment="Center" Grid.Column="1">200</TextBlock>
+                                            <TextBlock x:Name="tbl_LuongTop4" HorizontalAlignment="Center" Grid.Column="2">50000000</TextBlock>
+                                        </Grid>
+                                    </Border>
+                                    <Border Grid.Row="8">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="2*"/>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="1.2*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock x:Name="tbl_TenNhanVienTop5" HorizontalAlignment="Center" Grid.Column="0">Nguyen van a</TextBlock>
+                                            <TextBlock x:Name="tbl_SoGioLamTop5" HorizontalAlignment="Center" Grid.Column="1">200</TextBlock>
+                                            <TextBlock x:Name="tbl_LuongTop5" HorizontalAlignment="Center" Grid.Column="2">50000000</TextBlock>
+                                        </Grid>
+                                    </Border>
+                                    <Border Grid.Row="10">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="2*"/>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="1.2*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock x:Name="tbl_TenNhanVienTop6" HorizontalAlignment="Center" Grid.Column="0">Nguyen van a</TextBlock>
+                                            <TextBlock x:Name="tbl_SoGioLamTop6" HorizontalAlignment="Center" Grid.Column="1">200</TextBlock>
+                                            <TextBlock x:Name="tbl_LuongTop6" HorizontalAlignment="Center" Grid.Column="2">50000000</TextBlock>
+                                        </Grid>
+                                    </Border>
+                                </Grid>
+                            </Border>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </Grid>
+            
+            <!-- bên phải -->
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="0.05*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <!-- sản phẩm đã hết -->
+                <Border Background="#FF6868" Padding="5">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="8*"/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock x:Name="tbl_SanPhamDaHetTrongKHo" FontSize="20">Sản Phẩm Đã Hết</TextBlock>
+
+                        <Border Background="#F7F7F7" Grid.Row="1" Padding="10">
+                            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                                <StackPanel x:Name="stb_listSanPhamDaHet"></StackPanel>
+                            </ScrollViewer>
+                        </Border>
+                    </Grid>
+                </Border>
+                
+                <!-- sản phẩm sắp hết -->
+                <Border Grid.Row="2" Background="#FFE08C" Padding="5">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="8*"/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock x:Name="tbl_SanPhamSapHetTrongKHo" FontSize="20">Sản Phẩm Sắp Hết</TextBlock>
+
+                        <Border Background="#F7F7F7" Grid.Row="1" Padding="10">
+                            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                                <StackPanel x:Name="stb_listSanPhamSapHet"></StackPanel>
+                            </ScrollViewer>
+                        </Border>
+                    </Grid>
+                </Border>
+            </Grid>
+        </Grid>
     </Grid>
 </UserControl>

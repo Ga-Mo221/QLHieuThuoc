@@ -1,5 +1,8 @@
 ﻿using QLHieuThuoc.forms.NhanVien;
+using QLHieuThuoc.Model.DungNhanh;
 using QLHieuThuoc.Model.Files;
+using QLHieuThuoc.Model.NhanVien;
+using QLHieuThuoc.Model.sql;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -21,6 +25,8 @@ namespace QLHieuThuoc.forms
     /// </summary>
     public partial class MainWindow : Window
     {
+        Modify modify = new Modify();
+        TaoMaNgauNhien taoma = new TaoMaNgauNhien();
         private string IdNv;
         UserControl child = null;
         private int x = 1240;
@@ -58,6 +64,7 @@ namespace QLHieuThuoc.forms
             CheckSelectButton("TongQuan");
 
             Mo(grid_NoiDung, child, new TongQuan());
+            CapNhatLuongChoNhanVien();
         }
 
         // lấy ngôn ngữ
@@ -221,7 +228,7 @@ namespace QLHieuThuoc.forms
         {
             CheckSelectButton("BanHang");
 
-            Mo(grid_NoiDung, child, new BanHang());
+            Mo(grid_NoiDung, child, new BanHang(IdNv));
         }
 
         // Nhập hàng
@@ -286,5 +293,44 @@ namespace QLHieuThuoc.forms
             activeform = childform; // Gán giao diện mới
             panel1.Children.Add(childform); // Thêm vào Grid
         }
+
+
+        private void CapNhatLuongChoNhanVien()
+        {
+            string lenh = "select * from NhanVien";
+            List<nhanVien> nhanViens = modify.NhanViens(lenh);
+
+            foreach (var nhanVien in nhanViens)
+            {
+                string idnv = nhanVien.IdNhanVien1;
+
+                lenh = "select * from Luong where IDNV = '" + idnv + "' and THANG = month(getdate()) and NAM = year(getdate())";
+                List<BangLuong> Luongs = modify.Luongs(lenh);
+
+                if (Luongs.Count == 0)
+                {
+                    lenh = "insert into Luong values ('"+taoma.TaoMa()+"', '"+idnv+"', "+DateTime.Now.Month+", "+DateTime.Now.Year+ ", CAST(GETDATE() AS DATE), 0, 0, 0, 0)";
+                    modify.ThucThi(lenh);
+
+                }
+                else
+                {
+                    // Tính tổng số giờ làm trong tháng
+                    lenh = "SELECT ISNULL(SUM(TONGGIOLAM), 0) FROM ThoiGianLam WHERE IDNV = '" + idnv + "' AND MONTH(NGAYLAM) = MONTH(GETDATE()) AND YEAR(NGAYLAM) = YEAR(GETDATE())";
+                    decimal tongGioLam = Convert.ToDecimal(modify.LayGiaTri(lenh));
+
+                    // Lương = tổng giờ làm * 40.000 VNĐ
+                    decimal luong = tongGioLam * 40000;
+
+
+                    // Cập nhật lại bảng lương
+                    lenh = "UPDATE Luong SET SONGIOLAM = " + tongGioLam + ", LUONG = " + luong + " WHERE IDNV = '" + idnv + "' AND THANG = MONTH(GETDATE()) AND NAM = YEAR(GETDATE())";
+                    modify.ThucThi(lenh);
+                }
+            }
+
+        }
+
+
     }
 }

@@ -1,4 +1,4 @@
-fákjhj
+sadfa
 Vui lòng nhập mật khẩu!
 Thông Báo
 Tên đăng nhập hoặc mật khẩu không chính xác
@@ -171,9 +171,25 @@ NGÀY
 Lịch Làm
 Thêm Nhân Viên
 Ghi Chú
-Năm
+Xuất Hóa Đơn
 Tháng
-Mã Bảng Lương
-Tháng Lương
+Năm
+Ngày Tạo
+Tiền Thưởng
+Tiền Trợ Cấp
 Số Giờ Làm
 Lương
+Tên
+Mã Bảng Lương
+Tháng Lương
+Đường Dẫn Lưu Bảng Lương
+Đường Dẫn Lưu Hóa Đơn
+Hóa Đơn
+Không
+Xuất
+HÓA ĐƠN TẠM TÍNH
+Thành Tiền
+Ngày
+Thu Ngân
+Mã Đơn
+Tổng Thành Tiền

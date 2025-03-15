@@ -1,4 +1,5 @@
-﻿using QLHieuThuoc.Model.BanHang;
+﻿using QLHieuThuoc.forms.DonBanHang;
+using QLHieuThuoc.Model.BanHang;
 using QLHieuThuoc.Model.DungNhanh;
 using QLHieuThuoc.Model.Files;
 using QLHieuThuoc.Model.SanPham;
@@ -32,12 +33,14 @@ namespace QLHieuThuoc.forms
         private List<string> ListItemPhuongThucThanhToan = new List<string> { NN.nn[120], NN.nn[128], NN.nn[121] };
         private decimal tongtien = 0;
         private int diem = 0;
+        private string idnv;
 
 
-        public ThemDonBan()
+        public ThemDonBan(string id)
         {
             InitializeComponent();
             Loaded += ThemDonBan_Loaded;
+            idnv = id;
         }
 
         private void ThemDonBan_Loaded(object sender, RoutedEventArgs e)
@@ -95,15 +98,18 @@ namespace QLHieuThuoc.forms
                 List<string> tenbang = new List<string> { "sdj", "djdj"};
                 ChiTietDonBan chitiet = new ChiTietDonBan(tenbang);
                 chitiet.ShowDialog();
+                
             }
 
-                // xóa hiệu ứng làm mờ khi cửa sổ con đóng lại
-                this.Effect = null;
+            // xóa hiệu ứng làm mờ khi cửa sổ con đóng lại
+            this.Effect = null;
             if (XacNhan.XN && XacNhan.YN)
             {
                 LuuThongTinKhachHang();
                 LuuThongTinDonBan();
                 LuuThongTinChiTietDonBan();
+                HoaDon hd = new HoaDon(tbl_IdDonBan.Text);
+                hd.ShowDialog();
                 ThongBao.Show(NN.nn[2], NN.nn[142], "Cam");
                 XacNhan.XN = false;
                 XacNhan.YN = false;
@@ -114,7 +120,7 @@ namespace QLHieuThuoc.forms
 
         private void ThongTinDuPhong()
         {
-            Donban db = new Donban(tbl_IdDonBan.Text, tbl_IdKhachHang.Text, DateTime.Now, tongtien, cbb_PhuongThucThanhToan.SelectedItem.ToString());
+            Donban db = new Donban(tbl_IdDonBan.Text, tbl_IdKhachHang.Text, DateTime.Now, tongtien, cbb_PhuongThucThanhToan.SelectedItem.ToString(), idnv);
             Khachhang khh = new Khachhang(tbl_IdKhachHang.Text, tb_TenKhachHang.Text, tb_SoDienThoai.Text, diem, DateTime.Now);
 
             XacNhan.hd = db;
@@ -217,7 +223,7 @@ namespace QLHieuThuoc.forms
 
         private void LuuThongTinDonBan()
         {
-            string lenhInsert = "Insert into DonBan values ('" + tbl_IdDonBan.Text + "', N'" + tbl_IdKhachHang.Text + "', CAST(GETDATE() AS DATE), '" + tongtien + "', N'" + cbb_PhuongThucThanhToan.SelectedItem.ToString() + "')";
+            string lenhInsert = "Insert into DonBan values ('" + tbl_IdDonBan.Text + "', N'" + tbl_IdKhachHang.Text + "', CAST(GETDATE() AS DATE), '" + tongtien + "', N'" + cbb_PhuongThucThanhToan.SelectedItem.ToString() + "', '"+idnv+"')";
             modify.ThucThi(lenhInsert);
         }
 
