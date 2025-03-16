@@ -1,4 +1,4 @@
-sadfa
+                          Tiếng Việt
 Vui lòng nhập mật khẩu!
 Thông Báo
 Tên đăng nhập hoặc mật khẩu không chính xác
@@ -193,3 +193,28 @@ Ngày
 Thu Ngân
 Mã Đơn
 Tổng Thành Tiền
+Sản phẩm
+hiện tại trong kho không còn sản phẩm nào!
+Hiện tại chỉ còn lại
+sản phẩm trong kho!
+Hiện tại đã hết hạn sử dụng!
+hạn sử dụng chỉ còn lại dưới 7 ngày!
+hạn sử dụng chỉ còn lại dưới 1 tháng!
+Thiếu Thông Tin!
+Mật Khẩu không Chính Xác!
+Nhập Lại Mật Khẩu Không Chính Xác!
+Đổi Mật Khẩu
+Mật Khẩu Cũ
+Nhập Lại Mật Khẩu
+Lưu
+Ngày Mua
+Thứ Hai
+Thứ Ba
+Thứ Tư
+Thứ Năm
+Thứ Sáu
+Thứ Bảy
+Chủ Nhật
+Lỗi: Kích Thước Grid Chưa Xác Định!
+Lưu Hình Ảnh Thành Công Tại:
+Lỗi Khi Lưu Ảnh: 

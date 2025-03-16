@@ -72,31 +72,31 @@ namespace QLHieuThuoc.forms
         // Sự kiện kiểm tra tài khoản mật khẩu và đăng nhập
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            //string tk = tb_TaiKhoanDangNhap.Text;
-            //string mk = pw_MatKhauDangNhap.Password;
+            string tk = tb_TaiKhoanDangNhap.Text;
+            string mk = pw_MatKhauDangNhap.Password;
 
-            //if (tk.Trim() == "") { return; }
-            //else if (mk.Trim() == "") { MessageBox.Show(NN.nn[1], NN.nn[2], MessageBoxButton.OK, MessageBoxImage.Warning); return; }
-            //else
-            //{
-            //    string LenhTruyVan = "Select * from TaiKhoan where TK = '" + tk + "' and MK = '" + mk + "'";
-            //    List<TaiKhoan> tkl = modify.TaiKhoans(LenhTruyVan);
-            //    if (tkl.Count > 0)
-            //    {
-            //        string idnv = tkl[0].MaNhanVien1;
-            //        MainWindow CuaSoChinh = new MainWindow(idnv);
-            //        this.Hide();
-            //        CuaSoChinh.Show();
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show(NN.nn[3], NN.nn[2], MessageBoxButton.OK, MessageBoxImage.Warning);
-            //    }
-            //}
-            string idnv = "#g7d7ny";
-            MainWindow CuaSoChinh = new MainWindow(idnv);
-            this.Hide();
-            CuaSoChinh.Show();
+            if (tk.Trim() == "") { return; }
+            else if (mk.Trim() == "") { ThongBao.Show(NN.nn[2], NN.nn[1], "Do"); return; }
+            else
+            {
+                string LenhTruyVan = "Select * from TaiKhoan where TK = '" + tk + "' and MK = '" + mk + "'";
+                List<TaiKhoan> tkl = modify.TaiKhoans(LenhTruyVan);
+                if (tkl.Count > 0)
+                {
+                    string idnv = tkl[0].MaNhanVien1;
+                    MainWindow CuaSoChinh = new MainWindow(idnv);
+                    this.Hide();
+                    CuaSoChinh.Show();
+                }
+                else
+                {
+                    ThongBao.Show(NN.nn[2], NN.nn[3], "Do");
+                }
+            }
+            //string idnv = "#g7d7ny";
+            //MainWindow CuaSoChinh = new MainWindow(idnv);
+            //this.Hide();
+            //CuaSoChinh.Show();
         }
 
 
@@ -107,9 +107,9 @@ namespace QLHieuThuoc.forms
             string TKDK = tb_TaiKhoanDangKy.Text;
             string MKDK = pw_MatKhauDangKy.Password;
 
-            if(IDNV.Trim() == "") { MessageBox.Show(NN.nn[6], NN.nn[2], MessageBoxButton.OK, MessageBoxImage.Warning); return; }
-            if (TKDK.Trim() == "") { MessageBox.Show(NN.nn[7], NN.nn[2], MessageBoxButton.OK, MessageBoxImage.Warning); return; }
-            if (MKDK.Trim() == "") { MessageBox.Show(NN.nn[8], NN.nn[2], MessageBoxButton.OK, MessageBoxImage.Warning); return; }
+            if(IDNV.Trim() == "") { ThongBao.Show(NN.nn[2], NN.nn[6], "Do"); return; }
+            if (TKDK.Trim() == "") { ThongBao.Show(NN.nn[2], NN.nn[7], "Do"); return; }
+            if (MKDK.Trim() == "") { ThongBao.Show(NN.nn[2], NN.nn[8], "Do"); return; }
 
 
             string CauLenhTruyVanMaNhanVien = "Select * from NhanVien where ID = '"+IDNV+"'";
@@ -124,21 +124,21 @@ namespace QLHieuThuoc.forms
                         string CauLenhAddNewAcc = "Insert into TaiKhoan values ('"+TKDK+"','"+MKDK+"','"+IDNV+"')";
                         modify.ThucThi(CauLenhAddNewAcc);
 
-                        MessageBox.Show(NN.nn[9], NN.nn[2], MessageBoxButton.OK);
+                        ThongBao.Show(NN.nn[2], NN.nn[9], "Do");
                     }
                     else
                     {
-                        MessageBox.Show(NN.nn[10], NN.nn[2], MessageBoxButton.OK, MessageBoxImage.Warning);
+                        ThongBao.Show(NN.nn[2], NN.nn[10], "Do");
                     }
                 }
                 else
                 {
-                    MessageBox.Show(NN.nn[11], NN.nn[2], MessageBoxButton.OK, MessageBoxImage.Warning);
+                    ThongBao.Show(NN.nn[2], NN.nn[11], "Do");
                 }
             }
             else
             {
-                MessageBox.Show(NN.nn[12], NN.nn[2], MessageBoxButton.OK, MessageBoxImage.Warning);
+                ThongBao.Show(NN.nn[2], NN.nn[12], "Do");
             }
         }
 

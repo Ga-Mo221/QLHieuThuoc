@@ -108,7 +108,6 @@ namespace QLHieuThuoc.forms
                 // tính tiền
                 tongtien += decimal.Parse(sanpham.GiaSanPham) * int.Parse(sanpham.SoLuong);
                 TongTien();
-                MessageBox.Show(tongtien.ToString() );
                 sanpham.Click += Sanpham_Click;
             }
             if (listSpDonHang.sps.Count == 0)

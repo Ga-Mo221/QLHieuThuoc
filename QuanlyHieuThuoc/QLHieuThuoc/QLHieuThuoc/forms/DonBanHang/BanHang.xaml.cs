@@ -1,8 +1,10 @@
 ﻿using QLHieuThuoc.forms.NhanVien;
+using QLHieuThuoc.forms.Thongbaos;
 using QLHieuThuoc.Model.BanHang;
 using QLHieuThuoc.Model.DonNhapHangvsNCC;
 using QLHieuThuoc.Model.DungNhanh;
 using QLHieuThuoc.Model.Files;
+using QLHieuThuoc.Model.NhanVien;
 using QLHieuThuoc.Model.SanPham;
 using QLHieuThuoc.Model.sql;
 using QLHieuThuoc.UserControls;
@@ -30,6 +32,7 @@ namespace QLHieuThuoc.forms
     {
         Modify modify = new Modify();
         ClickTextBox cl = new ClickTextBox();
+        LayThongBao thongbao = new LayThongBao();
         private List<string> ListThang = new List<string> { NN.nn[118], NN.nn[119] };
         private string idnv;
 
@@ -38,6 +41,7 @@ namespace QLHieuThuoc.forms
             InitializeComponent();
             Loaded += BanHang_Loaded;
             idnv = id;
+            thongbao.BatThongBao(CoThongBao);
         }
 
         private void BanHang_Loaded(object sender, RoutedEventArgs e)
@@ -51,7 +55,19 @@ namespace QLHieuThuoc.forms
 
             string lenSelect = "SELECT * FROM DonBan WHERE MONTH(NGAYMUA) = MONTH(GETDATE()) AND YEAR(NGAYMUA) = YEAR(GETDATE())";
             tbl_SoLuongDonBanThangNay.Text = modify.DonBans(lenSelect).Count.ToString();
+            CapNhatTaiKhoan();
+        }
 
+
+        private void CapNhatTaiKhoan()
+        {
+            string lenh = "select * from NhanVien where ID = '" + idnv + "'";
+            List<nhanVien> nhanViens = modify.NhanViens(lenh);
+            if (nhanViens.Count > 0)
+            {
+                tbl_TenNhanVienThanhTiemKiem.Text = nhanViens[0].Ten1;
+                tbl_IdNhanVienThanhTimKiem.Text = idnv;
+            }
         }
 
 
@@ -66,6 +82,13 @@ namespace QLHieuThuoc.forms
             string lenhSelect = "select * from DonBan";
             List<Donban> donbans = modify.DonBans(lenhSelect);
             AddDonHang(donbans);
+
+            int cu = ThongBaoSanPham.ThongBao.Count;
+            thongbao.LayThongTin();
+            if (cu < ThongBaoSanPham.ThongBao.Count)
+            {
+                ThongBaoSanPham.status = true;
+            }
         }
 
 
@@ -164,6 +187,20 @@ namespace QLHieuThuoc.forms
                 // Hiển thị sản phẩm tìm được
                 AddDonHang(ketQua);
             }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ThongBaoSanPham.status = false;
+            CoThongBao.Visibility = Visibility.Collapsed;
+            ThanhThongBaoSanPham thanhthongbao = new ThanhThongBaoSanPham();
+            Window parentWindow = Window.GetWindow(this);
+            if (parentWindow != null)
+            {
+                thanhthongbao.Left = parentWindow.Left + (parentWindow.Width - thanhthongbao.Width) / 1.17;
+                thanhthongbao.Top = parentWindow.Top + 110;
+            }
+            thanhthongbao.Show();
         }
     }
 }

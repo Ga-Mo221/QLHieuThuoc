@@ -26,15 +26,17 @@ namespace QLHieuThuoc.forms
         Modify modify = new Modify();
         private List<Sanpham> sp;
         private string loai;
+        private string idnv;
 
 
-        public LoaiSanPham(List<Sanpham> Sp, string TenLoai)
+        public LoaiSanPham(List<Sanpham> Sp, string TenLoai, string id)
         {
             InitializeComponent();
             sp = Sp;
             loai = TenLoai;
 
             Loaded += LoaiSanPham_Loaded;
+            idnv = id;
         }
 
         private void LoaiSanPham_Loaded(object sender, RoutedEventArgs e)
@@ -83,7 +85,7 @@ namespace QLHieuThuoc.forms
             string CauLenhTruyVan = "select * from SanPham where ID = '" + e + "'";
 
             List<Sanpham> sp = modify.SanPhams(CauLenhTruyVan);
-            ThongTinSanPham ttsp = new ThongTinSanPham(sp[0]);
+            ThongTinSanPham ttsp = new ThongTinSanPham(sp[0], idnv);
             // áp dụng hiệu ứng mờ cho cửa sổ hiện tại
             this.Effect = new System.Windows.Media.Effects.BlurEffect()
             {

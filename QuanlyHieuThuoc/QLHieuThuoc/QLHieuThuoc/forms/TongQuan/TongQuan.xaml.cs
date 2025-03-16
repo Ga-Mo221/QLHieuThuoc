@@ -1,5 +1,8 @@
-﻿using QLHieuThuoc.Model.BanHang;
+﻿using QLHieuThuoc.forms.Thongbaos;
+using QLHieuThuoc.Model.BanHang;
+using QLHieuThuoc.Model.DungNhanh;
 using QLHieuThuoc.Model.Files;
+using QLHieuThuoc.Model.NhanVien;
 using QLHieuThuoc.Model.SanPham;
 using QLHieuThuoc.Model.sql;
 using QLHieuThuoc.UserControls;
@@ -27,10 +30,17 @@ namespace QLHieuThuoc.forms
     public partial class TongQuan : UserControl
     {
         Modify modify = new Modify();
-        public TongQuan()
+        LayThongBao thongbao = new LayThongBao();
+        private string idnv;
+
+
+        public TongQuan(string id)
         {
             InitializeComponent();
+            thongbao.BatThongBao(CoThongBao);
             Loaded += TongQuan_Loaded;
+            idnv = id;
+            
         }
 
         private void TongQuan_Loaded(object sender, RoutedEventArgs e)
@@ -42,6 +52,19 @@ namespace QLHieuThuoc.forms
             TongDanhThu();
             DonHangMoiNhat();
             SanPhamBanChayNhat();
+            CapNhatTaiKhoan();
+        }
+
+
+        private void CapNhatTaiKhoan()
+        {
+            string lenh = "select * from NhanVien where ID = '" + idnv + "'";
+            List<nhanVien> nhanViens = modify.NhanViens(lenh);
+            if (nhanViens.Count > 0)
+            {
+                tbl_TenNhanVienThanhTiemKiem.Text = nhanViens[0].Ten1;
+                tbl_IdNhanVienThanhTimKiem.Text = idnv;
+            }
         }
 
         private void DanhThuThangNay()
@@ -245,6 +268,25 @@ namespace QLHieuThuoc.forms
             tbl_TongDanhThu.Text = NN.nn[148];
             tbl_DonHangMoiNhat.Text = NN.nn[149];
             tbl_ThuocBanChayNhat.Text = NN.nn[150];
+            tbl_Id.Text = NN.nn[193];
+            tbl_Idkh.Text = NN.nn[104];
+            tbl_NgayMua.Text = NN.nn[209];
+            tbl_TongTien.Text = NN.nn[83];
+            tbl_ThanhToan.Text = NN.nn[96];
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ThongBaoSanPham.status = false;
+            CoThongBao.Visibility = Visibility.Collapsed;
+            ThanhThongBaoSanPham thanhthongbao = new ThanhThongBaoSanPham();
+            Window parentWindow = Window.GetWindow(this);
+            if (parentWindow != null)
+            {
+                thanhthongbao.Left = parentWindow.Left + (parentWindow.Width - thanhthongbao.Width)/1.17;
+                thanhthongbao.Top = parentWindow.Top + 110;
+            }
+            thanhthongbao.Show();
         }
     }
 }

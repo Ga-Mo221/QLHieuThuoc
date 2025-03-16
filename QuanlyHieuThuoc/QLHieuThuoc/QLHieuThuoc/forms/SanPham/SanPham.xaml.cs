@@ -1,4 +1,5 @@
-﻿using QLHieuThuoc.Model.DungNhanh;
+﻿using QLHieuThuoc.forms.Thongbaos;
+using QLHieuThuoc.Model.DungNhanh;
 using QLHieuThuoc.Model.Files;
 using QLHieuThuoc.Model.NhanVien;
 using QLHieuThuoc.Model.SanPham;
@@ -27,6 +28,7 @@ namespace QLHieuThuoc.forms
     public partial class SanPham : UserControl
     {
         Modify modify = new Modify();
+        LayThongBao thongbao = new LayThongBao();
         private string idnv;
 
         public SanPham(string idnv)
@@ -35,6 +37,7 @@ namespace QLHieuThuoc.forms
 
             this.Loaded += SanPham_Loaded;
             this.idnv = idnv;
+            thongbao.BatThongBao(CoThongBao);
             //CapNhanQuyen();
 
             ThongKeSoLuong();
@@ -50,6 +53,18 @@ namespace QLHieuThuoc.forms
             bt_ThucPhamChucNang.Click += Bt_ThucPhamChucNang_Click;
             bt_ThuocDiUng.Click += Bt_ThuocDiUng_Click;
             bt_ThuocHoHap.Click += Bt_ThuocHoHap_Click;
+            CapNhatTaiKhoan();
+        }
+
+        private void CapNhatTaiKhoan()
+        {
+            string lenh = "select * from NhanVien where ID = '" + idnv + "'";
+            List<nhanVien> nhanViens = modify.NhanViens(lenh);
+            if (nhanViens.Count > 0)
+            {
+                tbl_TenNhanVienThanhTiemKiem.Text = nhanViens[0].Ten1;
+                tbl_IdNhanVienThanhTimKiem.Text = idnv;
+            }
         }
 
 
@@ -64,7 +79,7 @@ namespace QLHieuThuoc.forms
             MainWindow mainWindow = Window.GetWindow(this) as MainWindow;
             if (mainWindow != null)
             {
-                Mo.OpenWindowWithBlur(mainWindow, new LoaiSanPham(sp, NN.nn[54]));
+                Mo.OpenWindowWithBlur(mainWindow, new LoaiSanPham(sp, NN.nn[54], idnv));
             }
         }
         // button Thuốc dị ứng
@@ -76,7 +91,7 @@ namespace QLHieuThuoc.forms
             MainWindow mainWindow = Window.GetWindow(this) as MainWindow;
             if (mainWindow != null)
             {
-                Mo.OpenWindowWithBlur(mainWindow, new LoaiSanPham(sp, NN.nn[53]));
+                Mo.OpenWindowWithBlur(mainWindow, new LoaiSanPham(sp, NN.nn[53], idnv));
             }
         }
         // button Thực phẩm chức năng
@@ -89,7 +104,7 @@ namespace QLHieuThuoc.forms
             MainWindow mainWindow = Window.GetWindow(this) as MainWindow;
             if (mainWindow != null)
             {
-                Mo.OpenWindowWithBlur(mainWindow, new LoaiSanPham(sp, NN.nn[50]));
+                Mo.OpenWindowWithBlur(mainWindow, new LoaiSanPham(sp, NN.nn[50], idnv));
             }
         }
         // button Thuốc giảm đau
@@ -101,7 +116,7 @@ namespace QLHieuThuoc.forms
             MainWindow mainWindow = Window.GetWindow(this) as MainWindow;
             if (mainWindow != null)
             {
-                Mo.OpenWindowWithBlur(mainWindow, new LoaiSanPham(sp, NN.nn[48]));
+                Mo.OpenWindowWithBlur(mainWindow, new LoaiSanPham(sp, NN.nn[48], idnv));
             }
         }
         // button Vitamin
@@ -113,7 +128,7 @@ namespace QLHieuThuoc.forms
             MainWindow mainWindow = Window.GetWindow(this) as MainWindow;
             if (mainWindow != null)
             {
-                Mo.OpenWindowWithBlur(mainWindow, new LoaiSanPham(sp, NN.nn[49]));
+                Mo.OpenWindowWithBlur(mainWindow, new LoaiSanPham(sp, NN.nn[49], idnv));
             }
         }
         // button ThuocTimMach
@@ -125,7 +140,7 @@ namespace QLHieuThuoc.forms
             MainWindow mainWindow = Window.GetWindow(this) as MainWindow;
             if (mainWindow != null)
             {
-                Mo.OpenWindowWithBlur(mainWindow, new LoaiSanPham(sp, NN.nn[52]));
+                Mo.OpenWindowWithBlur(mainWindow, new LoaiSanPham(sp, NN.nn[52], idnv));
             }
         }
         // button Thuốc kháng virus
@@ -137,7 +152,7 @@ namespace QLHieuThuoc.forms
             MainWindow mainWindow = Window.GetWindow(this) as MainWindow;
             if (mainWindow != null)
             {
-                Mo.OpenWindowWithBlur(mainWindow, new LoaiSanPham(sp, NN.nn[51]));
+                Mo.OpenWindowWithBlur(mainWindow, new LoaiSanPham(sp, NN.nn[51], idnv));
             }
         }
         // button thuốc kháng sinh
@@ -150,7 +165,7 @@ namespace QLHieuThuoc.forms
             MainWindow mainWindow = Window.GetWindow(this) as MainWindow;
             if (mainWindow != null)
             {
-                Mo.OpenWindowWithBlur(mainWindow, new LoaiSanPham(sp, NN.nn[47]));
+                Mo.OpenWindowWithBlur(mainWindow, new LoaiSanPham(sp, NN.nn[47], idnv));
             }
         }
         //--------------------------------------------
@@ -160,19 +175,6 @@ namespace QLHieuThuoc.forms
 
 
 
-        private void CapNhanQuyen()
-        {
-            tbl_IdNhanVienThanhTimKiem.Text = idnv;
-
-            string CauLenhTruyVan = "select * from NhanVien where ID = '"+idnv+"'";
-
-            List<nhanVien> nhanvien = modify.NhanViens(CauLenhTruyVan);
-
-            if (nhanvien.Count > 0)
-                tbl_TenNhanVienThanhTiemKiem.Text = nhanvien[0].Ten1;
-            else
-                MessageBox.Show(idnv);
-        }
 
         // Cập Nhật Ngôn Ngữ
         private void SanPham_Loaded(object sender, RoutedEventArgs e)
@@ -246,13 +248,14 @@ namespace QLHieuThuoc.forms
             string CauLenhTruyVan = "select * from SanPham where ID = '" + e + "'";
 
             List<Sanpham> sp = modify.SanPhams(CauLenhTruyVan);
-            ThongTinSanPham ttsp = new ThongTinSanPham(sp[0]);
+            ThongTinSanPham ttsp = new ThongTinSanPham(sp[0], idnv);
             // áp dụng hiệu ứng mờ cho cửa sổ hiện tại
             MainWindow mainWindow = Window.GetWindow(this) as MainWindow;
             if (mainWindow != null)
             {
                 Mo.OpenWindowWithBlur(mainWindow, ttsp);
             }
+            thongbao.LayThongTin();
         }
 
 
@@ -364,6 +367,20 @@ namespace QLHieuThuoc.forms
 
             // Hiển thị sản phẩm tìm được
             Aadsanpham(ketQua);
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            ThongBaoSanPham.status = false;
+            CoThongBao.Visibility = Visibility.Collapsed;
+            ThanhThongBaoSanPham thanhthongbao = new ThanhThongBaoSanPham();
+            Window parentWindow = Window.GetWindow(this);
+            if (parentWindow != null)
+            {
+                thanhthongbao.Left = parentWindow.Left + (parentWindow.Width - thanhthongbao.Width) / 1.17;
+                thanhthongbao.Top = parentWindow.Top + 110;
+            }
+            thanhthongbao.Show();
         }
     }
 }

@@ -108,14 +108,22 @@ namespace QLHieuThuoc.forms
                 LuuThongTinKhachHang();
                 LuuThongTinDonBan();
                 LuuThongTinChiTietDonBan();
-                HoaDon hd = new HoaDon(tbl_IdDonBan.Text);
-                hd.ShowDialog();
                 ThongBao.Show(NN.nn[2], NN.nn[142], "Cam");
                 XacNhan.XN = false;
                 XacNhan.YN = false;
                 this.Close() ;
-                
             }
+
+            // áp dụng hiệu ứng mờ cho cửa sổ hiện tại
+            this.Effect = new System.Windows.Media.Effects.BlurEffect()
+            {
+                Radius = 10 // độ mờ
+            };
+
+            HoaDon hd = new HoaDon(tbl_IdDonBan.Text);
+            hd.ShowDialog();
+            // xóa hiệu ứng làm mờ khi cửa sổ con đóng lại
+            this.Effect = null;
         }
 
         private void ThongTinDuPhong()
@@ -129,11 +137,19 @@ namespace QLHieuThuoc.forms
 
         private void KiemtraDiem()
         {
+            // Trừ điểm thưởng đã sử dụng
             diem -= DiemThuong.diem;
-            int d = (int)(tongtien / 10);
-            tongtien -= DiemThuong.diem * 1/2;
+
+            // Tính điểm thưởng mới (5% tổng tiền)
+            int d = (int)(((tongtien * 5) / 100)/1000);
+
+            // Giảm tổng tiền theo điểm đã sử dụng 
+            tongtien -= (decimal)(DiemThuong.diem * 100);
+
+            // Cộng điểm thưởng mới
             diem += d;
         }
+
 
         // mở bảng thêm sản phẩm
         private void Button_Click_2(object sender, RoutedEventArgs e)

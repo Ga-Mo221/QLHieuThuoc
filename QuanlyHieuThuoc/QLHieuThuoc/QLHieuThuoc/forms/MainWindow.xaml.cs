@@ -1,4 +1,5 @@
 ﻿using QLHieuThuoc.forms.NhanVien;
+using QLHieuThuoc.Model.ChamCong;
 using QLHieuThuoc.Model.DungNhanh;
 using QLHieuThuoc.Model.Files;
 using QLHieuThuoc.Model.NhanVien;
@@ -26,6 +27,9 @@ namespace QLHieuThuoc.forms
     public partial class MainWindow : Window
     {
         Modify modify = new Modify();
+        ChamCong chamCong = new ChamCong();
+        CheckAccount checkAccount = new CheckAccount();
+        LayThongBao thongbao = new LayThongBao();
         TaoMaNgauNhien taoma = new TaoMaNgauNhien();
         private string IdNv;
         UserControl child = null;
@@ -40,19 +44,24 @@ namespace QLHieuThuoc.forms
             this.Width = x; this.Height = y;
 
             this.Loaded += MainWindow_Loaded;
-
-            //KiemTraQuyenTruyCap();
+            thongbao.LayThongTin();
+            thongbao.KiemTraThongBao();
+            KiemTraQuyenTruyCap();
+            chamCong.GioVao();
         }
 
         
 
+
+
+
         // kiểm tra quyền truy cập
         private void KiemTraQuyenTruyCap()
         {
-            if (IdNv != "123")
+            if (checkAccount.check(IdNv))
             {
-                bt_NhanVien.Visibility = Visibility.Collapsed;
-                bt_KhachHang.Visibility = Visibility.Collapsed;
+                bt_ThongKe.Visibility = Visibility.Collapsed;
+                bt_TongQuan.Visibility = Visibility.Collapsed;
             }
         }
 
@@ -61,9 +70,17 @@ namespace QLHieuThuoc.forms
         {
             CapNhatNN();
 
-            CheckSelectButton("TongQuan");
+            if (checkAccount.check(IdNv))
+            {
+                CheckSelectButton("SanPham");
+                Mo(grid_NoiDung, child, new SanPham(IdNv));
+            }
+            else
+            {
+                CheckSelectButton("TongQuan");
+                Mo(grid_NoiDung, child, new TongQuan(IdNv));
+            }
 
-            Mo(grid_NoiDung, child, new TongQuan());
             CapNhatLuongChoNhanVien();
         }
 
@@ -212,7 +229,7 @@ namespace QLHieuThuoc.forms
         {
             CheckSelectButton("TongQuan");
 
-            Mo(grid_NoiDung, child, new TongQuan());
+            Mo(grid_NoiDung, child, new TongQuan(IdNv));
         }
 
         // Sản phẩm
@@ -244,7 +261,7 @@ namespace QLHieuThuoc.forms
         {
             CheckSelectButton("ThongKe");
 
-            Mo(grid_NoiDung, child, new ThongKe());
+            Mo(grid_NoiDung, child, new ThongKe(IdNv));
         }
 
         // Khách hàng
@@ -252,7 +269,7 @@ namespace QLHieuThuoc.forms
         {
             CheckSelectButton("KhachHang");
 
-            Mo(grid_NoiDung, child, new KhachHang());
+            Mo(grid_NoiDung, child, new KhachHang(IdNv));
         }
 
         // Nhân viên
@@ -260,7 +277,7 @@ namespace QLHieuThuoc.forms
         {
             CheckSelectButton("NhanVien");
 
-            Mo(grid_NoiDung, child, new NhanVien.NhanVien());
+            Mo(grid_NoiDung, child, new NhanVien.NhanVien(IdNv));
         }
 
         // Cài đặt
@@ -268,12 +285,14 @@ namespace QLHieuThuoc.forms
         {
             CheckSelectButton("CaiDat");
 
-            Mo(grid_NoiDung, child, new CaiDat());
+            Mo(grid_NoiDung, child, new QLHieuThuoc.forms.CaiDat.CaiDat(IdNv));
         }
 
         // Đăng xuất
         private void bt_DangXuat_Click(object sender, RoutedEventArgs e)
         {
+            chamCong.GioRa();
+            chamCong.ChapCong(IdNv);
             CheckSelectButton("DangXuat");
             this.Close();
             DangNhap DangNhapCuaSo = new DangNhap();

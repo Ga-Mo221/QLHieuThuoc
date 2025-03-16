@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "D:\\QLHieuThuoc\\QuanlyHieuThuoc\\QLHieuThuoc\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{AF183C98-B091-4920-B14C-79D71193BC4C}|QLHieuThuoc\\QLHieuThuoc.csproj|d:\\qlhieuthuoc\\quanlyhieuthuoc\\qlhieuthuoc\\qlhieuthuoc\\forms\\caidat\\caidat.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "RelativeMoniker": "D:0:0:{AF183C98-B091-4920-B14C-79D71193BC4C}|QLHieuThuoc\\QLHieuThuoc.csproj|solutionrelative:qlhieuthuoc\\forms\\caidat\\caidat.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF183C98-B091-4920-B14C-79D71193BC4C}|QLHieuThuoc\\QLHieuThuoc.csproj|d:\\qlhieuthuoc\\quanlyhieuthuoc\\qlhieuthuoc\\qlhieuthuoc\\forms\\mainwindow.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "RelativeMoniker": "D:0:0:{AF183C98-B091-4920-B14C-79D71193BC4C}|QLHieuThuoc\\QLHieuThuoc.csproj|solutionrelative:qlhieuthuoc\\forms\\mainwindow.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{AF183C98-B091-4920-B14C-79D71193BC4C}|QLHieuThuoc\\QLHieuThuoc.csproj|d:\\qlhieuthuoc\\quanlyhieuthuoc\\qlhieuthuoc\\qlhieuthuoc\\forms\\tongquan\\tongquan.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
       "RelativeMoniker": "D:0:0:{AF183C98-B091-4920-B14C-79D71193BC4C}|QLHieuThuoc\\QLHieuThuoc.csproj|solutionrelative:qlhieuthuoc\\forms\\tongquan\\tongquan.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AF183C98-B091-4920-B14C-79D71193BC4C}|QLHieuThuoc\\QLHieuThuoc.csproj|d:\\qlhieuthuoc\\quanlyhieuthuoc\\qlhieuthuoc\\qlhieuthuoc\\forms\\tongquan\\tongquan.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{AF183C98-B091-4920-B14C-79D71193BC4C}|QLHieuThuoc\\QLHieuThuoc.csproj|solutionrelative:qlhieuthuoc\\forms\\tongquan\\tongquan.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{AF183C98-B091-4920-B14C-79D71193BC4C}|QLHieuThuoc\\QLHieuThuoc.csproj|d:\\qlhieuthuoc\\quanlyhieuthuoc\\qlhieuthuoc\\qlhieuthuoc\\model\\chamcong\\chamcong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF183C98-B091-4920-B14C-79D71193BC4C}|QLHieuThuoc\\QLHieuThuoc.csproj|solutionrelative:qlhieuthuoc\\model\\chamcong\\chamcong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,27 +35,52 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "CaiDat.xaml.cs",
+              "DocumentMoniker": "D:\\QLHieuThuoc\\QuanlyHieuThuoc\\QLHieuThuoc\\QLHieuThuoc\\forms\\CaiDat\\CaiDat.xaml.cs",
+              "RelativeDocumentMoniker": "QLHieuThuoc\\forms\\CaiDat\\CaiDat.xaml.cs",
+              "ToolTip": "D:\\QLHieuThuoc\\QuanlyHieuThuoc\\QLHieuThuoc\\QLHieuThuoc\\forms\\CaiDat\\CaiDat.xaml.cs",
+              "RelativeToolTip": "QLHieuThuoc\\forms\\CaiDat\\CaiDat.xaml.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAAowFYAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-16T18:41:47.999Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "TongQuan.xaml.cs",
               "DocumentMoniker": "D:\\QLHieuThuoc\\QuanlyHieuThuoc\\QLHieuThuoc\\QLHieuThuoc\\forms\\TongQuan\\TongQuan.xaml.cs",
               "RelativeDocumentMoniker": "QLHieuThuoc\\forms\\TongQuan\\TongQuan.xaml.cs",
               "ToolTip": "D:\\QLHieuThuoc\\QuanlyHieuThuoc\\QLHieuThuoc\\QLHieuThuoc\\forms\\TongQuan\\TongQuan.xaml.cs",
               "RelativeToolTip": "QLHieuThuoc\\forms\\TongQuan\\TongQuan.xaml.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAQwLwAAAA0AAAAAAAAAA==",
+              "ViewState": "AgIAAKEAAAAAAAAAAAAuwMIAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-15T09:44:13.816Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-16T17:03:36.88Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "TongQuan.xaml",
-              "DocumentMoniker": "D:\\QLHieuThuoc\\QuanlyHieuThuoc\\QLHieuThuoc\\QLHieuThuoc\\forms\\TongQuan\\TongQuan.xaml",
-              "RelativeDocumentMoniker": "QLHieuThuoc\\forms\\TongQuan\\TongQuan.xaml",
-              "ToolTip": "D:\\QLHieuThuoc\\QuanlyHieuThuoc\\QLHieuThuoc\\QLHieuThuoc\\forms\\TongQuan\\TongQuan.xaml",
-              "RelativeToolTip": "QLHieuThuoc\\forms\\TongQuan\\TongQuan.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-03-15T09:44:09.53Z",
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "D:\\QLHieuThuoc\\QuanlyHieuThuoc\\QLHieuThuoc\\QLHieuThuoc\\forms\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "QLHieuThuoc\\forms\\MainWindow.xaml.cs",
+              "ToolTip": "D:\\QLHieuThuoc\\QuanlyHieuThuoc\\QLHieuThuoc\\QLHieuThuoc\\forms\\MainWindow.xaml.cs",
+              "RelativeToolTip": "QLHieuThuoc\\forms\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYBAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-16T16:24:26.8Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ChamCong.cs",
+              "DocumentMoniker": "D:\\QLHieuThuoc\\QuanlyHieuThuoc\\QLHieuThuoc\\QLHieuThuoc\\Model\\ChamCong\\ChamCong.cs",
+              "RelativeDocumentMoniker": "QLHieuThuoc\\Model\\ChamCong\\ChamCong.cs",
+              "ToolTip": "D:\\QLHieuThuoc\\QuanlyHieuThuoc\\QLHieuThuoc\\QLHieuThuoc\\Model\\ChamCong\\ChamCong.cs",
+              "RelativeToolTip": "QLHieuThuoc\\Model\\ChamCong\\ChamCong.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAQwCQAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-16T16:03:44.546Z"
             }
           ]
         }

@@ -1,42 +1,42 @@
-fsdf
-Please enter your password!
+english
+Please enter the password!
 Notification
-Username or password is incorrect
+The username or password is incorrect.
 Account
 Employee ID
-Please enter Employee ID
-Please enter Account
-Please enter Password
-You have successfully registered. Please go back to log in.
-Account already exists!
-This Employee ID has already been registered!
+Please enter the Employee ID.
+Please enter the Account.
+Please enter the Password.
+You have successfully registered. Please return to log in.
+This account already exists!
+This Employee ID has already been registered for an account!
 Employee ID does not exist!
-Register your account here
+Register your account here.
 Password
 Forgot Password?
-Login
+Log In
 Don't have an account?
-Register
-Register your account here
+Sign Up
+Register your account here.
 Already have an account?
 Exit
-Please fill in all information
+Please fill in all the required information.
 New Password
 Confirm
-Incorrect account!
+Incorrect Account!
 Password changed successfully.
 Overview
 Products
 Sales
-Purchases
+Stock Import
 Statistics
 Customers
 Employees
 Settings
-Logout
+Log Out
 Total Products
-In-stock Products
-Out-of-stock Products
+Products in Stock
+Out-of-Stock Products
 Search...
 Add Product
 Product Code
@@ -51,39 +51,39 @@ Vitamins
 Supplements
 Antiviral Drugs
 Cardiovascular Drugs
-Allergy Drugs
-Respiratory Drugs
+Allergy Medicines
+Respiratory Medicines
 Quantity
 Purchase Price
 Selling Price
 Ingredients
-Usage
-Warnings
+Uses
+Notes
 Dosage
 How to Use
 Add
 Cancel
-Missing information
+Missing Information
 Successfully Updated. The window will be closed.
 Successfully Added. The window will be closed.
 Product Information
-Product Type
+Product Category
 Expiration Date
 Do you want to delete this product?
 Successfully deleted. The window will be closed.
 Successfully Added
 Quantity must be an integer!
-Purchase price must be a decimal number!
-Selling price must be a decimal number!
+Purchase price must be a decimal!
+Selling price must be a decimal!
 Error
 Supplier
-Total Purchase Orders
-Purchase Order Code
+Total Import Orders
+Import Order Code
 Supplier Code
-Purchase Date
+Import Date
 Total Amount
 Method
-New Purchase Order
+New Import Order
 Address
 Phone Number
 Total Amount
@@ -98,7 +98,7 @@ Payment
 SUPPLIER INFORMATION
 Name
 Phone Number
-Product Type
+Product Category
 Total Sales Orders
 Sales Orders This Month
 Sales Order Code
@@ -112,31 +112,109 @@ Enter Points...
 Customer Name
 100...
 CUSTOMER INFORMATION
-Sales Date
+Sale Date
 Total Customers
 New Customers
-Added Date
+Date Added
 Last Month
 This Month
 Cash
 Payment Method
-Successfully Purchased!
-Supplier Name is missing!
-Address is missing!
-Phone Number is missing!
-No Products Added!
+Successfully Imported Goods!
+Supplier Name not entered!
+Address not entered!
+Phone Number not entered!
+No Product Added!
 No Payment Method Selected!
 Bank Transfer
 Out of Stock
-Running Low
+Low Stock
 In Stock
-Customer Name is missing!
-Quantity Updated
+Customer Name not entered!
+Updated Quantity
 Added to Cart
-Quantity not entered
+Quantity not entered!
 Quantity Exceeds Stock!
 Status
 Incorrect Entry!
 Points Exceeded!
-Language has been changed
+Language has been changed.
 Language
+Successfully Created Invoice!
+Full Screen
+Minimize
+Screen Ratio
+Revenue
+Purchases
+Total Revenue
+Latest Orders
+Best Selling Medicines
+Work Schedule
+Manage Work Hours
+Payroll
+Language Not Available!
+Employees
+Management
+Add Employee
+Employee Name not entered!
+Successfully Added Employee!
+Edit
+Total Employees
+New Employees
+Position
+Work Date
+Check-Out Time
+Check-In Time
+Total Work Hours
+Employee Name
+DATE
+Work Schedule
+Add Employee
+Notes
+Generate Invoice
+Month
+Year
+Creation Date
+Bonus
+Allowance
+Total Work Hours
+Salary
+Name
+Payroll Code
+Payroll Month
+Payroll File Path
+Invoice File Path
+Invoice
+No
+Export
+TEMPORARY INVOICE
+Total Amount
+Date
+Cashier
+Order Code
+Total Price
+Products
+No products left in stock!
+Only
+products left in stock!
+Expired products!
+Less than 7 days before expiration!
+Less than 1 month before expiration!
+Missing Information!
+Incorrect Password!
+Incorrect Password Confirmation!
+Change Password
+Old Password
+Confirm Password
+Save
+Purchase Date
+Monday
+Tuesday
+Wednesday
+Thursday
+Friday
+Saturday
+Sunday
+Error: Grid size not defined!
+Image saved successfully at:
+Error saving image: 

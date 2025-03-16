@@ -8,6 +8,8 @@ using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 using System.Windows.Media;
 using System.Windows;
+using QLHieuThuoc.forms;
+using QLHieuThuoc.Model.Files;
 
 namespace QLHieuThuoc.Model.DungNhanh
 {
@@ -23,7 +25,7 @@ namespace QLHieuThuoc.Model.DungNhanh
 
                 if (width == 0 || height == 0)
                 {
-                    MessageBox.Show("Lỗi: Kích thước Grid chưa xác định!", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
+                    ThongBao.Show(NN.nn[77], NN.nn[217], "Do");
                     return;
                 }
 
@@ -48,11 +50,11 @@ namespace QLHieuThuoc.Model.DungNhanh
                     encoder.Save(outStream);
                 }
 
-                MessageBox.Show($"Lưu hình ảnh thành công tại:\n{fullPath}", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
+                ThongBao.Show(NN.nn[2], $"{NN.nn[218]}\n{fullPath}", "Cam");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi khi lưu ảnh: " + ex.Message, "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
+                ThongBao.Show(NN.nn[77], NN.nn[219] + ex.Message, "Do");
             }
         }
 

@@ -33,13 +33,13 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <!-- Hiển thị thứ trong tuần -->
-            <TextBlock Text="Thứ Hai" Grid.Column="0"/>
-            <TextBlock Text="Thứ Ba" Grid.Column="1"/>
-            <TextBlock Text="Thứ Tư" Grid.Column="2"/>
-            <TextBlock Text="Thứ Năm" Grid.Column="3"/>
-            <TextBlock Text="Thứ Sáu" Grid.Column="4"/>
-            <TextBlock Text="Thứ Bảy" Grid.Column="5"/>
-            <TextBlock Text="Chủ Nhật" Grid.Column="6"/>
+            <TextBlock x:Name="thu2" Text="Thứ Hai" Grid.Column="0"/>
+            <TextBlock x:Name="thu3" Text="Thứ Ba" Grid.Column="1"/>
+            <TextBlock x:Name="thu4" Text="Thứ Tư" Grid.Column="2"/>
+            <TextBlock x:Name="thu5" Text="Thứ Năm" Grid.Column="3"/>
+            <TextBlock x:Name="thu6" Text="Thứ Sáu" Grid.Column="4"/>
+            <TextBlock x:Name="thu7" Text="Thứ Bảy" Grid.Column="5"/>
+            <TextBlock x:Name="chunhat" Text="Chủ Nhật" Grid.Column="6"/>
         </Grid>
 
         <Grid x:Name="gridngay" Grid.Row="2">

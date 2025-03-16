@@ -761,38 +761,27 @@
             
             <!-- các nút -->
             <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Right">
-                <!-- nút xóa -->
-                <Button Style="{DynamicResource buttonstyle}" Background="#F85E5E" Width="88" Click="Button_Click_1">
-                    <Button.Content>
-                        <TextBlock x:Name="tbl_bt_Xoa"
-                                   FontSize="20"
-                                   FontFamily="Cascadia Mono"
-                                   Foreground="#565656">
-                            xoa
-                        </TextBlock>
-                    </Button.Content>
-                </Button>
-                <Grid Width="10"/>
-                <!-- nút Hủy -->
-                <Button Style="{DynamicResource buttonstyle}" Background="#E2895A" Width="88" Click="Button_Click">
-                    <Button.Content>
-                        <TextBlock x:Name="tbl_bt_Huy"
-                                   FontSize="20"
-                                   FontFamily="Cascadia Mono"
-                                   Foreground="#565656">
-                            Huy
-                        </TextBlock>
-                    </Button.Content>
-                </Button>
-                <Grid Width="10"/>
+                
                 <!-- nút sửa -->
-                <Button Style="{DynamicResource buttonstyle}" Background="#E2895A" Width="88" Click="Button_Click_2">
+                <Button x:Name="bt_sua" Style="{DynamicResource buttonstyle}" Background="#F85E5E" Width="88" Click="Button_Click_2">
                     <Button.Content>
                         <TextBlock x:Name="tbl_bt_Sua"
                                    FontSize="20"
                                    FontFamily="Cascadia Mono"
                                    Foreground="#565656">
                             Sua
+                        </TextBlock>
+                    </Button.Content>
+                </Button>
+                <Grid Width="10"/>
+                <!-- nút Hủy -->
+                <Button x:Name="bt_huy" Style="{DynamicResource buttonstyle}" Background="#E2895A" Width="88" Click="Button_Click">
+                    <Button.Content>
+                        <TextBlock x:Name="tbl_bt_Huy"
+                                   FontSize="20"
+                                   FontFamily="Cascadia Mono"
+                                   Foreground="#565656">
+                            Huy
                         </TextBlock>
                     </Button.Content>
                 </Button>

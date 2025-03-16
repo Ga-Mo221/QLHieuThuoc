@@ -18,5 +18,20 @@ namespace QLHieuThuoc.Model.DungNhanh
 
             return $"#{result.ToString()}";
         }
+
+        public string TaoMa(int DoDai)
+        {
+            string chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789";
+            StringBuilder result = new StringBuilder();
+            Random random = new Random();
+
+            for (int i = 0; i < DoDai; i++)
+            {
+                int index = random.Next(chars.Length);
+                result.Append(chars[index]);
+            }
+
+            return $"#{result.ToString()}";
+        }
     }
 }

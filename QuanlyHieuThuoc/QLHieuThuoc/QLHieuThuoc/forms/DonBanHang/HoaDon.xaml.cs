@@ -34,7 +34,6 @@ namespace QLHieuThuoc.forms.DonBanHang
             InitializeComponent();
             Loaded += HoaDon_Loaded;
             idhd = id;
-            MessageBox.Show(idhd);
             LayThongTinHoaDon();
             AddSanPham();
         }
@@ -71,16 +70,19 @@ namespace QLHieuThuoc.forms.DonBanHang
             FROM DonBan d
             LEFT JOIN NhanVien nv ON d.IDNV = nv.ID
             LEFT JOIN KhachHang kh ON d.IDKH = kh.ID
-            WHERE d.ID = '"+idhd+"'";
+            WHERE d.ID = '" + idhd + "'";
 
             List<ThongTinHoaDon> tthd = modify.ThongTinHoaDons(query);
-            ThongTinHoaDon thongTinHoaDon = tthd[0];
+            if (tthd.Count > 0) 
+            {
+                ThongTinHoaDon thongTinHoaDon = tthd[0]; 
 
-            tbl_NgayMua.Text = $"{NN.nn[191]} : {thongTinHoaDon.NgayMua.ToString("dd/MM/yyyy")}";
-            tbl_ThuNgan.Text = $"{NN.nn[192]} : {thongTinHoaDon.TenNV}";
-            tbl_MaHoaDon.Text = $"{NN.nn[193]} : {thongTinHoaDon.Idhd}";
-            tbl_TenKhachHang.Text = $"{NN.nn[111]} : {thongTinHoaDon.TenKH}";
-            tbl_TongTien.Text = $"{NN.nn[194]} : {thongTinHoaDon.TongTien}VND";
+                tbl_NgayMua.Text = $"{NN.nn[191]} : {thongTinHoaDon.NgayMua.ToString("dd/MM/yyyy")}";
+                tbl_ThuNgan.Text = $"{NN.nn[192]} : {thongTinHoaDon.TenNV}";
+                tbl_MaHoaDon.Text = $"{NN.nn[193]} : {thongTinHoaDon.Idhd}";
+                tbl_TenKhachHang.Text = $"{NN.nn[111]} : {thongTinHoaDon.TenKH}";
+                tbl_TongTien.Text = $"{NN.nn[194]} : {thongTinHoaDon.TongTien}VND"; 
+            }
         }
 
 

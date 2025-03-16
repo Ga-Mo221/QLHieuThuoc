@@ -1,4 +1,9 @@
-﻿using QLHieuThuoc.Model.Files;
+﻿using QLHieuThuoc.forms.CaiDat;
+using QLHieuThuoc.forms.Thongbaos;
+using QLHieuThuoc.Model.DungNhanh;
+using QLHieuThuoc.Model.Files;
+using QLHieuThuoc.Model.NhanVien;
+using QLHieuThuoc.Model.sql;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,14 +19,17 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace QLHieuThuoc.forms
+namespace QLHieuThuoc.forms.CaiDat
 {
     /// <summary>
     /// Interaction logic for CaiDat.xaml
     /// </summary>
     public partial class CaiDat : UserControl
     {
+        CapNhatNgonNgu cnnn = new CapNhatNgonNgu();
+        Modify modify = new Modify();
         private List<string> NgonNgus = new List<string>();
+        LayThongBao thongbao = new LayThongBao();
         private List<string> TiLeManHinh = new List<string> { NN.nn[144], NN.nn[143], "1440x950"};
         CheckFileNN CF = new CheckFileNN();
         DocGhi dg = new DocGhi();
@@ -29,12 +37,27 @@ namespace QLHieuThuoc.forms
         private int y = 800;
         private int x1 = 1440;
         private int y1 = 950;
+        private string idnv;
 
-        public CaiDat()
+        public CaiDat(string id)
         {
             InitializeComponent();
             LayTen();
             CapNhatNN();
+            thongbao.BatThongBao(CoThongBao);
+            idnv = id;
+            CapNhatTaiKhoan();
+        }
+
+        private void CapNhatTaiKhoan()
+        {
+            string lenh = "select * from NhanVien where ID = '" + idnv + "'";
+            List<nhanVien> nhanViens = modify.NhanViens(lenh);
+            if (nhanViens.Count > 0)
+            {
+                tbl_TenNhanVienThanhTiemKiem.Text = nhanViens[0].Ten1;
+                tbl_IdNhanVienThanhTimKiem.Text = idnv;
+            }
         }
 
         private void LayTen()
@@ -59,12 +82,15 @@ namespace QLHieuThuoc.forms
                 {
                     dg.SaveSetting($"{cbb_NgonNgu.SelectedItem.ToString()}|{NN.folderPathLuong}|{NN.folderPathHoaDon}");
                     ThongBao.Show(NN.nn[2], NN.nn[140], "Cam");
+
+                    cnnn.UpdateDataBase(kiemtra);
+                    NN.nn.Clear();
                     System.Windows.Application.Current.Shutdown();
                 }
                 else
                 {
                     cbb_NgonNgu.SelectedItem = NN.NgonNguSetting;
-                    ThongBao.Show(NN.nn[2], NN.nn[154], "Cam");
+                    ThongBao.Show(NN.nn[2], $"{NN.nn[154]},{kiemtra.Count },{NN.nn.Count }", "Cam");
                 }
             }
         }
@@ -79,6 +105,7 @@ namespace QLHieuThuoc.forms
             tbl_FolderPathHoaDon.Text = NN.nn[185];
             tb_FolderPathHoaDon.Text = NN.folderPathHoaDon;
             tb_FolderPathLuong.Text = NN.folderPathLuong;
+            tbl_doimatkhau.Text = NN.nn[205] ;
         }
 
 
@@ -152,6 +179,30 @@ namespace QLHieuThuoc.forms
                     dg.SaveSetting($"{cbb_NgonNgu.SelectedItem.ToString()}|{NN.folderPathLuong}|{tb_FolderPathHoaDon.Text}");
                     dg.Setting();
                 }
+            }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ThongBaoSanPham.status = false;
+            CoThongBao.Visibility = Visibility.Collapsed;
+            ThanhThongBaoSanPham thanhthongbao = new ThanhThongBaoSanPham();
+            Window parentWindow = Window.GetWindow(this);
+            if (parentWindow != null)
+            {
+                thanhthongbao.Left = parentWindow.Left + (parentWindow.Width - thanhthongbao.Width) / 1.17;
+                thanhthongbao.Top = parentWindow.Top + 110;
+            }
+            thanhthongbao.Show();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = Window.GetWindow(this) as MainWindow;
+            if (mainWindow != null)
+            {
+                Mo.OpenWindowWithBlur(mainWindow, new DoiMatKhau(idnv));
+                
             }
         }
     }

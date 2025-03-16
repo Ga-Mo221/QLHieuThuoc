@@ -30,6 +30,7 @@ namespace QLHieuThuoc.forms.NhanVien
         private int Day;
         private List<string> tennvl = new List<string>();
         private List<Lichlam> tennhanvienlam = new List<Lichlam>();
+        private bool coghichu = false;
 
         public ThemLichLam(int day)
         {
@@ -43,6 +44,20 @@ namespace QLHieuThuoc.forms.NhanVien
             CapNhatNN();
             LayDanhSanhTenNhanVien();
             AddNhanVien();
+            CapNhatGhiChu();
+        }
+
+
+        private void CapNhatGhiChu()
+        {
+            int selectedDay = Day; // Ví dụ một ngày cụ thể
+            string lenh = "select * from GhiChu where day(NGAYLAM) = " + selectedDay + " and month(NGAYLAM) = month(Getdate()) and year(NGAYLAM) = year(Getdate())";
+            List<GhiChu> ghichus = modify.GhiChus(lenh);
+            if (ghichus.Count > 0)
+            {
+                tb_GhiChu.Text = ghichus[0].NoiDung;
+                coghichu = true;
+            }
         }
 
 
@@ -164,5 +179,28 @@ namespace QLHieuThuoc.forms.NhanVien
             this.Close();
         }
 
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            if (coghichu)
+            {
+                if (tb_GhiChu.Text.Length > 0)
+                {
+                    string update = "update GhiChu set NOIDUNG = N'" + tb_GhiChu.Text + "' where day(NGAYLAM) = " + Day + " and month(NGAYLAM) = month(Getdate()) and year(NGAYLAM) = year(Getdate())";
+                    modify.ThucThi(update);
+                    MessageBox.Show("da update");
+                }
+            }
+            else
+            {
+                if (tb_GhiChu.Text.Length > 0)
+                {
+                    DateTime ngay = new DateTime(DateTime.Now.Year, DateTime.Now.Month, Day);
+                    string insert = "INSERT INTO GhiChu VALUES ('" + taoma.TaoMa() + "', '"+ngay.ToString("yyyy-MM-dd") + "', '" + tb_GhiChu.Text + "')";
+
+                    modify.ThucThi(insert);
+                    MessageBox.Show("da luu");
+                }
+            }
+        }
     }
 }

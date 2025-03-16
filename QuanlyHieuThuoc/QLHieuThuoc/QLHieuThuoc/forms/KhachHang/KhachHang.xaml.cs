@@ -1,6 +1,8 @@
-﻿using QLHieuThuoc.Model.BanHang;
+﻿using QLHieuThuoc.forms.Thongbaos;
+using QLHieuThuoc.Model.BanHang;
 using QLHieuThuoc.Model.DungNhanh;
 using QLHieuThuoc.Model.Files;
+using QLHieuThuoc.Model.NhanVien;
 using QLHieuThuoc.Model.sql;
 using QLHieuThuoc.UserControls;
 using System;
@@ -28,12 +30,16 @@ namespace QLHieuThuoc.forms
 
         Modify modify = new Modify();
         ClickTextBox cl = new ClickTextBox();
+        LayThongBao thongbao = new LayThongBao();
+        private string idnv;
 
 
-        public KhachHang()
+        public KhachHang(string id)
         {
             InitializeComponent();
             Loaded += KhachHang_Loaded;
+            thongbao.BatThongBao(CoThongBao);
+            idnv = id;
         }
 
         private void KhachHang_Loaded(object sender, RoutedEventArgs e)
@@ -44,6 +50,18 @@ namespace QLHieuThuoc.forms
 
             string lenhSelect = "select * from KhachHang";
             AddKhachHang(modify.KhachHangs(lenhSelect));
+            CapNhatTaiKhoan();
+        }
+
+        private void CapNhatTaiKhoan()
+        {
+            string lenh = "select * from NhanVien where ID = '" + idnv + "'";
+            List<nhanVien> nhanViens = modify.NhanViens(lenh);
+            if (nhanViens.Count > 0)
+            {
+                tbl_TenNhanVienThanhTiemKiem.Text = nhanViens[0].Ten1;
+                tbl_IdNhanVienThanhTimKiem.Text = idnv;
+            }
         }
 
         // cập nhật tông số khách hàng
@@ -127,6 +145,20 @@ namespace QLHieuThuoc.forms
         private void tb_TimKiem_LostFocus(object sender, RoutedEventArgs e)
         {
             cl.LostF(tb_TimKiem, NN.nn[39]);
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ThongBaoSanPham.status = false;
+            CoThongBao.Visibility = Visibility.Collapsed;
+            ThanhThongBaoSanPham thanhthongbao = new ThanhThongBaoSanPham();
+            Window parentWindow = Window.GetWindow(this);
+            if (parentWindow != null)
+            {
+                thanhthongbao.Left = parentWindow.Left + (parentWindow.Width - thanhthongbao.Width) / 1.17;
+                thanhthongbao.Top = parentWindow.Top + 110;
+            }
+            thanhthongbao.Show();
         }
     }
 }

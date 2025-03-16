@@ -365,8 +365,27 @@ namespace QLHieuThuoc.Model.sql
             return thongtinsphds;
         }
 
+        // check ghi chu
+        public List<GhiChu> GhiChus(string LenhTruyVan)
+        {
+            List<GhiChu> ghiChus = new List<GhiChu>();
 
+            using (SqlConnection sqlConnection = KetNoi.GetSqlconnection())
+            {
+                sqlConnection.Open();
 
+                sqlConmand = new SqlCommand(LenhTruyVan, sqlConnection);
+                dataReader = sqlConmand.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    ghiChus.Add(new GhiChu(dataReader.GetString(0), dataReader.GetDateTime(1), dataReader.GetString(2)));
+                }
+
+                sqlConnection.Close();
+            }
+
+            return ghiChus;
+        }
 
 
 

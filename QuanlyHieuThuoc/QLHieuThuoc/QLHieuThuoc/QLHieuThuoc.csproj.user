@@ -2,6 +2,9 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
+    <Compile Update="forms\CaiDat\DoiMatKhau.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="forms\DonBanHang\BanHang.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -74,7 +77,10 @@
     <Compile Update="forms\DonBanHang\ThemSanPhamDonBan.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="forms\ThongKe\ThongBao.xaml.cs">
+    <Compile Update="forms\Thongbaos\ThanhThongBaoSanPham.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="forms\Thongbaos\ThongBao.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="forms\ThongKe\ThongKe.xaml.cs">
@@ -123,6 +129,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="UserControls\NhanVien\ThoiGianLamCuaNhanVien.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UserControls\ThongBaosp\NoiDungThongBao.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

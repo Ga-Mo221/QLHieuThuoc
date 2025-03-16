@@ -1,4 +1,8 @@
-﻿using System;
+﻿using QLHieuThuoc.forms.Thongbaos;
+using QLHieuThuoc.Model.DungNhanh;
+using QLHieuThuoc.Model.NhanVien;
+using QLHieuThuoc.Model.sql;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +24,48 @@ namespace QLHieuThuoc.forms
     /// </summary>
     public partial class ThongKe : UserControl
     {
-        public ThongKe()
+        LayThongBao thongbao = new LayThongBao();
+        Modify modify = new Modify();
+        private string idnv;
+
+
+        public ThongKe(string id)
         {
             InitializeComponent();
+            thongbao.BatThongBao(CoThongBao);
+            Loaded += ThongKe_Loaded;
+            idnv = id;
+        }
+
+        private void ThongKe_Loaded(object sender, RoutedEventArgs e)
+        {
+            CapNhatTaiKhoan();
+        }
+
+
+        private void CapNhatTaiKhoan()
+        {
+            string lenh = "select * from NhanVien where ID = '" + idnv + "'";
+            List<nhanVien> nhanViens = modify.NhanViens(lenh);
+            if (nhanViens.Count > 0)
+            {
+                tbl_TenNhanVienThanhTiemKiem.Text = nhanViens[0].Ten1;
+                tbl_IdNhanVienThanhTimKiem.Text = idnv;
+            }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ThongBaoSanPham.status = false;
+            CoThongBao.Visibility = Visibility.Collapsed;
+            ThanhThongBaoSanPham thanhthongbao = new ThanhThongBaoSanPham();
+            Window parentWindow = Window.GetWindow(this);
+            if (parentWindow != null)
+            {
+                thanhthongbao.Left = parentWindow.Left + (parentWindow.Width - thanhthongbao.Width) / 1.17;
+                thanhthongbao.Top = parentWindow.Top + 110;
+            }
+            thanhthongbao.Show();
         }
     }
 }

@@ -1,5 +1,9 @@
 ﻿using QLHieuThuoc.forms.FNhanVien;
+using QLHieuThuoc.forms.Thongbaos;
+using QLHieuThuoc.Model.DungNhanh;
 using QLHieuThuoc.Model.Files;
+using QLHieuThuoc.Model.NhanVien;
+using QLHieuThuoc.Model.sql;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,17 +27,45 @@ namespace QLHieuThuoc.forms.NhanVien
     public partial class NhanVien : UserControl
     {
         UserControl child = null;
-        public NhanVien()
+        LayThongBao thongbao = new LayThongBao();
+        Modify modify = new Modify();
+        CheckAccount checkAccount = new CheckAccount();
+        private string idnv;
+        public NhanVien(string id)
         {
             InitializeComponent();
             Loaded += NhanVien_Loaded;
             KiemTra(1);
-            Mo(Grid_NoiDung, child, new LichLam());
+            idnv = id;   
+            Mo(Grid_NoiDung, child, new LichLam(idnv));
+            thongbao.BatThongBao(CoThongBao);
         }
 
         private void NhanVien_Loaded(object sender, RoutedEventArgs e)
         {
             CapNhatNN();
+            CapNhatTaiKhoan();
+            CapNhatQuyenTruyCap();
+        }
+
+        private void CapNhatTaiKhoan()
+        {
+            string lenh = "select * from NhanVien where ID = '" + idnv + "'";
+            List<nhanVien> nhanViens = modify.NhanViens(lenh);
+            if (nhanViens.Count > 0)
+            {
+                tbl_TenNhanVienThanhTiemKiem.Text = nhanViens[0].Ten1;
+                tbl_IdNhanVienThanhTimKiem.Text = idnv;
+            }
+        }
+
+        private void CapNhatQuyenTruyCap()
+        {
+            if (checkAccount.check(idnv))
+            {
+                bt_Luong.Visibility = Visibility.Collapsed;
+                bt_ThoiGian.Visibility = Visibility.Collapsed;
+            }
         }
 
         // Hiển thị giao diện
@@ -83,7 +115,7 @@ namespace QLHieuThuoc.forms.NhanVien
         private void bt_LichLam_Click(object sender, RoutedEventArgs e)
         {
             KiemTra(1);
-            Mo(Grid_NoiDung, child, new LichLam());
+            Mo(Grid_NoiDung, child, new LichLam(idnv));
         }
 
         private void bt_ThoiGian_Click(object sender, RoutedEventArgs e)
@@ -96,6 +128,20 @@ namespace QLHieuThuoc.forms.NhanVien
         {
             KiemTra(3);
             Mo(Grid_NoiDung, child, new Luong());
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ThongBaoSanPham.status = false;
+            CoThongBao.Visibility = Visibility.Collapsed;
+            ThanhThongBaoSanPham thanhthongbao = new ThanhThongBaoSanPham();
+            Window parentWindow = Window.GetWindow(this);
+            if (parentWindow != null)
+            {
+                thanhthongbao.Left = parentWindow.Left + (parentWindow.Width - thanhthongbao.Width) / 1.17;
+                thanhthongbao.Top = parentWindow.Top + 110;
+            }
+            thanhthongbao.Show();
         }
     }
 }

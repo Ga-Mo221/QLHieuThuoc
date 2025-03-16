@@ -1,5 +1,6 @@
 ﻿using QLHieuThuoc.forms.NhanVien;
 using QLHieuThuoc.Model.DungNhanh;
+using QLHieuThuoc.Model.Files;
 using QLHieuThuoc.Model.NhanVien;
 using QLHieuThuoc.Model.sql;
 using System;
@@ -29,10 +30,16 @@ namespace QLHieuThuoc.forms.FNhanVien
     public partial class LichLam : UserControl
     {
         Modify modify = new Modify();
-        public LichLam()
+        CheckAccount checkAccount = new CheckAccount();
+        private string idnv;
+
+
+        public LichLam(string id)
         {
             InitializeComponent();
             HienThiLich();
+            idnv = id;
+            CapNhatNN();
         }
 
         private void TaoGridNgay()
@@ -186,15 +193,28 @@ namespace QLHieuThuoc.forms.FNhanVien
 
         private void dabutton_click(object s, RoutedEventArgs e, int dayNumber)
         {
-            MainWindow mainWindow = Window.GetWindow(this) as MainWindow;
-            if (mainWindow != null)
+            if (!checkAccount.check(idnv))
             {
-                Mo.OpenWindowWithBlur(mainWindow, new ThemLichLam(dayNumber));
-                HienThiLich();
+                MainWindow mainWindow = Window.GetWindow(this) as MainWindow;
+                if (mainWindow != null)
+                {
+                    Mo.OpenWindowWithBlur(mainWindow, new ThemLichLam(dayNumber));
+                    HienThiLich();
+                }
             }
         }
 
 
+        private void CapNhatNN()
+        {
+            thu2.Text = NN.nn[210];
+            thu3.Text = NN.nn[211];
+            thu4.Text = NN.nn[212];
+            thu5.Text = NN.nn[213];
+            thu6.Text = NN.nn[214];
+            thu7.Text = NN.nn[215];
+            chunhat.Text = NN.nn[216];
+        }
 
 
         private StackPanel stackPanel(int day)

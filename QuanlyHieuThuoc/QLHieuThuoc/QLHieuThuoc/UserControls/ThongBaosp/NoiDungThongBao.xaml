@@ -1,0 +1,26 @@
+﻿<UserControl x:Class="QLHieuThuoc.UserControls.ThongBaosp.NoiDungThongBao"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:QLHieuThuoc.UserControls.ThongBaosp"
+             mc:Ignorable="d" 
+             d:DesignHeight="80" d:DesignWidth="400">
+    <Grid Background="White">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="60"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock x:Name="kyhieu" Grid.Column="1" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center">⚠️</TextBlock>
+            <Grid Margin="10" Grid.Column="3" >
+                <TextBlock x:Name="noidung" TextWrapping="Wrap" FontSize="13" VerticalAlignment="Center" FontFamily="Cascadia Mono" Foreground="#565656">shdflahsd;lfhas;ldkfsdfasdfasdfhoiwhrsahdf;lhasasldfh;laskdhf;laskhdf;laskhdf;lasjdfl;jaslkdjfl;asdjfljcv</TextBlock>
+            </Grid>
+        </Grid>
+
+        <Rectangle VerticalAlignment="Bottom" Height="1" Fill="#565656"/>
+    </Grid>
+</UserControl>

@@ -1,4 +1,5 @@
-﻿using QLHieuThuoc.Model.Files;
+﻿using QLHieuThuoc.Model.DungNhanh;
+using QLHieuThuoc.Model.Files;
 using QLHieuThuoc.Model.SanPham;
 using QLHieuThuoc.Model.sql;
 using System;
@@ -23,6 +24,8 @@ namespace QLHieuThuoc.forms
     public partial class ThongTinSanPham : Window
     {
         Modify modify = new Modify();
+        CheckAccount checkAccount = new CheckAccount();
+        private string idnv;
         // list loại sản phẩm
         private List<string> ListLoaiSanPham = new List<string>
         {
@@ -38,12 +41,13 @@ namespace QLHieuThuoc.forms
 
 
         private Sanpham sp;
-        public ThongTinSanPham(Sanpham sp)
+        public ThongTinSanPham(Sanpham sp, string id)
         {
             InitializeComponent();
             this.sp = sp;
 
             Loaded += ThongTinSanPham_Loaded;
+            idnv = id;
         }
 
         private void ThongTinSanPham_Loaded(object sender, RoutedEventArgs e)
@@ -51,6 +55,11 @@ namespace QLHieuThuoc.forms
             CapNhatNN();
             CapNhatSP();
             cbb_LoaiSanPham.ItemsSource = ListLoaiSanPham;
+
+            if (checkAccount.check(idnv))
+            {
+                bt_sua.Visibility = Visibility.Collapsed;
+            }
         }
 
         // Nút Đóng Cửa Sổ
@@ -59,20 +68,6 @@ namespace QLHieuThuoc.forms
             this.Close();
         }
 
-        // Nút Xóa Sản Phẩm
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            string CauLenhDelete = "Delete from SanPham where ID = '"+sp.MaSanPham1+"'";
-
-            MessageBoxResult result = MessageBox.Show(NN.nn[71], NN.nn[2], MessageBoxButton.YesNo);
-
-            if (result == MessageBoxResult.Yes)
-            {
-                modify.ThucThi(CauLenhDelete);
-                MessageBox.Show(NN.nn[72], NN.nn[2], MessageBoxButton.OK);
-                this.Close();
-            }
-        }
 
         // Nút Sửa Sản Phẩm
         private void Button_Click_2(object sender, RoutedEventArgs e)

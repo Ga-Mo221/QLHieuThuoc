@@ -81,6 +81,61 @@
                 </Trigger>
             </ControlTemplate.Triggers>
         </ControlTemplate>
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" StrokeDashArray="1 2" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" SnapsToDevicePixels="true" StrokeThickness="1"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background1" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border1" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background1" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border1" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background1" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border1" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground1" Color="#FF838383"/>
+        <Style x:Key="ButtonStyle1" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" CornerRadius="20" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background1}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border1}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background1}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border1}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background1}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border1}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground1}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </UserControl.Resources>
     <Grid Background="#F7F7F7">
         <Grid.RowDefinitions>
@@ -126,8 +181,14 @@
 
                     <!-- thông báo -->
                     <Grid DockPanel.Dock="Right" Width="85">
-                        <Ellipse Height="40" Width="40" Fill="#C9C9C9" HorizontalAlignment="Center"/>
-                        <Ellipse Height="38" Width="38" Fill="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <Button Style="{DynamicResource ButtonStyle1}" HorizontalAlignment="Center" VerticalAlignment="Center" Height="40" Width="40" Background="White" Click="Button_Click">
+                            <Button.Content>
+                                <Grid>
+                                    <TextBlock FontSize="20">🔔</TextBlock>
+                                    <Ellipse x:Name="CoThongBao" Height="8" Width="8" Margin="15 0 0 0" Fill="Red" Visibility="Collapsed"/>
+                                </Grid>
+                            </Button.Content>
+                        </Button>
                     </Grid>
 
                     <!-- thanh tìm kiếm -->
@@ -171,12 +232,12 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <Button Template="{DynamicResource ButtonTemplate1}" x:Name="bt_LichLam" HorizontalAlignment="Right" Click="bt_LichLam_Click">
+            <Button Template="{DynamicResource ButtonTemplate1}" x:Name="bt_LichLam" Grid.Column="1" HorizontalAlignment="Center" Click="bt_LichLam_Click">
                 <Button.Content>
                     <TextBlock x:Name="tbl_bt_LichLam">Lich Lam</TextBlock>
                 </Button.Content>
             </Button>
-            <Button Template="{DynamicResource ButtonTemplate1}" x:Name="bt_ThoiGian" Grid.Column="1" HorizontalAlignment="Center" Click="bt_ThoiGian_Click">
+            <Button Template="{DynamicResource ButtonTemplate1}" x:Name="bt_ThoiGian" Grid.Column="0" HorizontalAlignment="Right" Click="bt_ThoiGian_Click">
                 <Button.Content>
                     <TextBlock x:Name="tbl_bt_ThoiGian">Quan Ly Thoi Gian</TextBlock>
                 </Button.Content>

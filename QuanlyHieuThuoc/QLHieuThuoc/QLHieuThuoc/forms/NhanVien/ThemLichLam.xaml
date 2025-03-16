@@ -437,6 +437,11 @@
                               SelectionChanged="cbb_NhanVien_SelectionChanged">
                     </ComboBox>
                     <TextBlock x:Name="tbl_GhiChu" Grid.Row="3" FontSize="13">ghi chu</TextBlock>
+                    <Button HorizontalAlignment="Right" VerticalAlignment="Top" Width="50" Grid.Row="3" Click="Button_Click_1">
+                        <Button.Content>
+                            <TextBlock FontSize="13">luu</TextBlock>
+                        </Button.Content>
+                    </Button>
                     <Border Background="White" CornerRadius="15" Padding="10" Grid.Row="4">
                         <TextBox Template="{DynamicResource TextBoxTemplate1}" x:Name="tb_GhiChu" TextWrapping="WrapWithOverflow" Background="White"></TextBox>
                     </Border>

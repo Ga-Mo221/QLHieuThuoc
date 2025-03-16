@@ -53,7 +53,7 @@ namespace QLHieuThuoc.forms.FNhanVien
 
         private void CapNhatSoLuongNhanVien()
         {
-            string lenhSelect = "select * from NhanVien where CHUCVU = '" + NN.nn[155] + "'";
+            string lenhSelect = "select * from NhanVien where CHUCVU = N'" + NN.nn[155] + "'";
             tbl_SoNhanVien.Text = modify.NhanViens(lenhSelect).Count.ToString();
         }
         private void CapNhatTongSoLuongNhanVien()
@@ -63,7 +63,7 @@ namespace QLHieuThuoc.forms.FNhanVien
         }
         private void CapNhatSoLuongQuanLy()
         {
-            string lenhSelect = "select * from NhanVien where CHUCVU = '" + NN.nn[156] + "'";
+            string lenhSelect = "select * from NhanVien where CHUCVU = N'" + NN.nn[156] + "'";
             tbl_SoQuanLy.Text = modify.NhanViens(lenhSelect).Count.ToString();
         }
         private void CapNhatSoLuongNhanVienMoi()
@@ -126,6 +126,7 @@ namespace QLHieuThuoc.forms.FNhanVien
                         stb_ThoiGian.Children.Add(thoigianlam);
                     }
                 }
+                OnOffTB("Off");
             }
         }
 
@@ -148,8 +149,10 @@ namespace QLHieuThuoc.forms.FNhanVien
                     tb_Sdt.IsEnabled = false;
                     tb_DiaChi.IsEnabled = false;
                     cbb_ChucVu.IsEnabled = false;
+                    tbl_bt_sua.Text = NN.nn[160];
                     break;
             }
+            
         }
 
         // Cập nHật ngôn ngữ
@@ -184,22 +187,34 @@ namespace QLHieuThuoc.forms.FNhanVien
             AddTenNhanVien(nhanViens);
         }
 
+
+        private bool kiemTra()
+        {
+            if (tb_TenNhanVien.Text.Trim().Length == 0) { return false; }
+            if (tb_Sdt.Text.Trim().Length == 0) return false;
+            if (tb_DiaChi.Text.Trim().Length == 0) return false;
+            if (cbb_ChucVu.SelectedItem == null) return false;
+            return true;
+        }
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            if (tbl_bt_sua.Text == NN.nn[160])
+            if (kiemTra())
             {
-                tbl_bt_sua.Text = NN.nn[91];
-                OnOffTB("On");
-            }
-            else if (tbl_bt_sua.Text == NN.nn[91])
-            {
-                string lenh = "update NhanVien set TEN = N'"+tb_TenNhanVien.Text+"', SDT = '"+tb_Sdt.Text+"', DIACHI = N'"+tb_DiaChi.Text+"', CHUCVU = N'"+cbb_ChucVu.SelectedItem.ToString()+"' where ID = '"+idnvduocchon+"'";
+                if (tbl_bt_sua.Text == NN.nn[160])
+                {
+                    tbl_bt_sua.Text = NN.nn[91];
+                    OnOffTB("On");
+                }
+                else if (tbl_bt_sua.Text == NN.nn[91])
+                {
+                    string lenh = "update NhanVien set TEN = N'" + tb_TenNhanVien.Text + "', SDT = '" + tb_Sdt.Text + "', DIACHI = N'" + tb_DiaChi.Text + "', CHUCVU = N'" + cbb_ChucVu.SelectedItem.ToString() + "' where ID = '" + idnvduocchon + "'";
 
-                modify.ThucThi(lenh);
-                ThongBao.Show(NN.nn[2], NN.nn[92], "Cam");
+                    modify.ThucThi(lenh);
+                    ThongBao.Show(NN.nn[2], NN.nn[92], "Cam");
 
-                tbl_bt_sua.Text = NN.nn[160];
-                OnOffTB("Off");
+                    tbl_bt_sua.Text = NN.nn[160];
+                    OnOffTB("Off");
+                }
             }
         }
     }

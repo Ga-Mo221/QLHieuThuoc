@@ -1,7 +1,9 @@
-﻿using QLHieuThuoc.Model.BanHang;
+﻿using QLHieuThuoc.forms.Thongbaos;
+using QLHieuThuoc.Model.BanHang;
 using QLHieuThuoc.Model.DonNhapHangvsNCC;
 using QLHieuThuoc.Model.DungNhanh;
 using QLHieuThuoc.Model.Files;
+using QLHieuThuoc.Model.NhanVien;
 using QLHieuThuoc.Model.sql;
 using QLHieuThuoc.UserControls;
 using System;
@@ -27,19 +29,21 @@ namespace QLHieuThuoc.forms
     public partial class NhapHang : UserControl
     {
         ClickTextBox clickk = new ClickTextBox();
+        LayThongBao thongbao = new LayThongBao();
         Modify modify = new Modify();
-        private string IDNV;
+        private string idnv;
         private List<string> ListThang = new List<string> { NN.nn[118], NN.nn[119] };
 
 
-        public NhapHang(string idnv)
+        public NhapHang(string id)
         {
             InitializeComponent();
-            IDNV = idnv;
+            idnv = id;
 
             tbl_SoLuongNhaCungCap.Text = SoLuongNhaCungCap();
             CapNhatTongDonNhap();
             cbb_Thang.ItemsSource = ListThang;
+            thongbao.BatThongBao(CoThongBao);
             Loaded += NhapHang_Loaded;
         }
 
@@ -55,6 +59,19 @@ namespace QLHieuThuoc.forms
 
             string lenSelect = "SELECT * FROM DonNhapHang WHERE MONTH(NGAYNHAP) = MONTH(GETDATE()) AND YEAR(NGAYNHAP) = YEAR(GETDATE())";
             tbl_SoLuongDonHangTrongThang.Text = modify.DonNhaps(lenSelect).Count.ToString();
+            CapNhatTaiKhoan();
+        }
+
+
+        private void CapNhatTaiKhoan()
+        {
+            string lenh = "select * from NhanVien where ID = '" + idnv + "'";
+            List<nhanVien> nhanViens = modify.NhanViens(lenh);
+            if (nhanViens.Count > 0)
+            {
+                tbl_TenNhanVienThanhTiemKiem.Text = nhanViens[0].Ten1;
+                tbl_IdNhanVienThanhTimKiem.Text = idnv;
+            }
         }
 
         // Cập nhật Tổng đơn Nhập
@@ -87,6 +104,13 @@ namespace QLHieuThuoc.forms
             AddDonNhap(ls);
             CapNhatTongDonNhap();
             SoLuongNhaCungCap();
+
+            int cu = ThongBaoSanPham.ThongBao.Count;
+            thongbao.LayThongTin();
+            if (cu < ThongBaoSanPham.ThongBao.Count)
+            {
+                ThongBaoSanPham.status = true;
+            }
         }
 
         // button mở danh sách nhà cung cấp
@@ -186,6 +210,20 @@ namespace QLHieuThuoc.forms
                 // Hiển thị sản phẩm tìm được
                 AddDonNhap(ketQua);
             }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ThongBaoSanPham.status = false;
+            CoThongBao.Visibility = Visibility.Collapsed;
+            ThanhThongBaoSanPham thanhthongbao = new ThanhThongBaoSanPham();
+            Window parentWindow = Window.GetWindow(this);
+            if (parentWindow != null)
+            {
+                thanhthongbao.Left = parentWindow.Left + (parentWindow.Width - thanhthongbao.Width) / 1.17;
+                thanhthongbao.Top = parentWindow.Top + 110;
+            }
+            thanhthongbao.Show();
         }
     }
 }

@@ -176,22 +176,9 @@
                             </Button>
                         
                         
-                            <!-- Thống kê -->
-                            <Button x:Name="bt_ThongKe" 
-                                    Style="{DynamicResource TongQuan}" Grid.Row="11"
-                                    Background="#E2895A" Click="bt_ThongKe_Click">
-                                <TextBlock x:Name="tbl_bt_ThongKe" 
-                                           FontSize="20"
-                                           FontFamily="Cascadia Mono"
-                                           Foreground="#FCF4F0">
-                                    Thống Kê
-                                </TextBlock>
-                            </Button>
-                        
-                        
                             <!-- Khách Hàng -->
                             <Button x:Name="bt_KhachHang" 
-                                    Style="{DynamicResource TongQuan}" Grid.Row="13"
+                                    Style="{DynamicResource TongQuan}" Grid.Row="11"
                                     Background="#E2895A" Click="bt_KhachHang_Click">
                                 <TextBlock x:Name="tbl_bt_KhachHang" 
                                            FontSize="20"
@@ -204,7 +191,7 @@
                         
                             <!-- Nhân viên -->
                             <Button x:Name="bt_NhanVien" 
-                                    Style="{DynamicResource TongQuan}" Grid.Row="15"
+                                    Style="{DynamicResource TongQuan}" Grid.Row="13"
                                     Background="#E2895A" Click="bt_NhanVien_Click">
                                 <TextBlock x:Name="tbl_bt_NhanVien" 
                                            FontSize="20"
@@ -213,19 +200,36 @@
                                      Nhân Viên
                                 </TextBlock>
                             </Button>
+                            
+                            
+                            <!-- Thống kê -->
+                            <Button x:Name="bt_ThongKe" 
+                                    Style="{DynamicResource TongQuan}" Grid.Row="15"
+                                    Background="#E2895A" Click="bt_ThongKe_Click">
+                                <TextBlock x:Name="tbl_bt_ThongKe" 
+                                           FontSize="20"
+                                           FontFamily="Cascadia Mono"
+                                           Foreground="#FCF4F0">
+                                    Thống Kê
+                                </TextBlock>
+                            </Button>
                         
                         
                             <!-- cài đặt và đăng xuất-->
                             <Grid Grid.Row="16">
-                                <StackPanel Orientation="Vertical" 
-                                            VerticalAlignment="Bottom">
-                                
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="1.6*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="0.2*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="0.3*"/>
+                                </Grid.RowDefinitions>
                                     <!-- Cài Đặt -->
                                     <Button x:Name="bt_CaiDat" 
                                             Style="{DynamicResource TongQuan}"
-                                            Height="57"
                                             Background="#E2895A" 
-                                            Click="bt_CaiDat_Click">
+                                            Click="bt_CaiDat_Click"
+                                            Grid.Row="1">
                                         <TextBlock x:Name="tbl_bt_CaiDat" 
                                                     FontSize="20"
                                                     FontFamily="Cascadia Mono"
@@ -233,12 +237,11 @@
                                             Cài Đặt
                                         </TextBlock>
                                     </Button>
-                                    <Grid Height="15"/>
                                     <!-- Đăng Xuất -->
                                     <Button x:Name="bt_DangXuat"
-                                            Height="57"
                                             Style="{DynamicResource TongQuan}"
-                                            Background="#E2895A" Click="bt_DangXuat_Click">
+                                            Background="#E2895A" Click="bt_DangXuat_Click"
+                                            Grid.Row="3">
                                         <TextBlock x:Name="tbl_bt_DangXuat" 
                                                     FontSize="20"
                                                     FontFamily="Cascadia Mono"
@@ -247,7 +250,6 @@
                                         </TextBlock>
                                     </Button>
                                     <Grid Height="24"/>
-                                </StackPanel>
                             </Grid>
                         </Grid>
 
